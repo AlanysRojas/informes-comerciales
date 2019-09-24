@@ -115,7 +115,7 @@ export class RequisitosProveedoresComponent implements OnInit {
       nombreComercialExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       rucExpress:  ['', [Validators.required,Validators.minLength(13) ,Validators.maxLength(13),Validators.pattern(this.numberPattern)]],
       formaLegalExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      estadoExpress:  ['', [Validators.required,Validators.minLength(6) ,Validators.maxLength(8),Validators.pattern(this.textPattern)]],
+      //estadoExpress:  ['', [Validators.required,Validators.minLength(6) ,Validators.maxLength(8),Validators.pattern(this.textPattern)]],
       inicioActividadesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       actividadPrincipalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       provinciaCiudadExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
@@ -149,6 +149,7 @@ export class RequisitosProveedoresComponent implements OnInit {
       checks: ['', [Validators.required]],
       checks1: ['', [Validators.required]],
       checks2: ['', [Validators.required]],
+      estadoExpress: ['', [Validators.required]],
       checksEmpresas: ['', [Validators.required]],
       //checks
       procesosJudicialesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],

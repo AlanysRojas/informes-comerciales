@@ -172,9 +172,11 @@
 
                                             <select class="browser-default custom-select">
                                                 <option value="" disabled selected>Seleccione una Opción</option>
-                                                <option value="Activo">Activo</option>
+                                                <option [(ngModel)]="formularioExpress.estadoExpress"
+                                                    value="Activo">Activo
+                                                </option>
                                                 <option value="Inactivo">Inactivo</option>
-                                                
+                                               
                                             </select>
                                             <div
                                                 *ngIf="reporteExpress.get('estadoExpress').errors && reporteExpress.get('estadoExpress').dirty">
@@ -257,33 +259,34 @@
                                     <tr>
                                         <td scope="col">Provincia</td>
                                         <td scope="col">
-                                                <select name="Provincia" class="browser-default custom-select">  
-                                                        <option value="Azuay" selected="selected">Azuay</option>  
-                                                        <option value="Cañar">Cañar</option>  
-                                                        <option value="Loja">Loja</option>  
-                                                        <option value="Carchi">Carchi</option>  
-                                                        <option value="Imbabura">Imbabura</option>  
-                                                        <option value="Pichincha">Pichincha</option>  
-                                                        <option value="Cotopaxi">Cotopaxi</option>  
-                                                        <option value="Tungurahua">Tungurahua</option>  
-                                                        <option value="Bolívar">Bolívar</option>  
-                                                        <option value="Chimborazo">Chimborazo</option>  
-                                                        <option value="Sto. Domingo de los Tsachilas">Sto. Domingo de los Tsachilas</option>  
-                                                        <option value="Esmeraldas">Esmeraldas</option>  
-                                                        <option value="Manabí">Manabí</option>  
-                                                        <option value="Guayas">Guayas</option>  
-                                                        <option value="Los Ríos">Los Ríos</option>  
-                                                        <option value="El Oro">El Oro</option>  
-                                                        <option value="Santa Elena">Santa Elena</option>  
-                                                        <option value="Sucumbíos">Sucumbíos</option>  
-                                                        <option value="Napo">Napo</option>  
-                                                        <option value="Pastaza">Pastaza</option>  
-                                                        <option value="Orellana">Orellana</option>  
-                                                        <option value="Morona Santiago">Morona Santiago</option>  
-                                                        <option value="Zamora Chinchipe">Zamora Chinchipe</option>  
-                                                        <option value="Galápagos">Galápagos</option>  
-                                                        <option value="Antártida Ecuatoriana">Antártida Ecuatoriana</option>  
-                                                        </select>  
+                                            <select name="Provincia" class="browser-default custom-select">
+                                                <option value="Azuay" selected="selected">Azuay</option>
+                                                <option value="Cañar">Cañar</option>
+                                                <option value="Loja">Loja</option>
+                                                <option value="Carchi">Carchi</option>
+                                                <option value="Imbabura">Imbabura</option>
+                                                <option value="Pichincha">Pichincha</option>
+                                                <option value="Cotopaxi">Cotopaxi</option>
+                                                <option value="Tungurahua">Tungurahua</option>
+                                                <option value="Bolívar">Bolívar</option>
+                                                <option value="Chimborazo">Chimborazo</option>
+                                                <option value="Sto. Domingo de los Tsachilas">Sto. Domingo de los
+                                                    Tsachilas</option>
+                                                <option value="Esmeraldas">Esmeraldas</option>
+                                                <option value="Manabí">Manabí</option>
+                                                <option value="Guayas">Guayas</option>
+                                                <option value="Los Ríos">Los Ríos</option>
+                                                <option value="El Oro">El Oro</option>
+                                                <option value="Santa Elena">Santa Elena</option>
+                                                <option value="Sucumbíos">Sucumbíos</option>
+                                                <option value="Napo">Napo</option>
+                                                <option value="Pastaza">Pastaza</option>
+                                                <option value="Orellana">Orellana</option>
+                                                <option value="Morona Santiago">Morona Santiago</option>
+                                                <option value="Zamora Chinchipe">Zamora Chinchipe</option>
+                                                <option value="Galápagos">Galápagos</option>
+                                                <option value="Antártida Ecuatoriana">Antártida Ecuatoriana</option>
+                                            </select>
                                             <div
                                                 *ngIf="reporteExpress.get('provinciaCiudadExpress').errors && reporteExpress.get('provinciaCiudadExpress').dirty">
                                                 <p class="text-danger"
@@ -308,34 +311,34 @@
 
                                     </tr>
                                     <tr>
-                                            <td scope="col">Ciudad </td>
-                                            <td scope="col">
-                                                <input class="form-control "
-                                                    [(ngModel)]="formularioExpress.provinciaCiudadExpress"
-                                                    formControlName="provinciaCiudadExpress" type="text ">
-                                                <div
-                                                    *ngIf="reporteExpress.get('provinciaCiudadExpress').errors && reporteExpress.get('provinciaCiudadExpress').dirty">
-                                                    <p class="text-danger"
-                                                        *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('required')">
-                                                        <font size="2">Provincia/Ciudad es requerida</font>
-                                                    </p>
-                                                    <p class="text-danger"
-                                                        *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('minlength')">
-                                                        <font size="2">Minimo de 3 Caracteres</font>
-                                                    </p>
-                                                    <p class="text-danger"
-                                                        *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('maxlength')">
-                                                        <font size="2">Maximon de 30 Caracteres</font>
-                                                    </p>
-                                                    <p class="text-danger"
-                                                        *ngIf="reporteExpress.controls['provinciaCiudadExpress'].touched && reporteExpress.controls['provinciaCiudadExpress'].hasError('pattern')">
-                                                        <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                        </font>
-                                                    </p>
-                                                </div>
-                                            </td>
-    
-                                        </tr>
+                                        <td scope="col">Ciudad </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioExpress.provinciaCiudadExpress"
+                                                formControlName="provinciaCiudadExpress" type="text ">
+                                            <div
+                                                *ngIf="reporteExpress.get('provinciaCiudadExpress').errors && reporteExpress.get('provinciaCiudadExpress').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('required')">
+                                                    <font size="2">Provincia/Ciudad es requerida</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteExpress.controls['provinciaCiudadExpress'].touched && reporteExpress.controls['provinciaCiudadExpress'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+
+                                    </tr>
                                     <tr>
                                         <td scope="col">Dirección </td>
                                         <td scope="col">
@@ -544,47 +547,38 @@
                                     <tr>
                                         <td scope="col">Cargo</td>
                                         <td scope="col" COLSPAN=2>
-                                            <input class="form-control " [(ngModel)]="formularioExpress.cargoExpress"
-                                                formControlName="cargoExpress" type="text ">
-                                            <div
-                                                *ngIf="reporteExpress.get('cargoExpress').errors && reporteExpress.get('cargoExpress').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('cargoExpress').hasError('required')">
-                                                    <font size="2">Cargo es requerida</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('cargoExpress').hasError('minlength')">
-                                                    <font size="2">Minimo de 3 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('cargoExpress').hasError('maxlength')">
-                                                    <font size="2">Maximon de 30 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['cargoExpress'].touched && reporteExpress.controls['cargoExpress'].hasError('pattern')">
-                                                    <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
-                                            </div>
+
+                                            <select class="browser-default custom-select">
+                                                <option value="" disabled selected>Seleccione una opción</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">Gerente General
+                                                </option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">Presidente</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">Contador</option>
+                                            </select>
                                         </td>
 
                                     </tr>
                                     <tr>
                                         <td scope="col">Empresas Relacionadas</td>
                                         <td scope="col" COLSPAN=2>
-                                                <div class="form-check form-check-inline-col8">
-                                                        <input type="radio" id="checksSiEmpresas" name="checksEmpresas" value="SI" formControlName="checksEmpresas" onclick="return ValidacionChecks();"
-                                                            [(ngModel)]="formularioExpress.checksEmpresas">SI<br>
-                                                        <input type="radio" id="checksNoEmpresas" name="checksEmpresas" value="NO" formControlName="checksEmpresas" onclick="return ValidacionChecks();"
-                                                            [(ngModel)]="formularioExpress.checksEmpresas">NO<br>
-                                                        
-                                                        <span class="text-danger"
-                                                            *ngIf="reporteExpress.controls['checksEmpresas'].touched && reporteExpress.controls['checksEmpresas'].hasError('required')">
-                                                            Seleccione una opción! </span>
-                                                    </div>
+                                            <div class="form-check form-check-inline-col8">
+                                                <input type="radio" id="checksSiEmpresas" name="checksEmpresas"
+                                                    value="SI" formControlName="checksEmpresas"
+                                                    onclick="return ValidacionChecks();"
+                                                    [(ngModel)]="formularioExpress.checksEmpresas">SI<br>
+                                                <input type="radio" id="checksNoEmpresas" name="checksEmpresas"
+                                                    value="NO" formControlName="checksEmpresas"
+                                                    onclick="return ValidacionChecks();"
+                                                    [(ngModel)]="formularioExpress.checksEmpresas">NO<br>
+
+                                                <span class="text-danger"
+                                                    *ngIf="reporteExpress.controls['checksEmpresas'].touched && reporteExpress.controls['checksEmpresas'].hasError('required')">
+                                                    Seleccione una opción! </span>
+                                            </div>
                                             <textarea class="form-control " style="display: none"
                                                 [(ngModel)]="formularioExpress.empresasRelacionadasExpress"
-                                                formControlName="empresasRelacionadasExpress" type="text " id="empresasRelacionadasExpress"></textarea>
+                                                formControlName="empresasRelacionadasExpress" type="text "
+                                                id="empresasRelacionadasExpress"></textarea>
                                             <div
                                                 *ngIf="reporteExpress.get('empresasRelacionadasExpress').errors && reporteExpress.get('empresasRelacionadasExpress').dirty">
                                                 <p class="text-danger"
@@ -611,29 +605,20 @@
                                     <tr>
                                         <td scope="col">Número de Empleados</td>
                                         <td scope="col" COLSPAN=2>
-                                            <input class="form-control "
-                                                [(ngModel)]="formularioExpress.numeroEmpleadosExpress"
-                                                formControlName="numeroEmpleadosExpress" type="text ">
-                                            <div
-                                                *ngIf="reporteExpress.get('numeroEmpleadosExpress').errors && reporteExpress.get('numeroEmpleadosExpress').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('numeroEmpleadosExpress').hasError('required')">
-                                                    <font size="2">Número de Empleados es requerida</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('numeroEmpleadosExpress').hasError('minlength')">
-                                                    <font size="2">Minimo de 3 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('numeroEmpleadosExpress').hasError('maxlength')">
-                                                    <font size="2">Maximon de 30 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['numeroEmpleadosExpress'].touched && reporteExpress.controls['numeroEmpleadosExpress'].hasError('pattern')">
-                                                    <font size="2"> Este campo ocupa carecteres numéricos
-                                                    </font>
-                                                </p>
-                                            </div>
+                                            <select class="browser-default custom-select">
+                                                <option value="" disabled selected>Seleccione una Opción</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">0-10</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">10-20</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">20-30</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">30-40</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">40-50</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">50-60</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">60-70</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">70-80</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">80-90</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">90-100</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">100-.....</option>
+                                            </select>
                                         </td>
 
                                     </tr>

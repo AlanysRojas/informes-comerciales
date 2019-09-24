@@ -13,6 +13,7 @@ var infSchema = Schema({
     actividadPrincipalExpress: String,
     provinciaCiudadExpress: String,
     direccionExpress: String,
+    estadoExpress:String,
     sucursalesExpress: String,
     telefonoExpress: String,
     paginaCorreoExpress: String,
