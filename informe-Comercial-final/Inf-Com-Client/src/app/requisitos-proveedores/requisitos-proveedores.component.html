@@ -577,12 +577,12 @@
                                                             [(ngModel)]="formularioExpress.checksEmpresas">SI<br>
                                                         <input type="radio" id="checksNoEmpresas" name="checksEmpresas" value="NO" formControlName="checksEmpresas" onclick="return ValidacionChecks();"
                                                             [(ngModel)]="formularioExpress.checksEmpresas">NO<br>
-                                                        <br>
+                                                        
                                                         <span class="text-danger"
                                                             *ngIf="reporteExpress.controls['checksEmpresas'].touched && reporteExpress.controls['checksEmpresas'].hasError('required')">
                                                             Seleccione una opción! </span>
                                                     </div>
-                                            <textarea class="form-control "
+                                            <textarea class="form-control " style="display: none"
                                                 [(ngModel)]="formularioExpress.empresasRelacionadasExpress"
                                                 formControlName="empresasRelacionadasExpress" type="text " id="empresasRelacionadasExpress"></textarea>
                                             <div
@@ -1192,7 +1192,7 @@
                                     <td scope="col">Puntualidad en los pagos :</td>
                                     <td scope="col">
                                         <select class="browser-default custom-select">
-                                            <option value="" disabled selected>SELECCIONE UNA OPCIÓN</option>
+                                            <option value="" disabled selected>Seleccione una Opción</option>
                                             <option value="A tiempo">A tiempo</option>
                                             <option value="Con retrasos">Con retrasos</option>
                                             <option value="No paga">No paga</option>
@@ -1265,12 +1265,12 @@
                             <div class="col-lg-4"><br>
                                 <div class="form-check form-check-inline-col8">
                                     <input type="radio" id="checksSi" name="checks2" value="SI"
-                                        formControlName="checks2" [(ngModel)]="formularioExpress.checks1">SI<br>
+                                        formControlName="checks2" [(ngModel)]="formularioExpress.checks2">SI<br>
                                     <input type="radio" id="checksNo" name="checks2" value="NO"
-                                        formControlName="checks2" [(ngModel)]="formularioExpress.checks1">NO
+                                        formControlName="checks2" [(ngModel)]="formularioExpress.checks2">NO
                                     <br>
                                     <input type="radio" id="checksNoAp" name="checks2" value="NO APLICA"
-                                        formControlName="checks2" [(ngModel)]="formularioExpress.checks1">NO APLICA<br>
+                                        formControlName="checks2" [(ngModel)]="formularioExpress.checks2">NO APLICA<br>
                                     <br>
                                     <span class="text-danger"
                                         *ngIf="reporteExpress.controls['checks2'].touched && reporteExpress.controls['checks2'].hasError('required')">

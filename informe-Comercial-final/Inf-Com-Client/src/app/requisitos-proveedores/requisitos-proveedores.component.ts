@@ -30,16 +30,17 @@ export class RequisitosProveedoresComponent implements OnInit {
   direccionExpress: string;
   sucursalesExpress: string;
   telefonoExpress: number;
-  paginaCorreoExpress: string;
+  correoExpress: string;
+  paginaExpress: string;
   representanteLegalExpress: string;
   personaContactoExpress: string;
   cargoExpress: string;
   empresasRelacionadasExpress: string;
   numeroEmpleadosExpress: number;
   pagoRentaUnoExpress: string;
-  //pagoRentaDosExpress: string;
+  pagoRentaDosExpress: string;
   impuestoDivisasExpressUno: string;
-  //impuestoDivisasExpressDos: string;
+  impuestoDivisasExpressDos: string;
   //calificacion
   requeridoClienteExpress: string;
   requeridoServiratingExpress: string;
@@ -55,6 +56,8 @@ export class RequisitosProveedoresComponent implements OnInit {
   //selects
   checks: String;
   checks1: String;
+  checks2: String;
+  checksEmpresas: string;
   //checks
   procesosJudicialesExpress: string;
   accionesDelitosExpress: string;
@@ -119,16 +122,17 @@ export class RequisitosProveedoresComponent implements OnInit {
       direccionExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       sucursalesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       telefonoExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(10)]],
-      paginaCorreoExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.emailPattern)]],
+      paginaExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.emailPattern)]],
+      correoExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.emailPattern)]],
       representanteLegalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       personaContactoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       cargoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       empresasRelacionadasExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       numeroEmpleadosExpress:  ['', [Validators.required,Validators.minLength(1) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
       pagoRentaUnoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-     // pagoRentaDosExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      pagoRentaDosExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       impuestoDivisasExpressUno:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-     // impuestoDivisasExpressDos:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      impuestoDivisasExpressDos:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       //calificacion
       requeridoClienteExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       requeridoServiratingExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
@@ -144,6 +148,8 @@ export class RequisitosProveedoresComponent implements OnInit {
       //selects
       checks: ['', [Validators.required]],
       checks1: ['', [Validators.required]],
+      checks2: ['', [Validators.required]],
+      checksEmpresas: ['', [Validators.required]],
       //checks
       procesosJudicialesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       accionesDelitosExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
