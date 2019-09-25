@@ -19,7 +19,7 @@ export class RequisitosProveedoresComponent implements OnInit {
 
   razonSocialExpress: string;
   fecha: string;
-  solicitante: string;
+  solicitanteExpress: string;
   nombreComercialExpress: string;
   rucExpress: number;
   formaLegalExpress: string;
@@ -114,8 +114,7 @@ export class RequisitosProveedoresComponent implements OnInit {
       razonSocialExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       nombreComercialExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       rucExpress:  ['', [Validators.required,Validators.minLength(13) ,Validators.maxLength(13),Validators.pattern(this.numberPattern)]],
-      formaLegalExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      //estadoExpress:  ['', [Validators.required,Validators.minLength(6) ,Validators.maxLength(8),Validators.pattern(this.textPattern)]],
+      formaLegalExpress:  ['', [Validators.required]],
       inicioActividadesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       actividadPrincipalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       provinciaCiudadExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
