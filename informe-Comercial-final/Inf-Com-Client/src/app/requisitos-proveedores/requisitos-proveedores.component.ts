@@ -15,6 +15,7 @@ export class RequisitosProveedoresComponent implements OnInit {
   formularioExpress = new FormExpress();
   submitted = false;
   //empieza formulario
+  hola:FormGroup;
   reporteExpress: FormGroup;
 
   razonSocialExpress: string;
@@ -115,6 +116,8 @@ export class RequisitosProveedoresComponent implements OnInit {
   numberPattern= new RegExp(/^[0-9 ]+$/);
 
   constructor(public fb: FormBuilder, private proveedoresService:FormProveedoresServiceService) {
+
+   
     this.reporteExpress = this.fb.group({
       
       razonSocialExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
