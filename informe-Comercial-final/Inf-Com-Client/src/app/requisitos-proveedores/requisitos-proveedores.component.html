@@ -496,8 +496,8 @@
                                         <td scope="col">Cargo</td>
                                         <td scope="col" COLSPAN=2>
 
-                                            <select class="browser-default custom-select"
-                                                formControlName="cargoExpress" [(ngModel)]="formularioExpress.cargoExpress">
+                                            <select class="browser-default custom-select" formControlName="cargoExpress"
+                                                [(ngModel)]="formularioExpress.cargoExpress">
                                                 <option value="" disabled selected>Seleccione un Cargo</option>
                                                 <option value="Gerente General">Gerente General</option>
                                                 <option value="Presidente">Presidente</option>
@@ -561,28 +561,30 @@
                                     <tr>
                                         <td scope="col">Número de Empleados</td>
                                         <td scope="col" COLSPAN=2>
-                                            <select class="browser-default custom-select" formControlName="numeroEmpleadosExpress" [(ngModel)]="formularioExpress.numeroEmpleadosExpress">
+                                            <select class="browser-default custom-select"
+                                                formControlName="numeroEmpleadosExpress"
+                                                [(ngModel)]="formularioExpress.numeroEmpleadosExpress">
                                                 <option value="" disabled selected>Seleccione una Opción</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">0-10</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">10-20</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">20-30</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">30-40</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">40-50</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">50-60</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">60-70</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">70-80</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">80-90</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">90-100</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">100 o más</option>
+                                                <option value="0-10">0-10</option>
+                                                <option value="10-20">10-20</option>
+                                                <option value="20-30">20-30</option>
+                                                <option value="30-40">30-40</option>
+                                                <option value="40-50">40-50</option>
+                                                <option value="50-60">50-60</option>
+                                                <option value="60-70">60-70</option>
+                                                <option value="70-80">70-80</option>
+                                                <option value="80-90">80-90</option>
+                                                <option value="90-100">90-100</option>
+                                                <option value="100 o más">100 o más</option>
                                             </select>
                                             <div
-                                            *ngIf="reporteExpress.get('numeroEmpleadosExpress').errors && reporteExpress.get('numeroEmpleadosExpress').dirty">
-                                            <p class="text-danger"
-                                                *ngIf="reporteExpress.get('numeroEmpleadosExpress').hasError('required')">
-                                                <font size="2">Provincia/Ciudad es requerida</font>
-                                            </p>
+                                                *ngIf="reporteExpress.get('numeroEmpleadosExpress').errors && reporteExpress.get('numeroEmpleadosExpress').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteExpress.get('numeroEmpleadosExpress').hasError('required')">
+                                                    <font size="2">Provincia/Ciudad es requerida</font>
+                                                </p>
 
-                                        </div>
+                                            </div>
                                         </td>
 
                                     </tr>
@@ -592,7 +594,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <select class="browser-default custom-select">
+                                                    <select class="browser-default custom-select" formControlName="anioPagoImpuesto" [(ngModel)]="formularioExpress.anioPagoImpuesto">
                                                         <option value="" disabled selected>Seleccione un año</option>
                                                         <option value="2010">2010</option>
                                                         <option value="2011">2011</option>
@@ -607,6 +609,14 @@
                                                         <option value="2020">2020</option>
 
                                                     </select>
+                                                    <div
+                                                        *ngIf="reporteExpress.get('anioPagoImpuesto').errors && reporteExpress.get('anioPagoImpuesto').dirty">
+                                                        <p class="text-danger"
+                                                            *ngIf="reporteExpress.get('anioPagoImpuesto').hasError('required')">
+                                                            <font size="2">Provincia/Ciudad es requerida</font>
+                                                        </p>
+
+                                                    </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <input class="form-control "
@@ -635,7 +645,7 @@
                                             <div class="row">
                                                 <div class="col-6">
 
-                                                    <select class="browser-default custom-select">
+                                                    <select class="browser-default custom-select" formControlName="anioPagoImpuestoDos" [(ngModel)]="formularioExpress.anioPagoImpuestoDos">
                                                         <option value="" disabled selected>Seleccione un año</option>
                                                         <option value="2010">2010</option>
                                                         <option value="2011">2011</option>
@@ -650,6 +660,14 @@
                                                         <option value="2020">2020</option>
 
                                                     </select>
+                                                    <div
+                                                        *ngIf="reporteExpress.get('anioPagoImpuestoDos').errors && reporteExpress.get('anioPagoImpuestoDos').dirty">
+                                                        <p class="text-danger"
+                                                            *ngIf="reporteExpress.get('anioPagoImpuestoDos').hasError('required')">
+                                                            <font size="2">Campo requerido</font>
+                                                        </p>
+
+                                                    </div>
                                                 </div>
 
                                                 <div class="col-6">
@@ -681,7 +699,7 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <select class="browser-default custom-select">
+                                                    <select class="browser-default custom-select" formControlName="anioImpuestoDivisas" [(ngModel)]="formularioExpress.anioImpuestoDivisas">
                                                         <option value="" disabled selected>Seleccione un año</option>
                                                         <option value="2010">2010</option>
                                                         <option value="2011">2011</option>
@@ -696,6 +714,14 @@
                                                         <option value="2020">2020</option>
 
                                                     </select>
+                                                    <div
+                                                        *ngIf="reporteExpress.get('anioImpuestoDivisas').errors && reporteExpress.get('anioImpuestoDivisas').dirty">
+                                                        <p class="text-danger"
+                                                            *ngIf="reporteExpress.get('anioImpuestoDivisas').hasError('required')">
+                                                            <font size="2">Campo requerido</font>
+                                                        </p>
+
+                                                    </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <input class="form-control "

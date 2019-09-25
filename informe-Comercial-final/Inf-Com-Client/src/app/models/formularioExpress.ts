@@ -20,8 +20,11 @@ export class FormExpress {
   empresasRelacionadasExpress: string;
   numeroEmpleadosExpress: number;
   pagoRentaUnoExpress: string;
+  anioPagoImpuesto: string;
+  anioPagoImpuestoDos: string;
   pagoRentaDosExpress: string;
   impuestoDivisasExpressUno: string;
+  anioImpuestoDivisas: string;
   impuestoDivisasExpressDos: string;
   //calificacion
   requeridoClienteExpress: string;
