@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var infSchema = Schema({
     razonSocialExpress: String,
     fecha: String,
-    solicitante: String,
+    solicitanteExpress: String,
     nombreComercialExpress: String,
     rucExpress: String,
     formaLegalExpress: String,

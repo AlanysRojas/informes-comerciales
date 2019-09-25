@@ -2,7 +2,7 @@ export class FormExpress {
   _id: string;
   razonSocialExpress: string;
   fecha: string;
-  solicitante: string;
+  solicitanteExpress: string;
   nombreComercialExpress: string;
   rucExpress: number;
   formaLegalExpress: string;
