@@ -151,12 +151,19 @@
                                         <td scope="col">Estado</td>
                                         <td scope="col">
 
-                                            <select class="browser-default custom-select">
+                                            <select class="browser-default custom-select" formControlName="estadoExpress" [(ngModel)]="formularioExpress.estadoExpress">
                                                 <option value="" disabled selected>Seleccione una Opción</option>
                                                 <option value="Activo">Activo</option>
-                                                <option value="Inactivo">Inactivo</option>
-                                               
+                                                <option value="Inactivo">Inactivo</option>   
                                             </select>
+                                            <div
+                                                *ngIf="reporteExpress.get('estadoExpress').errors && reporteExpress.get('estadoExpress').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteExpress.get('estadoExpress').hasError('required')">
+                                                    <font size="2">Actividad principal es requerida</font>
+                                                </p>
+                                        
+                                            </div>
                                            
                                         </td>
 
