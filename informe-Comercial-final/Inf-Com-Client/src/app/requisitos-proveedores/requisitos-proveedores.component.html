@@ -224,7 +224,7 @@
                                     <tr>
                                         <td scope="col">Provincia</td>
                                         <td scope="col">
-                                            <select name="Provincia" class="browser-default custom-select">
+                                            <select name="Provincia" class="browser-default custom-select" formControlName="provinciaExpress" [(ngModel)]="formularioExpress.provinciaExpress">
                                                 <option value="Azuay" selected="selected">Azuay</option>
                                                 <option value="Cañar">Cañar</option>
                                                 <option value="Loja">Loja</option>
@@ -235,8 +235,7 @@
                                                 <option value="Tungurahua">Tungurahua</option>
                                                 <option value="Bolívar">Bolívar</option>
                                                 <option value="Chimborazo">Chimborazo</option>
-                                                <option value="Sto. Domingo de los Tsachilas">Sto. Domingo de los
-                                                    Tsachilas</option>
+                                                <option value="Sto. Domingo de los Tsachilas">Sto. Domingo de los Tsachilas</option>
                                                 <option value="Esmeraldas">Esmeraldas</option>
                                                 <option value="Manabí">Manabí</option>
                                                 <option value="Guayas">Guayas</option>
@@ -253,24 +252,12 @@
                                                 <option value="Antártida Ecuatoriana">Antártida Ecuatoriana</option>
                                             </select>
                                             <div
-                                                *ngIf="reporteExpress.get('provinciaCiudadExpress').errors && reporteExpress.get('provinciaCiudadExpress').dirty">
+                                                *ngIf="reporteExpress.get('provinciaExpress').errors && reporteExpress.get('provinciaExpress').dirty">
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('required')">
+                                                    *ngIf="reporteExpress.get('provinciaExpress').hasError('required')">
                                                     <font size="2">Provincia/Ciudad es requerida</font>
                                                 </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('minlength')">
-                                                    <font size="2">Minimo de 3 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('maxlength')">
-                                                    <font size="2">Maximon de 30 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['provinciaCiudadExpress'].touched && reporteExpress.controls['provinciaCiudadExpress'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                
                                             </div>
                                         </td>
 
@@ -278,29 +265,7 @@
                                     <tr>
                                         <td scope="col">Ciudad </td>
                                         <td scope="col">
-                                            <input class="form-control "
-                                                [(ngModel)]="formularioExpress.provinciaCiudadExpress"
-                                                formControlName="provinciaCiudadExpress" type="text ">
-                                            <div
-                                                *ngIf="reporteExpress.get('provinciaCiudadExpress').errors && reporteExpress.get('provinciaCiudadExpress').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('required')">
-                                                    <font size="2">Provincia/Ciudad es requerida</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('minlength')">
-                                                    <font size="2">Minimo de 3 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('provinciaCiudadExpress').hasError('maxlength')">
-                                                    <font size="2">Maximon de 30 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['provinciaCiudadExpress'].touched && reporteExpress.controls['provinciaCiudadExpress'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
-                                            </div>
+                                           
                                         </td>
 
                                     </tr>

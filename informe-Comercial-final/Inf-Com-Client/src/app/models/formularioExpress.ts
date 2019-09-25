@@ -9,7 +9,7 @@ export class FormExpress {
   estadoExpress: string;
   inicioActividadesExpress: string;
   actividadPrincipalExpress: string;
-  provinciaCiudadExpress: string;
+  provinciaExpress: string;
   direccionExpress: string;
   sucursalesExpress: string;
   telefonoExpress: number;
