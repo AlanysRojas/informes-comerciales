@@ -42,6 +42,7 @@ export class FormExpress {
   //selects
   checks: String;
   checks1: String;
+  checksCalificaciones: string;
   //checks
   procesosJudicialesExpress: string;
   accionesDelitosExpress: string;

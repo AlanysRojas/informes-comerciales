@@ -30,81 +30,67 @@
     function ValidacionChecks() {
         var checkSi = document.getElementById("checksSiEmpresas");
         var checkNo = document.getElementById("checksNoEmpresas");
+        var check0 = document.getElementById("checkCalificacion0");
+        var check1 = document.getElementById("checkCalificacion1");
+        var check2 = document.getElementById("checkCalificacion2");
+        var check3 = document.getElementById("checkCalificacion3");
+        var check4 = document.getElementById("checkCalificacion4");
+        var check5 = document.getElementById("checkCalificacion5");
+        var check6 = document.getElementById("checkCalificacion6");
+        var check7 = document.getElementById("checkCalificacion7");
+        var check8 = document.getElementById("checkCalificacion8");
+        var check9 = document.getElementById("checkCalificacion9");
+        var check10 = document.getElementById("checkCalificacion10");
+
+    
 
 
 
         //var textTarea = document.getElementById("descriptionTrue");
         if (checksSiEmpresas.checked) {
+            console.log("xddd");
             document.getElementById("empresasRelacionadasExpress").style.display = "inline";
         }
         if (checksNoEmpresas.checked) {
             document.getElementById("empresasRelacionadasExpress").style.display = "none";
 
         }
+        if (check0.checked) {
+            console.log("se marco 0");
+            document.getElementById("critico").style.backgroundColor = "#FF0000";
+        }
+        if (check1.checked) {
+            console.log("se marco 1");
+            document.getElementById("critico").style.backgroundColor = "#F91818";
+        }
+        if (check2.checked) {
+            console.log("se marco 2");
+            document.getElementById("critico").style.backgroundColor = "#F84431";
+        }if (check3.checked) {
+            console.log("se marco 3");
+            document.getElementById("riesgoso").style.backgroundColor = "#F74916";
+        }if (check4.checked) {
+            console.log("se marco 4");
+            document.getElementById("riesgoso").style.backgroundColor = "#F76416";
+        }if (check5.checked) {
+            console.log("se marco 5");
+            document.getElementById("riesgoso").style.backgroundColor = "#F79116";
+        }if (check6.checked) {
+            
+            document.getElementById("confiable").style.backgroundColor = "#F7C716";
+        }if (check7.checked) {
+            document.getElementById("confiable").style.backgroundColor = "#F7E916";
+        }if (check8.checked) {
+            document.getElementById("confiable").style.backgroundColor = "#E6F716";
+        }if (check9.checked) {
+            document.getElementById("notable").style.backgroundColor = "#1DF716";
+        }if (check10.checked) {
+            document.getElementById("notable").style.backgroundColor = "#0DBA08";
+        }
 
     }
 
-    function checkCalificacion() {
-
-var check0 = document.getElementById("check0");
-var check1 = document.getElementById("check1");
-var check2 = document.getElementById("check2");
-var check3 = document.getElementById("check3");
-var check4 = document.getElementById("check4");
-var check5 = document.getElementById("check5");
-var check6 = document.getElementById("check6");
-var check7 = document.getElementById("check7");
-var check8 = document.getElementById("check8");
-var check9 = document.getElementById("check9");
-var check10 = document.getElementById("check10");
-
-
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-if (check0.checked) {
-
-    document.getElementById("critico").style.backgroundColor = "#0A9F25";
-}
-
-}
+   
 
 </script>
 

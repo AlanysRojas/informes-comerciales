@@ -822,13 +822,13 @@
                                     <tr style="text-align:center;">
 
                                         <td COLSPAN=3 id="critico" (dblclick)="quitarColorCritico()"
-                                            (click)="cambiarColorCritico()"><b>CRITICO</b></td>
+                                            ><b>CRITICO</b></td>
                                         <td COLSPAN=3 id="riesgoso" (dblclick)="quitarColorRiesgoso()"
-                                            (click)="cambiarColorRiesgoso()"><b>RIESGOSO</b></td>
+                                            ><b>RIESGOSO</b></td>
                                         <td COLSPAN=3 id="confiable" (dblclick)="quitarColorConfiable()"
-                                            (click)="cambiarColorConfiable()"><b>CONFIABLE</b> </td>
+                                            ><b>CONFIABLE</b> </td>
                                         <td COLSPAN=2 id="notable" (dblclick)="quitarColorNotable()"
-                                            (click)="cambiarColorNotable()"><b>NOTABLE</b> </td>
+                                            ><b>NOTABLE</b> </td>
 
                                     </tr>
 
@@ -847,36 +847,23 @@
                                         <td id="10" (click)="textoRojo10()" (dblclick)="quitarColor10()">10</td>
                                     </tr>
                                     <tr style="text-align:center;">
-                                        <td><input type="radio" id="0" name="checksCalificaciones" value="0" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="1" name="checksCalificaciones" value="1" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="2" name="checksCalificaciones" value="2" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="3" name="checksCalificaciones" value="3" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="4" name="checksCalificaciones" value="4" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="5" name="checksCalificaciones" value="5" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="6" name="checksCalificaciones" value="6" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="7" name="checksCalificaciones" value="7" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="8" name="checksCalificaciones" value="8" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="9" name="checksCalificaciones" value="9" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="10" name="checksCalificaciones" value="10" formControlName="checksCalificaciones" onclick="return ValidacionChecks(); "[(ngModel)]="formularioExpress.checksCalificaciones"></td>
-
+                                        <td><input type="radio" id="checkCalificacion0" name="checksCalificaciones" value="0" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion1" name="checksCalificaciones" value="1" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion2" name="checksCalificaciones" value="2" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion3" name="checksCalificaciones" value="3" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion4" name="checksCalificaciones" value="4" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion5" name="checksCalificaciones" value="5" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion6" name="checksCalificaciones" value="6" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion7" name="checksCalificaciones" value="7" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion8" name="checksCalificaciones" value="8" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion9" name="checksCalificaciones" value="9" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion10" name="checksCalificaciones" value="10" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        
                                     </tr>
 
                                 </tbody>
                             </table>
 
-                            <select class="browser-default custom-select" style="width:270px">
-                                <option value="" disabled selected>Seleccione la Calificación</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">1</option>
-                                <option value="5">2</option>
-                                <option value="6">3</option>
-                                <option value="7">1</option>
-                                <option value="8">2</option>
-                                <option value="9">3</option>
-                                <option value="10">10</option>
-                            </select>
 
                         </div>
                     </div>
