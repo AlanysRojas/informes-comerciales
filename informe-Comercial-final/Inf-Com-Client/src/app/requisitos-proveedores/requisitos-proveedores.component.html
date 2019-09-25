@@ -594,7 +594,9 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <select class="browser-default custom-select" formControlName="anioPagoImpuesto" [(ngModel)]="formularioExpress.anioPagoImpuesto">
+                                                    <select class="browser-default custom-select"
+                                                        formControlName="anioPagoImpuesto"
+                                                        [(ngModel)]="formularioExpress.anioPagoImpuesto">
                                                         <option value="" disabled selected>Seleccione un año</option>
                                                         <option value="2010">2010</option>
                                                         <option value="2011">2011</option>
@@ -645,7 +647,9 @@
                                             <div class="row">
                                                 <div class="col-6">
 
-                                                    <select class="browser-default custom-select" formControlName="anioPagoImpuestoDos" [(ngModel)]="formularioExpress.anioPagoImpuestoDos">
+                                                    <select class="browser-default custom-select"
+                                                        formControlName="anioPagoImpuestoDos"
+                                                        [(ngModel)]="formularioExpress.anioPagoImpuestoDos">
                                                         <option value="" disabled selected>Seleccione un año</option>
                                                         <option value="2010">2010</option>
                                                         <option value="2011">2011</option>
@@ -699,7 +703,9 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <select class="browser-default custom-select" formControlName="anioImpuestoDivisas" [(ngModel)]="formularioExpress.anioImpuestoDivisas">
+                                                    <select class="browser-default custom-select"
+                                                        formControlName="anioImpuestoDivisas"
+                                                        [(ngModel)]="formularioExpress.anioImpuestoDivisas">
                                                         <option value="" disabled selected>Seleccione un año</option>
                                                         <option value="2010">2010</option>
                                                         <option value="2011">2011</option>
@@ -750,7 +756,9 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <select class="browser-default custom-select">
+                                                    <select class="browser-default custom-select"
+                                                        formControlName="anioImpuestoDivisasDos"
+                                                        [(ngModel)]="formularioExpress.anioImpuestoDivisasDos">
                                                         <option value="" disabled selected>Seleccione un año</option>
                                                         <option value="2010">2010</option>
                                                         <option value="2011">2011</option>
@@ -765,6 +773,14 @@
                                                         <option value="2020">2020</option>
 
                                                     </select>
+                                                    <div
+                                                        *ngIf="reporteExpress.get('anioImpuestoDivisasDos').errors && reporteExpress.get('anioImpuestoDivisas').dirty">
+                                                        <p class="text-danger"
+                                                            *ngIf="reporteExpress.get('anioImpuestoDivisas').hasError('required')">
+                                                            <font size="2">Campo requerido</font>
+                                                        </p>
+
+                                                    </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <input class="form-control"
@@ -1180,12 +1196,20 @@
                                 <tr>
                                     <td scope="col">Puntualidad en los pagos :</td>
                                     <td scope="col">
-                                        <select class="browser-default custom-select">
+                                        <select class="browser-default custom-select" formControlName="puntualidadPagosExpress" [(ngModel)]="formularioExpress.puntualidadPagosExpress">
                                             <option value="" disabled selected>Seleccione una Opción</option>
                                             <option value="A tiempo">A tiempo</option>
                                             <option value="Con retrasos">Con retrasos</option>
                                             <option value="No paga">No paga</option>
                                         </select>
+                                        <div
+                                            *ngIf="reporteExpress.get('puntualidadPagosExpress').errors && reporteExpress.get('puntualidadPagosExpress').dirty">
+                                            <p class="text-danger"
+                                                *ngIf="reporteExpress.get('puntualidadPagosExpress').hasError('required')">
+                                                <font size="2">Campo requerido</font>
+                                            </p>
+
+                                        </div>
 
                                 </tr>
 

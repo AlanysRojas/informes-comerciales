@@ -26,6 +26,7 @@ export class FormExpress {
   impuestoDivisasExpressUno: string;
   anioImpuestoDivisas: string;
   impuestoDivisasExpressDos: string;
+  puntualidadPagosExpress: string;
   //calificacion
   requeridoClienteExpress: string;
   requeridoServiratingExpress: string;

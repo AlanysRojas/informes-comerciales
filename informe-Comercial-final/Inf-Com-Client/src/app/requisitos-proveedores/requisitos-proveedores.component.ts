@@ -43,7 +43,9 @@ export class RequisitosProveedoresComponent implements OnInit {
   pagoRentaDosExpress: string;
   impuestoDivisasExpressUno: string;
   anioImpuestoDivisas: string;
+  anioImpuestoDivisasDos: string;
   impuestoDivisasExpressDos: string;
+  puntualidadPagosExpress: string;
   //calificacion
   requeridoClienteExpress: string;
   requeridoServiratingExpress: string;
@@ -137,6 +139,8 @@ export class RequisitosProveedoresComponent implements OnInit {
       pagoRentaDosExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       impuestoDivisasExpressUno:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       anioImpuestoDivisas: ['', [Validators.required]],
+      anioImpuestoDivisasDos: ['', [Validators.required]],
+      puntualidadPagosExpress: ['', [Validators.required]],
       impuestoDivisasExpressDos:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       //calificacion
       requeridoClienteExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
