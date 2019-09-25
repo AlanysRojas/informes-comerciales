@@ -39,9 +39,14 @@ export class RequisitosProveedoresComponent implements OnInit {
   empresasRelacionadasExpress: string;
   numeroEmpleadosExpress: number;
   pagoRentaUnoExpress: string;
+  anioPagoImpuesto: string;
+  anioPagoImpuestoDos: string;
   pagoRentaDosExpress: string;
   impuestoDivisasExpressUno: string;
+  anioImpuestoDivisas: string;
+  anioImpuestoDivisasDos: string;
   impuestoDivisasExpressDos: string;
+  puntualidadPagosExpress: string;
   //calificacion
   requeridoClienteExpress: string;
   requeridoServiratingExpress: string;
@@ -128,12 +133,17 @@ export class RequisitosProveedoresComponent implements OnInit {
       correoExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.emailPattern)]],
       representanteLegalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       personaContactoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      cargoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      cargoExpress:  ['', [Validators.required]],
       empresasRelacionadasExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      numeroEmpleadosExpress:  ['', [Validators.required,Validators.minLength(1) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
+      numeroEmpleadosExpress:  ['', [Validators.required]],
       pagoRentaUnoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      anioPagoImpuesto:  ['', [Validators.required]],
+      anioPagoImpuestoDos: ['', [Validators.required]],
       pagoRentaDosExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       impuestoDivisasExpressUno:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      anioImpuestoDivisas: ['', [Validators.required]],
+      anioImpuestoDivisasDos: ['', [Validators.required]],
+      puntualidadPagosExpress: ['', [Validators.required]],
       impuestoDivisasExpressDos:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       //calificacion
       requeridoClienteExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
