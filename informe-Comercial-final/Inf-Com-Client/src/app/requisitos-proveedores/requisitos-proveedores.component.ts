@@ -26,7 +26,7 @@ export class RequisitosProveedoresComponent implements OnInit {
   estadoExpress: string;
   inicioActividadesExpress: string;
   actividadPrincipalExpress: string;
-  provinciaCiudadExpress: string;
+  provinciaExpress: string;
   direccionExpress: string;
   sucursalesExpress: string;
   telefonoExpress: number;
@@ -117,7 +117,7 @@ export class RequisitosProveedoresComponent implements OnInit {
       formaLegalExpress:  ['', [Validators.required]],
       inicioActividadesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       actividadPrincipalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      provinciaCiudadExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      provinciaExpress:  ['', [Validators.required]],
       direccionExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       sucursalesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       telefonoExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(10)]],
