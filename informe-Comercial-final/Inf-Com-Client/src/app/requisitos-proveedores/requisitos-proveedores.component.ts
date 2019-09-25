@@ -65,6 +65,7 @@ export class RequisitosProveedoresComponent implements OnInit {
   checks1: String;
   checks2: String;
   checksEmpresas: string;
+  checksCalificaciones: string;
   //checks
   procesosJudicialesExpress: string;
   accionesDelitosExpress: string;
@@ -165,6 +166,7 @@ export class RequisitosProveedoresComponent implements OnInit {
       checks2: ['', [Validators.required]],
       estadoExpress: ['', [Validators.required]],
       checksEmpresas: ['', [Validators.required]],
+      checksCalificaciones: ['', [Validators.required]],
       //checks
       procesosJudicialesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       accionesDelitosExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
@@ -314,6 +316,7 @@ export class RequisitosProveedoresComponent implements OnInit {
 
   }
   cambiarColorConfiable(){
+    
     document.getElementById("confiable").style.backgroundColor="#0A9F25";
 
   }
