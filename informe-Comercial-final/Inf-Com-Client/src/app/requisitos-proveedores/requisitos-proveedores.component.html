@@ -80,7 +80,7 @@
                                     </tr>
                                     <tr>
 
-                                        <td scope="col">Nombre Comerciala</td>
+                                        <td scope="col">Nombre Comercial</td>
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioExpress.nombreComercialExpress"
@@ -492,13 +492,21 @@
                                         <td scope="col">Cargo</td>
                                         <td scope="col" COLSPAN=2>
 
-                                            <select class="browser-default custom-select">
+                                            <select class="browser-default custom-select" formControlName="cargoExpress" [(ngModel)]="formularioExpress.cargoExpress">
                                                 <option value="" disabled selected>Seleccione un Cargo</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">Gerente General
+                                                <option id="a tiempo" name="checks" value="Gerente General">Gerente General
                                                 </option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">Presidente</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">Contador</option>
+                                                <option id="a tiempo" name="checks" value="Presidente">Presidente</option>
+                                                <option id="a tiempo" name="checks" value="Contador">Contador</option>
                                             </select>
+                                            <div
+                                                *ngIf="reporteExpress.get('cargoExpress').errors && reporteExpress.get('cargoExpress').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteExpress.get('cargoExpress').hasError('required')">
+                                                    <font size="2">Campo requerido</font>
+                                                </p>
+
+                                            </div>
                                         </td>
 
                                     </tr>
