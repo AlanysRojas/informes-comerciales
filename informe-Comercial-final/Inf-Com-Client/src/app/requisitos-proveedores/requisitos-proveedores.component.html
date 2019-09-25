@@ -22,13 +22,12 @@
                     <p><b>Solicitante:</b>
                 </div>
                 <div class="col-6">
-                    <select class="browser-default custom-select" 
-                        [(ngModel)]="solicitanteExpress">
-                        <option value="" disabled selected>Seleccione un Solicitante</option>
+                    <select class="browser-default custom-select">
+                        <option value="" disabled selected>Seleccione una Empresa</option>
                         <option value="kywi">kywi</option>
                         <option value="Seguros Confianza">Seguros Confianza</option>
+
                     </select>
-                   
                 </div>
             </div>
 
@@ -80,7 +79,7 @@
                                     </tr>
                                     <tr>
 
-                                        <td scope="col">Nombre Comerciala</td>
+                                        <td scope="col">Nombre Comercial</td>
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioExpress.nombreComercialExpress"
@@ -139,20 +138,15 @@
                                     <tr>
                                         <td scope="col">Forma Legal</td>
                                         <td scope="col">
-                                            <select class="browser-default custom-select" formControlName="formaLegalExpress" [(ngModel)]="formularioExpress.formaLegalExpress">
+                                             <select class="browser-default custom-select">
                                                 <option value="" disabled selected>Seleccione Forma Legal</option>
-                                                <option value="Persona Natural">Persona Natural</option>
-                                                <option value="Persona Jurídica">Persona Jurídica</option>
+                                                <option id="selectNat" name="select" value="Persona Natural"
+                                                    [(ngModel)]="formularioExpress.formaLegalExpress">Persona Natural
+                                                </option>
+
+                                                <option id="selectJur" name="select" value="Persona Jurídica"
+                                                    [(ngModel)]="formularioExpress.checks">Persona Jurídica</option>
                                             </select>
-                                            <div
-                                                *ngIf="reporteExpress.get('formaLegalExpress').errors && reporteExpress.get('formaLegalExpress').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('formaLegalExpress').hasError('required')">
-                                                    <font size="2">Actividad principal es requerida</font>
-                                                </p>
-
-                                            </div>
-
 
                                         </td>
 
@@ -161,21 +155,13 @@
                                         <td scope="col">Estado</td>
                                         <td scope="col">
 
-                                            <select class="browser-default custom-select"
-                                                formControlName="estadoExpress"
-                                                [(ngModel)]="formularioExpress.estadoExpress">
+                                            <select class="browser-default custom-select">
                                                 <option value="" disabled selected>Seleccione una Opción</option>
-                                                <option value="Activo">Activo</option>
+                                                <option value="Activo">Activo
+                                                </option>
                                                 <option value="Inactivo">Inactivo</option>
-                                            </select>
-                                            <div
-                                                *ngIf="reporteExpress.get('estadoExpress').errors && reporteExpress.get('estadoExpress').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('estadoExpress').hasError('required')">
-                                                    <font size="2">Actividad principal es requerida</font>
-                                                </p>
 
-                                            </div>
+                                            </select>
 
                                         </td>
 
@@ -528,7 +514,7 @@
                                         <td scope="col" COLSPAN=2>
 
                                             <select class="browser-default custom-select">
-                                                <option value="" disabled selected>Seleccione un Cargo</option>
+                                                <option value="" disabled selected>Seleccione una opción</option>
                                                 <option id="a tiempo" name="checks" value="a tiempo">Gerente General
                                                 </option>
                                                 <option id="a tiempo" name="checks" value="a tiempo">Presidente</option>
@@ -596,7 +582,7 @@
                                                 <option id="a tiempo" name="checks" value="a tiempo">70-80</option>
                                                 <option id="a tiempo" name="checks" value="a tiempo">80-90</option>
                                                 <option id="a tiempo" name="checks" value="a tiempo">90-100</option>
-                                                <option id="a tiempo" name="checks" value="a tiempo">100-.....</option>
+                                                <option id="a tiempo" name="checks" value="a tiempo">100-..</option>
                                             </select>
                                         </td>
 
@@ -2316,4 +2302,5 @@
             </form>
         </div>
     </div>
-</div>
+   
+
