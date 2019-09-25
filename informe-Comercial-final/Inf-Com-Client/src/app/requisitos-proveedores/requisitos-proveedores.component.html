@@ -237,33 +237,9 @@
                                         <td scope="col">
                                             <select name="Provincia" class="browser-default custom-select"
                                                 formControlName="provinciaExpress"
-                                                [(ngModel)]="formularioExpress.provinciaExpress">
-                                                <option value="Azuay" selected="selected">Azuay</option>
-                                                <option value="Cañar">Cañar</option>
-                                                <option value="Loja">Loja</option>
-                                                <option value="Carchi">Carchi</option>
-                                                <option value="Imbabura">Imbabura</option>
-                                                <option value="Pichincha">Pichincha</option>
-                                                <option value="Cotopaxi">Cotopaxi</option>
-                                                <option value="Tungurahua">Tungurahua</option>
-                                                <option value="Bolívar">Bolívar</option>
-                                                <option value="Chimborazo">Chimborazo</option>
-                                                <option value="Sto. Domingo de los Tsachilas">Sto. Domingo de los
-                                                    Tsachilas</option>
-                                                <option value="Esmeraldas">Esmeraldas</option>
-                                                <option value="Manabí">Manabí</option>
-                                                <option value="Guayas">Guayas</option>
-                                                <option value="Los Ríos">Los Ríos</option>
-                                                <option value="El Oro">El Oro</option>
-                                                <option value="Santa Elena">Santa Elena</option>
-                                                <option value="Sucumbíos">Sucumbíos</option>
-                                                <option value="Napo">Napo</option>
-                                                <option value="Pastaza">Pastaza</option>
-                                                <option value="Orellana">Orellana</option>
-                                                <option value="Morona Santiago">Morona Santiago</option>
-                                                <option value="Zamora Chinchipe">Zamora Chinchipe</option>
-                                                <option value="Galápagos">Galápagos</option>
-                                                <option value="Antártida Ecuatoriana">Antártida Ecuatoriana</option>
+                                                [(ngModel)]="formularioExpress.provinciaExpress"
+                                                (change)="cambioProvincia($event.target.value)">
+                                                <option *ngFor ="let prov of listaProvincias" value="{{prov.name}}">{{prov.name}}</option>
                                             </select>
                                             <div
                                                 *ngIf="reporteExpress.get('provinciaExpress').errors && reporteExpress.get('provinciaExpress').dirty">
@@ -279,8 +255,12 @@
                                     <tr>
                                         <td scope="col">Ciudad </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioExpress.ciudadExpress"
-                                                formControlName="ciudadExpress" type="text ">
+                                          
+                                            <!--input class="form-control " [(ngModel)]="formularioExpress.ciudadExpress"
+                                                formControlName="ciudadExpress" type="text "-->
+                                                <select name="Ciudad" class="browser-default custom-select">
+                                                    <option *ngFor ="let ciudad of ciudades" value="{{ciudad}}">{{ciudad}}</option>
+                                                </select>
                                             <div
                                                 *ngIf="reporteExpress.get('ciudadExpress').errors && reporteExpress.get('ciudadExpress').dirty">
                                                 <p class="text-danger"

@@ -61,9 +61,9 @@ export class RequisitosProveedoresComponent implements OnInit {
   clienteDesdeExpress: string;
   compraMensualExpress: string;
   //selects
-  checks: String;
-  checks1: String;
-  checks2: String;
+  checks: string;
+  checks1: string;
+  checks2: string;
   checksEmpresas: string;
   checksCalificaciones: string;
   //checks
@@ -108,7 +108,36 @@ export class RequisitosProveedoresComponent implements OnInit {
   avaluoExpress3: string;
   avaluoExpress4: string;
   observacionesExpress: string;
-
+  listaProvincias: Array<any> = [
+    {name:"AZUAY",ciudades: ["CUENCA","GIRÓN","GUALACEO","NABÓN","PAUTE","PUCARA","SAN FERNANDO","SANTA ISABEL","SIGSIG","OÑA","CHORDELEG","EL PAN","SEVILLA DE ORO","GUACHAPALA","CAMILO PONCE ENRÍQUEZ"
+    ]},{name:"BOLIVAR",ciudades:["GUARANDA","CHILLANES","CHIMBO","ECHEANDÍA","SAN MIGUEL","CALUMA","LAS NAVES"
+    ]},{name:"CAÑAR",ciudades:["AZOGUES","BIBLIÁN","CAÑAR","LA TRONCAL","EL TAMBO","DÉLEG","SUSCAL"
+    ]},{name:"CARCHI",ciudades:["TULCÁN","BOLÍVAR","ESPEJO","MIRA","MONTÚFAR","SAN PEDRO DE HUACA"
+    ]},{name:"COTOPAXI",ciudades:["LATACUNGA","LA MANÁ","PANGUA","PUJILI","SALCEDO","SAQUISILÍ","SIGCHOS"
+    ]},{name:"CHIMBORAZO",ciudades:["RIOBAMBA","ALAUSI","COLTA","CHAMBO","CHUNCHI","GUAMOTE","GUANO","PALLATANGA","PENIPE","CUMANDÁ"
+    ]},{name:"EL ORO",ciudades:["MACHALA","ARENILLAS","ATAHUALPA","BALSAS","CHILLA","EL GUABO","HUAQUILLAS","MARCABELÍ","PASAJE","PIÑAS","PORTOVELO","SANTA ROSA","ZARUMA","LAS LAJAS"
+    ]},{name:"ESMERALDAS",ciudades:["ESMERALDAS","ELOY ALFARO","MUISNE","QUININDÉ","SAN LORENZO","ATACAMES","RIOVERDE","LA CONCORDIA"
+    ]},{name:"GUAYAS",ciudades:["GUAYAQUIL","ALFREDO BAQUERIZO MORENO (JUJÁN)","BALAO","BALZAR","COLIMES","DAULE","DURÁN","EL EMPALME","EL TRIUNFO","MILAGRO","NARANJAL","NARANJITO","PALESTINA","PEDRO CARBO","SAMBORONDÓN","SANTA LUCÍA","SALITRE (URBINA JADO)","SAN JACINTO DE YAGUACHI","PLAYAS","SIMÓN BOLÍVAR","CORONEL MARCELINO MARIDUEÑA","LOMAS DE SARGENTILLO","NOBOL","GENERAL ANTONIO ELIZALDE","ISIDRO AYORA"
+    ]},{name:"IMBABURA",ciudades:["IBARRA","ANTONIO ANTE","COTACACHI","OTAVALO","PIMAMPIRO","SAN MIGUEL DE URCUQUÍ"
+    ]},{name:"LOJA",ciudades:["LOJA","CALVAS","CATAMAYO","CELICA","CHAGUARPAMBA","ESPÍNDOLA","GONZANAMÁ","MACARÁ","PALTAS","PUYANGO","SARAGURO","SOZORANGA","ZAPOTILLO","PINDAL","QUILANGA","OLMEDO"
+    ]},{name:"LOS RIOS",ciudades:["BABAHOYO","BABA","MONTALVO","PUEBLOVIEJO","QUEVEDO","URDANETA","VENTANAS","VÍNCES","PALENQUE","BUENA FÉ","VALENCIA","MOCACHE","QUINSALOMA"
+    ]},{name:"MANABI",ciudades:["PORTOVIEJO","BOLÍVAR","CHONE","EL CARMEN","FLAVIO ALFARO","JIPIJAPA","JUNÍN","MANTA","MONTECRISTI","PAJÁN","PICHINCHA","ROCAFUERTE","SANTA ANA","SUCRE","TOSAGUA","24 DE MAYO","PEDERNALES","OLMEDO","PUERTO LÓPEZ","JAMA","JARAMIJÓ","SAN VICENTE"
+    ]},{name:"MORONA SANTIAGO",ciudades:["MORONA","GUALAQUIZA","LIMÓN INDANZA","PALORA","SANTIAGO","SUCÚA","HUAMBOYA","SAN JUAN BOSCO","TAISHA","LOGROÑO","PABLO SEXTO","TIWINTZA"
+    ]},{name:"NAPO",ciudades:["TENA","ARCHIDONA","EL CHACO","QUIJOS","CARLOS JULIO AROSEMENA TOLA"
+    ]},{name:"PASTAZA",ciudades:["PASTAZA","MERA","SANTA CLARA","ARAJUNO"
+    ]},{name:"PICHINCHA",ciudades:["QUITO","CAYAMBE","MEJIA","PEDRO MONCAYO","RUMIÑAHUI","SAN MIGUEL DE LOS BANCOS","PEDRO VICENTE MALDONADO","PUERTO QUITO"
+    ]},{name:"TUNGURAHUA",ciudades:["AMBATO","BAÑOS DE AGUA SANTA","CEVALLOS","MOCHA","PATATE","QUERO","SAN PEDRO DE PELILEO","SANTIAGO DE PÍLLARO","TISALEO"
+    ]},{name:"ZAMORA CHINCHIPE",ciudades:["ZAMORA","CHINCHIPE","NANGARITZA","YACUAMBI","YANTZAZA (YANZATZA)","EL PANGUI","CENTINELA DEL CÓNDOR","PALANDA","PAQUISHA"
+    ]},{name:"GALAPAGOS",ciudades:["SAN CRISTÓBAL","ISABELA","SANTA CRUZ"
+    ]},{name:"SUCUMBIOS",ciudades:["LAGO AGRIO","GONZALO PIZARRO","PUTUMAYO","SHUSHUFINDI","SUCUMBÍOS","CASCALES","CUYABENO"
+    ]},{name:"ORELLANA",ciudades:["ORELLANA","AGUARICO","LA JOYA DE LOS SACHAS","LORETO"
+    ]},{name:"SANTO DOMINGO DE LOS TSACHILAS",ciudades:["SANTO DOMINGO"
+    ]},{name:"SANTA ELENA", ciudades:["SANTA ELENA","LA LIBERTAD","SALINAS"]},
+  ];
+  ciudades: Array<any>;
+  cambioProvincia(count) {
+    this.ciudades = this.listaProvincias.find(con => con.name == count).ciudades;
+  }
 
 
 
@@ -156,7 +185,7 @@ export class RequisitosProveedoresComponent implements OnInit {
       contactoReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       lineaCreditoExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(7),Validators.pattern(this.textPattern)]],
       pagosReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      ciudadExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      
       productoServicioReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       clienteDesdeExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       compraMensualExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
@@ -164,6 +193,7 @@ export class RequisitosProveedoresComponent implements OnInit {
       checks: ['', [Validators.required]],
       checks1: ['', [Validators.required]],
       checks2: ['', [Validators.required]],
+      ciudadExpress:['', [Validators.required]],
       estadoExpress: ['', [Validators.required]],
       checksEmpresas: ['', [Validators.required]],
       checksCalificaciones: ['', [Validators.required]],
