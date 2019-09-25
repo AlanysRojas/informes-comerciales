@@ -143,26 +143,7 @@
                                                 <option value="Persona Natural">Persona Natural</option>
                                                 <option value="Persona Jurídica">Persona Jurídica</option>
                                             </select>
-                                            <div
-                                                *ngIf="reporteExpress.get('formaLegalExpress').errors && reporteExpress.get('formaLegalExpress').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('formaLegalExpress').hasError('required')">
-                                                    <font size="2">Forma Legal es requerida</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('formaLegalExpress').hasError('minlength')">
-                                                    <font size="2">Minimo de 3 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('formaLegalExpress').hasError('maxlength')">
-                                                    <font size="2">Maximo de 30 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['formaLegalExpress'].touched && reporteExpress.controls['formaLegalExpress'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
-                                            </div>
+                                           
                                         </td>
 
                                     </tr>
@@ -172,32 +153,11 @@
 
                                             <select class="browser-default custom-select">
                                                 <option value="" disabled selected>Seleccione una Opción</option>
-                                                <option [(ngModel)]="formularioExpress.estadoExpress"
-                                                    value="Activo">Activo
-                                                </option>
+                                                <option value="Activo">Activo</option>
                                                 <option value="Inactivo">Inactivo</option>
                                                
                                             </select>
-                                            <div
-                                                *ngIf="reporteExpress.get('estadoExpress').errors && reporteExpress.get('estadoExpress').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('estadoExpress').hasError('required')">
-                                                    <font size="2">Estado es requerida</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('estadoExpress').hasError('minlength')">
-                                                    <font size="2">Minimo de 6 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('estadoExpress').hasError('maxlength')">
-                                                    <font size="2">Maximon de 8 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['estadoExpress'].touched && reporteExpress.controls['estadoExpress'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
-                                            </div>
+                                           
                                         </td>
 
                                     </tr>
