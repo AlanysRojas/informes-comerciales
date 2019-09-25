@@ -13,7 +13,9 @@ export class FormExpress {
   direccionExpress: string;
   sucursalesExpress: string;
   telefonoExpress: number;
-  paginaCorreoExpress: string;
+  correoExpress:string;
+  paginaExpress:string;
+  ciudadExpress:string;
   representanteLegalExpress: string;
   personaContactoExpress: string;
   cargoExpress: string;

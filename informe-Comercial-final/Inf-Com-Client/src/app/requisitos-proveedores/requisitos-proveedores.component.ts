@@ -28,6 +28,7 @@ export class RequisitosProveedoresComponent implements OnInit {
   inicioActividadesExpress: string;
   actividadPrincipalExpress: string;
   provinciaExpress: string;
+  ciudadExpress:string;
   direccionExpress: string;
   sucursalesExpress: string;
   telefonoExpress: number;
@@ -155,6 +156,7 @@ export class RequisitosProveedoresComponent implements OnInit {
       contactoReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       lineaCreditoExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(7),Validators.pattern(this.textPattern)]],
       pagosReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      ciudadExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       productoServicioReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       clienteDesdeExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       compraMensualExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
