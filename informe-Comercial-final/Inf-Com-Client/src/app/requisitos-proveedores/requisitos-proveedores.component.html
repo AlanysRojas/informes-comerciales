@@ -22,12 +22,13 @@
                     <p><b>Solicitante:</b>
                 </div>
                 <div class="col-6">
-                    <select class="browser-default custom-select" [(ngModel)]="formularioExpress.solicitanteExpress">
+                    <!--<select class="browser-default custom-select" [(ngModel)]="formularioExpress.solicitanteExpress">
                         <option value="" disabled selected>SELECCIONA LA OPCION</option>
                         <option value="Kiwy">Kiwy</option>
                         <option value="Loja">Loja</option>
 
-                    </select>
+                    </select>-->
+                    <input type="text" [(ngModel)]="formularioExpress.solicitanteExpress">
 
                 </div>
             </div>
@@ -226,8 +227,10 @@
                                                 <option value="Servicios">Servicios de Construcción</option>
                                                 <option value="Trabajadores Autónomos">Trabajadores Autónomos</option>
                                                 <option value="Comerciantes Minoristas">Comerciantes Minoristas</option>
-                                                <option value="Otros servicios en General">Otros servicios en General</option>
-                                                <option value="Otros microempresarios en general">Otros microempresarios en general</option>
+                                                <option value="Otros servicios en General">Otros servicios en General
+                                                </option>
+                                                <option value="Otros microempresarios en general">Otros microempresarios
+                                                    en general</option>
                                             </select>
                                         </td>
 
@@ -239,7 +242,8 @@
                                                 formControlName="provinciaExpress"
                                                 [(ngModel)]="formularioExpress.provinciaExpress"
                                                 (change)="cambioProvincia($event.target.value)">
-                                                <option *ngFor ="let prov of listaProvincias" value="{{prov.name}}">{{prov.name}}</option>
+                                                <option *ngFor="let prov of listaProvincias" value="{{prov.name}}">
+                                                    {{prov.name}}</option>
                                             </select>
                                             <div
                                                 *ngIf="reporteExpress.get('provinciaExpress').errors && reporteExpress.get('provinciaExpress').dirty">
@@ -255,12 +259,18 @@
                                     <tr>
                                         <td scope="col">Ciudad </td>
                                         <td scope="col">
-                                          
+
+
+
+
                                             <!--input class="form-control " [(ngModel)]="formularioExpress.ciudadExpress"
                                                 formControlName="ciudadExpress" type="text "-->
-                                                <select name="Ciudad" class="browser-default custom-select">
-                                                    <option *ngFor ="let ciudad of ciudades" value="{{ciudad}}">{{ciudad}}</option>
-                                                </select>
+                                            <select name="Ciudad" class="browser-default custom-select"
+                                                formControlName="ciudadExpress"
+                                                [(ngModel)]="formularioExpress.ciudadExpress">
+                                                <option *ngFor="let ciudad of ciudades" value="{{ciudad}}">{{ciudad}}
+                                                </option>
+                                            </select>
                                             <div
                                                 *ngIf="reporteExpress.get('ciudadExpress').errors && reporteExpress.get('ciudadExpress').dirty">
                                                 <p class="text-danger"
