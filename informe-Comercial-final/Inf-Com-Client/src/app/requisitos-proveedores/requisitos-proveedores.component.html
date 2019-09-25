@@ -20,13 +20,13 @@
             <div class="row">
                 <div class="col-6">
                     <p><b>Solicitante:</b>
-                </div>            
+                </div>
                 <div class="col-6">
-                    <select  class="browser-default custom-select"  [(ngModel)]="formularioExpress.solicitanteExpress">
+                    <select class="browser-default custom-select" [(ngModel)]="formularioExpress.solicitanteExpress">
                         <option value="" disabled selected>SELECCIONA LA OPCION</option>
                         <option value="Kiwy">Kiwy</option>
                         <option value="Loja">Loja</option>
-                        
+
                     </select>
 
                 </div>
@@ -150,7 +150,7 @@
                                                 *ngIf="reporteExpress.get('formaLegalExpress').errors && reporteExpress.get('formaLegalExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('formaLegalExpress').hasError('required')">
-                                                    <font size="2">Actividad principal es requerida</font>
+                                                    <font size="2">Forma legal es requerida</font>
                                                 </p>
 
                                             </div>
@@ -211,29 +211,24 @@
                                     <tr>
                                         <td scope="col">Actividad principal </td>
                                         <td scope="col">
-                                            <input class="form-control "
-                                                [(ngModel)]="formularioExpress.actividadPrincipalExpress"
-                                                formControlName="actividadPrincipalExpress" type="text ">
-                                            <div
-                                                *ngIf="reporteExpress.get('actividadPrincipalExpress').errors && reporteExpress.get('actividadPrincipalExpress').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('actividadPrincipalExpress').hasError('required')">
-                                                    <font size="2">Actividad principal es requerida</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('actividadPrincipalExpress').hasError('minlength')">
-                                                    <font size="2">Minimo de 3 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('actividadPrincipalExpress').hasError('maxlength')">
-                                                    <font size="2">Maximon de 30 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['actividadPrincipalExpress'].touched && reporteExpress.controls['actividadPrincipalExpress'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
-                                            </div>
+                                            <select class="browser-default custom-select"
+                                                formControlName="actividadPrincipalExpress"
+                                                [(ngModel)]="formularioExpress.actividadPrincipalExpress">
+                                                <option value="" disabled selected>SELECCIONE UNA OPCIÓN</option>
+                                                <option value="Agricultores">Agricultores</option>
+                                                <option value="Pescadores">Pescadores</option>
+                                                <option value="Ganaderos">Ganaderos</option>
+                                                <option value="Agricultores">Agricultores</option>
+                                                <option value="Mineros">Mineros</option>
+                                                <option value="Transportistas">Transportistas</option>
+                                                <option value="Microindustriales">Microindustriales</option>
+                                                <option value="Restaurantes">Restaurantes y Hoteles</option>
+                                                <option value="Servicios">Servicios de Construcción</option>
+                                                <option value="Trabajadores Autónomos">Trabajadores Autónomos</option>
+                                                <option value="Comerciantes Minoristas">Comerciantes Minoristas</option>
+                                                <option value="Otros servicios en General">Otros servicios en General</option>
+                                                <option value="Otros microempresarios en general">Otros microempresarios en general</option>
+                                            </select>
                                         </td>
 
                                     </tr>
@@ -284,8 +279,7 @@
                                     <tr>
                                         <td scope="col">Ciudad </td>
                                         <td scope="col">
-                                            <input class="form-control "
-                                                [(ngModel)]="formularioExpress.ciudadExpress"
+                                            <input class="form-control " [(ngModel)]="formularioExpress.ciudadExpress"
                                                 formControlName="ciudadExpress" type="text ">
                                             <div
                                                 *ngIf="reporteExpress.get('ciudadExpress').errors && reporteExpress.get('ciudadExpress').dirty">
@@ -840,14 +834,13 @@
                                 <tbody>
                                     <tr style="text-align:center;">
 
-                                        <td COLSPAN=3 id="critico" (dblclick)="quitarColorCritico()"
-                                            ><b>CRITICO</b></td>
-                                        <td COLSPAN=3 id="riesgoso" (dblclick)="quitarColorRiesgoso()"
-                                            ><b>RIESGOSO</b></td>
-                                        <td COLSPAN=3 id="confiable" (dblclick)="quitarColorConfiable()"
-                                            ><b>CONFIABLE</b> </td>
-                                        <td COLSPAN=2 id="notable" (dblclick)="quitarColorNotable()"
-                                            ><b>NOTABLE</b> </td>
+                                        <td COLSPAN=3 id="critico" (dblclick)="quitarColorCritico()"><b>CRITICO</b></td>
+                                        <td COLSPAN=3 id="riesgoso" (dblclick)="quitarColorRiesgoso()"><b>RIESGOSO</b>
+                                        </td>
+                                        <td COLSPAN=3 id="confiable" (dblclick)="quitarColorConfiable()">
+                                            <b>CONFIABLE</b> </td>
+                                        <td COLSPAN=2 id="notable" (dblclick)="quitarColorNotable()"><b>NOTABLE</b>
+                                        </td>
 
                                     </tr>
 
@@ -866,18 +859,51 @@
                                         <td id="10" (click)="textoRojo10()" (dblclick)="quitarColor10()">10</td>
                                     </tr>
                                     <tr style="text-align:center;">
-                                        <td><input type="radio" id="checkCalificacion0" name="checksCalificaciones" value="0" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="checkCalificacion1" name="checksCalificaciones" value="1" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="checkCalificacion2" name="checksCalificaciones" value="2" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="checkCalificacion3" name="checksCalificaciones" value="3" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="checkCalificacion4" name="checksCalificaciones" value="4" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="checkCalificacion5" name="checksCalificaciones" value="5" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="checkCalificacion6" name="checksCalificaciones" value="6" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="checkCalificacion7" name="checksCalificaciones" value="7" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="checkCalificacion8" name="checksCalificaciones" value="8" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="checkCalificacion9" name="checksCalificaciones" value="9" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        <td><input type="radio" id="checkCalificacion10" name="checksCalificaciones" value="10" formControlName="checksCalificaciones" onclick="return ValidacionChecks();" [(ngModel)]="formularioExpress.checksCalificaciones"></td>
-                                        
+                                        <td><input type="radio" id="checkCalificacion0" name="checksCalificaciones"
+                                                value="0" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion1" name="checksCalificaciones"
+                                                value="1" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion2" name="checksCalificaciones"
+                                                value="2" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion3" name="checksCalificaciones"
+                                                value="3" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion4" name="checksCalificaciones"
+                                                value="4" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion5" name="checksCalificaciones"
+                                                value="5" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion6" name="checksCalificaciones"
+                                                value="6" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion7" name="checksCalificaciones"
+                                                value="7" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion8" name="checksCalificaciones"
+                                                value="8" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion9" name="checksCalificaciones"
+                                                value="9" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+                                        <td><input type="radio" id="checkCalificacion10" name="checksCalificaciones"
+                                                value="10" formControlName="checksCalificaciones"
+                                                onclick="return ValidacionChecks();"
+                                                [(ngModel)]="formularioExpress.checksCalificaciones"></td>
+
                                     </tr>
 
                                 </tbody>
@@ -1216,7 +1242,9 @@
                                 <tr>
                                     <td scope="col">Puntualidad en los pagos :</td>
                                     <td scope="col">
-                                        <select class="browser-default custom-select" formControlName="puntualidadPagosExpress" [(ngModel)]="formularioExpress.puntualidadPagosExpress">
+                                        <select class="browser-default custom-select"
+                                            formControlName="puntualidadPagosExpress"
+                                            [(ngModel)]="formularioExpress.puntualidadPagosExpress">
                                             <option value="" disabled selected>Seleccione una Opción</option>
                                             <option value="A tiempo">A tiempo</option>
                                             <option value="Con retrasos">Con retrasos</option>
