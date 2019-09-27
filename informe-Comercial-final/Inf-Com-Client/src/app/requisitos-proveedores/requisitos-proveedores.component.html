@@ -352,7 +352,7 @@
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioExpress.telefonoExpress"
                                                 formControlName="telefonoExpress" type="text" minlength="7"
-                                                maxlength="7">
+                                                maxlength="10">
                                             <div
                                                 *ngIf="reporteExpress.get('telefonoExpress').errors && reporteExpress.get('telefonoExpress').dirty">
                                                 <p class="text-danger"
@@ -1054,7 +1054,7 @@
                                         <input class="form-control "
                                             [(ngModel)]="formularioExpress.telefonoReferenciaExpress"
                                             formControlName="telefonoReferenciaExpress" type="text" minlength="7"
-                                            maxlength="7">
+                                            maxlength="10">
                                         <div
                                             *ngIf="reporteExpress.get('telefonoReferenciaExpress').errors && reporteExpress.get('telefonoReferenciaExpress').dirty">
                                             <p class="text-danger"
@@ -1448,9 +1448,52 @@
 
                             <tbody>
                                 <tr style="background: yellow">
-                                    <td style="text-align:center;"><b></b> </td>
-                                    <td style="text-align:center;"><b>AÑO 2017</b> </td>
-                                    <td style="text-align:center;"><b>AÑO 2018</b> </td>
+                                    <td style="text-align:center;"> </td>
+                                    <td style="text-align:center;"> 
+                                        <select class="browser-default custom-select"
+                                        formControlName="fechaInfoFinanciera"
+                                        [(ngModel)]="formularioExpress.fechaInfoFinanciera"  style="width:150px" >
+                                        <option value="AÑO 2018">AÑO 2018</option>
+                                        <option value="AÑO 2019">AÑO 2019</option>
+                                        <option value="AÑO 2020">AÑO 2020</option>
+                                        <option value="AÑO 2021">AÑO 2021</option>
+                                        <option value="AÑO 2022">AÑO 2022</option>
+                                        <option value="AÑO 2023">AÑO 2023</option>
+                                        <option value="AÑO 2024">AÑO 2024</option>
+                                        <option value="AÑO 2025">AÑO 2025</option>
+                                    </select>
+                                    <div
+                                        *ngIf="reporteExpress.get('fechaInfoFinanciera').errors && reporteExpress.get('fechaInfoFinanciera').dirty">
+                                        <p class="text-danger"
+                                            *ngIf="reporteExpress.get('fechaInfoFinanciera').hasError('required')">
+                                            <font size="2">Campo requerido</font>
+                                        </p>
+
+                                    </div>
+
+                                </td>
+                                    <td style="text-align:center;">
+                                        <select class="browser-default custom-select"
+                                        formControlName="fechaInfoFinanciera1"
+                                        [(ngModel)]="formularioExpress.fechaInfoFinanciera1"  style="width:150px" >
+                                        <option value="AÑO 2018">AÑO 2018</option>
+                                        <option value="AÑO 2019">AÑO 2019</option>
+                                        <option value="AÑO 2020">AÑO 2020</option>
+                                        <option value="AÑO 2021">AÑO 2021</option>
+                                        <option value="AÑO 2022">AÑO 2022</option>
+                                        <option value="AÑO 2023">AÑO 2023</option>
+                                        <option value="AÑO 2024">AÑO 2024</option>
+                                        <option value="AÑO 2025">AÑO 2025</option>
+                                    </select>
+                                    <div
+                                        *ngIf="reporteExpress.get('fechaInfoFinanciera1').errors && reporteExpress.get('fechaInfoFinanciera1').dirty">
+                                        <p class="text-danger"
+                                            *ngIf="reporteExpress.get('fechaInfoFinanciera1').hasError('required')">
+                                            <font size="2">Campo requerido</font>
+                                        </p>
+
+                                    </div>
+                                    </td>
                                 </tr>
                                 <tr>
 
@@ -1464,8 +1507,8 @@
 
                                         <!--<input type="text" class="form-control" [(ngModel)]="formularioExpress.ventas2014Express"  maxlength="21" formControlName="ventas2014Express" id ="ventas2014Express" on  name="ventas2014Express"  size="21"  maxlength="21" onkeypress="mascara(this,cpf)"  onpaste="return false"  >-->
                                         <input class="form-control" [(ngModel)]="formularioExpress.ventas2014Express"
-                                            formControlName="ventas2014Express" maxlength="21" id="txtPrueba"
-                                            type="text" onkeyup="format(txtPrueba)" onKeyPress="return validar(event)" onchange="format(txtPrueba)"
+                                            formControlName="ventas2014Express" maxlength="21" 
+                                            type="text"  onKeyPress="return validar(event)" 
                                             >
                                         <div
                                             *ngIf="reporteExpress.get('ventas2014Express').errors && reporteExpress.get('ventas2014Express').dirty">
@@ -1490,8 +1533,8 @@
                                            <!--<input class="form-control" [(ngModel)]="formularioExpress.ventas2015Express"
                                             formControlName="ventas2015Express" type="text" onkeyup="format(txtPrueba)" onchange="format(txtPrueba)" >--> 
                                             <input class="form-control" [(ngModel)]="formularioExpress.ventas2015Express"
-                                            formControlName="ventas2015Express" maxlength="21" id="txtPrueba1"
-                                            type="text" onkeyup="format(txtPrueba1)" onKeyPress="return validar(event)" onchange="format(txtPrueba1)"
+                                            formControlName="ventas2015Express" maxlength="21" 
+                                            type="text"  onKeyPress="return validar(event)" 
                                             >
                                             <div
                                             *ngIf="reporteExpress.get('ventas2015Express').errors && reporteExpress.get('ventas2015Express').dirty">
@@ -1517,8 +1560,8 @@
                                     <td scope="col">ACTIVOS</td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.activos2014Express"
-                                            formControlName="activos2014Express" type="text" maxlength="21" id="txtPrueba2"
-                                            type="text" onkeyup="format(txtPrueba2)" onKeyPress="return validar(event)" onchange="format(txtPrueba2)">
+                                            formControlName="activos2014Express" type="text" 
+                                            type="text"  onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('activos2014Express').errors && reporteExpress.get('activos2014Express').dirty">
                                             <p class="text-danger"
@@ -1538,8 +1581,8 @@
                                     </td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.activos2015Express"
-                                            formControlName="activos2015Express" type="text" maxlength="21" id="txtPrueba3"
-                                            type="text" onkeyup="format(txtPrueba3)" onKeyPress="return validar(event)" onchange="format(txtPrueba3)" >
+                                            formControlName="activos2015Express" type="text" maxlength="21" 
+                                            type="text"  onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('activos2015Express').errors && reporteExpress.get('activos2015Express').dirty">
                                             <p class="text-danger"
@@ -1563,8 +1606,8 @@
                                     <td scope="col">PASIVOS</td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.pasivo2014Express"
-                                            formControlName="pasivo2014Express" type="text" id="txtPrueba4"
-                                            type="text" onkeyup="format(txtPrueba4)" onKeyPress="return validar(event)" onchange="format(txtPrueba4)">
+                                            formControlName="pasivo2014Express" type="text" 
+                                            type="text" onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('pasivo2014Express').errors && reporteExpress.get('pasivo2014Express').dirty">
                                             <p class="text-danger"
@@ -1584,8 +1627,8 @@
                                     </td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.pasivo2015Express"
-                                            formControlName="pasivo2015Express" type="text" id="txtPrueba5"
-                                            type="text" onkeyup="format(txtPrueba5)" onKeyPress="return validar(event)" onchange="format(txtPrueba5)">
+                                            formControlName="pasivo2015Express" type="text"
+                                            type="text"  onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('pasivo2015Express').errors && reporteExpress.get('pasivo2015Express').dirty">
                                             <p class="text-danger"
@@ -1610,8 +1653,8 @@
                                     <td scope="col">
                                         <input class="form-control "
                                             [(ngModel)]="formularioExpress.patrimonio2014Express"
-                                            formControlName="patrimonio2014Express" type="text" id="txtPrueba6"
-                                            type="text" onkeyup="format(txtPrueba6)" onKeyPress="return validar(event)" onchange="format(txtPrueba6)"
+                                            formControlName="patrimonio2014Express" type="text" 
+                                            type="text"  onKeyPress="return validar(event)"
                                             >
                                         <div
                                             *ngIf="reporteExpress.get('patrimonio2014Express').errors && reporteExpress.get('patrimonio2014Express').dirty">
@@ -1633,9 +1676,8 @@
                                     <td scope="col">
                                         <input class="form-control "
                                             [(ngModel)]="formularioExpress.patrimonio2015Express"
-                                            formControlName="patrimonio2015Express" type="text" id="txtPrueba7"
-                                            type="text" onkeyup="format(txtPrueba7)" onKeyPress="return validar(event)" onchange="format(txtPrueba7)"
-                                            >
+                                            formControlName="patrimonio2015Express" type="text" 
+                                            type="text"  onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('patrimonio2015Express').errors && reporteExpress.get('patrimonio2015Express').dirty">
                                             <p class="text-danger"
@@ -1659,7 +1701,7 @@
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.utilidad2014Express"
                                             formControlName="utilidad2014Express" type="text" id="txtPrueba8"
-                                            type="text" onkeyup="format(txtPrueba8)" onKeyPress="return validar(event)" onchange="format(txtPrueba8)" >
+                                            type="text" onKeyPress="return validar(event)"  >
                                         <div
                                             *ngIf="reporteExpress.get('utilidad2014Express').errors && reporteExpress.get('utilidad2014Express').dirty">
                                             <p class="text-danger"
@@ -1679,8 +1721,8 @@
                                     </td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.utilidad2015Express"
-                                            formControlName="utilidad2015Express" type="text" id="txtPrueba9"
-                                            type="text" onkeyup="format(txtPrueba9)" onKeyPress="return validar(event)" onchange="format(txtPrueba9)">
+                                            formControlName="utilidad2015Express" type="text" 
+                                            type="text"  onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('utilidad2015Express').errors && reporteExpress.get('utilidad2015Express').dirty">
                                             <p class="text-danger"
