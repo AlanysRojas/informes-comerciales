@@ -42,7 +42,9 @@
         var check9 = document.getElementById("checkCalificacion9");
         var check10 = document.getElementById("checkCalificacion10");
 
-    
+
+
+
 
 
 
@@ -66,31 +68,83 @@
         if (check2.checked) {
             console.log("se marco 2");
             document.getElementById("critico").style.backgroundColor = "#F84431";
-        }if (check3.checked) {
+        } if (check3.checked) {
             console.log("se marco 3");
             document.getElementById("riesgoso").style.backgroundColor = "#F74916";
-        }if (check4.checked) {
+        } if (check4.checked) {
             console.log("se marco 4");
             document.getElementById("riesgoso").style.backgroundColor = "#F76416";
-        }if (check5.checked) {
+        } if (check5.checked) {
             console.log("se marco 5");
             document.getElementById("riesgoso").style.backgroundColor = "#F79116";
-        }if (check6.checked) {
-            
+        } if (check6.checked) {
+
             document.getElementById("confiable").style.backgroundColor = "#F7C716";
-        }if (check7.checked) {
+        } if (check7.checked) {
             document.getElementById("confiable").style.backgroundColor = "#F7E916";
-        }if (check8.checked) {
+        } if (check8.checked) {
             document.getElementById("confiable").style.backgroundColor = "#E6F716";
-        }if (check9.checked) {
+        } if (check9.checked) {
             document.getElementById("notable").style.backgroundColor = "#1DF716";
-        }if (check10.checked) {
+        } if (check10.checked) {
             document.getElementById("notable").style.backgroundColor = "#0DBA08";
         }
 
     }
+    function mascara(o, f) {
+        v_obj = o;
+        v_fun = f;
+        setTimeout("execmascara()", 1);
+    }
+    function execmascara() {
+        v_obj.value = v_fun(v_obj.value);
+    }
+    function cpf(v) {
+        v = v.replace(/([^0-9\.]+)/g, '');
+        v = v.replace(/^[\.]/, '');
+        v = v.replace(/[\.][\.]/g, '');
+        v = v.replace(/\.(\d)(\d)(\d)/g, '.$1$2');
+        v = v.replace(/\.(\d{1,2})\./g, '.$1');
+        v = v.toString().split('').reverse().join('').replace(/(\d{3})/g, '$1,');
+        v = v.split('').reverse().join('').replace(/^[\,]/, '');
+        return v;
+    }
 
-   
+    function format(input) {
+        var num = input.value.replace(/\./g, "");
+        if (!isNaN(num)) {
+            num = num.toString().split("").reverse().join("").replace(/(?=\d*\.?)(\d{3})/g, "$1.");
+            num = num.split("").reverse().join("").replace(/^[\.]/, "");
+            input.value = num;
+        }
+
+        else {
+            alert("Solo se permiten numeros");
+            input.value = input.value.replace(/[^\d\.]*/g, "");
+        }
+    }
+    function validar(e) {
+
+
+
+        tecla = (document.all) ? e.keyCode : e.which;
+        if (tecla == 8) return true; //Tecla de retroceso (para poder borrar)
+        if (tecla == 44) return true; //Coma ( En este caso para diferenciar los decimales )
+        if (tecla == 48) return true;
+        if (tecla == 49) return true;
+        if (tecla == 50) return true;
+        if (tecla == 51) return true;
+        if (tecla == 52) return true;
+        if (tecla == 53) return true;
+        if (tecla == 54) return true;
+        if (tecla == 55) return true;
+        if (tecla == 56) return true;
+        patron = /1/; //ver nota
+        te = String.fromCharCode(tecla);
+        return patron.test(te);
+    }
+
+
 
 </script>
 
