@@ -68,7 +68,6 @@ export class RequisitosProveedoresComponent implements OnInit {
   checksCalificaciones: string;
   //checks
   procesosJudicialesExpress: string;
-  accionesDelitosExpress: string;
   informacionRelevanteExpress: string;
   informacionBancariaExpress: string;
   ventas2014Express: string;
@@ -145,6 +144,7 @@ export class RequisitosProveedoresComponent implements OnInit {
   textPattern= new RegExp(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ\s ]+$/);
   numberPattern= new RegExp(/^[0-9 ]+$/);
   paginaWebPattern= new RegExp( /^((https?):\/\/)?([w|W]{3}\.)+[a-zA-Z0-9\-\.]{3,}\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/ )
+  dineroPattern= new RegExp (/^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/)
 
   constructor(public fb: FormBuilder, private proveedoresService:FormProveedoresServiceService) {
 
@@ -158,10 +158,10 @@ export class RequisitosProveedoresComponent implements OnInit {
       inicioActividadesExpress:  ['', [Validators.required]],
       actividadPrincipalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       provinciaExpress:  ['', [Validators.required]],
-      direccionExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      direccionExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(50)]],
       sucursalesExpress:  ['', [Validators.required]],
       telefonoExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(10)]],
-      paginaExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.emailPattern)]],
+      paginaExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.paginaWebPattern)]],
       correoExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.emailPattern)]],
       representanteLegalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       personaContactoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
@@ -181,14 +181,14 @@ export class RequisitosProveedoresComponent implements OnInit {
       requeridoClienteExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       requeridoServiratingExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       nombreReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      direccionReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      direccionReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(50)]],
       telefonoReferenciaExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(10),Validators.pattern(this.numberPattern)]],
       contactoReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      lineaCreditoExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(7),Validators.pattern(this.textPattern)]],
+      lineaCreditoExpress:  ['', [Validators.required]],
       pagosReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       
       productoServicioReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      clienteDesdeExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      clienteDesdeExpress:  ['', [Validators.required]],
       compraMensualExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       //selects
       checks: ['', [Validators.required]],
@@ -199,10 +199,9 @@ export class RequisitosProveedoresComponent implements OnInit {
       checksEmpresas: ['', [Validators.required]],
       checksCalificaciones: ['', [Validators.required]],
       //checks
-      procesosJudicialesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      accionesDelitosExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      informacionRelevanteExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      informacionBancariaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      procesosJudicialesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(300)]],
+      informacionRelevanteExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(500)]],
+      informacionBancariaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(500)]],
       ventas2014Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       ventas2015Express: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       activos2014Express: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
@@ -213,17 +212,17 @@ export class RequisitosProveedoresComponent implements OnInit {
       patrimonio2015Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       utilidad2014Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       utilidad2015Express: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      terrenoAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      terrenoAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      construccionAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      construccionAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      avaluoTotalAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      avaluoTotalAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      marcaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      marcaExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      marcaExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      marcaExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      marcaExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      terrenoAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      terrenoAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      construccionAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      construccionAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      avaluoTotalAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      avaluoTotalAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      marcaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      marcaExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      marcaExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      marcaExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      marcaExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       tipoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       tipoExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       tipoExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
@@ -239,7 +238,7 @@ export class RequisitosProveedoresComponent implements OnInit {
       avaluoExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       avaluoExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
       avaluoExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      observacionesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      observacionesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(300)]],
     
     });
 
