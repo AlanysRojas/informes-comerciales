@@ -60,7 +60,7 @@
                                                 *ngIf="reporteExpress.get('razonSocialExpress').errors && reporteExpress.get('razonSocialExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('razonSocialExpress').hasError('required')">
-                                                    <font size="2">Razón Social es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('razonSocialExpress').hasError('minlength')">
@@ -90,7 +90,7 @@
                                                 *ngIf="reporteExpress.get('nombreComercialExpress').errors && reporteExpress.get('nombreComercialExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('nombreComercialExpress').hasError('required')">
-                                                    <font size="2">Nombre Comercial es requerido</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('nombreComercialExpress').hasError('minlength')">
@@ -118,7 +118,7 @@
                                                 *ngIf="reporteExpress.get('rucExpress').errors && reporteExpress.get('rucExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('rucExpress').hasError('required')">
-                                                    <font size="2">Ruc es requerido</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('rucExpress').hasError('minlength')">
@@ -151,7 +151,7 @@
                                                 *ngIf="reporteExpress.get('formaLegalExpress').errors && reporteExpress.get('formaLegalExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('formaLegalExpress').hasError('required')">
-                                                    <font size="2">Forma legal es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
 
                                             </div>
@@ -175,7 +175,7 @@
                                                 *ngIf="reporteExpress.get('estadoExpress').errors && reporteExpress.get('estadoExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('estadoExpress').hasError('required')">
-                                                    <font size="2">Actividad principal es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
 
                                             </div>
@@ -187,24 +187,31 @@
                                     <tr>
                                         <td scope="col">Inicio de actividades</td>
                                         <td scope="col">
-                                            <input class="form-control "
-                                                [(ngModel)]="formularioExpress.inicioActividadesExpress"
-                                                formControlName="inicioActividadesExpress" type="text ">
+                                            <select class="browser-default custom-select"
+                                            formControlName="inicioActividadesExpress"
+                                            [(ngModel)]="formularioExpress.inicioActividadesExpress">
+                                            <option value="" disabled selected>Seleccione un año</option>
+                                            <option value="2010">2010</option>
+                                            <option value="2011">2011</option>
+                                            <option value="2012">2012</option>
+                                            <option value="2013">2013</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+
+                                        </select>
+                                                
                                             <div
                                                 *ngIf="reporteExpress.get('inicioActividadesExpress').errors && reporteExpress.get('inicioActividadesExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('inicioActividadesExpress').hasError('required')">
-                                                    <font size="2">Incio de actividades es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('inicioActividadesExpress').hasError('minlength')">
-                                                    <font size="2">Minimo de 3 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('inicioActividadesExpress').hasError('maxlength')">
-                                                    <font size="2">Maximon de 30 Caracteres</font>
-                                                </p>
-
+                                                
                                             </div>
                                         </td>
 
@@ -275,7 +282,7 @@
                                                 *ngIf="reporteExpress.get('ciudadExpress').errors && reporteExpress.get('ciudadExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('ciudadExpress').hasError('required')">
-                                                    <font size="2">Ciudad es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('ciudadExpress').hasError('minlength')">
@@ -300,7 +307,7 @@
                                                 *ngIf="reporteExpress.get('direccionExpress').errors && reporteExpress.get('direccionExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('direccionExpress').hasError('required')">
-                                                    <font size="2">Dirección es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('direccionExpress').hasError('minlength')">
@@ -325,7 +332,7 @@
                                                 *ngIf="reporteExpress.get('sucursalesExpress').errors && reporteExpress.get('sucursalesExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('sucursalesExpress').hasError('required')">
-                                                    <font size="2">Sucursales es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('sucursalesExpress').hasError('minlength')">
@@ -335,11 +342,7 @@
                                                     *ngIf="reporteExpress.get('sucursalesExpress').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['sucursalesExpress'].touched && reporteExpress.controls['sucursalesExpress'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                               
                                             </div>
                                         </td>
 
@@ -354,7 +357,7 @@
                                                 *ngIf="reporteExpress.get('telefonoExpress').errors && reporteExpress.get('telefonoExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('telefonoExpress').hasError('required')">
-                                                    <font size="2">Teléfono es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('telefonoExpress').hasError('minlength')">
@@ -382,7 +385,7 @@
                                                 *ngIf="reporteExpress.get('paginaExpress').errors && reporteExpress.get('paginaExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('paginaExpress').hasError('required')">
-                                                    <font size="2">Página Web es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('paginaExpress').hasError('minlength')">
@@ -391,6 +394,11 @@
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('paginaExpress').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteExpress.controls['paginaExpress'].touched && reporteExpress.controls['paginaExpress'].hasError('pattern')">
+                                                    <font size="2"> Se requiere una página web
+                                                    </font>
                                                 </p>
 
                                             </div>
@@ -407,7 +415,7 @@
                                                 *ngIf="reporteExpress.get('correoExpress').errors && reporteExpress.get('correoExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('correoExpress').hasError('required')">
-                                                    <font size="2">Campo es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('correoExpress').hasError('minlength')">
@@ -416,6 +424,11 @@
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('correoExpress').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteExpress.controls['correoExpress'].touched && reporteExpress.controls['correoExpress'].hasError('pattern')">
+                                                    <font size="2"> Se requiere un correo
+                                                    </font>
                                                 </p>
 
                                             </div>
@@ -447,7 +460,7 @@
                                                 *ngIf="reporteExpress.get('representanteLegalExpress').errors && reporteExpress.get('representanteLegalExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('representanteLegalExpress').hasError('required')">
-                                                    <font size="2">Representante Legal es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('representanteLegalExpress').hasError('minlength')">
@@ -477,7 +490,7 @@
                                                 *ngIf="reporteExpress.get('personaContactoExpress').errors && reporteExpress.get('personaContactoExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('personaContactoExpress').hasError('required')">
-                                                    <font size="2">Persona de Contacto es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('personaContactoExpress').hasError('minlength')">
@@ -511,7 +524,7 @@
                                                 *ngIf="reporteExpress.get('cargoExpress').errors && reporteExpress.get('cargoExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('cargoExpress').hasError('required')">
-                                                    <font size="2">Provincia/Ciudad es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
 
                                             </div>
@@ -543,7 +556,7 @@
                                                 *ngIf="reporteExpress.get('empresasRelacionadasExpress').errors && reporteExpress.get('empresasRelacionadasExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('empresasRelacionadasExpress').hasError('required')">
-                                                    <font size="2">Empresa Relacionada es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('empresasRelacionadasExpress').hasError('minlength')">
@@ -585,7 +598,7 @@
                                                 *ngIf="reporteExpress.get('numeroEmpleadosExpress').errors && reporteExpress.get('numeroEmpleadosExpress').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteExpress.get('numeroEmpleadosExpress').hasError('required')">
-                                                    <font size="2">Provincia/Ciudad es requerida</font>
+                                                    <font size="2">Campo requerido</font>
                                                 </p>
 
                                             </div>
@@ -619,7 +632,7 @@
                                                         *ngIf="reporteExpress.get('anioPagoImpuesto').errors && reporteExpress.get('anioPagoImpuesto').dirty">
                                                         <p class="text-danger"
                                                             *ngIf="reporteExpress.get('anioPagoImpuesto').hasError('required')">
-                                                            <font size="2">Provincia/Ciudad es requerida</font>
+                                                            <font size="2">Campo requerido</font>
                                                         </p>
 
                                                     </div>
@@ -632,7 +645,7 @@
                                                         *ngIf="reporteExpress.get('pagoRentaUnoExpress').errors && reporteExpress.get('pagoRentaUnoExpress').dirty">
                                                         <p class="text-danger"
                                                             *ngIf="reporteExpress.get('pagoRentaUnoExpress').hasError('required')">
-                                                            <font size="2">Pago Impuesto a la Renta es requerida</font>
+                                                            <font size="2">Campo requerido</font>
                                                         </p>
                                                         <p class="text-danger"
                                                             *ngIf="reporteExpress.get('pagoRentaUnoExpress').hasError('minlength')">
@@ -642,6 +655,7 @@
                                                             *ngIf="reporteExpress.get('pagoRentaUnoExpress').hasError('maxlength')">
                                                             <font size="2">Maximon de 30 Caracteres</font>
                                                         </p>
+                                                        
 
                                                     </div>
                                                 </div>
@@ -686,7 +700,7 @@
                                                         *ngIf="reporteExpress.get('pagoRentaDosExpress').errors && reporteExpress.get('pagoRentaDosExpress').dirty">
                                                         <p class="text-danger"
                                                             *ngIf="reporteExpress.get('pagoRentaDosExpress').hasError('required')">
-                                                            <font size="2">Pago Impuesto a la Renta es requerida</font>
+                                                            <font size="2">Campo requerido</font>
                                                         </p>
                                                         <p class="text-danger"
                                                             *ngIf="reporteExpress.get('pagoRentaDosExpress').hasError('minlength')">
@@ -741,7 +755,7 @@
                                                         *ngIf="reporteExpress.get('impuestoDivisasExpressUno').errors && reporteExpress.get('impuestoDivisasExpressUno').dirty">
                                                         <p class="text-danger"
                                                             *ngIf="reporteExpress.get('impuestoDivisasExpressUno').hasError('required')">
-                                                            <font size="2">Impuesto a la salidade Divisas es requerida
+                                                            <font size="2">Campo requerido
                                                             </font>
                                                         </p>
                                                         <p class="text-danger"
@@ -794,7 +808,7 @@
                                                         *ngIf="reporteExpress.get('impuestoDivisasExpressDos').errors && reporteExpress.get('impuestoDivisasExpressDos').dirty">
                                                         <p class="text-danger"
                                                             *ngIf="reporteExpress.get('impuestoDivisasExpressDos').hasError('required')">
-                                                            <font size="2">Impuesto a la salidade Divisas es requerida
+                                                            <font size="2">Campo requerido
                                                             </font>
                                                         </p>
                                                         <p class="text-danger"
@@ -927,7 +941,7 @@
                                     *ngIf="reporteExpress.get('requeridoClienteExpress').errors && reporteExpress.get('requeridoClienteExpress').dirty">
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.get('requeridoClienteExpress').hasError('required')">
-                                        <font size="2">Requerido por el cliente es requerida</font>
+                                        <font size="2">Campo requerido</font>
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.get('requeridoClienteExpress').hasError('minlength')">
@@ -946,7 +960,7 @@
                                     *ngIf="reporteExpress.get('requeridoServiratingExpress').errors && reporteExpress.get('requeridoServiratingExpress').dirty">
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.get('requeridoServiratingExpress').hasError('required')">
-                                        <font size="2">Requerido por Servirating es requerida</font>
+                                        <font size="2">Campo requerido</font>
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.get('requeridoServiratingExpress').hasError('minlength')">
@@ -989,7 +1003,7 @@
                                             *ngIf="reporteExpress.get('nombreReferenciaExpress').errors && reporteExpress.get('nombreReferenciaExpress').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('nombreReferenciaExpress').hasError('required')">
-                                                <font size="2">Nombre de Referencia es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('nombreReferenciaExpress').hasError('minlength')">
@@ -1019,7 +1033,7 @@
                                             *ngIf="reporteExpress.get('direccionReferenciaExpress').errors && reporteExpress.get('direccionReferenciaExpress').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('direccionReferenciaExpress').hasError('required')">
-                                                <font size="2">Dirección es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('direccionReferenciaExpress').hasError('minlength')">
@@ -1027,7 +1041,7 @@
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('direccionReferenciaExpress').hasError('maxlength')">
-                                                <font size="2">Maximon de 30 Caracteres</font>
+                                                <font size="2">Maximon de 50 Caracteres</font>
                                             </p>
 
                                         </div>
@@ -1045,7 +1059,7 @@
                                             *ngIf="reporteExpress.get('telefonoReferenciaExpress').errors && reporteExpress.get('telefonoReferenciaExpress').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('telefonoReferenciaExpress').hasError('required')">
-                                                <font size="2">Teléfono es requerido</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('telefonoReferenciaExpress').hasError('minlength')">
@@ -1074,7 +1088,7 @@
                                             *ngIf="reporteExpress.get('contactoReferenciaExpress').errors && reporteExpress.get('contactoReferenciaExpress').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('contactoReferenciaExpress').hasError('required')">
-                                                <font size="2">Contacto es requerido</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('contactoReferenciaExpress').hasError('minlength')">
@@ -1096,27 +1110,21 @@
                                 <tr>
                                     <td scope="col">Línea de Crédito</td>
                                     <td scope="col">
-                                        <input class="form-control " [(ngModel)]="formularioExpress.lineaCreditoExpress"
-                                            formControlName="lineaCreditoExpress" type="text ">
+                                        <select class="browser-default custom-select"
+                                                formControlName="lineaCreditoExpress"
+                                                [(ngModel)]="formularioExpress.lineaCreditoExpress">
+                                                <option value="" disabled selected>Seleccione una opción</option>
+                                                <option value="Abierta">Abierta</option>
+                                                <option value="Cerrada">Cerrada</option>
+                                                <option value="Bloqueada">Bloqueada</option>
+                                            </select>
                                         <div
                                             *ngIf="reporteExpress.get('lineaCreditoExpress').errors && reporteExpress.get('lineaCreditoExpress').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('lineaCreditoExpress').hasError('required')">
-                                                <font size="2">Línea de Crédito es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
-                                            <p class="text-danger"
-                                                *ngIf="reporteExpress.get('lineaCreditoExpress').hasError('minlength')">
-                                                <font size="2">Minimo de 7 Caracteres</font>
-                                            </p>
-                                            <p class="text-danger"
-                                                *ngIf="reporteExpress.get('lineaCreditoExpress').hasError('maxlength')">
-                                                <font size="2">Maximon de 7 Caracteres</font>
-                                            </p>
-                                            <p class="text-danger"
-                                                *ngIf="reporteExpress.controls['lineaCreditoExpress'].touched && reporteExpress.controls['lineaCreditoExpress'].hasError('pattern')">
-                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                </font>
-                                            </p>
+                                           
                                         </div>
                                     </td>
 
@@ -1133,7 +1141,7 @@
                                             *ngIf="reporteExpress.get('pagosReferenciaExpress').errors && reporteExpress.get('pagosReferenciaExpress').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('pagosReferenciaExpress').hasError('required')">
-                                                <font size="2">Pagos es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('pagosReferenciaExpress').hasError('minlength')">
@@ -1159,7 +1167,7 @@
                                             *ngIf="reporteExpress.get('productoServicioReferenciaExpress').errors && reporteExpress.get('productoServicioReferenciaExpress').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('productoServicioReferenciaExpress').hasError('required')">
-                                                <font size="2">Producto/Servicio es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('productoServicioReferenciaExpress').hasError('minlength')">
@@ -1181,27 +1189,30 @@
                                 <tr>
                                     <td scope="col">Cliente desde</td>
                                     <td scope="col">
-                                        <input class="form-control " [(ngModel)]="formularioExpress.clienteDesdeExpress"
-                                            formControlName="clienteDesdeExpress" type="text ">
+                                        <select class="browser-default custom-select"
+                                            formControlName="clienteDesdeExpress"
+                                            [(ngModel)]="formularioExpress.clienteDesdeExpress">
+                                            <option value="" disabled selected>Seleccione un año</option>
+                                            <option value="2010">2010</option>
+                                            <option value="2011">2011</option>
+                                            <option value="2012">2012</option>
+                                            <option value="2013">2013</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+
+                                        </select>
                                         <div
                                             *ngIf="reporteExpress.get('clienteDesdeExpress').errors && reporteExpress.get('clienteDesdeExpress').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('clienteDesdeExpress').hasError('required')">
-                                                <font size="2">Cliente desde es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
-                                            <p class="text-danger"
-                                                *ngIf="reporteExpress.get('clienteDesdeExpress').hasError('minlength')">
-                                                <font size="2">Minimo de 3 Caracteres</font>
-                                            </p>
-                                            <p class="text-danger"
-                                                *ngIf="reporteExpress.get('clienteDesdeExpress').hasError('maxlength')">
-                                                <font size="2">Maximon de 30 Caracteres</font>
-                                            </p>
-                                            <p class="text-danger"
-                                                *ngIf="reporteExpress.controls['clienteDesdeExpress'].touched && reporteExpress.controls['clienteDesdeExpress'].hasError('pattern')">
-                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                </font>
-                                            </p>
+                                           
                                         </div>
                                     </td>
 
@@ -1216,7 +1227,7 @@
                                             *ngIf="reporteExpress.get('compraMensualExpress').errors && reporteExpress.get('compraMensualExpress').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('compraMensualExpress').hasError('required')">
-                                                <font size="2">Compra Mensual es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('compraMensualExpress').hasError('minlength')">
@@ -1348,7 +1359,7 @@
                         </tr>
 
                         <tr style="text-align:center;">
-                            <td>
+                            <td COLSPAN=2>
                                 <div class="form-group">
                                     <textarea class="form-control rounded-0" formControlName="procesosJudicialesExpress"
                                         [(ngModel)]="formularioExpress.procesosJudicialesExpress" rows="3"></textarea>
@@ -1356,7 +1367,7 @@
                                         *ngIf="reporteExpress.get('procesosJudicialesExpress').errors && reporteExpress.get('procesosJudicialesExpress').dirty">
                                         <p class="text-danger"
                                             *ngIf="reporteExpress.get('procesosJudicialesExpress').hasError('required')">
-                                            <font size="2">Procesos(s) Judicial(es) es requerida</font>
+                                            <font size="2">Campo requerido</font>
                                         </p>
                                         <p class="text-danger"
                                             *ngIf="reporteExpress.get('procesosJudicialesExpress').hasError('minlength')">
@@ -1364,38 +1375,13 @@
                                         </p>
                                         <p class="text-danger"
                                             *ngIf="reporteExpress.get('procesosJudicialesExpress').hasError('maxlength')">
-                                            <font size="2">Maximon de 30 Caracteres</font>
+                                            <font size="2">Maximon de 300 Caracteres</font>
                                         </p>
 
                                     </div>
                                 </div>
                             </td>
-                            <td>
-                                <div class="form-group">
-                                    <textarea class="form-control rounded-0" formControlName="accionesDelitosExpress"
-                                        [(ngModel)]="formularioExpress.accionesDelitosExpress" rows="3"></textarea>
-                                    <div
-                                        *ngIf="reporteExpress.get('accionesDelitosExpress').errors && reporteExpress.get('accionesDelitosExpress').dirty">
-                                        <p class="text-danger"
-                                            *ngIf="reporteExpress.get('accionesDelitosExpress').hasError('required')">
-                                            <font size="2">Accion(es)/Delito(s) es requerida</font>
-                                        </p>
-                                        <p class="text-danger"
-                                            *ngIf="reporteExpress.get('accionesDelitosExpress').hasError('minlength')">
-                                            <font size="2">Minimo de 3 Caracteres</font>
-                                        </p>
-                                        <p class="text-danger"
-                                            *ngIf="reporteExpress.get('accionesDelitosExpress').hasError('maxlength')">
-                                            <font size="2">Maximon de 30 Caracteres</font>
-                                        </p>
-                                        <p class="text-danger"
-                                            *ngIf="reporteExpress.controls['accionesDelitosExpress'].touched && reporteExpress.controls['accionesDelitosExpress'].hasError('pattern')">
-                                            <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
-                                            </font>
-                                        </p>
-                                    </div>
-                                </div>
-                            </td>
+                           
                         </tr>
 
                     </tbody>
@@ -1410,7 +1396,7 @@
                         *ngIf="reporteExpress.get('informacionRelevanteExpress').errors && reporteExpress.get('informacionRelevanteExpress').dirty">
                         <p class="text-danger"
                             *ngIf="reporteExpress.get('informacionRelevanteExpress').hasError('required')">
-                            <font size="2">Información Relevante es requerida</font>
+                            <font size="2">Campo requerido</font>
                         </p>
                         <p class="text-danger"
                             *ngIf="reporteExpress.get('informacionRelevanteExpress').hasError('minlength')">
@@ -1418,13 +1404,9 @@
                         </p>
                         <p class="text-danger"
                             *ngIf="reporteExpress.get('informacionRelevanteExpress').hasError('maxlength')">
-                            <font size="2">Maximon de 30 Caracteres</font>
+                            <font size="2">Máximo de 500 Caracteres</font>
                         </p>
-                        <p class="text-danger"
-                            *ngIf="reporteExpress.controls['informacionRelevanteExpress'].touched && reporteExpress.controls['informacionRelevanteExpress'].hasError('pattern')">
-                            <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
-                            </font>
-                        </p>
+                        
                     </div>
 
                 </div>
@@ -1438,7 +1420,7 @@
                         *ngIf="reporteExpress.get('informacionBancariaExpress').errors && reporteExpress.get('informacionBancariaExpress').dirty">
                         <p class="text-danger"
                             *ngIf="reporteExpress.get('informacionBancariaExpress').hasError('required')">
-                            <font size="2">Información Bancaria y Crediticia es requerida</font>
+                            <font size="2">Campo requerido</font>
                         </p>
                         <p class="text-danger"
                             *ngIf="reporteExpress.get('informacionBancariaExpress').hasError('minlength')">
@@ -1489,7 +1471,7 @@
                                             *ngIf="reporteExpress.get('ventas2014Express').errors && reporteExpress.get('ventas2014Express').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('ventas2014Express').hasError('required')">
-                                                <font size="2">Ventas es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('ventas2014Express').hasError('minlength')">
@@ -1499,6 +1481,7 @@
                                                 *ngIf="reporteExpress.get('ventas2014Express').hasError('maxlength')">
                                                 <font size="2">Maximon de 30 Caracteres</font>
                                             </p>
+                                            
 
                                         </div>
                                     </td>
@@ -1514,7 +1497,7 @@
                                             *ngIf="reporteExpress.get('ventas2015Express').errors && reporteExpress.get('ventas2015Express').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('ventas2015Express').hasError('required')">
-                                                <font size="2">Ventas es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('ventas2015Express').hasError('minlength')">
@@ -1540,7 +1523,7 @@
                                             *ngIf="reporteExpress.get('activos2014Express').errors && reporteExpress.get('activos2014Express').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('activos2014Express').hasError('required')">
-                                                <font size="2">Activos es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('activos2014Express').hasError('minlength')">
@@ -1561,7 +1544,7 @@
                                             *ngIf="reporteExpress.get('activos2015Express').errors && reporteExpress.get('activos2015Express').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('activos2015Express').hasError('required')">
-                                                <font size="2">Activos es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('activos2015Express').hasError('minlength')">
@@ -1586,7 +1569,7 @@
                                             *ngIf="reporteExpress.get('pasivo2014Express').errors && reporteExpress.get('pasivo2014Express').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('pasivo2014Express').hasError('required')">
-                                                <font size="2">Pasivos es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('pasivo2014Express').hasError('minlength')">
@@ -1607,7 +1590,7 @@
                                             *ngIf="reporteExpress.get('pasivo2015Express').errors && reporteExpress.get('pasivo2015Express').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('pasivo2015Express').hasError('required')">
-                                                <font size="2">Pasivos es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('pasivo2015Express').hasError('minlength')">
@@ -1634,7 +1617,7 @@
                                             *ngIf="reporteExpress.get('patrimonio2014Express').errors && reporteExpress.get('patrimonio2014Express').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('patrimonio2014Express').hasError('required')">
-                                                <font size="2">Patrimonio es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('patrimonio2014Express').hasError('minlength')">
@@ -1657,7 +1640,7 @@
                                             *ngIf="reporteExpress.get('patrimonio2015Express').errors && reporteExpress.get('patrimonio2015Express').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('patrimonio2015Express').hasError('required')">
-                                                <font size="2">Patrimonio es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('patrimonio2015Express').hasError('minlength')">
@@ -1681,7 +1664,7 @@
                                             *ngIf="reporteExpress.get('utilidad2014Express').errors && reporteExpress.get('utilidad2014Express').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('utilidad2014Express').hasError('required')">
-                                                <font size="2">Utilidad es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('utilidad2014Express').hasError('minlength')">
@@ -1702,7 +1685,7 @@
                                             *ngIf="reporteExpress.get('utilidad2015Express').errors && reporteExpress.get('utilidad2015Express').dirty">
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('utilidad2015Express').hasError('required')">
-                                                <font size="2">Utilidad es requerida</font>
+                                                <font size="2">Campo requerido</font>
                                             </p>
                                             <p class="text-danger"
                                                 *ngIf="reporteExpress.get('utilidad2015Express').hasError('minlength')">
@@ -1723,7 +1706,7 @@
                 <div class="card-header text-white bg-dark "><img
                         src="../../assets/img/documento.png" />&nbsp;<b>CONSULTA DE PREDIOS</b>
                 </div>
-                <table class="table table-bordered" id="tableColor">
+                <table class="table table-bordered" id="tableColor" style="text-align: center">
 
                     <tbody>
                         <tr>
@@ -1749,13 +1732,9 @@
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.get('terrenoAreaExpress').hasError('maxlength')">
-                                        <font size="2">Maximon de 30 Caracteres</font>
+                                        <font size="2">Maximo de 30 Caracteres</font>
                                     </p>
-                                    <p class="text-danger"
-                                        *ngIf="reporteExpress.controls['terrenoAreaExpress'].touched && reporteExpress.controls['terrenoAreaExpress'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
-                                        </font>
-                                    </p>
+                                   
                                 </div>
                             </td>
                             <td scope="col">
@@ -1902,11 +1881,7 @@
                                         *ngIf="reporteExpress.get('marcaExpress').hasError('maxlength')">
                                         <font size="2">Maximon de 30 Caracteres</font>
                                     </p>
-                                    <p class="text-danger"
-                                        *ngIf="reporteExpress.controls['marcaExpress'].touched && reporteExpress.controls['marcaExpress'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
-                                        </font>
-                                    </p>
+                                    
                                 </div>
                             </td>
                             <td scope="col">
@@ -2001,11 +1976,7 @@
                                         *ngIf="reporteExpress.get('marcaExpress1').hasError('maxlength')">
                                         <font size="2">Maximon de 30 Caracteres</font>
                                     </p>
-                                    <p class="text-danger"
-                                        *ngIf="reporteExpress.controls['marcaExpress1'].touched && reporteExpress.controls['marcaExpress1'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
-                                        </font>
-                                    </p>
+                                   
                                 </div>
                             </td>
                             <td scope="col">
@@ -2100,11 +2071,7 @@
                                         *ngIf="reporteExpress.get('marcaExpress2').hasError('maxlength')">
                                         <font size="2">Maximon de 30 Caracteres</font>
                                     </p>
-                                    <p class="text-danger"
-                                        *ngIf="reporteExpress.controls['marcaExpress2'].touched && reporteExpress.controls['marcaExpress2'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
-                                        </font>
-                                    </p>
+                                   
                                 </div>
                             </td>
                             <td scope="col">
@@ -2199,11 +2166,7 @@
                                         *ngIf="reporteExpress.get('marcaExpress3').hasError('maxlength')">
                                         <font size="2">Maximon de 30 Caracteres</font>
                                     </p>
-                                    <p class="text-danger"
-                                        *ngIf="reporteExpress.controls['marcaExpress3'].touched && reporteExpress.controls['marcaExpress3'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
-                                        </font>
-                                    </p>
+                                    
                                 </div>
                             </td>
                             <td scope="col">
@@ -2298,11 +2261,7 @@
                                         *ngIf="reporteExpress.get('marcaExpress4').hasError('maxlength')">
                                         <font size="2">Maximon de 30 Caracteres</font>
                                     </p>
-                                    <p class="text-danger"
-                                        *ngIf="reporteExpress.controls['marcaExpress4'].touched && reporteExpress.controls['marcaExpress4'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
-                                        </font>
-                                    </p>
+                                   
                                 </div>
                             </td>
                             <td scope="col">
@@ -2396,13 +2355,9 @@
                             <font size="2">Minimo de 3 Caracteres</font>
                         </p>
                         <p class="text-danger" *ngIf="reporteExpress.get('observacionesExpress').hasError('maxlength')">
-                            <font size="2">Maximon de 30 Caracteres</font>
+                            <font size="2">Maximon de 300 Caracteres</font>
                         </p>
-                        <p class="text-danger"
-                            *ngIf="reporteExpress.controls['observacionesExpress'].touched && reporteExpress.controls['observacionesExpress'].hasError('pattern')">
-                            <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
-                            </font>
-                        </p>
+                       
                     </div>
                 </div>
 
