@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators, FormArray } from '@angular/forms';
 import { FormProveedoresServiceService } from '../services/form-proveedores-service.service';
 import { FormExpress } from '../models/formularioExpress';
+import Swal from 'sweetalert2';
 
 
 
@@ -318,6 +319,11 @@ export class RequisitosProveedoresComponent implements OnInit {
     console.log(this.formularioExpress);
     this.proveedoresService.addInforme(this.formularioExpress)
         .subscribe();
+        Swal.fire({
+          title:'Muy Bien',
+          text:'Datos Guardados Éxitosamente',
+          type: 'success'
+        })
   }
 
   
@@ -434,6 +440,14 @@ export class RequisitosProveedoresComponent implements OnInit {
     quitarColor10(){
       document.getElementById("10").style.color= "black"
   
+    }
+
+    showAlert(){
+      Swal.fire({
+        title:'Erro!',
+        text:'Hola mundo',
+        type: 'error'
+      })
     }
   
  
