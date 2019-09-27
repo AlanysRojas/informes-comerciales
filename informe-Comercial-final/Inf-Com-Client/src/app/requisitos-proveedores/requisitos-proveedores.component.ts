@@ -142,8 +142,9 @@ export class RequisitosProveedoresComponent implements OnInit {
 
 
   emailPattern = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  textPattern= new RegExp(/^[a-zA-Z ]+$/);
+  textPattern= new RegExp(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ\s ]+$/);
   numberPattern= new RegExp(/^[0-9 ]+$/);
+  paginaWebPattern= new RegExp( /^((https?):\/\/)?([w|W]{3}\.)+[a-zA-Z0-9\-\.]{3,}\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/ )
 
   constructor(public fb: FormBuilder, private proveedoresService:FormProveedoresServiceService) {
 
@@ -154,11 +155,11 @@ export class RequisitosProveedoresComponent implements OnInit {
       nombreComercialExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       rucExpress:  ['', [Validators.required,Validators.minLength(13) ,Validators.maxLength(13),Validators.pattern(this.numberPattern)]],
       formaLegalExpress:  ['', [Validators.required]],
-      inicioActividadesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      inicioActividadesExpress:  ['', [Validators.required]],
       actividadPrincipalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
       provinciaExpress:  ['', [Validators.required]],
       direccionExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      sucursalesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      sucursalesExpress:  ['', [Validators.required]],
       telefonoExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(10)]],
       paginaExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.emailPattern)]],
       correoExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.emailPattern)]],
