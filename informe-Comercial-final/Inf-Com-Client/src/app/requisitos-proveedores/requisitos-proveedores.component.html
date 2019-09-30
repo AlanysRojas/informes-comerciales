@@ -640,7 +640,7 @@
                                                 <div class="col-6">
                                                     <input class="form-control "
                                                         [(ngModel)]="formularioExpress.pagoRentaUnoExpress"
-                                                        formControlName="pagoRentaUnoExpress" type="text ">
+                                                        formControlName="pagoRentaUnoExpress" type="text "onchange="dolar(this)" onKeyPress="return validar(event)">
                                                     <div
                                                         *ngIf="reporteExpress.get('pagoRentaUnoExpress').errors && reporteExpress.get('pagoRentaUnoExpress').dirty">
                                                         <p class="text-danger"
@@ -694,7 +694,7 @@
 
                                                 <div class="col-6">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioExpress.pagoRentaDosExpress"
+                                                        [(ngModel)]="formularioExpress.pagoRentaDosExpress" onchange="dolar(this)" onKeyPress="return validar(event)"
                                                         formControlName="pagoRentaDosExpress" type="text ">
                                                     <div
                                                         *ngIf="reporteExpress.get('pagoRentaDosExpress').errors && reporteExpress.get('pagoRentaDosExpress').dirty">
@@ -749,7 +749,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioExpress.impuestoDivisasExpressUno"
+                                                        [(ngModel)]="formularioExpress.impuestoDivisasExpressUno" onchange="dolar(this)" onKeyPress="return validar(event)"
                                                         formControlName="impuestoDivisasExpressUno" type="text ">
                                                     <div
                                                         *ngIf="reporteExpress.get('impuestoDivisasExpressUno').errors && reporteExpress.get('impuestoDivisasExpressUno').dirty">
@@ -802,7 +802,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <input class="form-control"
-                                                        [(ngModel)]="formularioExpress.impuestoDivisasExpressDos"
+                                                         [(ngModel)]="formularioExpress.impuestoDivisasExpressDos" onchange="dolar(this)" onKeyPress="return validar(event)"
                                                         formControlName="impuestoDivisasExpressDos" type="text ">
                                                     <div
                                                         *ngIf="reporteExpress.get('impuestoDivisasExpressDos').errors && reporteExpress.get('impuestoDivisasExpressDos').dirty">
@@ -1781,7 +1781,7 @@
                             </td>
                             <td scope="col">
                                 <input class="form-control " [(ngModel)]="formularioExpress.terrenoAvaluoExpress" onKeyPress="return validar(event)" 
-                                    formControlName="terrenoAvaluoExpress" type="text " onchange="format(this)">
+                                    formControlName="terrenoAvaluoExpress" type="text " onchange="dolar(this)">
                                 <div
                                     *ngIf="reporteExpress.get('terrenoAvaluoExpress').errors && reporteExpress.get('terrenoAvaluoExpress').dirty">
                                     <p class="text-danger"
@@ -1826,7 +1826,7 @@
                             </td>
                             <td scope="col">
                                 <input class="form-control " [(ngModel)]="formularioExpress.construccionAvaluoExpress" onKeyPress="return validar(event)" 
-                                    formControlName="construccionAvaluoExpress" type="text " onchange="format(this)">
+                                    formControlName="construccionAvaluoExpress" type="text " onchange="dolar(this)">
                                 <div
                                     *ngIf="reporteExpress.get('construccionAvaluoExpress').errors && reporteExpress.get('construccionAvaluoExpress').dirty">
                                     <p class="text-danger"
@@ -1851,7 +1851,7 @@
                             <td scope="col"><b>AVALUO TOTAL</b></td>
                             <td scope="col">
                                 <input class="form-control " [(ngModel)]="formularioExpress.avaluoTotalAreaExpress" onKeyPress="return validar(event)" 
-                                    formControlName="avaluoTotalAreaExpress" type="text " onchange="format(this)">
+                                    formControlName="avaluoTotalAreaExpress" type="text " onchange="dolar(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoTotalAreaExpress').errors && reporteExpress.get('avaluoTotalAreaExpress').dirty">
                                     <p class="text-danger"
@@ -1871,7 +1871,7 @@
                             </td>
                             <td scope="col">
                                 <input class="form-control " [(ngModel)]="formularioExpress.avaluoTotalAvaluoExpress" onKeyPress="return validar(event)" 
-                                    formControlName="avaluoTotalAvaluoExpress" type="text " onchange="format(this)">
+                                    formControlName="avaluoTotalAvaluoExpress" type="text " onchange="dolar(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoTotalAvaluoExpress').errors && reporteExpress.get('avaluoTotalAvaluoExpress').dirty">
                                     <p class="text-danger"
@@ -1976,7 +1976,7 @@
                             </td>
                             <td scope="col">
                                 <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress" onKeyPress="return validar(event)" 
-                                    formControlName="avaluoExpress" type="text " onchange="format(this)">
+                                    formControlName="avaluoExpress" type="text " onchange="dolar(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoExpress').errors && reporteExpress.get('avaluoExpress').dirty">
                                     <p class="text-danger"
@@ -2071,7 +2071,7 @@
                             </td>
                             <td scope="col">
                                 <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress1" onKeyPress="return validar(event)"
-                                    formControlName="avaluoExpress1" type="text " onchange="format(this)">
+                                    formControlName="avaluoExpress1" type="text " onchange="dolar(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoExpress1').errors && reporteExpress.get('avaluoExpress1').dirty">
                                     <p class="text-danger"
@@ -2166,7 +2166,7 @@
                             </td>
                             <td scope="col">
                                 <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress2" onKeyPress="return validar(event)"
-                                    formControlName="avaluoExpress2" type="text " onchange="format(this)">
+                                    formControlName="avaluoExpress2" type="text " onchange="dolar(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoExpress2').errors && reporteExpress.get('avaluoExpress2').dirty">
                                     <p class="text-danger"
@@ -2261,7 +2261,7 @@
                             </td>
                             <td scope="col">
                                 <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress3" onKeyPress="return validar(event)"
-                                    formControlName="avaluoExpress3" type="text" onchange="format(this)">
+                                    formControlName="avaluoExpress3" type="text" onchange="dolar(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoExpress3').errors && reporteExpress.get('avaluoExpress3').dirty">
                                     <p class="text-danger"
@@ -2356,7 +2356,7 @@
                             </td>
                             <td scope="col">
                                 <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress4" onKeyPress="return validar(event)"
-                                    formControlName="avaluoExpress4" type="text " onchange="format(this)">
+                                    formControlName="avaluoExpress4" type="text " onchange="dolar(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoExpress4').errors && reporteExpress.get('avaluoExpress4').dirty">
                                     <p class="text-danger"
