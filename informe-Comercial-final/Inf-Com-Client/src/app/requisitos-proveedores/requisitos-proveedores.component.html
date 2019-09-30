@@ -113,7 +113,7 @@
                                         <td scope="col">RUC</td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioExpress.rucExpress"
-                                                formControlName="rucExpress" type="text" minlength="13" maxlength="13">
+                                                formControlName="rucExpress" type="text" minlength="13" maxlength="13" onKeyPress="return validar(event)" >
                                             <div
                                                 *ngIf="reporteExpress.get('rucExpress').errors && reporteExpress.get('rucExpress').dirty">
                                                 <p class="text-danger"
@@ -351,7 +351,7 @@
                                         <td scope="col">Teléfonos/fax </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioExpress.telefonoExpress"
-                                                formControlName="telefonoExpress" type="text" minlength="7"
+                                                formControlName="telefonoExpress" type="text" minlength="7" onKeyPress="return validar(event)" 
                                                 maxlength="10">
                                             <div
                                                 *ngIf="reporteExpress.get('telefonoExpress').errors && reporteExpress.get('telefonoExpress').dirty">
@@ -1053,7 +1053,7 @@
                                     <td scope="col">
                                         <input class="form-control "
                                             [(ngModel)]="formularioExpress.telefonoReferenciaExpress"
-                                            formControlName="telefonoReferenciaExpress" type="text" minlength="7"
+                                            formControlName="telefonoReferenciaExpress" type="text" minlength="7" onKeyPress="return validar(event)" 
                                             maxlength="10">
                                         <div
                                             *ngIf="reporteExpress.get('telefonoReferenciaExpress').errors && reporteExpress.get('telefonoReferenciaExpress').dirty">
@@ -1506,9 +1506,9 @@
 
 
                                         <!--<input type="text" class="form-control" [(ngModel)]="formularioExpress.ventas2014Express"  maxlength="21" formControlName="ventas2014Express" id ="ventas2014Express" on  name="ventas2014Express"  size="21"  maxlength="21" onkeypress="mascara(this,cpf)"  onpaste="return false"  >-->
-                                        <input class="form-control" [(ngModel)]="formularioExpress.ventas2014Express"
+                                        <input class="form-control" [(ngModel)]="formularioExpress.ventas2014Express" onchange="format(this)"
                                             formControlName="ventas2014Express" maxlength="21" 
-                                            type="text"  onKeyPress="return validar(event)" 
+                                            type="text" onKeyPress="return validar(event)" 
                                             >
                                         <div
                                             *ngIf="reporteExpress.get('ventas2014Express').errors && reporteExpress.get('ventas2014Express').dirty">
@@ -1533,7 +1533,7 @@
                                            <!--<input class="form-control" [(ngModel)]="formularioExpress.ventas2015Express"
                                             formControlName="ventas2015Express" type="text" onkeyup="format(txtPrueba)" onchange="format(txtPrueba)" >--> 
                                             <input class="form-control" [(ngModel)]="formularioExpress.ventas2015Express"
-                                            formControlName="ventas2015Express" maxlength="21" 
+                                            formControlName="ventas2015Express" maxlength="21" onchange="format(this)"
                                             type="text"  onKeyPress="return validar(event)" 
                                             >
                                             <div
@@ -1560,7 +1560,7 @@
                                     <td scope="col">ACTIVOS</td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.activos2014Express"
-                                            formControlName="activos2014Express" type="text" 
+                                            formControlName="activos2014Express" type="text" onchange="format(this)"
                                             type="text"  onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('activos2014Express').errors && reporteExpress.get('activos2014Express').dirty">
@@ -1581,7 +1581,7 @@
                                     </td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.activos2015Express"
-                                            formControlName="activos2015Express" type="text" maxlength="21" 
+                                            formControlName="activos2015Express" type="text" maxlength="21" onchange="format(this)"
                                             type="text"  onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('activos2015Express').errors && reporteExpress.get('activos2015Express').dirty">
@@ -1606,7 +1606,7 @@
                                     <td scope="col">PASIVOS</td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.pasivo2014Express"
-                                            formControlName="pasivo2014Express" type="text" 
+                                            formControlName="pasivo2014Express" type="text" onchange="format(this)"
                                             type="text" onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('pasivo2014Express').errors && reporteExpress.get('pasivo2014Express').dirty">
@@ -1627,7 +1627,7 @@
                                     </td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.pasivo2015Express"
-                                            formControlName="pasivo2015Express" type="text"
+                                            formControlName="pasivo2015Express" type="text" onchange="format(this)"
                                             type="text"  onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('pasivo2015Express').errors && reporteExpress.get('pasivo2015Express').dirty">
@@ -1653,7 +1653,7 @@
                                     <td scope="col">
                                         <input class="form-control "
                                             [(ngModel)]="formularioExpress.patrimonio2014Express"
-                                            formControlName="patrimonio2014Express" type="text" 
+                                            formControlName="patrimonio2014Express" type="text" onchange="format(this)"
                                             type="text"  onKeyPress="return validar(event)"
                                             >
                                         <div
@@ -1676,7 +1676,7 @@
                                     <td scope="col">
                                         <input class="form-control "
                                             [(ngModel)]="formularioExpress.patrimonio2015Express"
-                                            formControlName="patrimonio2015Express" type="text" 
+                                            formControlName="patrimonio2015Express" type="text"  onchange="format(this)"
                                             type="text"  onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('patrimonio2015Express').errors && reporteExpress.get('patrimonio2015Express').dirty">
@@ -1700,7 +1700,7 @@
                                     <td scope="col">UTILIDAD</td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.utilidad2014Express"
-                                            formControlName="utilidad2014Express" type="text" id="txtPrueba8"
+                                            formControlName="utilidad2014Express" type="text" id="txtPrueba8" onchange="format(this)"
                                             type="text" onKeyPress="return validar(event)"  >
                                         <div
                                             *ngIf="reporteExpress.get('utilidad2014Express').errors && reporteExpress.get('utilidad2014Express').dirty">
@@ -1721,7 +1721,7 @@
                                     </td>
                                     <td scope="col">
                                         <input class="form-control " [(ngModel)]="formularioExpress.utilidad2015Express"
-                                            formControlName="utilidad2015Express" type="text" 
+                                            formControlName="utilidad2015Express" type="text"  onchange="format(this)"
                                             type="text"  onKeyPress="return validar(event)" >
                                         <div
                                             *ngIf="reporteExpress.get('utilidad2015Express').errors && reporteExpress.get('utilidad2015Express').dirty">
@@ -1760,7 +1760,7 @@
 
                             <td scope="col">TERRENO</td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.terrenoAreaExpress"
+                                <input class="form-control " [(ngModel)]="formularioExpress.terrenoAreaExpress" onKeyPress="return validar(event)" 
                                     formControlName="terrenoAreaExpress" type="text ">
                                 <div
                                     *ngIf="reporteExpress.get('terrenoAreaExpress').errors && reporteExpress.get('terrenoAreaExpress').dirty">
@@ -1780,8 +1780,8 @@
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.terrenoAvaluoExpress"
-                                    formControlName="terrenoAvaluoExpress" type="text ">
+                                <input class="form-control " [(ngModel)]="formularioExpress.terrenoAvaluoExpress" onKeyPress="return validar(event)" 
+                                    formControlName="terrenoAvaluoExpress" type="text " onchange="format(this)">
                                 <div
                                     *ngIf="reporteExpress.get('terrenoAvaluoExpress').errors && reporteExpress.get('terrenoAvaluoExpress').dirty">
                                     <p class="text-danger"
@@ -1805,7 +1805,7 @@
 
                             <td scope="col">CONSTRUCCIÓN</td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.construccionAreaExpress"
+                                <input class="form-control " [(ngModel)]="formularioExpress.construccionAreaExpress" onKeyPress="return validar(event)" 
                                     formControlName="construccionAreaExpress" type="text ">
                                 <div
                                     *ngIf="reporteExpress.get('construccionAreaExpress').errors && reporteExpress.get('construccionAreaExpress').dirty">
@@ -1825,8 +1825,8 @@
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.construccionAvaluoExpress"
-                                    formControlName="construccionAvaluoExpress" type="text ">
+                                <input class="form-control " [(ngModel)]="formularioExpress.construccionAvaluoExpress" onKeyPress="return validar(event)" 
+                                    formControlName="construccionAvaluoExpress" type="text " onchange="format(this)">
                                 <div
                                     *ngIf="reporteExpress.get('construccionAvaluoExpress').errors && reporteExpress.get('construccionAvaluoExpress').dirty">
                                     <p class="text-danger"
@@ -1850,8 +1850,8 @@
 
                             <td scope="col"><b>AVALUO TOTAL</b></td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoTotalAreaExpress"
-                                    formControlName="avaluoTotalAreaExpress" type="text ">
+                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoTotalAreaExpress" onKeyPress="return validar(event)" 
+                                    formControlName="avaluoTotalAreaExpress" type="text " onchange="format(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoTotalAreaExpress').errors && reporteExpress.get('avaluoTotalAreaExpress').dirty">
                                     <p class="text-danger"
@@ -1870,8 +1870,8 @@
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoTotalAvaluoExpress"
-                                    formControlName="avaluoTotalAvaluoExpress" type="text ">
+                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoTotalAvaluoExpress" onKeyPress="return validar(event)" 
+                                    formControlName="avaluoTotalAvaluoExpress" type="text " onchange="format(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoTotalAvaluoExpress').errors && reporteExpress.get('avaluoTotalAvaluoExpress').dirty">
                                     <p class="text-danger"
@@ -1951,7 +1951,7 @@
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.fechavahiculosExpress"
+                                <input class="form-control " [(ngModel)]="formularioExpress.fechavahiculosExpress" onKeyPress="return validar(event)" 
                                     formControlName="fechavahiculosExpress" type="text ">
                                 <div
                                     *ngIf="reporteExpress.get('fechavahiculosExpress').errors && reporteExpress.get('fechavahiculosExpress').dirty">
@@ -1969,14 +1969,14 @@
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.controls['fechavahiculosExpress'].touched && reporteExpress.controls['fechavahiculosExpress'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
+                                        <font size="2">Este campo debe contener datos numéricos
                                         </font>
                                     </p>
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress"
-                                    formControlName="avaluoExpress" type="text ">
+                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress" onKeyPress="return validar(event)" 
+                                    formControlName="avaluoExpress" type="text " onchange="format(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoExpress').errors && reporteExpress.get('avaluoExpress').dirty">
                                     <p class="text-danger"
@@ -2046,7 +2046,7 @@
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.fechavahiculosExpress1"
+                                <input class="form-control " [(ngModel)]="formularioExpress.fechavahiculosExpress1" onKeyPress="return validar(event)" 
                                     formControlName="fechavahiculosExpress1" type="text ">
                                 <div
                                     *ngIf="reporteExpress.get('fechavahiculosExpress1').errors && reporteExpress.get('fechavahiculosExpress1').dirty">
@@ -2064,14 +2064,14 @@
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.controls['fechavahiculosExpress1'].touched && reporteExpress.controls['fechavahiculosExpress1'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
+                                        <font size="2">Este campo debe contener datos numéricos
                                         </font>
                                     </p>
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress1"
-                                    formControlName="avaluoExpress1" type="text ">
+                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress1" onKeyPress="return validar(event)"
+                                    formControlName="avaluoExpress1" type="text " onchange="format(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoExpress1').errors && reporteExpress.get('avaluoExpress1').dirty">
                                     <p class="text-danger"
@@ -2088,7 +2088,7 @@
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.controls['avaluoExpress1'].touched && reporteExpress.controls['avaluoExpress1'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
+                                        <font size="2"> Este campo debe contener datos numéricos
                                         </font>
                                     </p>
                                 </div>
@@ -2141,7 +2141,7 @@
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.fechavahiculosExpress2"
+                                <input class="form-control " [(ngModel)]="formularioExpress.fechavahiculosExpress2" onKeyPress="return validar(event)"
                                     formControlName="fechavahiculosExpress2" type="text ">
                                 <div
                                     *ngIf="reporteExpress.get('fechavahiculosExpress2').errors && reporteExpress.get('fechavahiculosExpress2').dirty">
@@ -2159,14 +2159,14 @@
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.controls['fechavahiculosExpress2'].touched && reporteExpress.controls['fechavahiculosExpress2'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
+                                        <font size="2"> Este campo debe contener datos numéricos
                                         </font>
                                     </p>
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress2"
-                                    formControlName="avaluoExpress2" type="text ">
+                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress2" onKeyPress="return validar(event)"
+                                    formControlName="avaluoExpress2" type="text " onchange="format(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoExpress2').errors && reporteExpress.get('avaluoExpress2').dirty">
                                     <p class="text-danger"
@@ -2183,7 +2183,7 @@
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.controls['avaluoExpress2'].touched && reporteExpress.controls['avaluoExpress2'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
+                                        <font size="2"> Este campo debe contener datos numéricos
                                         </font>
                                     </p>
                                 </div>
@@ -2236,7 +2236,7 @@
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.fechavahiculosExpress3"
+                                <input class="form-control " [(ngModel)]="formularioExpress.fechavahiculosExpress3" onKeyPress="return validar(event)"
                                     formControlName="fechavahiculosExpress3" type="text ">
                                 <div
                                     *ngIf="reporteExpress.get('fechavahiculosExpress3').errors && reporteExpress.get('fechavahiculosExpress3').dirty">
@@ -2254,14 +2254,14 @@
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.controls['fechavahiculosExpress3'].touched && reporteExpress.controls['fechavahiculosExpress3'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
+                                        <font size="2"> Este campo debe contener datos numéricos
                                         </font>
                                     </p>
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress3"
-                                    formControlName="avaluoExpress3" type="text ">
+                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress3" onKeyPress="return validar(event)"
+                                    formControlName="avaluoExpress3" type="text" onchange="format(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoExpress3').errors && reporteExpress.get('avaluoExpress3').dirty">
                                     <p class="text-danger"
@@ -2278,7 +2278,7 @@
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.controls['avaluoExpress3'].touched && reporteExpress.controls['avaluoExpress3'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
+                                        <font size="2"> Este campo debe contener datos numéricos
                                         </font>
                                     </p>
                                 </div>
@@ -2331,7 +2331,7 @@
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.fechavahiculosExpress4"
+                                <input class="form-control " [(ngModel)]="formularioExpress.fechavahiculosExpress4" onKeyPress="return validar(event)"
                                     formControlName="fechavahiculosExpress4" type="text ">
                                 <div
                                     *ngIf="reporteExpress.get('fechavahiculosExpress4').errors && reporteExpress.get('fechavahiculosExpress4').dirty">
@@ -2349,14 +2349,14 @@
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.controls['fechavahiculosExpress4'].touched && reporteExpress.controls['fechavahiculosExpress4'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
+                                        <font size="2"> Este campo debe contener datos numéricos
                                         </font>
                                     </p>
                                 </div>
                             </td>
                             <td scope="col">
-                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress4"
-                                    formControlName="avaluoExpress4" type="text ">
+                                <input class="form-control " [(ngModel)]="formularioExpress.avaluoExpress4" onKeyPress="return validar(event)"
+                                    formControlName="avaluoExpress4" type="text " onchange="format(this)">
                                 <div
                                     *ngIf="reporteExpress.get('avaluoExpress4').errors && reporteExpress.get('avaluoExpress4').dirty">
                                     <p class="text-danger"
@@ -2373,7 +2373,7 @@
                                     </p>
                                     <p class="text-danger"
                                         *ngIf="reporteExpress.controls['avaluoExpress4'].touched && reporteExpress.controls['avaluoExpress4'].hasError('pattern')">
-                                        <font size="2"> Este campo puede contener caracteres entre "A-Za-z"
+                                        <font size="2"> Este campo debe contener datos numéricos
                                         </font>
                                     </p>
                                 </div>
@@ -2407,9 +2407,6 @@
                 <div>
                     <button type="submit" class="btn btn-success m-1">Guardar información </button>
                 </div>
-                <button type="submit" (click)="showAlert()"class="btn btn-danger m-1">Ver Alert</button>
-
-
             </form>
         </div>
     </div>
