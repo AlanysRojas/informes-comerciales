@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators, FormArray } from '@angular/forms';
 import { FormProveedoresServiceService } from '../services/form-proveedores-service.service';
 import { FormExpress } from '../models/formularioExpress';
+import {formatCurrency, getCurrencySymbol} from '@angular/common';
 import Swal from 'sweetalert2';
 
 
@@ -449,6 +450,19 @@ export class RequisitosProveedoresComponent implements OnInit {
         type: 'error'
       })
     }
+
+
+    updateValue(value: string) {
+      let val = parseInt(value, 10);
+      if (Number.isNaN(val)) {
+        val = 0;
+      }
+      this.ventas2014Express = formatCurrency(val, 'en-US', getCurrencySymbol('USD', 'wide'));
+  }
+
+  recargarPagina () {
+    setTimeout("location.reload()", 2100)
+};
   
  
   
