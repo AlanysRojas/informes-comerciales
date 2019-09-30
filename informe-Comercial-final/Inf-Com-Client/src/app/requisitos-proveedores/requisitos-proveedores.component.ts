@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { FormProveedoresServiceService } from '../services/form-proveedores-service.service';
 import { FormExpress } from '../models/formularioExpress';
+import {formatCurrency, getCurrencySymbol} from '@angular/common';
 import Swal from 'sweetalert2';
 import { timer } from 'rxjs';
 
