@@ -144,7 +144,7 @@ export class RequisitosProveedoresComponent implements OnInit {
 
 
   emailPattern = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  textPattern= new RegExp(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ\s ]+$/);
+  textPattern= new RegExp(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ&-.\s ]+$/);
   numberPattern= new RegExp(/^[0-9 ]+$/);
   paginaWebPattern= new RegExp( /^((https?):\/\/)?([w|W]{3}\.)+[a-zA-Z0-9\-\.]{3,}\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/ )
   dineroPattern= new RegExp (/^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/)
