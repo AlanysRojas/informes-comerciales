@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InformeCompletoComponent } from './informe-completo.component';
+import { InformeCompletoComponent } from "./InformeCompletoComponent";
 
 describe('InformeCompletoComponent', () => {
   let component: InformeCompletoComponent;
