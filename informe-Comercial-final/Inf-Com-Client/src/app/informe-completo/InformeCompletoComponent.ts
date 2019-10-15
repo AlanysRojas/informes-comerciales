@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormProveedoresServiceService } from '../services/form-proveedores-service.service';
+import { CompletoService } from '../services/completo.service';
 import { formCompleto } from '../models/formularioCompleto';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-informe-completo',
@@ -38,7 +39,7 @@ export class InformeCompletoComponent implements OnInit {
     personaContactoCompleto: string;
     cargoCompleto: string;
     correoCompleto: string;
-    checksEmpresas: string;
+    checksEmpresasCompleto: string;
     empresasRelacionadasCompleto: string;
     grupoEconomicoCompleto: string;
     codigoActividadCompleto: string;
@@ -177,7 +178,7 @@ export class InformeCompletoComponent implements OnInit {
     cartCastCompleta5: string;
     saldoDeudaCompleta5: string;
     acConcCompleta5: string;
-    fechaCorteCompleta6: string;
+    
     institucionCompleta6: string;
     tipoRiesgoCompleta6: string;
     tipoCreditoCompleta6: string;
@@ -489,7 +490,7 @@ export class InformeCompletoComponent implements OnInit {
     dineroPattern = new RegExp(/^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/);
 
 
-    constructor(public fb: FormBuilder, private proveedoresService: FormProveedoresServiceService) {
+    constructor(public fb: FormBuilder, private completoService: CompletoService) {
 
         this.reporteCompleto = this.fb.group({
 
@@ -498,10 +499,10 @@ export class InformeCompletoComponent implements OnInit {
             razonSocialCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             nombreComercialCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             rucCompleto:['', [Validators.required, Validators.minLength(13), Validators.maxLength(13), Validators.pattern(this.numberPattern)]],
-            formaLegalCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            estadoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            formaLegalCompleto:  ['', [Validators.required]],
+            estadoCompleto: ['', [Validators.required]],
             capitalSubscritoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            inicioActividadesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            inicioActividadesCompleto: ['', [Validators.required]],
             actividadPrincipalCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             objetoSocialCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             provinciaCompleto: ['', [Validators.required]],
@@ -514,7 +515,7 @@ export class InformeCompletoComponent implements OnInit {
             personaContactoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             cargoCompleto: ['', [Validators.required]],
             correoCompleto: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(30), Validators.pattern(this.emailPattern)]],
-            checksEmpresas: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            checksEmpresasCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             empresasRelacionadasCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             grupoEconomicoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             codigoActividadCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
@@ -653,18 +654,18 @@ export class InformeCompletoComponent implements OnInit {
             cartCastCompleta5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             saldoDeudaCompleta5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             acConcCompleta5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            fechaCorteCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+           // fechaCorteCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             institucionCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            tipoRiesgoCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            tipoCreditoCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            vincCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            //tipoRiesgoCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            //tipoCreditoCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            //vincCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             totalVencerCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             noDevInteresesCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             totalVencidoCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             demJudCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             cartCastCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             saldoDeudaCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            acConcCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            //acConcCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             acreedorCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             porVencerCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             noDevengaIntCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
@@ -962,6 +963,36 @@ export class InformeCompletoComponent implements OnInit {
             observacionesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
         });
     }
+    listaProvincias: Array<any> = [
+    {name:"AZUAY",ciudades: ["CUENCA","GIRÓN","GUALACEO","NABÓN","PAUTE","PUCARA","SAN FERNANDO","SANTA ISABEL","SIGSIG","OÑA","CHORDELEG","EL PAN","SEVILLA DE ORO","GUACHAPALA","CAMILO PONCE ENRÍQUEZ"
+    ]},{name:"BOLIVAR",ciudades:["GUARANDA","CHILLANES","CHIMBO","ECHEANDÍA","SAN MIGUEL","CALUMA","LAS NAVES"
+    ]},{name:"CAÑAR",ciudades:["AZOGUES","BIBLIÁN","CAÑAR","LA TRONCAL","EL TAMBO","DÉLEG","SUSCAL"
+    ]},{name:"CARCHI",ciudades:["TULCÁN","BOLÍVAR","ESPEJO","MIRA","MONTÚFAR","SAN PEDRO DE HUACA"
+    ]},{name:"COTOPAXI",ciudades:["LATACUNGA","LA MANÁ","PANGUA","PUJILI","SALCEDO","SAQUISILÍ","SIGCHOS"
+    ]},{name:"CHIMBORAZO",ciudades:["RIOBAMBA","ALAUSI","COLTA","CHAMBO","CHUNCHI","GUAMOTE","GUANO","PALLATANGA","PENIPE","CUMANDÁ"
+    ]},{name:"EL ORO",ciudades:["MACHALA","ARENILLAS","ATAHUALPA","BALSAS","CHILLA","EL GUABO","HUAQUILLAS","MARCABELÍ","PASAJE","PIÑAS","PORTOVELO","SANTA ROSA","ZARUMA","LAS LAJAS"
+    ]},{name:"ESMERALDAS",ciudades:["ESMERALDAS","ELOY ALFARO","MUISNE","QUININDÉ","SAN LORENZO","ATACAMES","RIOVERDE","LA CONCORDIA"
+    ]},{name:"GUAYAS",ciudades:["GUAYAQUIL","ALFREDO BAQUERIZO MORENO (JUJÁN)","BALAO","BALZAR","COLIMES","DAULE","DURÁN","EL EMPALME","EL TRIUNFO","MILAGRO","NARANJAL","NARANJITO","PALESTINA","PEDRO CARBO","SAMBORONDÓN","SANTA LUCÍA","SALITRE (URBINA JADO)","SAN JACINTO DE YAGUACHI","PLAYAS","SIMÓN BOLÍVAR","CORONEL MARCELINO MARIDUEÑA","LOMAS DE SARGENTILLO","NOBOL","GENERAL ANTONIO ELIZALDE","ISIDRO AYORA"
+    ]},{name:"IMBABURA",ciudades:["IBARRA","ANTONIO ANTE","COTACACHI","OTAVALO","PIMAMPIRO","SAN MIGUEL DE URCUQUÍ"
+    ]},{name:"LOJA",ciudades:["LOJA","CALVAS","CATAMAYO","CELICA","CHAGUARPAMBA","ESPÍNDOLA","GONZANAMÁ","MACARÁ","PALTAS","PUYANGO","SARAGURO","SOZORANGA","ZAPOTILLO","PINDAL","QUILANGA","OLMEDO"
+    ]},{name:"LOS RIOS",ciudades:["BABAHOYO","BABA","MONTALVO","PUEBLOVIEJO","QUEVEDO","URDANETA","VENTANAS","VÍNCES","PALENQUE","BUENA FÉ","VALENCIA","MOCACHE","QUINSALOMA"
+    ]},{name:"MANABI",ciudades:["PORTOVIEJO","BOLÍVAR","CHONE","EL CARMEN","FLAVIO ALFARO","JIPIJAPA","JUNÍN","MANTA","MONTECRISTI","PAJÁN","PICHINCHA","ROCAFUERTE","SANTA ANA","SUCRE","TOSAGUA","24 DE MAYO","PEDERNALES","OLMEDO","PUERTO LÓPEZ","JAMA","JARAMIJÓ","SAN VICENTE"
+    ]},{name:"MORONA SANTIAGO",ciudades:["MORONA","GUALAQUIZA","LIMÓN INDANZA","PALORA","SANTIAGO","SUCÚA","HUAMBOYA","SAN JUAN BOSCO","TAISHA","LOGROÑO","PABLO SEXTO","TIWINTZA"
+    ]},{name:"NAPO",ciudades:["TENA","ARCHIDONA","EL CHACO","QUIJOS","CARLOS JULIO AROSEMENA TOLA"
+    ]},{name:"PASTAZA",ciudades:["PASTAZA","MERA","SANTA CLARA","ARAJUNO"
+    ]},{name:"PICHINCHA",ciudades:["QUITO","CAYAMBE","MEJIA","PEDRO MONCAYO","RUMIÑAHUI","SAN MIGUEL DE LOS BANCOS","PEDRO VICENTE MALDONADO","PUERTO QUITO"
+    ]},{name:"TUNGURAHUA",ciudades:["AMBATO","BAÑOS DE AGUA SANTA","CEVALLOS","MOCHA","PATATE","QUERO","SAN PEDRO DE PELILEO","SANTIAGO DE PÍLLARO","TISALEO"
+    ]},{name:"ZAMORA CHINCHIPE",ciudades:["ZAMORA","CHINCHIPE","NANGARITZA","YACUAMBI","YANTZAZA (YANZATZA)","EL PANGUI","CENTINELA DEL CÓNDOR","PALANDA","PAQUISHA"
+    ]},{name:"GALAPAGOS",ciudades:["SAN CRISTÓBAL","ISABELA","SANTA CRUZ"
+    ]},{name:"SUCUMBIOS",ciudades:["LAGO AGRIO","GONZALO PIZARRO","PUTUMAYO","SHUSHUFINDI","SUCUMBÍOS","CASCALES","CUYABENO"
+    ]},{name:"ORELLANA",ciudades:["ORELLANA","AGUARICO","LA JOYA DE LOS SACHAS","LORETO"
+    ]},{name:"SANTO DOMINGO DE LOS TSACHILAS",ciudades:["SANTO DOMINGO"
+    ]},{name:"SANTA ELENA", ciudades:["SANTA ELENA","LA LIBERTAD","SALINAS"]},
+  ];
+  ciudades: Array<any>;
+  cambioProvincia(count) {
+    this.ciudades = this.listaProvincias.find(con => con.name == count).ciudades;
+  }
 
     ngOnInit() {
     }
@@ -978,7 +1009,16 @@ export class InformeCompletoComponent implements OnInit {
 
     addReporteCompleto() {
         this.submitted = true;
-        
+        this.save();
       }
-  
+      private save(): void {
+        console.log(this.formularioCompleto);
+        this.completoService.addInformeCompleto(this.formularioCompleto)
+            .subscribe();
+            Swal.fire({
+              title:'Muy Bien',
+              text:'Datos Guardados Éxitosamente',
+              type: 'success'
+            });
+      }
 }
