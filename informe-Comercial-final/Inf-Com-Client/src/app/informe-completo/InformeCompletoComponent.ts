@@ -218,7 +218,7 @@ export class InformeCompletoComponent implements OnInit {
     detallOperacionesVencidasCompleto: string;
 
 
-//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
     balanceGeneralFecha: string;

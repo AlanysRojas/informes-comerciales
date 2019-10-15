@@ -4753,8 +4753,8 @@
                                         <td scope="col" style="text-align: left">CAJA, BANCOS</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cajaBancosCompleto"
-                                                formControlName="cajaBancosCompleto" type="text ">
+                                                [(ngModel)]="formularioCompleto.cajaBancosCompleto" onKeyPress="return validar(event)"
+                                                formControlName="cajaBancosCompleto" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cajaBancosCompleto').errors && reporteCompleto.get('cajaBancosCompleto').dirty">
                                                 <p class="text-danger"
@@ -4777,8 +4777,8 @@
                                             </div>
                                         </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.cajaBancosCompletoDos"
-                                                formControlName="cajaBancosCompletoDos" type="text ">
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.cajaBancosCompletoDos" onKeyPress="return validar(event)"
+                                                formControlName="cajaBancosCompletoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cajaBancosCompletoDos').errors && reporteCompleto.get('cajaBancosCompletoDos').dirty">
                                                 <p class="text-danger"
@@ -4806,8 +4806,9 @@
                                         <td scope="col" style="text-align: left">INVERSIONES CORRIENTES </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.inversionesCorrientes"
-                                                formControlName="inversionesCorrientes" type="text ">
+                                                [(ngModel)]="formularioCompleto.inversionesCorrientes" onKeyPress="return validar(event)"
+                                                formControlName="inversionesCorrientes" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('inversionesCorrientes').errors && reporteCompleto.get('inversionesCorrientes').dirty">
                                                 <p class="text-danger"
@@ -4831,8 +4832,9 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.inversionesCorrientesDos"
-                                                formControlName="inversionesCorrientesDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.inversionesCorrientesDos" onKeyPress="return validar(event)"
+                                                formControlName="inversionesCorrientesDos" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('inversionesCorrientesDos').errors && reporteCompleto.get('inversionesCorrientesDos').dirty">
                                                 <p class="text-danger"
@@ -4861,8 +4863,9 @@
                                             CORRIENTE
                                             <b> RELACIONADOS </b>LOCALES Y EXTERIOR </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.cuentasRelacionadas"
-                                                formControlName="cuentasRelacionadas" type="text ">
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.cuentasRelacionadas"  onKeyPress="return validar(event)"
+                                                formControlName="cuentasRelacionadas" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasRelacionadas').errors && reporteCompleto.get('cuentasRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -4885,8 +4888,9 @@
                                             </div>
                                         </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.cuentasRelacionadasDos"
-                                                formControlName="cuentasRelacionadasDos" type="text ">
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.cuentasRelacionadasDos" onKeyPress="return validar(event)"
+                                                formControlName="cuentasRelacionadasDos" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasRelacionadasDos').errors && reporteCompleto.get('cuentasRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -4918,7 +4922,9 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.cuentasNoRelacionadas"
-                                                formControlName="cuentasNoRelacionadas" type="text ">
+                                                onKeyPress="return validar(event)"
+                                                formControlName="cuentasNoRelacionadas" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasNoRelacionadas').errors && reporteCompleto.get('cuentasNoRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -4942,8 +4948,9 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasNoRelacionadasDos"
-                                                formControlName="cuentasNoRelacionadasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasNoRelacionadasDos" onKeyPress="return validar(event)"
+                                                formControlName="cuentasNoRelacionadasDos" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasNoRelacionadasDos').errors && reporteCompleto.get('cuentasNoRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -4972,8 +4979,9 @@
                                             <b>RELACIONADOS </b> </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasRelacionadas"
-                                                formControlName="otrasCuentasRelacionadas" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasRelacionadas" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasRelacionadas" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasRelacionadas').errors && reporteCompleto.get('otrasCuentasRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -4997,8 +5005,9 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasRelacionadasDos"
-                                                formControlName="otrasCuentasRelacionadasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasRelacionadasDos" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasRelacionadasDos" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasRelacionadasDos').errors && reporteCompleto.get('otrasCuentasRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -5028,8 +5037,9 @@
                                                 RELACIONADOS</b> </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasNoRelacionadas"
-                                                formControlName="otrasCuentasNoRelacionadas" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasNoRelacionadas" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasNoRelacionadas" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasNoRelacionadas').errors && reporteCompleto.get('otrasCuentasNoRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -5053,8 +5063,9 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasNoRelacionadasDos"
-                                                formControlName="otrasCuentasNoRelacionadasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasNoRelacionadasDos" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasNoRelacionadasDos" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasNoRelacionadasDos').errors && reporteCompleto.get('otrasCuentasNoRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -5082,8 +5093,9 @@
                                             PLAZO </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.provisionCuentas"
-                                                formControlName="provisionCuentas" type="text ">
+                                                [(ngModel)]="formularioCompleto.provisionCuentas" onKeyPress="return validar(event)"
+                                                formControlName="provisionCuentas" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('provisionCuentas').errors && reporteCompleto.get('provisionCuentas').dirty">
                                                 <p class="text-danger"
@@ -5108,8 +5120,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.provisionCuentasDos"
-                                                formControlName="provisionCuentasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.provisionCuentasDos" onKeyPress="return validar(event)"
+                                                formControlName="provisionCuentasDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('provisionCuentasDos').errors && reporteCompleto.get('provisionCuentasDos').dirty">
                                                 <p class="text-danger"
@@ -5162,8 +5174,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.creditoTributarioDos"
-                                                formControlName="creditoTributarioDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.creditoTributarioDos" onKeyPress="return validar(event)"
+                                                formControlName="creditoTributarioDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('creditoTributarioDos').errors && reporteCompleto.get('creditoTributarioDos').dirty">
                                                 <p class="text-danger"
@@ -5191,8 +5203,8 @@
                                         <td scope="col" style="text-align: left">INVENTARIOS </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.inventariosCompleto"
-                                                formControlName="inventariosCompleto" type="text ">
+                                                [(ngModel)]="formularioCompleto.inventariosCompleto" onKeyPress="return validar(event)"
+                                                formControlName="inventariosCompleto" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('inventariosCompleto').errors && reporteCompleto.get('inventariosCompleto').dirty">
                                                 <p class="text-danger"
@@ -5216,8 +5228,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.inventariosCompletoDos"
-                                                formControlName="inventariosCompletoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.inventariosCompletoDos" onKeyPress="return validar(event)"
+                                                formControlName="inventariosCompletoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('inventariosCompletoDos').errors && reporteCompleto.get('inventariosCompletoDos').dirty">
                                                 <p class="text-danger"
@@ -5246,8 +5258,8 @@
                                         <td scope="col" style="text-align: left">ACTIVOS PAGADOS POR ANTICIPADO </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.activosPagados"
-                                                formControlName="activosPagados" type="text ">
+                                                [(ngModel)]="formularioCompleto.activosPagados" onKeyPress="return validar(event)"
+                                                formControlName="activosPagados" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('activosPagados').errors && reporteCompleto.get('activosPagados').dirty">
                                                 <p class="text-danger"
@@ -5272,8 +5284,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.activosPagadosDos"
-                                                formControlName="activosPagadosDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.activosPagadosDos" onKeyPress="return validar(event)"
+                                                formControlName="activosPagadosDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('activosPagadosDos').errors && reporteCompleto.get('activosPagadosDos').dirty">
                                                 <p class="text-danger"
@@ -5301,8 +5313,8 @@
                                         <td scope="col" style="text-align: left">OTROS ACTIVOS CORRIENTES</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrosActivosCorrientes"
-                                                formControlName="otrosActivosCorrientes" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrosActivosCorrientes" onKeyPress="return validar(event)"
+                                                formControlName="otrosActivosCorrientes" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosActivosCorrientes').errors && reporteCompleto.get('otrosActivosCorrientes').dirty">
                                                 <p class="text-danger"
@@ -5326,8 +5338,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrosActivosCorrientesDos"
-                                                formControlName="otrosActivosCorrientesDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrosActivosCorrientesDos" onKeyPress="return validar(event)"
+                                                formControlName="otrosActivosCorrientesDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosActivosCorrientesDos').errors && reporteCompleto.get('otrosActivosCorrientesDos').dirty">
                                                 <p class="text-danger"
@@ -5355,8 +5367,8 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL ACTIVO CORRIENTE</b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalActivoCorriente"
-                                                formControlName="totalActivoCorriente" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalActivoCorriente" onKeyPress="return validar(event)"
+                                                formControlName="totalActivoCorriente" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalActivoCorriente').errors && reporteCompleto.get('totalActivoCorriente').dirty">
                                                 <p class="text-danger"
@@ -5380,8 +5392,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalActivoCorrienteDos"
-                                                formControlName="totalActivoCorrienteDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalActivoCorrienteDos" onKeyPress="return validar(event)"
+                                                formControlName="totalActivoCorrienteDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalActivoCorrienteDos').errors && reporteCompleto.get('totalActivoCorrienteDos').dirty">
                                                 <p class="text-danger"
@@ -5409,8 +5421,8 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL ACTIVO FIJO </b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalActivoFijo"
-                                                formControlName="totalActivoFijo" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalActivoFijo" onKeyPress="return validar(event)"
+                                                formControlName="totalActivoFijo" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalActivoFijo').errors && reporteCompleto.get('totalActivoFijo').dirty">
                                                 <p class="text-danger"
@@ -5435,8 +5447,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalActivoFijoDos"
-                                                formControlName="totalActivoFijoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalActivoFijoDos" onKeyPress="return validar(event)"
+                                                formControlName="totalActivoFijoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalActivoFijoDos').errors && reporteCompleto.get('totalActivoFijoDos').dirty">
                                                 <p class="text-danger"
@@ -5465,8 +5477,8 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL ACTIVO DIFERIDO </b> </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalActivoDiferido"
-                                                formControlName="totalActivoDiferido" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalActivoDiferido" onKeyPress="return validar(event)"
+                                                formControlName="totalActivoDiferido" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalActivoDiferido').errors && reporteCompleto.get('totalActivoDiferido').dirty">
                                                 <p class="text-danger"
@@ -5491,8 +5503,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalActivoDiferidoDos"
-                                                formControlName="totalActivoDiferidoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalActivoDiferidoDos"  onKeyPress="return validar(event)"
+                                                formControlName="totalActivoDiferidoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalActivoDiferidoDos').errors && reporteCompleto.get('totalActivoDiferidoDos').dirty">
                                                 <p class="text-danger"
@@ -5521,8 +5533,8 @@
                                             PARTICIPACIONES </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.inversionesParticipaciones"
-                                                formControlName="inversionesParticipaciones" type="text ">
+                                                [(ngModel)]="formularioCompleto.inversionesParticipaciones" onKeyPress="return validar(event)"
+                                                formControlName="inversionesParticipaciones" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('inversionesParticipaciones').errors && reporteCompleto.get('inversionesParticipaciones').dirty">
                                                 <p class="text-danger"
@@ -5546,8 +5558,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.inversionesParticipacionesDos"
-                                                formControlName="inversionesParticipacionesDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.inversionesParticipacionesDos" onKeyPress="return validar(event)"
+                                                formControlName="inversionesParticipacionesDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('inversionesParticipacionesDos').errors && reporteCompleto.get('inversionesParticipacionesDos').dirty">
                                                 <p class="text-danger"
@@ -5575,8 +5587,8 @@
                                         <td scope="col" style="text-align: left">INVERSIONES LARGO PLAZO OTRAS </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasInversionesLargoPlazo"
-                                                formControlName="otrasInversionesLargoPlazo" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasInversionesLargoPlazo" onKeyPress="return validar(event)"
+                                                formControlName="otrasInversionesLargoPlazo" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasInversionesLargoPlazo').errors && reporteCompleto.get('otrasInversionesLargoPlazo').dirty">
                                                 <p class="text-danger"
@@ -5600,8 +5612,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasInversionesLargoPlazoDos"
-                                                formControlName="otrasInversionesLargoPlazoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasInversionesLargoPlazoDos" onKeyPress="return validar(event)"
+                                                formControlName="otrasInversionesLargoPlazoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasInversionesLargoPlazoDos').errors && reporteCompleto.get('otrasInversionesLargoPlazoDos').dirty">
                                                 <p class="text-danger"
@@ -5632,8 +5644,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarRelacionadas"
-                                                formControlName="cuentasPorCobrarRelacionadas" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarRelacionadas" onKeyPress="return validar(event)"
+                                                formControlName="cuentasPorCobrarRelacionadas" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadas').errors && reporteCompleto.get('cuentasPorCobrarRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -5657,8 +5669,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarRelacionadasDos"
-                                                formControlName="cuentasPorCobrarRelacionadasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarRelacionadasDos" onKeyPress="return validar(event)"
+                                                formControlName="cuentasPorCobrarRelacionadasDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadasDos').errors && reporteCompleto.get('cuentasPorCobrarRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -5688,8 +5700,8 @@
                                                 RELACIONADOS LOCALES Y EXTERIOR</b> </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarNoRelacionadas"
-                                                formControlName="cuentasPorCobrarNoRelacionadas" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarNoRelacionadas" onKeyPress="return validar(event)"
+                                                formControlName="cuentasPorCobrarNoRelacionadas" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadas').errors && reporteCompleto.get('cuentasPorCobrarNoRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -5713,8 +5725,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarNoRelacionadasDos"
-                                                formControlName="cuentasPorCobrarNoRelacionadasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarNoRelacionadasDos" onKeyPress="return validar(event)"
+                                                formControlName="cuentasPorCobrarNoRelacionadasDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadasDos').errors && reporteCompleto.get('cuentasPorCobrarNoRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -5745,8 +5757,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarRelacionadas"
-                                                formControlName="otrasCuentasPorCobrarRelacionadas" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarRelacionadas" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasPorCobrarRelacionadas" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadas').errors && reporteCompleto.get('otrasCuentasPorCobrarRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -5770,8 +5782,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarRelacionadasDos"
-                                                formControlName="otrasCuentasPorCobrarRelacionadasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarRelacionadasDos" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasPorCobrarRelacionadasDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadasDos').errors && reporteCompleto.get('otrasCuentasPorCobrarRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -5802,8 +5814,8 @@
                                                 RELACIONADOS</b> </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarNoRelacionadas"
-                                                formControlName="otrasCuentasPorCobrarNoRelacionadas" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarNoRelacionadas" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasPorCobrarNoRelacionadas" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadas').errors && reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -5827,8 +5839,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarNoRelacionadasDos"
-                                                formControlName="otrasCuentasPorCobrarNoRelacionadasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarNoRelacionadasDos" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasPorCobrarNoRelacionadasDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadasDos').errors && reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -5858,8 +5870,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.provisionCuentasIncobrables"
-                                                formControlName="provisionCuentasIncobrables" type="text ">
+                                                [(ngModel)]="formularioCompleto.provisionCuentasIncobrables" onKeyPress="return validar(event)"
+                                                formControlName="provisionCuentasIncobrables" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('provisionCuentasIncobrables').errors && reporteCompleto.get('provisionCuentasIncobrables').dirty">
                                                 <p class="text-danger"
@@ -5912,8 +5924,8 @@
                                         <td scope="col" style="text-align: left">OTROS ACTIVOS LARGO PLAZO</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrosActivosLargoPlazo"
-                                                formControlName="otrosActivosLargoPlazo" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrosActivosLargoPlazo" onKeyPress="return validar(event)"
+                                                formControlName="otrosActivosLargoPlazo" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosActivosLargoPlazo').errors && reporteCompleto.get('otrosActivosLargoPlazo').dirty">
                                                 <p class="text-danger"
@@ -5937,8 +5949,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrosActivosLargoPlazoDos"
-                                                formControlName="otrosActivosLargoPlazoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrosActivosLargoPlazoDos" onKeyPress="return validar(event)"
+                                                formControlName="otrosActivosLargoPlazoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosActivosLargoPlazoDos').errors && reporteCompleto.get('otrosActivosLargoPlazoDos').dirty">
                                                 <p class="text-danger"
@@ -5966,8 +5978,8 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL ACTIVO LARGO PLAZO</b> </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalActivosLargoPlazo"
-                                                formControlName="totalActivosLargoPlazo" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalActivosLargoPlazo" onKeyPress="return validar(event)"
+                                                formControlName="totalActivosLargoPlazo" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalActivosLargoPlazo').errors && reporteCompleto.get('totalActivosLargoPlazo').dirty">
                                                 <p class="text-danger"
@@ -5991,8 +6003,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalActivosLargoPlazoDos"
-                                                formControlName="totalActivosLargoPlazoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalActivosLargoPlazoDos" onKeyPress="return validar(event)"
+                                                formControlName="totalActivosLargoPlazoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalActivosLargoPlazoDos').errors && reporteCompleto.get('totalActivosLargoPlazoDos').dirty">
                                                 <p class="text-danger"
@@ -6020,8 +6032,8 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL DEL ACTIVO</b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalDelActivo"
-                                                formControlName="totalDelActivo" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalDelActivo" onKeyPress="return validar(event)"
+                                                formControlName="totalDelActivo" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalDelActivo').errors && reporteCompleto.get('totalDelActivo').dirty">
                                                 <p class="text-danger"
@@ -6045,8 +6057,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalDelActivoDos"
-                                                formControlName="totalDelActivoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalDelActivoDos" onKeyPress="return validar(event)"
+                                                formControlName="totalDelActivoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalDelActivoDos').errors && reporteCompleto.get('totalDelActivoDos').dirty">
                                                 <p class="text-danger"
@@ -6075,8 +6087,8 @@
                                             <b>PASIVO</b></td>
                                         <td scope="col" style="background: paleturquoise">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.pasivoCompleto"
-                                                formControlName="pasivoCompleto" type="text ">
+                                                [(ngModel)]="formularioCompleto.pasivoCompleto" onKeyPress="return validar(event)"
+                                                formControlName="pasivoCompleto" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('pasivoCompleto').errors && reporteCompleto.get('pasivoCompleto').dirty">
                                                 <p class="text-danger"
@@ -6100,8 +6112,8 @@
                                         </td>
                                         <td scope="col" style="background: paleturquoise">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.pasivoCompletoDos"
-                                                formControlName="pasivoCompletoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.pasivoCompletoDos" onKeyPress="return validar(event)"
+                                                formControlName="pasivoCompletoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('pasivoCompletoDos').errors && reporteCompleto.get('pasivoCompletoDos').dirty">
                                                 <p class="text-danger"
@@ -6132,8 +6144,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasProveedoresRelacionado"
-                                                formControlName="cuentasProveedoresRelacionado" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasProveedoresRelacionado" onKeyPress="return validar(event)"
+                                                formControlName="cuentasProveedoresRelacionado" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasProveedoresRelacionado').errors && reporteCompleto.get('cuentasProveedoresRelacionado').dirty">
                                                 <p class="text-danger"
@@ -6157,8 +6169,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasProveedoresRelacionadoDos"
-                                                formControlName="cuentasProveedoresRelacionadoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasProveedoresRelacionadoDos" onKeyPress="return validar(event)"
+                                                formControlName="cuentasProveedoresRelacionadoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasProveedoresRelacionadoDos').errors && reporteCompleto.get('cuentasProveedoresRelacionadoDos').dirty">
                                                 <p class="text-danger"
@@ -6188,8 +6200,8 @@
                                                 RELACIONADOS</b> LOCALES Y EXTERIOR </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasProveedoresNoRelacionado"
-                                                formControlName="cuentasProveedoresNoRelacionado" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasProveedoresNoRelacionado" onKeyPress="return validar(event)"
+                                                formControlName="cuentasProveedoresNoRelacionado" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasProveedoresNoRelacionado').errors && reporteCompleto.get('cuentasProveedoresNoRelacionado').dirty">
                                                 <p class="text-danger"
@@ -6213,8 +6225,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasProveedoresNoRelacionadoDos"
-                                                formControlName="cuentasProveedoresNoRelacionadoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasProveedoresNoRelacionadoDos" onKeyPress="return validar(event)"
+                                                formControlName="cuentasProveedoresNoRelacionadoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasProveedoresNoRelacionadoDos').errors && reporteCompleto.get('cuentasProveedoresNoRelacionadoDos').dirty">
                                                 <p class="text-danger"
@@ -6243,8 +6255,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.obligacionesFinancieras"
-                                                formControlName="obligacionesFinancieras" type="text ">
+                                                [(ngModel)]="formularioCompleto.obligacionesFinancieras" onKeyPress="return validar(event)"
+                                                formControlName="obligacionesFinancieras" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('obligacionesFinancieras').errors && reporteCompleto.get('obligacionesFinancieras').dirty">
                                                 <p class="text-danger"
@@ -6268,8 +6280,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.obligacionesFinancierasDos"
-                                                formControlName="obligacionesFinancierasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.obligacionesFinancierasDos" onKeyPress="return validar(event)"
+                                                formControlName="obligacionesFinancierasDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('obligacionesFinancierasDos').errors && reporteCompleto.get('obligacionesFinancierasDos').dirty">
                                                 <p class="text-danger"
@@ -6297,8 +6309,8 @@
                                         <td scope="col" style="text-align: left">PRESTAMOS ACCIONISTAS CORTO PLAZO</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.prestamosAccionistas"
-                                                formControlName="prestamosAccionistas" type="text ">
+                                                [(ngModel)]="formularioCompleto.prestamosAccionistas" onKeyPress="return validar(event)"
+                                                formControlName="prestamosAccionistas" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('prestamosAccionistas').errors && reporteCompleto.get('prestamosAccionistas').dirty">
                                                 <p class="text-danger"
@@ -6322,8 +6334,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.prestamosAccionistasDos"
-                                                formControlName="prestamosAccionistasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.prestamosAccionistasDos" onKeyPress="return validar(event)"
+                                                formControlName="prestamosAccionistasDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('prestamosAccionistasDos').errors && reporteCompleto.get('prestamosAccionistasDos').dirty">
                                                 <p class="text-danger"
@@ -6352,8 +6364,8 @@
                                             CORRIENTE<b> RELACIONADOS </b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasPagarRelacionadas"
-                                                formControlName="otrasCuentasPagarRelacionadas" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPagarRelacionadas" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasPagarRelacionadas" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasPagarRelacionadas').errors && reporteCompleto.get('otrasCuentasPagarRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -6377,8 +6389,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasPagarRelacionadasDos"
-                                                formControlName="otrasCuentasPagarRelacionadasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPagarRelacionadasDos" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasPagarRelacionadasDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasPagarRelacionadasDos').errors && reporteCompleto.get('otrasCuentasPagarRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -6408,8 +6420,8 @@
                                                 RELACIONADOS</b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasPagarNoRelacionadas"
-                                                formControlName="otrasCuentasPagarNoRelacionadas" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPagarNoRelacionadas" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasPagarNoRelacionadas" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasPagarNoRelacionadas').errors && reporteCompleto.get('otrasCuentasPagarNoRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -6433,8 +6445,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasPagarNoRelacionadasDos"
-                                                formControlName="otrasCuentasPagarNoRelacionadasDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPagarNoRelacionadasDos" onKeyPress="return validar(event)"
+                                                formControlName="otrasCuentasPagarNoRelacionadasDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasPagarNoRelacionadasDos').errors && reporteCompleto.get('otrasCuentasPagarNoRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -6463,8 +6475,8 @@
                                             EJERCICIO </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.impuestoRentaEjercito"
-                                                formControlName="impuestoRentaEjercito" type="text ">
+                                                [(ngModel)]="formularioCompleto.impuestoRentaEjercito" onKeyPress="return validar(event)"
+                                                formControlName="impuestoRentaEjercito" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('impuestoRentaEjercito').errors && reporteCompleto.get('impuestoRentaEjercito').dirty">
                                                 <p class="text-danger"
@@ -6488,8 +6500,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.impuestoRentaEjercitoDos"
-                                                formControlName="impuestoRentaEjercitoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.impuestoRentaEjercitoDos" onKeyPress="return validar(event)"
+                                                formControlName="impuestoRentaEjercitoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('impuestoRentaEjercitoDos').errors && reporteCompleto.get('impuestoRentaEjercitoDos').dirty">
                                                 <p class="text-danger"
@@ -6518,8 +6530,8 @@
                                             DEL EJERCICIO </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.participacionEjercito"
-                                                formControlName="participacionEjercito" type="text ">
+                                                [(ngModel)]="formularioCompleto.participacionEjercito" onKeyPress="return validar(event)"
+                                                formControlName="participacionEjercito" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('participacionEjercito').errors && reporteCompleto.get('participacionEjercito').dirty">
                                                 <p class="text-danger"
@@ -6543,8 +6555,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.participacionEjercitoDos"
-                                                formControlName="participacionEjercitoDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.participacionEjercitoDos" onKeyPress="return validar(event)"
+                                                formControlName="participacionEjercitoDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('participacionEjercitoDos').errors && reporteCompleto.get('participacionEjercitoDos').dirty">
                                                 <p class="text-danger"
@@ -6572,8 +6584,8 @@
                                         <td scope="col" style="text-align: left">OTROS PASIVOS CORRIENTES </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrosPasivosCorrientes"
-                                                formControlName="otrosPasivosCorrientes" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrosPasivosCorrientes" onKeyPress="return validar(event)"
+                                                formControlName="otrosPasivosCorrientes" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosPasivosCorrientes').errors && reporteCompleto.get('otrosPasivosCorrientes').dirty">
                                                 <p class="text-danger"
@@ -6597,8 +6609,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrosPasivosCorrientesDos"
-                                                formControlName="otrosPasivosCorrientesDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.otrosPasivosCorrientesDos" onKeyPress="return validar(event)"
+                                                formControlName="otrosPasivosCorrientesDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosPasivosCorrientesDos').errors && reporteCompleto.get('otrosPasivosCorrientesDos').dirty">
                                                 <p class="text-danger"
@@ -6626,8 +6638,8 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL PASIVO CORRIENTE</b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalPasivoCorriente"
-                                                formControlName="totalPasivoCorriente" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalPasivoCorriente" onKeyPress="return validar(event)"
+                                                formControlName="totalPasivoCorriente" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalPasivoCorriente').errors && reporteCompleto.get('totalPasivoCorriente').dirty">
                                                 <p class="text-danger"
@@ -6651,8 +6663,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalPasivoCorrienteDos"
-                                                formControlName="totalPasivoCorrienteDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.totalPasivoCorrienteDos" onKeyPress="return validar(event)" 
+                                                formControlName="totalPasivoCorrienteDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalPasivoCorrienteDos').errors && reporteCompleto.get('totalPasivoCorrienteDos').dirty">
                                                 <p class="text-danger"
@@ -6683,8 +6695,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasPorPagar"
-                                                formControlName="cuentasPorPagar" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasPorPagar" onKeyPress="return validar(event)" 
+                                                formControlName="cuentasPorPagar" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasPorPagar').errors && reporteCompleto.get('cuentasPorPagar').dirty">
                                                 <p class="text-danger"
@@ -6708,8 +6720,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasPorPagarDos"
-                                                formControlName="cuentasPorPagarDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasPorPagarDos" onKeyPress="return validar(event)" 
+                                                formControlName="cuentasPorPagarDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasPorPagarDos').errors && reporteCompleto.get('cuentasPorPagarDos').dirty">
                                                 <p class="text-danger"
@@ -6740,8 +6752,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasPorPagarNoRela"
-                                                formControlName="cuentasPorPagarNoRela" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasPorPagarNoRela" onKeyPress="return validar(event)" 
+                                                formControlName="cuentasPorPagarNoRela" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasPorPagarNoRela').errors && reporteCompleto.get('cuentasPorPagarNoRela').dirty">
                                                 <p class="text-danger"
@@ -6765,8 +6777,8 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.cuentasPorPagarNoRelaDos"
-                                                formControlName="cuentasPorPagarNoRelaDos" type="text ">
+                                                [(ngModel)]="formularioCompleto.cuentasPorPagarNoRelaDos" onKeyPress="return validar(event)"
+                                                formControlName="cuentasPorPagarNoRelaDos" type="text " onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasPorPagarNoRelaDos').errors && reporteCompleto.get('cuentasPorPagarNoRelaDos').dirty">
                                                 <p class="text-danger"
@@ -6795,8 +6807,9 @@
                                             LARGO PLAZO </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.obligacionesInstituFinan"
-                                                formControlName="obligacionesInstituFinan" type="text ">
+                                                [(ngModel)]="formularioCompleto.obligacionesInstituFinan" onKeyPress="return validar(event)"
+                                                formControlName="obligacionesInstituFinan" type="text " 
+                                                onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('obligacionesInstituFinan').errors && reporteCompleto.get('obligacionesInstituFinan').dirty">
                                                 <p class="text-danger"
@@ -6820,7 +6833,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.obligacionesInstituFinanDos"
+                                                [(ngModel)]="formularioCompleto.obligacionesInstituFinanDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="obligacionesInstituFinanDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('obligacionesInstituFinanDos').errors && reporteCompleto.get('obligacionesInstituFinanDos').dirty">
@@ -6849,7 +6862,7 @@
                                         <td scope="col" style="text-align: left">PRESTAMOS ACCIONISTAS LARGO PLAZO</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.prestamosLargoPlazo"
+                                                [(ngModel)]="formularioCompleto.prestamosLargoPlazo" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="prestamosLargoPlazo" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('prestamosLargoPlazo').errors && reporteCompleto.get('prestamosLargoPlazo').dirty">
@@ -6874,7 +6887,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.prestamosLargoPlazoDos"
+                                                [(ngModel)]="formularioCompleto.prestamosLargoPlazoDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="prestamosLargoPlazoDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('prestamosLargoPlazoDos').errors && reporteCompleto.get('prestamosLargoPlazoDos').dirty">
@@ -6905,7 +6918,7 @@
                                             <b> RELACIONADOS</b> </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasLargoPlazo"
+                                                [(ngModel)]="formularioCompleto.otrasCuentasLargoPlazo" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="otrasCuentasLargoPlazo" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasLargoPlazo').errors && reporteCompleto.get('otrasCuentasLargoPlazo').dirty">
@@ -6930,7 +6943,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasLargoPlazoDos"
+                                                [(ngModel)]="formularioCompleto.otrasCuentasLargoPlazoDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="otrasCuentasLargoPlazoDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasLargoPlazoDos').errors && reporteCompleto.get('otrasCuentasLargoPlazoDos').dirty">
@@ -6961,7 +6974,7 @@
                                                 RELACIONADOS </b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasPorPagar"
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPorPagar" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="otrasCuentasPorPagar" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasPorPagar').errors && reporteCompleto.get('otrasCuentasPorPagar').dirty">
@@ -6986,7 +6999,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasCuentasPorPagarDos"
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPorPagarDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="otrasCuentasPorPagarDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasCuentasPorPagarDos').errors && reporteCompleto.get('otrasCuentasPorPagarDos').dirty">
@@ -7015,7 +7028,7 @@
                                         <td scope="col" style="text-align: left">OTROS PASIVOS LARGO PLAZO</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrosPasivosLargoPlazo"
+                                                [(ngModel)]="formularioCompleto.otrosPasivosLargoPlazo" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="otrosPasivosLargoPlazo" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosPasivosLargoPlazo').errors && reporteCompleto.get('otrosPasivosLargoPlazo').dirty">
@@ -7040,7 +7053,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrosPasivosLargoPlazoDos"
+                                                [(ngModel)]="formularioCompleto.otrosPasivosLargoPlazoDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="otrosPasivosLargoPlazoDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosPasivosLargoPlazoDos').errors && reporteCompleto.get('otrosPasivosLargoPlazoDos').dirty">
@@ -7069,7 +7082,7 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL PASIVO LARGO PLAZO</b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totPasivoLargoPlazo"
+                                                [(ngModel)]="formularioCompleto.totPasivoLargoPlazo" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="totPasivoLargoPlazo" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('totPasivoLargoPlazo').errors && reporteCompleto.get('totPasivoLargoPlazo').dirty">
@@ -7094,7 +7107,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totPasivoLargoPlazoDos"
+                                                [(ngModel)]="formularioCompleto.totPasivoLargoPlazoDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="totPasivoLargoPlazoDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('totPasivoLargoPlazoDos').errors && reporteCompleto.get('totPasivoLargoPlazoDos').dirty">
@@ -7123,7 +7136,7 @@
                                         <td scope="col" style="text-align: left">OTROS PASIVOS </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrosPasivos"
+                                                [(ngModel)]="formularioCompleto.otrosPasivos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="otrosPasivos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosPasivos').errors && reporteCompleto.get('otrosPasivos').dirty">
@@ -7148,7 +7161,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrosPasivosDos"
+                                                [(ngModel)]="formularioCompleto.otrosPasivosDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="otrosPasivosDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosPasivosDos').errors && reporteCompleto.get('otrosPasivosDos').dirty">
@@ -7177,7 +7190,7 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL DEL PASIVO</b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalDelPasivo"
+                                                [(ngModel)]="formularioCompleto.totalDelPasivo" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="totalDelPasivo" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalDelPasivo').errors && reporteCompleto.get('totalDelPasivo').dirty">
@@ -7202,7 +7215,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalDelPasivoDos"
+                                                [(ngModel)]="formularioCompleto.totalDelPasivoDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="totalDelPasivoDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalDelPasivoDos').errors && reporteCompleto.get('totalDelPasivoDos').dirty">
@@ -7232,7 +7245,7 @@
                                             <b>PATRIMONIO NETO</b></td>
                                         <td scope="col" style="background: powderblue">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.patrimonioNeto"
+                                                [(ngModel)]="formularioCompleto.patrimonioNeto" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="patrimonioNeto" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('patrimonioNeto').errors && reporteCompleto.get('patrimonioNeto').dirty">
@@ -7257,7 +7270,7 @@
                                         </td>
                                         <td scope="col" style="background: powderblue">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.patrimonioNetoDos"
+                                                [(ngModel)]="formularioCompleto.patrimonioNetoDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="patrimonioNetoDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('patrimonioNetoDos').errors && reporteCompleto.get('patrimonioNetoDos').dirty">
@@ -7286,7 +7299,7 @@
                                         <td scope="col" style="text-align: left">CAPITAL SUSCRITO Y/O ASIGNADO </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.capitalSuscrito"
+                                                [(ngModel)]="formularioCompleto.capitalSuscrito" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="capitalSuscrito" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('capitalSuscrito').errors && reporteCompleto.get('capitalSuscrito').dirty">
@@ -7311,7 +7324,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.capitalSuscritoDos"
+                                                [(ngModel)]="formularioCompleto.capitalSuscritoDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="capitalSuscritoDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('capitalSuscritoDos').errors && reporteCompleto.get('capitalSuscritoDos').dirty">
@@ -7340,7 +7353,7 @@
                                         <td scope="col" style="text-align: left">(-) CAPITAL SUSCRITO NO PAGADO</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.capitalSuscritoNoPaga"
+                                                [(ngModel)]="formularioCompleto.capitalSuscritoNoPaga" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="capitalSuscritoNoPaga" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('capitalSuscritoNoPaga').errors && reporteCompleto.get('capitalSuscritoNoPaga').dirty">
@@ -7364,8 +7377,8 @@
                                             </div>
                                         </td>
                                         <td scope="col">
-                                            <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.capitalSuscritoNoPagaDos"
+                                            <input class="form-control " 
+                                                [(ngModel)]="formularioCompleto.capitalSuscritoNoPagaDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="capitalSuscritoNoPagaDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('capitalSuscritoNoPagaDos').errors && reporteCompleto.get('capitalSuscritoNoPagaDos').dirty">
@@ -7394,7 +7407,7 @@
                                         <td scope="col" style="text-align: left">APORTES DE SOCIOS O ACCIONISTAS </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.aportesSocios"
+                                                [(ngModel)]="formularioCompleto.aportesSocios" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="aportesSocios" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('aportesSocios').errors && reporteCompleto.get('aportesSocios').dirty">
@@ -7419,7 +7432,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.aportesSociosDos"
+                                                [(ngModel)]="formularioCompleto.aportesSociosDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="aportesSociosDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('aportesSociosDos').errors && reporteCompleto.get('aportesSociosDos').dirty">
@@ -7448,7 +7461,7 @@
                                         <td scope="col" style="text-align: left">RESERVA LEGAL-FACULTATIVA</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.reservaLegal"
+                                                [(ngModel)]="formularioCompleto.reservaLegal" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="reservaLegal" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('reservaLegal').errors && reporteCompleto.get('reservaLegal').dirty">
@@ -7473,7 +7486,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.reservaLegalDos"
+                                                [(ngModel)]="formularioCompleto.reservaLegalDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="reservaLegalDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('reservaLegalDos').errors && reporteCompleto.get('reservaLegalDos').dirty">
@@ -7502,7 +7515,7 @@
                                         <td scope="col" style="text-align: left">OTRAS RESERVAS</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasReservas"
+                                                [(ngModel)]="formularioCompleto.otrasReservas" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="otrasReservas" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasReservas').errors && reporteCompleto.get('otrasReservas').dirty">
@@ -7527,7 +7540,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.otrasReservasDos"
+                                                [(ngModel)]="formularioCompleto.otrasReservasDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="otrasReservasDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasReservasDos').errors && reporteCompleto.get('otrasReservasDos').dirty">
@@ -7557,7 +7570,7 @@
                                             ANTERIORES</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadNoDistribuida"
+                                                [(ngModel)]="formularioCompleto.utilidadNoDistribuida" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadNoDistribuida" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadNoDistribuida').errors && reporteCompleto.get('utilidadNoDistribuida').dirty">
@@ -7582,7 +7595,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadNoDistribuidaDos"
+                                                [(ngModel)]="formularioCompleto.utilidadNoDistribuidaDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadNoDistribuidaDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadNoDistribuidaDos').errors && reporteCompleto.get('utilidadNoDistribuidaDos').dirty">
@@ -7612,7 +7625,7 @@
                                             ANTERIORES </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.perdidaAcumulada"
+                                                [(ngModel)]="formularioCompleto.perdidaAcumulada" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="perdidaAcumulada" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('perdidaAcumulada').errors && reporteCompleto.get('perdidaAcumulada').dirty">
@@ -7637,7 +7650,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.perdidaAcumuladaDos"
+                                                [(ngModel)]="formularioCompleto.perdidaAcumuladaDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="perdidaAcumuladaDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('perdidaAcumuladaDos').errors && reporteCompleto.get('perdidaAcumuladaDos').dirty">
@@ -7666,7 +7679,7 @@
                                         <td scope="col" style="text-align: left">UTILIDAD DEL EJERCICIO </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadEjercito"
+                                                [(ngModel)]="formularioCompleto.utilidadEjercito" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadEjercito" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadEjercito').errors && reporteCompleto.get('utilidadEjercito').dirty">
@@ -7691,7 +7704,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadEjercitoDos"
+                                                [(ngModel)]="formularioCompleto.utilidadEjercitoDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadEjercitoDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadEjercitoDos').errors && reporteCompleto.get('utilidadEjercitoDos').dirty">
@@ -7719,7 +7732,7 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL PATRIMONIO NETO</b> </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalPatrimonio"
+                                                [(ngModel)]="formularioCompleto.totalPatrimonio" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="totalPatrimonio" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalPatrimonio').errors && reporteCompleto.get('totalPatrimonio').dirty">
@@ -7744,7 +7757,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalPatrimonioDos"
+                                                [(ngModel)]="formularioCompleto.totalPatrimonioDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="totalPatrimonioDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalPatrimonioDos').errors && reporteCompleto.get('totalPatrimonioDos').dirty">
@@ -7772,7 +7785,7 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL PASIVO Y PATRIMONIO</b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalPasivoPatrimonio"
+                                                [(ngModel)]="formularioCompleto.totalPasivoPatrimonio" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="totalPasivoPatrimonio" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalPasivoPatrimonio').errors && reporteCompleto.get('totalPasivoPatrimonio').dirty">
@@ -7797,7 +7810,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.totalPasivoPatrimonioDos"
+                                                [(ngModel)]="formularioCompleto.totalPasivoPatrimonioDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="totalPasivoPatrimonioDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalPasivoPatrimonioDos').errors && reporteCompleto.get('totalPasivoPatrimonioDos').dirty">
@@ -7881,7 +7894,7 @@
                                     <tr>
                                         <td scope="col" style="text-align: left">Ventas Totales </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.ventasTotales"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.ventasTotales" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="ventasTotales" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('ventasTotales').errors && reporteCompleto.get('ventasTotales').dirty">
@@ -7905,7 +7918,7 @@
                                             </div>
                                         </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.ventasTotalesDos"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.ventasTotalesDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="ventasTotalesDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('ventasTotalesDos').errors && reporteCompleto.get('ventasTotalesDos').dirty">
@@ -7934,7 +7947,7 @@
                                         <td scope="col" style="text-align: left">(-) Costo de Ventas</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.costoVentas"
+                                                [(ngModel)]="formularioCompleto.costoVentas" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="costoVentas" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('costoVentas').errors && reporteCompleto.get('costoVentas').dirty">
@@ -7959,7 +7972,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.costoVentasDos"
+                                                [(ngModel)]="formularioCompleto.costoVentasDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="costoVentasDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('costoVentasDos').errors && reporteCompleto.get('costoVentasDos').dirty">
@@ -7987,7 +8000,7 @@
                                     <tr>
                                         <td scope="col" style="text-align: left"> <b> (=) Utilidad Bruta </b></td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.utilidadBruta"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.utilidadBruta" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadBruta" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadBruta').errors && reporteCompleto.get('utilidadBruta').dirty">
@@ -8011,7 +8024,7 @@
                                             </div>
                                         </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.utilidadBrutaDos"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.utilidadBrutaDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadBrutaDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadBrutaDos').errors && reporteCompleto.get('utilidadBrutaDos').dirty">
@@ -8041,7 +8054,7 @@
                                         <td scope="col" style="text-align: left">(-) Gastos de Administración </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.gastosAdministracion"
+                                                [(ngModel)]="formularioCompleto.gastosAdministracion" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="gastosAdministracion" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('gastosAdministracion').errors && reporteCompleto.get('gastosAdministracion').dirty">
@@ -8066,7 +8079,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.gastosAdministracionDos"
+                                                [(ngModel)]="formularioCompleto.gastosAdministracionDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="gastosAdministracionDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('gastosAdministracionDos').errors && reporteCompleto.get('gastosAdministracionDos').dirty">
@@ -8095,8 +8108,8 @@
                                         <td scope="col" style="text-align: left">
                                             <b>(=) Utilidad Operacional </b> </td>
                                         <td scope="col">
-                                            <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadOperacional"
+                                            <input class="form-control " 
+                                                [(ngModel)]="formularioCompleto.utilidadOperacional" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadOperacional" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadOperacional').errors && reporteCompleto.get('utilidadOperacional').dirty">
@@ -8121,7 +8134,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadOperacionalDos"
+                                                [(ngModel)]="formularioCompleto.utilidadOperacionalDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadOperacionalDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadOperacionalDos').errors && reporteCompleto.get('utilidadOperacionalDos').dirty">
@@ -8151,7 +8164,7 @@
                                         <td scope="col" style="text-align: left">(+) Ingresos No operacionales </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.ingresosNoOperacionales"
+                                                [(ngModel)]="formularioCompleto.ingresosNoOperacionales" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="ingresosNoOperacionales" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('ingresosNoOperacionales').errors && reporteCompleto.get('ingresosNoOperacionales').dirty">
@@ -8176,7 +8189,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.ingresosNoOperacionalesDos"
+                                                [(ngModel)]="formularioCompleto.ingresosNoOperacionalesDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="ingresosNoOperacionalesDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('ingresosNoOperacionalesDos').errors && reporteCompleto.get('ingresosNoOperacionalesDos').dirty">
@@ -8204,7 +8217,7 @@
                                         <td scope="col" style="text-align: left">(-) Gastos no operacionales </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.gastosNoOperacio"
+                                                [(ngModel)]="formularioCompleto.gastosNoOperacio" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="gastosNoOperacio" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('gastosNoOperacio').errors && reporteCompleto.get('gastosNoOperacio').dirty">
@@ -8229,7 +8242,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.gastosNoOperacioDos"
+                                                [(ngModel)]="formularioCompleto.gastosNoOperacioDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="gastosNoOperacioDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('gastosNoOperacioDos').errors && reporteCompleto.get('gastosNoOperacioDos').dirty">
@@ -8258,7 +8271,7 @@
                                                 part.Trab</b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadAntesImpuestos"
+                                                [(ngModel)]="formularioCompleto.utilidadAntesImpuestos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadAntesImpuestos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadAntesImpuestos').errors && reporteCompleto.get('utilidadAntesImpuestos').dirty">
@@ -8283,7 +8296,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadAntesImpuestosDos"
+                                                [(ngModel)]="formularioCompleto.utilidadAntesImpuestosDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadAntesImpuestosDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadAntesImpuestosDos').errors && reporteCompleto.get('utilidadAntesImpuestosDos').dirty">
@@ -8312,7 +8325,7 @@
                                         <td scope="col" style="text-align: left">(-) Participación de Trabajadores</td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.participacionTrabajadores"
+                                                [(ngModel)]="formularioCompleto.participacionTrabajadores" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="participacionTrabajadores" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('participacionTrabajadores').errors && reporteCompleto.get('participacionTrabajadores').dirty">
@@ -8337,7 +8350,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.participacionTrabajadoresDos"
+                                                [(ngModel)]="formularioCompleto.participacionTrabajadoresDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="participacionTrabajadoresDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('participacionTrabajadoresDos').errors && reporteCompleto.get('participacionTrabajadoresDos').dirty">
@@ -8367,7 +8380,7 @@
                                         <td scope="col" style="text-align: left"><b>(=) Utilidad Tributable </b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadTributable"
+                                                [(ngModel)]="formularioCompleto.utilidadTributable" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadTributable" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadTributable').errors && reporteCompleto.get('utilidadTributable').dirty">
@@ -8392,7 +8405,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadTributableDos"
+                                                [(ngModel)]="formularioCompleto.utilidadTributableDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadTributableDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadTributableDos').errors && reporteCompleto.get('utilidadTributableDos').dirty">
@@ -8421,7 +8434,7 @@
                                         <td scope="col" style="text-align: left">(-) Impuesto a la renta </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.impuestoARenta"
+                                                [(ngModel)]="formularioCompleto.impuestoARenta" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="impuestoARenta" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('impuestoARenta').errors && reporteCompleto.get('impuestoARenta').dirty">
@@ -8446,7 +8459,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.impuestoARentaDos"
+                                                [(ngModel)]="formularioCompleto.impuestoARentaDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="impuestoARentaDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('impuestoARentaDos').errors && reporteCompleto.get('impuestoARentaDos').dirty">
@@ -8476,7 +8489,7 @@
                                                 ejercicio </b></td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadRepartible"
+                                                [(ngModel)]="formularioCompleto.utilidadRepartible" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadRepartible" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadRepartible').errors && reporteCompleto.get('utilidadRepartible').dirty">
@@ -8501,7 +8514,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.utilidadRepartibleDos"
+                                                [(ngModel)]="formularioCompleto.utilidadRepartibleDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="utilidadRepartibleDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadRepartibleDos').errors && reporteCompleto.get('utilidadRepartibleDos').dirty">
@@ -8554,7 +8567,7 @@
                                         <td scope="col" COLSPAN=1 style="background: paleturquoise"> 
                                             <select class="browser-default custom-select"
                                             formControlName="indiceFinancieroFecha"
-                                            [(ngModel)]="formularioCompleto.indiceFinancieroFecha"
+                                            [(ngModel)]="formularioCompleto.indiceFinancieroFecha" 
                                             style="width:150px">
                                             <option value="AÑO 2018">AÑO 2018</option>
                                             <option value="AÑO 2019">AÑO 2019</option>
@@ -8587,7 +8600,7 @@
                                     <tr>
                                         <td scope="col" style="text-align: left">Razón corriente </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonCorriente"
+                                            <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)" [(ngModel)]="formularioCompleto.razonCorriente"
                                                 formControlName="razonCorriente" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonCorriente').errors && reporteCompleto.get('razonCorriente').dirty">
@@ -8611,7 +8624,7 @@
                                             </div>
                                         </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonCorrienteDos"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonCorrienteDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="razonCorrienteDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonCorrienteDos').errors && reporteCompleto.get('razonCorrienteDos').dirty">
@@ -8635,7 +8648,7 @@
                                             </div>
                                         </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonCorrienteTres"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonCorrienteTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="razonCorrienteTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonCorrienteTres').errors && reporteCompleto.get('razonCorrienteTres').dirty">
@@ -8663,7 +8676,7 @@
                                     <tr>
                                         <td scope="col" style="text-align: left">Prueba acida </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.pruebaAcida"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.pruebaAcida" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="pruebaAcida" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('pruebaAcida').errors && reporteCompleto.get('pruebaAcida').dirty">
@@ -8688,7 +8701,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.pruebaAcidaDos"
+                                                [(ngModel)]="formularioCompleto.pruebaAcidaDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="pruebaAcidaDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('pruebaAcidaDos').errors && reporteCompleto.get('pruebaAcidaDos').dirty">
@@ -8713,7 +8726,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.pruebaAcidaTres"
+                                                [(ngModel)]="formularioCompleto.pruebaAcidaTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="pruebaAcidaTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('pruebaAcidaTres').errors && reporteCompleto.get('pruebaAcidaTres').dirty">
@@ -8741,7 +8754,7 @@
                                     <tr>
                                         <td scope="col" style="text-align: left"> <b>Razón de efectivo </b></td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonEfectivo"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonEfectivo" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="razonEfectivo" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonEfectivo').errors && reporteCompleto.get('razonEfectivo').dirty">
@@ -8765,7 +8778,7 @@
                                             </div>
                                         </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonEfectivoDos"
+                                            <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)" [(ngModel)]="formularioCompleto.razonEfectivoDos"
                                                 formControlName="razonEfectivoDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonEfectivoDos').errors && reporteCompleto.get('razonEfectivoDos').dirty">
@@ -8789,7 +8802,7 @@
                                             </div>
                                         </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonEfectivoTres"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonEfectivoTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="razonEfectivoTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonEfectivoTres').errors && reporteCompleto.get('razonEfectivoTres').dirty">
@@ -8818,7 +8831,7 @@
                                     <tr style="background: lightgray">
                                         <td scope="col" style="text-align: left"><b>Índices de apalancamiento</b> </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.indiceApalanca"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.indiceApalanca" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="indiceApalanca" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('indiceApalanca').errors && reporteCompleto.get('indiceApalanca').dirty">
@@ -8843,7 +8856,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.indiceApalancaDos"
+                                                [(ngModel)]="formularioCompleto.indiceApalancaDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="indiceApalancaDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('indiceApalancaDos').errors && reporteCompleto.get('indiceApalancaDos').dirty">
@@ -8868,7 +8881,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.indiceApalancaTres"
+                                                [(ngModel)]="formularioCompleto.indiceApalancaTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="indiceApalancaTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('indiceApalancaTres').errors && reporteCompleto.get('indiceApalancaTres').dirty">
@@ -8896,7 +8909,7 @@
                                     <tr>
                                         <td scope="col" style="text-align: left">Razón deuda total </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonDeudaTotal"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.razonDeudaTotal" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="razonDeudaTotal" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonDeudaTotal').errors && reporteCompleto.get('razonDeudaTotal').dirty">
@@ -8921,7 +8934,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.razonDeudaTotalDos"
+                                                [(ngModel)]="formularioCompleto.razonDeudaTotalDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="razonDeudaTotalDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonDeudaTotalDos').errors && reporteCompleto.get('razonDeudaTotalDos').dirty">
@@ -8946,7 +8959,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.razonDeudaTotalTres"
+                                                [(ngModel)]="formularioCompleto.razonDeudaTotalTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="razonDeudaTotalTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonDeudaTotalTres').errors && reporteCompleto.get('razonDeudaTotalTres').dirty">
@@ -8976,7 +8989,7 @@
                                         <td scope="col" style="text-align: left"><b>Índices de actividad/ rotación de
                                                 activos y pasivos</b></td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.indicesActividad"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.indicesActividad" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="indicesActividad" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('indicesActividad').errors && reporteCompleto.get('indicesActividad').dirty">
@@ -9001,7 +9014,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.indicesActividadDos"
+                                                [(ngModel)]="formularioCompleto.indicesActividadDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="indicesActividadDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('indicesActividadDos').errors && reporteCompleto.get('indicesActividadDos').dirty">
@@ -9026,7 +9039,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.indicesActividadTres"
+                                                [(ngModel)]="formularioCompleto.indicesActividadTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="indicesActividadTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('indicesActividadTres').errors && reporteCompleto.get('indicesActividadTres').dirty">
@@ -9053,7 +9066,7 @@
                                     <tr>
                                         <td scope="col" style="text-align: left">Rotación de Inventario</td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.rotacionInventario"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.rotacionInventario" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rotacionInventario" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionInventario').errors && reporteCompleto.get('rotacionInventario').dirty">
@@ -9078,7 +9091,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.rotacionInventarioDos"
+                                                [(ngModel)]="formularioCompleto.rotacionInventarioDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rotacionInventarioDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionInventarioDos').errors && reporteCompleto.get('rotacionInventarioDos').dirty">
@@ -9103,7 +9116,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.rotacionInventarioTres"
+                                                [(ngModel)]="formularioCompleto.rotacionInventarioTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rotacionInventarioTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionInventarioTres').errors && reporteCompleto.get('rotacionInventarioTres').dirty">
@@ -9130,7 +9143,7 @@
                                     <tr>
                                         <td scope="col" style="text-align: left">Días de venta en inventario </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.diasVenta"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.diasVenta" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="diasVenta" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasVenta').errors && reporteCompleto.get('diasVenta').dirty">
@@ -9155,7 +9168,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.diasVentaDos"
+                                                [(ngModel)]="formularioCompleto.diasVentaDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="diasVentaDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasVentaDos').errors && reporteCompleto.get('diasVentaDos').dirty">
@@ -9180,7 +9193,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.diasVentaTres"
+                                                [(ngModel)]="formularioCompleto.diasVentaTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="diasVentaTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasVentaTres').errors && reporteCompleto.get('diasVentaTres').dirty">
@@ -9210,7 +9223,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.rotacionCuentas"
-                                                formControlName="rotacionCuentas" type="text ">
+                                                formControlName="rotacionCuentas" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionCuentas').errors && reporteCompleto.get('rotacionCuentas').dirty">
                                                 <p class="text-danger"
@@ -9235,7 +9248,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.rotacionCuentasDos"
-                                                formControlName="rotacionCuentasDos" type="text ">
+                                                formControlName="rotacionCuentasDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionCuentasDos').errors && reporteCompleto.get('rotacionCuentasDos').dirty">
                                                 <p class="text-danger"
@@ -9259,7 +9272,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.rotacionCuentasTres"
+                                                [(ngModel)]="formularioCompleto.rotacionCuentasTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rotacionCuentasTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionCuentasTres').errors && reporteCompleto.get('rotacionCuentasTres').dirty">
@@ -9290,7 +9303,7 @@
                                                 cobrar</b></td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.diasPromedio"
-                                                formControlName="diasPromedio" type="text ">
+                                                formControlName="diasPromedio" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasPromedio').errors && reporteCompleto.get('diasPromedio').dirty">
                                                 <p class="text-danger"
@@ -9314,7 +9327,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.diasPromedioDos"
+                                                [(ngModel)]="formularioCompleto.diasPromedioDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="diasPromedioDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasPromedioDos').errors && reporteCompleto.get('diasPromedioDos').dirty">
@@ -9339,7 +9352,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.diasPromedioTres"
+                                                [(ngModel)]="formularioCompleto.diasPromedioTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="diasPromedioTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasPromedioTres').errors && reporteCompleto.get('diasPromedioTres').dirty">
@@ -9369,7 +9382,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.rotacionCuentasPagar"
-                                                formControlName="rotacionCuentasPagar" type="text ">
+                                                formControlName="rotacionCuentasPagar" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionCuentasPagar').errors && reporteCompleto.get('rotacionCuentasPagar').dirty">
                                                 <p class="text-danger"
@@ -9393,7 +9406,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.rotacionCuentasPagarDos"
+                                                [(ngModel)]="formularioCompleto.rotacionCuentasPagarDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rotacionCuentasPagarDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionCuentasPagarDos').errors && reporteCompleto.get('rotacionCuentasPagarDos').dirty">
@@ -9418,7 +9431,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.rotacionCuentasPagarTres"
+                                                [(ngModel)]="formularioCompleto.rotacionCuentasPagarTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rotacionCuentasPagarTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionCuentasPagarTres').errors && reporteCompleto.get('rotacionCuentasPagarTres').dirty">
@@ -9447,7 +9460,7 @@
                                         <td scope="col" style="text-align: left">Días promedio en cuentas <b> por
                                                 pagar</b> </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.diasCuentasPagar"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.diasCuentasPagar" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="diasCuentasPagar" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasCuentasPagar').errors && reporteCompleto.get('diasCuentasPagar').dirty">
@@ -9472,7 +9485,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.diasCuentasPagarDos"
+                                                [(ngModel)]="formularioCompleto.diasCuentasPagarDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="diasCuentasPagarDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasCuentasPagarDos').errors && reporteCompleto.get('diasCuentasPagarDos').dirty">
@@ -9497,7 +9510,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.diasCuentasPagarTres"
+                                                [(ngModel)]="formularioCompleto.diasCuentasPagarTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="diasCuentasPagarTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasCuentasPagarTres').errors && reporteCompleto.get('diasCuentasPagarTres').dirty">
@@ -9525,7 +9538,7 @@
                                     <tr>
                                         <td scope="col" style="text-align: left">Rotación de activos totales </td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.rotacionActivosTotales"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.rotacionActivosTotales" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rotacionActivosTotales" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionActivosTotales').errors && reporteCompleto.get('rotacionActivosTotales').dirty">
@@ -9550,7 +9563,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.rotacionActivosTotalesDos"
+                                                [(ngModel)]="formularioCompleto.rotacionActivosTotalesDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rotacionActivosTotalesDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionActivosTotalesDos').errors && reporteCompleto.get('rotacionActivosTotalesDos').dirty">
@@ -9575,7 +9588,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.rotacionActivosTotalesTres"
+                                                [(ngModel)]="formularioCompleto.rotacionActivosTotalesTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rotacionActivosTotalesTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionActivosTotalesTres').errors && reporteCompleto.get('rotacionActivosTotalesTres').dirty">
@@ -9603,7 +9616,7 @@
                                     <tr style="background: lightgray">
                                         <td scope="col" style="text-align: left"> <b>Índices de rentabilidad</b></td>
                                         <td scope="col">
-                                            <input class="form-control " [(ngModel)]="formularioCompleto.indicesRentabilidad"
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.indicesRentabilidad" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="indicesRentabilidad" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('indicesRentabilidad').errors && reporteCompleto.get('indicesRentabilidad').dirty">
@@ -9628,7 +9641,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.indicesRentabilidadDos"
+                                                [(ngModel)]="formularioCompleto.indicesRentabilidadDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="indicesRentabilidadDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('indicesRentabilidadDos').errors && reporteCompleto.get('indicesRentabilidadDos').dirty">
@@ -9653,7 +9666,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.indicesRentabilidadTres"
+                                                [(ngModel)]="formularioCompleto.indicesRentabilidadTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="indicesRentabilidadTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('indicesRentabilidadTres').errors && reporteCompleto.get('indicesRentabilidadTres').dirty">
@@ -9682,7 +9695,7 @@
                                         <td scope="col" style="text-align: left">Margen de utilidad </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.margenUtilidad"
-                                                formControlName="margenUtilidad" type="text ">
+                                                formControlName="margenUtilidad" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('margenUtilidad').errors && reporteCompleto.get('margenUtilidad').dirty">
                                                 <p class="text-danger"
@@ -9706,7 +9719,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.margenUtilidadDos"
+                                                [(ngModel)]="formularioCompleto.margenUtilidadDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="margenUtilidadDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('margenUtilidadDos').errors && reporteCompleto.get('margenUtilidadDos').dirty">
@@ -9731,7 +9744,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.margenUtilidadTres"
+                                                [(ngModel)]="formularioCompleto.margenUtilidadTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="margenUtilidadTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('margenUtilidadTres').errors && reporteCompleto.get('margenUtilidadTres').dirty">
@@ -9760,7 +9773,7 @@
                                         <td scope="col" style="text-align: left">Rendimiento sobre activos </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.rendimientoActivos"
-                                                formControlName="rendimientoActivos" type="text ">
+                                                formControlName="rendimientoActivos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rendimientoActivos').errors && reporteCompleto.get('rendimientoActivos').dirty">
                                                 <p class="text-danger"
@@ -9784,7 +9797,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.rendimientoActivosDos"
+                                                [(ngModel)]="formularioCompleto.rendimientoActivosDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rendimientoActivosDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rendimientoActivosDos').errors && reporteCompleto.get('rendimientoActivosDos').dirty">
@@ -9809,7 +9822,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.rendimientoActivosTres"
+                                                [(ngModel)]="formularioCompleto.rendimientoActivosTres" onKeyPress="return validar(event)"  onchange="format(this)"
                                                 formControlName="rendimientoActivosTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rendimientoActivosTres').errors && reporteCompleto.get('rendimientoActivosTres').dirty">
@@ -9838,7 +9851,7 @@
                                         <td scope="col" style="text-align: left">Rendimiento sobre capital </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.rendimientoCapital"
-                                                formControlName="rendimientoCapital" type="text ">
+                                                formControlName="rendimientoCapital" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rendimientoCapital').errors && reporteCompleto.get('rendimientoCapital').dirty">
                                                 <p class="text-danger"
@@ -9863,7 +9876,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.rendimientoCapitalDos"
-                                                formControlName="rendimientoCapitalDos" type="text ">
+                                                formControlName="rendimientoCapitalDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rendimientoCapitalDos').errors && reporteCompleto.get('rendimientoCapitalDos').dirty">
                                                 <p class="text-danger"
@@ -9888,7 +9901,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.rendimientoCapitalTres"
-                                                formControlName="rendimientoCapitalTres" type="text ">
+                                                formControlName="rendimientoCapitalTres" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rendimientoCapitalTres').errors && reporteCompleto.get('rendimientoCapitalTres').dirty">
                                                 <p class="text-danger"
@@ -9970,7 +9983,7 @@
                                                 <td scope="col"><b> ACTIVO CORRIENTE</b></td>
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.activoCorriente"
+                                                        [(ngModel)]="formularioCompleto.activoCorriente" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="activoCorriente" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('activoCorriente').errors && reporteCompleto.get('activoCorriente').dirty">
@@ -9996,7 +10009,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.activoCorrienteDos"
+                                                        [(ngModel)]="formularioCompleto.activoCorrienteDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="activoCorrienteDos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('activoCorrienteDos').errors && reporteCompleto.get('activoCorrienteDos').dirty">
@@ -10025,7 +10038,7 @@
                                                 <td scope="col"><b> ACTIVO NO CORRIENTE</b></td>
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.activoNoCorriente"
+                                                        [(ngModel)]="formularioCompleto.activoNoCorriente" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="activoNoCorriente" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('activoNoCorriente').errors && reporteCompleto.get('activoNoCorriente').dirty">
@@ -10051,7 +10064,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.activoNoCorrienteDos"
+                                                        [(ngModel)]="formularioCompleto.activoNoCorrienteDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="activoNoCorrienteDos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('activoNoCorrienteDos').errors && reporteCompleto.get('activoNoCorrienteDos').dirty">
@@ -10080,7 +10093,7 @@
                                                 <td scope="col"><b>TOTAL DE ACTIVOS</b> </td>
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.totalActivos"
+                                                        [(ngModel)]="formularioCompleto.totalActivos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="totalActivos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('totalActivos').errors && reporteCompleto.get('totalActivos').dirty">
@@ -10106,7 +10119,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.totalActivosDos"
+                                                        [(ngModel)]="formularioCompleto.totalActivosDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="totalActivosDos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('totalActivosDos').errors && reporteCompleto.get('totalActivosDos').dirty">
@@ -10135,7 +10148,7 @@
                                                 <td scope="col"><b>PASIVO CORRIENTE </b></td>
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.pasivoCorriente"
+                                                        [(ngModel)]="formularioCompleto.pasivoCorriente" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="pasivoCorriente" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('pasivoCorriente').errors && reporteCompleto.get('pasivoCorriente').dirty">
@@ -10161,7 +10174,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.pasivoCorrienteDos"
+                                                        [(ngModel)]="formularioCompleto.pasivoCorrienteDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="pasivoCorrienteDos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('pasivoCorrienteDos').errors && reporteCompleto.get('pasivoCorrienteDos').dirty">
@@ -10190,7 +10203,7 @@
                                                 <td scope="col"><b>PASIVO NO CORRIENTE </b> </td>
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.pasivoNoCorriente"
+                                                        [(ngModel)]="formularioCompleto.pasivoNoCorriente" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="pasivoNoCorriente" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('pasivoNoCorriente').errors && reporteCompleto.get('pasivoNoCorriente').dirty">
@@ -10216,7 +10229,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.pasivoNoCorrienteDos"
+                                                        [(ngModel)]="formularioCompleto.pasivoNoCorrienteDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="pasivoNoCorrienteDos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('pasivoNoCorrienteDos').errors && reporteCompleto.get('pasivoNoCorrienteDos').dirty">
@@ -10245,7 +10258,7 @@
                                                 <td scope="col"><b>TOTAL PASIVOS </b> </td>
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.totalPasivos"
+                                                        [(ngModel)]="formularioCompleto.totalPasivos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="totalPasivos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('totalPasivos').errors && reporteCompleto.get('totalPasivos').dirty">
@@ -10271,7 +10284,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.totalPasivosDos"
+                                                        [(ngModel)]="formularioCompleto.totalPasivosDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="totalPasivosDos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('totalPasivosDos').errors && reporteCompleto.get('totalPasivosDos').dirty">
@@ -10300,7 +10313,7 @@
                                                 <td scope="col"><b>PATRIMONIO</b> </td>
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.patrimonio"
+                                                        [(ngModel)]="formularioCompleto.patrimonio" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="patrimonio" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('patrimonio').errors && reporteCompleto.get('patrimonio').dirty">
@@ -10326,7 +10339,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.patrimonioDos"
+                                                        [(ngModel)]="formularioCompleto.patrimonioDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="patrimonioDos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('patrimonioDos').errors && reporteCompleto.get('patrimonioDos').dirty">
@@ -10355,7 +10368,7 @@
                                                 <td scope="col"><b>VENTAS</b></td>
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.ventasCompleto"
+                                                        [(ngModel)]="formularioCompleto.ventasCompleto" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="ventasCompleto" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('ventasCompleto').errors && reporteCompleto.get('ventasCompleto').dirty">
@@ -10381,7 +10394,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.ventasCompletoDos"
+                                                        [(ngModel)]="formularioCompleto.ventasCompletoDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="ventasCompletoDos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('ventasCompletoDos').errors && reporteCompleto.get('ventasCompletoDos').dirty">
@@ -10410,7 +10423,7 @@
                                                 <td scope="col"><b>UTILIDAD /PERDIDA</b> </td>
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.utilidadPerdida"
+                                                        [(ngModel)]="formularioCompleto.utilidadPerdida" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="utilidadPerdida" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('utilidadPerdida').errors && reporteCompleto.get('utilidadPerdida').dirty">
@@ -10436,7 +10449,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.utilidadPerdidaDos"
+                                                        [(ngModel)]="formularioCompleto.utilidadPerdidaDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="utilidadPerdidaDos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('utilidadPerdidaDos').errors && reporteCompleto.get('utilidadPerdidaDos').dirty">
@@ -10465,7 +10478,7 @@
                                                 <td scope="col"><b>CAPITAL DE TRABAJO</b> </td>
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.capitalTrabajo"
+                                                        [(ngModel)]="formularioCompleto.capitalTrabajo" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="capitalTrabajo" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('capitalTrabajo').errors && reporteCompleto.get('capitalTrabajo').dirty">
@@ -10491,7 +10504,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.capitalTrabajoDos"
+                                                        [(ngModel)]="formularioCompleto.capitalTrabajoDos" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="capitalTrabajoDos" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('capitalTrabajoDos').errors && reporteCompleto.get('capitalTrabajoDos').dirty">
@@ -10542,7 +10555,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.valor1"
+                                                        [(ngModel)]="formularioCompleto.valor1" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="valor1" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('valor1').errors && reporteCompleto.get('valor1').dirty">
@@ -10566,7 +10579,7 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.porcentaje1"
                                                         formControlName="porcentaje1" type="text ">
                                                     <div
@@ -10596,7 +10609,7 @@
                                             <tr>
 
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.valor2"
                                                         formControlName="valor2" type="text ">
                                                     <div
@@ -10621,7 +10634,7 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.porcentaje2"
                                                         formControlName="porcentaje2" type="text ">
                                                     <div
@@ -10651,7 +10664,7 @@
                                             <tr>
 
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.valor3"
                                                         formControlName="valor3" type="text ">
                                                     <div
@@ -10676,7 +10689,7 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.porcentaje3"
                                                         formControlName="porcentaje3" type="text ">
                                                     <div
@@ -10706,7 +10719,7 @@
                                             <tr>
 
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.valor4"
                                                         formControlName="valor4" type="text ">
                                                     <div
@@ -10731,7 +10744,7 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.porcentaje4"
                                                         formControlName="porcentaje4" type="text ">
                                                     <div
@@ -10761,7 +10774,7 @@
                                             <tr>
 
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.valor5"
                                                         formControlName="valor5" type="text ">
                                                     <div
@@ -10786,7 +10799,7 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.porcentaje5"
                                                         formControlName="porcentaje5" type="text ">
                                                     <div
@@ -10817,7 +10830,7 @@
 
                                                 <td scope="col">
                                                     <input class="form-control "
-                                                        [(ngModel)]="formularioCompleto.valor6"
+                                                        [(ngModel)]="formularioCompleto.valor6" onKeyPress="return validar(event)"  onchange="format(this)"
                                                         formControlName="valor6" type="text ">
                                                     <div
                                                         *ngIf="reporteCompleto.get('valor6').errors && reporteCompleto.get('valor6').dirty">
@@ -10841,7 +10854,7 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.porcentaje6"
                                                         formControlName="porcentaje6" type="text ">
                                                     <div
@@ -10871,7 +10884,7 @@
                                             <tr>
 
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.valor7"
                                                         formControlName="valor7" type="text ">
                                                     <div
@@ -10896,7 +10909,7 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.porcentaje7"
                                                         formControlName="porcentaje7" type="text ">
                                                     <div
@@ -10926,7 +10939,7 @@
                                             <tr>
 
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.valor8"
                                                         formControlName="valor8" type="text ">
                                                     <div
@@ -10951,7 +10964,7 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.porcentaje8"
                                                         formControlName="porcentaje8" type="text ">
                                                     <div
@@ -10981,7 +10994,7 @@
                                             <tr>
 
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.valor9"
                                                         formControlName="valor9" type="text ">
                                                     <div
@@ -11006,7 +11019,7 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.porcentaje9"
                                                         formControlName="porcentaje9" type="text ">
                                                     <div
@@ -11036,7 +11049,7 @@
                                             <tr>
 
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.valor10"
                                                         formControlName="valor10" type="text ">
                                                     <div
@@ -11061,7 +11074,7 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
-                                                    <input class="form-control "
+                                                    <input class="form-control " onKeyPress="return validar(event)"  onchange="format(this)"
                                                         [(ngModel)]="formularioCompleto.porcentaje10"
                                                         formControlName="porcentaje10" type="text ">
                                                     <div
