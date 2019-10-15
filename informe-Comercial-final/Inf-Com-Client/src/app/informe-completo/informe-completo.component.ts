@@ -43,6 +43,7 @@ export class InformeCompletoComponent implements OnInit {
     anioPagoImpuestoCompleto: string;
     pagoRentaUnoCompleto: string;
     anioPagoImpuestoDosCompleto: string;
+    anioSalidaDivisasDosCompleto:string;
     pagoRentaDosCompleto: string;
     anioSalidaDivisasCompleto: string;
     salidaDivisasCompletoUno: string;
@@ -53,7 +54,7 @@ export class InformeCompletoComponent implements OnInit {
     checksInfraestructura: string;
     checksSucursalesCompleto: string;
     direccionSucursalCompleto: string;
-    numeroEmpleadosExpress: string;
+    numeroEmpleadosCompleto: string;
     checksMaquinaria: string;
     directivoUnoCompleto: string;
     cargoDirectivoUnoCompleto: string;
@@ -299,9 +300,9 @@ export class InformeCompletoComponent implements OnInit {
   dineroPattern = new RegExp(/^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/);
 
 
-  constructor(public fb: FormBuilder, private proveedoresService:FormProveedoresServiceService) { 
+  constructor(public fab: FormBuilder, private proveedoresService:FormProveedoresServiceService) { 
 
-    this.reporteCompleto = this.fb.group({
+    this.reporteCompleto = this.fab.group({
 
       fechaElaboracionCompleta: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
       solicitanteCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
@@ -335,13 +336,14 @@ export class InformeCompletoComponent implements OnInit {
       anioSalidaDivisasCompleto: ['', [Validators.required]],
       salidaDivisasCompletoUno: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
       salidaDivisasCompletoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+      anioSalidaDivisasDosCompleto: ['', [Validators.required]],
       checksCalificaciones: ['', [Validators.required]],
       requeridoClienteCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
       requeridoServiratingCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
       checksInfraestructura: ['', [Validators.required]],
       checksSucursalesCompleto: ['', [Validators.required]],
       direccionSucursalCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-      numeroEmpleadosExpress: ['', [Validators.required]],
+      numeroEmpleadosCompleto: ['', [Validators.required]],
       checksMaquinaria: ['', [Validators.required]],
       directivoUnoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
       cargoDirectivoUnoCompleto: ['', [Validators.required]],
@@ -495,7 +497,7 @@ export class InformeCompletoComponent implements OnInit {
       endeudamientoPromCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
       fechaEndeudamiento: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
       mayPlazoVencidoCompleto1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-      fechaMayPlazoVencido1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+      fechaMayPlazoVencido1: ['', [Validators.required]],
       mayValorVencidoCompleto1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
       fechaMayValorVencido1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
       endeudamientoPromCompleto1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],

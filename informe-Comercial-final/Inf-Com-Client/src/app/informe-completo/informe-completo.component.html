@@ -40,7 +40,7 @@
                     <h2>REPORTE EXPRESS</h2>
                 </em></div><br>
 
-            <form [formGroup]="reporteCompleto" (ngSubmit)="addReporteCompleto()" novalidate>
+            <form [formGroup]="reporteCompleto" novalidate>
                 <div class="card ">
                     <div class="card-header text-white bg-dark "><img src="../../assets/img/documento.png" />&nbsp;
                         <b>DATOS DEL PROVEEDOR A SER EVALUADO</b></div>
@@ -131,7 +131,7 @@
                                                     <font size="2">Maximo de 13 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteCompleto.controls['rucCompleto'].touched && reporteExpress.controls['rucCompleto'].hasError('pattern')">
+                                                    *ngIf="reporteCompleto.controls['rucCompleto'].touched && reporteCompleto.controls['rucCompleto'].hasError('pattern')">
                                                     <font size="2"> Este campo ocupa carecteres numéricos"
                                                     </font>
                                                 </p>
@@ -205,7 +205,7 @@
                                                 [(ngModel)]="formularioCompleto.capitalSubscritoCompleto"
                                                 formControlName="capitalSubscritoCompleto" type="text ">
                                             <div
-                                                *ngIf="reporteCompleto.get('capitalSubscritoCompleto').errors && reporteExpress.get('capitalSubscritoCompleto').dirty">
+                                                *ngIf="reporteCompleto.get('capitalSubscritoCompleto').errors && reporteCompleto.get('capitalSubscritoCompleto').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.get('capitalSubscritoCompleto').hasError('required')">
                                                     <font size="2">Incio de actividades es requerida</font>
@@ -233,7 +233,7 @@
                                             <div
                                                 *ngIf="reporteCompleto.get('inicioActividadesCompleto').errors && reporteCompleto.get('inicioActividadesCompleto').dirty">
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('inicioActividadesCompleto').hasError('required')">
+                                                    *ngIf="reporteCompleto.get('inicioActividadesCompleto').hasError('required')">
                                                     <font size="2">Incio de actividades es requerida</font>
                                                 </p>
                                                 <p class="text-danger"
@@ -321,7 +321,7 @@
                                             <div
                                                 *ngIf="reporteCompleto.get('provinciaCompleto').errors && reporteCompleto.get('provinciaCompleto').dirty">
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.get('provinciaCompleto').hasError('required')">
+                                                    *ngIf="reporteCompleto.get('provinciaCompleto').hasError('required')">
                                                     <font size="2">Provincia/Ciudad es requerida</font>
                                                 </p>
 
@@ -615,7 +615,7 @@
                                                     [(ngModel)]="formularioCompleto.checksEmpresas">NO<br>
 
                                                 <span class="text-danger"
-                                                    *ngIf="reporteCompleto.controls['checksEmpresas'].touched && formularioCompleto.controls['checksEmpresas'].hasError('required')">
+                                                    *ngIf="reporteCompleto.controls['checksEmpresas'].touched && reporteCompleto.controls['checksEmpresas'].hasError('required')">
                                                     Seleccione una opción! </span>
                                             </div>
                                             <textarea class="form-control " style="display: none"
@@ -623,7 +623,7 @@
                                                 formControlName="empresasRelacionadasCompleto" type="text "
                                                 id="empresasRelacionadasCompleto"></textarea>
                                             <div
-                                                *ngIf="reporteCompleto.get('empresasRelacionadasCompleto').errors && reporteExpress.get('empresasRelacionadasCompleto').dirty">
+                                                *ngIf="reporteCompleto.get('empresasRelacionadasCompleto').errors && reporteCompleto.get('empresasRelacionadasCompleto').dirty">
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.get('empresasRelacionadasCompleto').hasError('required')">
                                                     <font size="2">Campo requerido</font>
@@ -784,7 +784,7 @@
 
                                                     </select>
                                                     <div
-                                                        *ngIf="reporteCompleto.get('anioPagoImpuestoDosCompleto').errors && reporteExpress.get('anioPagoImpuestoDosCompleto').dirty">
+                                                        *ngIf="reporteCompleto.get('anioPagoImpuestoDosCompleto').errors && reporteCompleto.get('anioPagoImpuestoDosCompleto').dirty">
                                                         <p class="text-danger"
                                                             *ngIf="reporteCompleto.get('anioPagoImpuestoDosCompleto').hasError('required')">
                                                             <font size="2">Campo requerido</font>
@@ -861,7 +861,7 @@
                                                     <div
                                                         *ngIf="reporteCompleto.get('salidaDivisasCompletoUno').errors && reporteCompleto.get('salidaDivisasCompletoUno').dirty">
                                                         <p class="text-danger"
-                                                            *ngIf="reporteExpress.get('salidaDivisasCompletoUno').hasError('required')">
+                                                            *ngIf="reporteCompleto.get('salidaDivisasCompletoUno').hasError('required')">
                                                             <font size="2">Campo requerido
                                                             </font>
                                                         </p>
@@ -902,7 +902,7 @@
                                                     <div
                                                         *ngIf="reporteCompleto.get('anioSalidaDivisasDosCompleto').errors && reporteCompleto.get('anioSalidaDivisasDosCompleto').dirty">
                                                         <p class="text-danger"
-                                                            *ngIf="reporteExpress.get('anioSalidaDivisasDosCompleto').hasError('required')">
+                                                            *ngIf="reporteCompleto.get('anioSalidaDivisasDosCompleto').hasError('required')">
                                                             <font size="2">Campo requerido</font>
                                                         </p>
 
@@ -1110,11 +1110,11 @@
 
                             <td scope="col">Infraestructura</td>
                             <td scope="col" COLSPAN=3>
-                                <input type="radio" id="checksPropia" name="checks" value="PROPIA"
+                                <input type="radio" id="checksPropia" name="checksInfraestructura" value="PROPIA"
                                     formControlName="checksInfraestructura"
                                     [(ngModel)]="formularioCompleto.checksInfraestructura">PROPIA &nbsp;
                                 &nbsp;
-                                <input type="radio" id="checksRentada" name="checks" value="RENTADA"
+                                <input type="radio" id="checksRentada" name="checksInfraestructura" value="RENTADA"
                                     formControlName="checksInfraestructura"
                                     [(ngModel)]="formularioCompleto.checksInfraestructura">RENTADA<br>
                                 <br>
@@ -1171,8 +1171,8 @@
                         <tr>
                             <td scope="col">Número de Empleados</td>
                             <td scope="col" COLSPAN=2>
-                                <select class="browser-default custom-select" formControlName="numeroEmpleadosExpress"
-                                    [(ngModel)]="formularioExpress.numeroEmpleadosExpress">
+                                <select class="browser-default custom-select" formControlName="numeroEmpleadosCompleto"
+                                    [(ngModel)]="formularioCompleto.numeroEmpleadosCompleto">
                                     <option value="" disabled selected>Seleccione una Opción</option>
                                     <option value="0-10">0-10</option>
                                     <option value="10-20">10-20</option>
@@ -1187,9 +1187,9 @@
                                     <option value="100 o más">100 o más</option>
                                 </select>
                                 <div
-                                    *ngIf="reporteExpress.get('numeroEmpleadosExpress').errors && reporteExpress.get('numeroEmpleadosExpress').dirty">
+                                    *ngIf="reporteCompleto.get('numeroEmpleadosCompleto').errors && reporteCompleto.get('numeroEmpleadosCompleto').dirty">
                                     <p class="text-danger"
-                                        *ngIf="reporteExpress.get('numeroEmpleadosExpress').hasError('required')">
+                                        *ngIf="reporteCompleto.get('numeroEmpleadosCompleto').hasError('required')">
                                         <font size="2">Campo requerido</font>
                                     </p>
 
@@ -1210,7 +1210,7 @@
                                     [(ngModel)]="formularioCompleto.checksMaquinaria">NO
                                 &nbsp; &nbsp;
                                 <input type="radio" id="checksNoAplicaMaquinaria" name="checksMaquinaria"
-                                    value="NO APLICA" formControlName="checks"
+                                    value="NO APLICA" formControlName="checksMaquinaria"
                                     [(ngModel)]="formularioCompleto.checksMaquinaria">NO APLICA<br>
 
                                 <span class="text-danger"
@@ -1275,7 +1275,7 @@
                         </tr>
                         <tr style="text-align:center;">
                             <td>
-                                <input class="form-control " [(ngModel)]="formularioExpress.directivoDosCompleto"
+                                <input class="form-control " [(ngModel)]="formularioCompleto.directivoDosCompleto"
                                     formControlName="directivoDosCompleto" type="text ">
                                 <div
                                     *ngIf="reporteCompleto.get('directivoDosCompleto').errors && reporteCompleto.get('directivoDosCompleto').dirty">
@@ -1750,7 +1750,7 @@
                             <td scope="col">Teléfono:</td>
 
                             <td><input class="form-control " [(ngModel)]="formularioCompleto.telefonoRefCompleto"
-                                    formControlName="requeridoServiratingExpress" type="text ">
+                                    formControlName="telefonoRefCompleto" type="text ">
                                 <div
                                     *ngIf="reporteCompleto.get('telefonoRefCompleto').errors && reporteCompleto.get('telefonoRefCompleto').dirty">
                                     <p class="text-danger"
@@ -1815,7 +1815,7 @@
                             <td><input class="form-control" [(ngModel)]="formularioCompleto.contactoRefDosCompleto"
                                     formControlName="contactoRefDosCompleto" type="text ">
                                 <div
-                                    *ngIf="reporteCompleto.get('contactoRefDosCompleto').errors && reporteExpress.get('contactoRefDosCompleto').dirty">
+                                    *ngIf="reporteCompleto.get('contactoRefDosCompleto').errors && reporteCompleto.get('contactoRefDosCompleto').dirty">
                                     <p class="text-danger"
                                         *ngIf="reporteCompleto.get('contactoRefDosCompleto').hasError('required')">
                                         <font size="2">Requerido por Servirating es requerida</font>
@@ -1898,9 +1898,9 @@
                             <td><input class="form-control " [(ngModel)]="formularioCompleto.pagosRefDosCompleto"
                                     formControlName="pagosRefDosCompleto" type="text ">
                                 <div
-                                    *ngIf="reporteCompleto.get('pagosRefDosCompleto').errors && reporteExpress.get('pagosRefDosCompleto').dirty">
+                                    *ngIf="reporteCompleto.get('pagosRefDosCompleto').errors && reporteCompleto.get('pagosRefDosCompleto').dirty">
                                     <p class="text-danger"
-                                        *ngIf="reporteExpress.get('pagosRefDosCompleto').hasError('required')">
+                                        *ngIf="reporteCompleto.get('pagosRefDosCompleto').hasError('required')">
                                         <font size="2">Requerido por Servirating es requerida</font>
                                     </p>
                                     <p class="text-danger"
@@ -2149,7 +2149,7 @@
                             </div>
                             <div class="col-lg-4"><br>
                                 <div class="form-check form-check-inline-col8">
-                                    <input type="radio" id="checksSiu" name="                   " value="SI"
+                                    <input type="radio" id="checksSiu" name="checksSuperintendencia" value="SI"
                                         formControlName="checksSuperintendencia"
                                         [(ngModel)]="formularioCompleto.checksSuperintendencia">SI<br>
                                     <input type="radio" id="checksNop" name="checksSuperintendencia" value="NO"
@@ -2189,17 +2189,17 @@
                                         formControlName="procesosJudicialesCompleto"
                                         [(ngModel)]="formularioCompleto.procesosJudicialesCompleto" rows="3"></textarea>
                                     <div
-                                        *ngIf="formularioCompleto.get('procesosJudicialesCompleto').errors && formularioCompleto.get('procesosJudicialesCompleto').dirty">
+                                        *ngIf="reporteCompleto.get('procesosJudicialesCompleto').errors && reporteCompleto.get('procesosJudicialesCompleto').dirty">
                                         <p class="text-danger"
-                                            *ngIf="formularioCompleto.get('procesosJudicialesCompleto').hasError('required')">
+                                            *ngIf="reporteCompleto.get('procesosJudicialesCompleto').hasError('required')">
                                             <font size="2">Procesos(s) Judicial(es) es requerida</font>
                                         </p>
                                         <p class="text-danger"
-                                            *ngIf="formularioCompleto.get('procesosJudicialesCompleto').hasError('minlength')">
+                                            *ngIf="reporteCompleto.get('procesosJudicialesCompleto').hasError('minlength')">
                                             <font size="2">Minimo de 3 Caracteres</font>
                                         </p>
                                         <p class="text-danger"
-                                            *ngIf="formularioCompleto.get('procesosJudicialesCompleto').hasError('maxlength')">
+                                            *ngIf="reporteCompleto.get('procesosJudicialesCompleto').hasError('maxlength')">
                                             <font size="2">Maximon de 30 Caracteres</font>
                                         </p>
 
@@ -2313,7 +2313,11 @@
                                 <td>
                                     <input type="date" id="start" name="trip-start" value="aaaa-mm-dd"
                                         style="WIDTH: 350px; HEIGHT: 80px;font-size: 30px" size="10" min="2018-01-01"
-                                        max="2050-12-31" [(ngModel)]="formularioComplet.fechaInstCompleto">
+                                        formControlName="fechaInstCompleto"
+                                        max="2050-12-31" [(ngModel)]="formularioCompleto.fechaInstCompleto">
+                                    <span class="text-danger"
+                                        *ngIf="reporteCompleto.controls['fechaInstCompleto'].touched && reporteCompleto.controls['fechaInstCompleto'].hasError('required')">
+                                        campo Requerido </span>
                                 </td>
 
 
@@ -3041,7 +3045,7 @@
                                     </div>
                                 </td>
                                 <td><input class="form-control " style="WIDTH: 60px; HEIGHT: 60px"
-                                        [(ngModel)]="cartCastCompleta2.cartCastCompleta2"
+                                        [(ngModel)]="formularioCompleto.cartCastCompleta2"
                                         formControlName="cartCastCompleta2" type="text ">
                                     <div
                                         *ngIf="reporteCompleto.get('cartCastCompleta2').errors && reporteCompleto.get('cartCastCompleta2').dirty">
@@ -4400,21 +4404,21 @@
                                             [(ngModel)]="formularioCompleto.historialCrediticioCompleto"
                                             formControlName="historialCrediticioCompleto" type="text ">
                                         <div
-                                            *ngIf="reporteCompletoCompleto.get('historialCrediticioCompleto').errors && reporteCompletoCompleto.get('historialCrediticioCompleto').dirty">
+                                            *ngIf="reporteCompleto.get('historialCrediticioCompleto').errors && reporteCompleto.get('historialCrediticioCompleto').dirty">
                                             <p class="text-danger"
-                                                *ngIf="reporteCompletoCompleto.get('historialCrediticioCompleto').hasError('required')">
+                                                *ngIf="reporteCompleto.get('historialCrediticioCompleto').hasError('required')">
                                                 <font size="2">Razón Social es requerida</font>
                                             </p>
                                             <p class="text-danger"
-                                                *ngIf="reporteCompletoCompleto.get('historialCrediticioCompleto').hasError('minlength')">
+                                                *ngIf="reporteCompleto.get('historialCrediticioCompleto').hasError('minlength')">
                                                 <font size="2">Minimo de 3 Caracteres</font>
                                             </p>
                                             <p class="text-danger"
-                                                *ngIf="reporteCompletoCompleto.get('historialCrediticioCompleto').hasError('maxlength')">
+                                                *ngIf="reporteCompleto.get('historialCrediticioCompleto').hasError('maxlength')">
                                                 <font size="2">Maximo de 30 Caracteres</font>
                                             </p>
                                             <p class="text-danger"
-                                                *ngIf="reporteCompletoCompleto.controls['historialCrediticioCompleto'].touched && reporteCompletoCompleto.controls['historialCrediticioCompleto'].hasError('pattern')">
+                                                *ngIf="reporteCompleto.controls['historialCrediticioCompleto'].touched && reporteCompleto.controls['historialCrediticioCompleto'].hasError('pattern')">
                                                 <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                 </font>
                                             </p>
@@ -4469,7 +4473,11 @@
                                 <td>
                                     <input type="date" id="start" name="trip-start" value="aaaa-mm-dd"
                                         style="WIDTH: 150px; HEIGHT: 60px;font-size: 15px" size="10" min="2018-01-01"
+                                        formControlName="fechaMayPlazoVencido" 
                                         max="2050-12-31" [(ngModel)]="formularioCompleto.fechaMayPlazoVencido">
+                                        <span class="text-danger"
+                                        *ngIf="reporteCompleto.controls['fechaMayPlazoVencido'].touched && reporteCompleto.controls['fechaMayPlazoVencido'].hasError('required')">
+                                        campo Requerido </span>
                                 </td>
                             </tr>
                             <tr align="center">
@@ -4497,7 +4505,8 @@
                                 <td>
                                     <input type="date" id="start" name="trip-start" value="aaaa-mm-dd"
                                         style="WIDTH: 150px; HEIGHT: 60px;font-size: 15px" size="10" min="2018-01-01"
-                                        max="2050-12-31" [(ngModel)]="formularioComplet.fechaMayValorVencido">
+                                        formControlName="fechaMayValorVencido"
+                                        max="2050-12-31" [(ngModel)]="formularioCompleto.fechaMayValorVencido">
                                 </td>
                             </tr>
                             <tr align="center">
@@ -4525,7 +4534,11 @@
                                 <td>
                                     <input type="date" id="start" name="trip-start" value="aaaa-mm-dd"
                                         style="WIDTH: 150px; HEIGHT: 60px;font-size: 15px" size="10" min="2018-01-01"
-                                        max="2050-12-31" [(ngModel)]="formularioComplet.fechaEndeudamiento">
+                                        formControlName="fechaEndeudamiento"
+                                        max="2050-12-31" [(ngModel)]="formularioCompleto.fechaEndeudamiento">
+                                        <span class="text-danger"
+                                        *ngIf="reporteCompleto.controls['fechaEndeudamiento'].touched && reporteCompleto.controls['fechaEndeudamiento'].hasError('required')">
+                                        campo Requerido </span>
                                 </td>
 
                             </tr>
@@ -4576,7 +4589,12 @@
                                 <td>
                                     <input type="date" id="start" name="trip-start" value="aaaa-mm-dd"
                                         style="WIDTH: 150px; HEIGHT: 60px;font-size: 15px" size="10" min="2018-01-01"
+                                        formControlName="fechaMayPlazoVencido1"
                                         max="2050-12-31" [(ngModel)]="formularioCompleto.fechaMayPlazoVencido1">
+                                        <span class="text-danger"
+                                        *ngIf="reporteCompleto.controls['fechaMayPlazoVencido1'].touched && reporteCompleto.controls['fechaMayPlazoVencido1'].hasError('required')">
+                                        campo Requerido </span>
+                                       
                                 </td>
                             </tr>
                             <tr align="center">
@@ -4604,7 +4622,8 @@
                                 <td>
                                     <input type="date" id="start" name="trip-start" value="aaaa-mm-dd"
                                         style="WIDTH: 150px; HEIGHT: 60px;font-size: 15px" size="10" min="2018-01-01"
-                                        max="2050-12-31" [(ngModel)]="formularioComplet.fechaMayValorVencido1">
+                                        formControlName="fechaMayValorVencido1"
+                                        max="2050-12-31" [(ngModel)]="formularioCompleto.fechaMayValorVencido1">
                                 </td>
                             </tr>
                             <tr align="center">
@@ -4632,7 +4651,12 @@
                                 <td>
                                     <input type="date" id="start" name="trip-start" value="aaaa-mm-dd"
                                         style="WIDTH: 150px; HEIGHT: 60px;font-size: 15px" size="10" min="2018-01-01"
-                                        max="2050-12-31" [(ngModel)]="formularioComplet.fechaEndeudamiento1">
+                                        formControlName="fechaEndeudamiento1"
+                                        max="2050-12-31" [(ngModel)]="formularioCompleto.fechaEndeudamiento1">
+                                        <span class="text-danger"
+                                        *ngIf="reporteCompleto.controls['fechaEndeudamiento1'].touched && reporteCompleto.controls['fechaEndeudamiento1'].hasError('required')">
+                                        campo Requerido </span>
+                                        
                                 </td>
 
                             </tr>
@@ -4667,6 +4691,1202 @@
 
 
                 </div>
+                <div class="card-header text-white bg-dark "><img src="../../assets/img/documento.png" />&nbsp;
+                    <b>INFORMACION FINANCIERA</b></div>
+                    <div class="card-body">
+                        <div class="row">
+                            <table class="table table-bordered" id="tableColor" style="text-align:center;">
+                                <thead>
+                                    <tr>
+                                        <td scope="col" COLSPAN=3 style="background:gray">
+                                            <h5><b>BALANCE GENERAL (USD)
+                                                    UNIDADES</b></h5>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                        <td scope="col" style="background: yellow"><b>Activo</b></td>
+                                        <td scope="col" style="background: paleturquoise">
+                                            <select class="browser-default custom-select"
+                                                formControlName="balanceGeneralFecha"
+                                                [(ngModel)]="formularioCompleto.balanceGeneralFecha"
+                                                style="width:150px">
+                                                <option value="AÑO 2018">AÑO 2018</option>
+                                                <option value="AÑO 2019">AÑO 2019</option>
+                                                <option value="AÑO 2020">AÑO 2020</option>
+                                                <option value="AÑO 2021">AÑO 2021</option>
+                                                <option value="AÑO 2022">AÑO 2022</option>
+                                                <option value="AÑO 2023">AÑO 2023</option>
+                                                <option value="AÑO 2024">AÑO 2024</option>
+                                                <option value="AÑO 2025">AÑO 2025</option>
+                                            </select>
+                                        </td>
+                                        <td scope="col" style="background: paleturquoise">
+                                            <select class="browser-default custom-select"
+                                                formControlName="balanceGeneralFechaDos"
+                                                [(ngModel)]="formularioCompleto.balanceGeneralFechaDos"
+                                                style="width:150px">
+                                                <option value="AÑO 2018">AÑO 2018</option>
+                                                <option value="AÑO 2019">AÑO 2019</option>
+                                                <option value="AÑO 2020">AÑO 2020</option>
+                                                <option value="AÑO 2021">AÑO 2021</option>
+                                                <option value="AÑO 2022">AÑO 2022</option>
+                                                <option value="AÑO 2023">AÑO 2023</option>
+                                                <option value="AÑO 2024">AÑO 2024</option>
+                                                <option value="AÑO 2025">AÑO 2025</option>
+                                            </select>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td scope="col" COLSPAN=3 style="text-align: left">
+                                            <b> Activo Corriente</b>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">CAJA, BANCOS</td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.cajaBancosCompleto"
+                                                formControlName="cajaBancosCompleto" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('cajaBancosCompleto').errors && reporteCompleto.get('cajaBancosCompleto').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cajaBancosCompleto').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cajaBancosCompleto').hasError('minlength')">
+                                                    <font size="2">Minimo de 13 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cajaBancosCompleto').hasError('maxlength')">
+                                                    <font size="2">Maximo de 13 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['cajaBancosCompleto'].touched && reporteCompleto.controls['cajaBancosCompleto'].hasError('pattern')">
+                                                    <font size="2"> Este campo ocupa carecteres numéricos"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.cajaBancosCompletoDos"
+                                                formControlName="cajaBancosCompletoDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('cajaBancosCompletoDos').errors && reporteCompleto.get('cajaBancosCompletoDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cajaBancosCompletoDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cajaBancosCompletoDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 13 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cajaBancosCompletoDos').hasError('maxlength')">
+                                                    <font size="2">Maximo de 13 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['cajaBancosCompletoDos'].touched && reporteCompleto.controls['cajaBancosCompletoDos'].hasError('pattern')">
+                                                    <font size="2"> Este campo ocupa carecteres numéricos
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">INVERSIONES CORRIENTES </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.inversionesCorrientes"
+                                                formControlName="inversionesCorrientes" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('inversionesCorrientes').errors && reporteCompleto.get('inversionesCorrientes').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesCorrientes').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesCorrientes').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesCorrientes').hasError('maxlength')">
+                                                    <font size="2">Maximo de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['inversionesCorrientes'].touched && reporteCompleto.controls['inversionesCorrientes'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.inversionesCorrientesDos"
+                                                formControlName="inversionesCorrientesDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('inversionesCorrientesDos').errors && reporteCompleto.get('inversionesCorrientesDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesCorrientesDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesCorrientesDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesCorrientesDos').hasError('maxlength')">
+                                                    <font size="2">Maximo de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['inversionesCorrientesDos'].touched && reporteCompleto.controls['inversionesCorrientesDos'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">CUENTAS Y DOC.POR COBRAR CLIENTES
+                                            CORRIENTE
+                                            <b> RELACIONADOS </b>LOCALES Y EXTERIOR </td>
+                                        <td scope="col">
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.cuentasRelacionadas"
+                                                formControlName="cuentasRelacionadas" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('cuentasRelacionadas').errors && reporteCompleto.get('cuentasRelacionadas').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasRelacionadas').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasRelacionadas').hasError('minlength')">
+                                                    <font size="2">Minimo de 6 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasRelacionadas').hasError('maxlength')">
+                                                    <font size="2">Maximon de 8 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['cuentasRelacionadas'].touched && reporteCompleto.controls['cuentasRelacionadas'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control " [(ngModel)]="formularioCompleto.cuentasRelacionadasDos"
+                                                formControlName="cuentasRelacionadasDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('cuentasRelacionadasDos').errors && reporteCompleto.get('cuentasRelacionadasDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasRelacionadasDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasRelacionadasDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 6 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasRelacionadasDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 8 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['cuentasRelacionadasDos'].touched && reporteCompleto.controls['cuentasRelacionadasDos'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="col" style="text-align: left">CUENTAS Y DOC.POR COBRAR CLIENTES
+                                            CORRIENTE <b> NO
+                                                RELACIONADOS</b> LOCALES Y EXTERIOR </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.cuentasNoRelacionadas"
+                                                formControlName="cuentasNoRelacionadas" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('cuentasNoRelacionadas').errors && reporteCompleto.get('cuentasNoRelacionadas').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasNoRelacionadas').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasNoRelacionadas').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasNoRelacionadas').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.cuentasNoRelacionadasDos"
+                                                formControlName="cuentasNoRelacionadasDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('cuentasNoRelacionadasDos').errors && reporteCompleto.get('cuentasNoRelacionadasDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasNoRelacionadasDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasNoRelacionadasDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasNoRelacionadasDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">OTRAS CUENTAS Y DOC. POR COBRAR
+                                            <b>RELACIONADOS </b> </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrasCuentasRelacionadas"
+                                                formControlName="otrasCuentasRelacionadas" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrasCuentasRelacionadas').errors && reporteCompleto.get('otrasCuentasRelacionadas').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasRelacionadas').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasRelacionadas').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasRelacionadas').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['otrasCuentasRelacionadas'].touched && reporteCompleto.controls['otrasCuentasRelacionadas'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrasCuentasRelacionadasDos"
+                                                formControlName="otrasCuentasRelacionadasDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrasCuentasRelacionadasDos').errors && reporteCompleto.get('otrasCuentasRelacionadasDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasRelacionadasDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasRelacionadasDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasRelacionadasDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['otrasCuentasRelacionadasDos'].touched && reporteCompleto.controls['otrasCuentasRelacionadasDos'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">OTRAS CUENTAS Y DOC. POR COBRAR <b>NO
+                                                RELACIONADOS</b> </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrasCuentasNoRelacionadas"
+                                                formControlName="otrasCuentasNoRelacionadas" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrasCuentasNoRelacionadas').errors && reporteCompleto.get('otrasCuentasNoRelacionadas').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasNoRelacionadas').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasNoRelacionadas').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasNoRelacionadas').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['otrasCuentasNoRelacionadas'].touched && reporteCompleto.controls['otrasCuentasNoRelacionadas'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrasCuentasNoRelacionadasDos"
+                                                formControlName="otrasCuentasNoRelacionadasDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrasCuentasNoRelacionadasDos').errors && reporteCompleto.get('otrasCuentasNoRelacionadasDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasNoRelacionadasDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasNoRelacionadasDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasNoRelacionadasDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['otrasCuentasNoRelacionadasDos'].touched && reporteCompleto.controls['otrasCuentasNoRelacionadasDos'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">(-)PROVISION CUENTAS INCOBRABLES CORTO
+                                            PLAZO </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.provisionCuentas"
+                                                formControlName="provisionCuentas" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('provisionCuentas').errors && reporteCompleto.get('provisionCuentas').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentas').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentas').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentas').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.provisionCuentasDos"
+                                                formControlName="provisionCuentasDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('provisionCuentasDos').errors && reporteCompleto.get('provisionCuentasDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentasDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentasDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentasDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">CREDITO TRIBUTARIO A FAVOR (IVA) +
+                                            (IMP.RENTA) </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.creditoTributario"
+                                                formControlName="creditoTributario" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('creditoTributario').errors && reporteCompleto.get('creditoTributario').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('creditoTributario').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('creditoTributario').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('creditoTributario').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['creditoTributario'].touched && reporteCompleto.controls['creditoTributario'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.creditoTributarioDos"
+                                                formControlName="creditoTributarioDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('creditoTributarioDos').errors && reporteCompleto.get('creditoTributarioDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('creditoTributarioDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('creditoTributarioDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('creditoTributarioDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['creditoTributarioDos'].touched && reporteCompleto.controls['creditoTributarioDos'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">INVENTARIOS </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.inventariosCompleto"
+                                                formControlName="inventariosCompleto" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('inventariosCompleto').errors && reporteCompleto.get('inventariosCompleto').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inventariosCompleto').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inventariosCompleto').hasError('minlength')">
+                                                    <font size="2">Minimo de 7 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inventariosCompleto').hasError('maxlength')">
+                                                    <font size="2">Maximon de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['inventariosCompleto'].touched && reporteCompleto.controls['inventariosCompleto'].hasError('pattern')">
+                                                    <font size="2">Este campo debe contener caracters numéricos"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.inventariosCompletoDos"
+                                                formControlName="inventariosCompletoDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('inventariosCompletoDos').errors && reporteCompleto.get('inventariosCompletoDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inventariosCompletoDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inventariosCompletoDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 7 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inventariosCompletoDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['inventariosCompletoDos'].touched && reporteCompleto.controls['inventariosCompletoDos'].hasError('pattern')">
+                                                    <font size="2">Este campo debe contener caracters numéricos"
+                                                    </font>
+                                                </p>
+                                            </div>
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">ACTIVOS PAGADOS POR ANTICIPADO </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.activosPagados"
+                                                formControlName="activosPagados" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('activosPagados').errors && reporteCompleto.get('activosPagados').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('activosPagados').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('activosPagados').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('activosPagados').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.activosPagadosDos"
+                                                formControlName="activosPagadosDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('activosPagadosDos').errors && reporteCompleto.get('activosPagadosDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('activosPagadosDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('activosPagadosDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('activosPagadosDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">OTROS ACTIVOS CORRIENTES</td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrosActivosCorrientes"
+                                                formControlName="otrosActivosCorrientes" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrosActivosCorrientes').errors && reporteCompleto.get('otrosActivosCorrientes').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosCorrientes').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosCorrientes').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosCorrientes').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrosActivosCorrientesDos"
+                                                formControlName="otrosActivosCorrientesDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrosActivosCorrientesDos').errors && reporteCompleto.get('otrosActivosCorrientesDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosCorrientesDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosCorrientesDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosCorrientesDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr style="background:lightgray">
+                                        <td scope="col" style="text-align: left"><b>TOTAL ACTIVO CORRIENTE</b></td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.totalActivoCorriente"
+                                                formControlName="totalActivoCorriente" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('totalActivoCorriente').errors && reporteCompleto.get('totalActivoCorriente').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoCorriente').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoCorriente').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoCorriente').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.totalActivoCorrienteDos"
+                                                formControlName="totalActivoCorrienteDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('totalActivoCorrienteDos').errors && reporteCompleto.get('totalActivoCorrienteDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoCorrienteDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoCorrienteDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoCorrienteDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr style="background:cadetblue">
+                                        <td scope="col" style="text-align: left"><b>TOTAL ACTIVO FIJO </b></td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.totalActivoFijo"
+                                                formControlName="totalActivoFijo" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('totalActivoFijo').errors && reporteCompleto.get('totalActivoFijo').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoFijo').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoFijo').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoFijo').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.totalActivoFijoDos"
+                                                formControlName="totalActivoFijoDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('totalActivoFijoDos').errors && reporteCompleto.get('totalActivoFijoDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoFijoDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoFijoDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoFijoDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr style="background:cadetblue">
+                                        <td scope="col" style="text-align: left"><b>TOTAL ACTIVO DIFERIDO </b> </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.totalActivoDiferido"
+                                                formControlName="totalActivoDiferido" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('totalActivoDiferido').errors && reporteCompleto.get('totalActivoDiferido').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoDiferido').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoDiferido').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoDiferido').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.totalActivoDiferidoDos"
+                                                formControlName="totalActivoDiferidoDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('totalActivoDiferidoDos').errors && reporteCompleto.get('totalActivoDiferidoDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoDiferidoDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoDiferidoDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivoDiferidoDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">INVERSIONES LARGO PLAZO ACCIONES Y
+                                            PARTICIPACIONES </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.inversionesParticipaciones"
+                                                formControlName="inversionesParticipaciones" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('inversionesParticipaciones').errors && reporteCompleto.get('inversionesParticipaciones').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesParticipaciones').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesParticipaciones').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesParticipaciones').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.inversionesParticipacionesDos"
+                                                formControlName="inversionesParticipacionesDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('inversionesParticipacionesDos').errors && reporteCompleto.get('inversionesParticipacionesDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesParticipacionesDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesParticipacionesDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('inversionesParticipacionesDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">INVERSIONES LARGO PLAZO OTRAS </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrasInversionesLargoPlazo"
+                                                formControlName="otrasInversionesLargoPlazo" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrasInversionesLargoPlazo').errors && reporteCompleto.get('otrasInversionesLargoPlazo').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasInversionesLargoPlazo').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasInversionesLargoPlazo').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasInversionesLargoPlazo').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrasInversionesLargoPlazoDos"
+                                                formControlName="otrasInversionesLargoPlazoDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrasInversionesLargoPlazoDos').errors && reporteCompleto.get('otrasInversionesLargoPlazoDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasInversionesLargoPlazoDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasInversionesLargoPlazoDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasInversionesLargoPlazoDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">CUENTAS Y DOC.POR COBRAR CLIENTES LARGO
+                                            PLAZO
+                                            <b>RELACIONADOS</b> LOCALES Y EXTERIOR
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarRelacionadas"
+                                                formControlName="cuentasPorCobrarRelacionadas" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadas').errors && reporteCompleto.get('cuentasPorCobrarRelacionadas').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadas').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadas').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadas').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarRelacionadasDos"
+                                                formControlName="cuentasPorCobrarRelacionadasDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadasDos').errors && reporteCompleto.get('cuentasPorCobrarRelacionadasDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadasDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadasDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadasDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">CUENTAS Y DOC.POR COBRAR CLIENTES LARGO
+                                            PLAZO
+                                            <b>NO RELACIONADOS</b> LOCALES Y EXTERIOR
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarNoRelacionadas"
+                                                formControlName="cuentasPorCobrarNoRelacionadas" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadas').errors && reporteCompleto.get('cuentasPorCobrarNoRelacionadas').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadas').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadas').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadas').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.cuentasPorCobrarNoRelacionadasDos"
+                                                formControlName="cuentasPorCobrarNoRelacionadasDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadasDos').errors && reporteCompleto.get('cuentasPorCobrarNoRelacionadasDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadasDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadasDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadasDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="col" style="text-align: left">OTRAS CUENTAS Y DOC.POR COBRAR CLIENTES LARGO
+                                            PLAZO
+                                            <b>RELACIONADOS</b>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarRelacionadas"
+                                                formControlName="otrasCuentasPorCobrarRelacionadas" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadas').errors && reporteCompleto.get('otrasCuentasPorCobrarRelacionadas').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadas').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadas').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadas').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarRelacionadasDos"
+                                                formControlName="otrasCuentasPorCobrarRelacionadasDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadasDos').errors && reporteCompleto.get('otrasCuentasPorCobrarRelacionadasDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadasDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadasDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadasDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td scope="col" style="text-align: left">OTRAS CUENTAS Y DOC.POR COBRAR CLIENTES LARGO
+                                            PLAZO
+                                            <b>NO RELACIONADOS</b>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarNoRelacionadas"
+                                                formControlName="otrasCuentasPorCobrarNoRelacionadas" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadas').errors && reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadas').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadas').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadas').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadas').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrasCuentasPorCobrarNoRelacionadasDos"
+                                                formControlName="otrasCuentasPorCobrarNoRelacionadasDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadasDos').errors && reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadasDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadasDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadasDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadasDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    
+                                    <tr>
+                                        <td scope="col" style="text-align: left">(-) PROVISIÓN DE CUENTAS INCOBRABLES
+                                            LARGO PLAZO
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.provisionCuentasIncobrables"
+                                                formControlName="provisionCuentasIncobrables" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('provisionCuentasIncobrables').errors && reporteCompleto.get('provisionCuentasIncobrables').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentasIncobrables').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentasIncobrables').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentasIncobrables').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.provisionCuentasIncobrablesDos"
+                                                formControlName="provisionCuentasIncobrablesDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('provisionCuentasIncobrablesDos').errors && reporteCompleto.get('provisionCuentasIncobrablesDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentasIncobrablesDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentasIncobrablesDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('provisionCuentasIncobrablesDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" style="text-align: left">OTROS ACTIVOS
+                                            LARGO PLAZO
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrosActivosLargoPlazo"
+                                                formControlName="otrosActivosLargoPlazo" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrosActivosLargoPlazo').errors && reporteCompleto.get('otrosActivosLargoPlazo').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosLargoPlazo').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosLargoPlazo').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosLargoPlazo').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.otrosActivosLargoPlazoDos"
+                                                formControlName="otrosActivosLargoPlazoDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('otrosActivosLargoPlazoDos').errors && reporteCompleto.get('otrosActivosLargoPlazoDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosLargoPlazoDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosLargoPlazoDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('otrosActivosLargoPlazoDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr style="background:lightgray">
+                                        <td scope="col" style="text-align: left"><b>TOTAL ACTIVO LARGO PLAZO</b></td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.totalActivosLargoPlazo"
+                                                formControlName="totalActivosLargoPlazo" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('totalActivosLargoPlazo').errors && reporteCompleto.get('totalActivosLargoPlazo').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivosLargoPlazo').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivosLargoPlazo').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivosLargoPlazo').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <input class="form-control "
+                                                [(ngModel)]="formularioCompleto.totalActivosLargoPlazoDos"
+                                                formControlName="totalActivosLargoPlazoDos" type="text ">
+                                            <div
+                                                *ngIf="reporteCompleto.get('totalActivosLargoPlazoDos').errors && reporteCompleto.get('totalActivosLargoPlazoDos').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivosLargoPlazoDos').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivosLargoPlazoDos').hasError('minlength')">
+                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('totalActivosLargoPlazoDos').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
 
             </form>

@@ -1,5 +1,5 @@
 export class FormExpress {
-  _id: string;
+  id: string;
   razonSocialExpress: string;
   fecha: string;
   solicitanteExpress: string;

@@ -32,6 +32,7 @@ var comSchema = Schema({
     anioPagoImpuestoDosCompleto: String,
     pagoRentaDosCompleto: String,
     anioSalidaDivisasCompleto: String,
+    anioSalidaDivisasDosCompleto:String,
     salidaDivisasCompletoUno: String,
     salidaDivisasCompletoDos: String,
     checksCalificaciones: String,
