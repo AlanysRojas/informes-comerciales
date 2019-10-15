@@ -31,6 +31,7 @@ export class formCompleto {
     anioPagoImpuestoDosCompleto: string;
     pagoRentaDosCompleto: string;
     anioSalidaDivisasCompleto: string;
+    anioSalidaDivisasDosCompleto:string;
     salidaDivisasCompletoUno: string;
     salidaDivisasCompletoDos: string;
     checksCalificaciones: string;
@@ -39,7 +40,7 @@ export class formCompleto {
     checksInfraestructura: string;
     checksSucursalesCompleto: string;
     direccionSucursalCompleto: string;
-    numeroEmpleadosExpress: string;
+    numeroEmpleadosCompleto: string;
     checksMaquinaria: string;
     directivoUnoCompleto: string;
     cargoDirectivoUnoCompleto: string;

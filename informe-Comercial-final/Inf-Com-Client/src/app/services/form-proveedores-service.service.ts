@@ -18,7 +18,7 @@ export class FormProveedoresServiceService {
   ) { }
 
   getInformes (): Observable<FormExpress[]> {
-    return this.http.get<FormExpress[]>(this.informesUrl)
+    return this.http.get<FormExpress[]>(this.informesUrl);
   }
 
   getInforme(id: string): Observable<FormExpress> {
@@ -31,7 +31,7 @@ export class FormProveedoresServiceService {
   }
 
   deleteInforme (informe: FormExpress | string): Observable<FormExpress> {
-    const id = typeof informe === 'string' ? informe : informe._id;
+    const id = typeof informe === 'string' ? informe : informe.id;
     const url = `${this.informesUrl}/${id}`;
 
     return this.http.delete<FormExpress>(url, httpOptions);
