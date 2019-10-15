@@ -5,7 +5,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RequisitosProveedoresComponent } from './requisitos-proveedores/requisitos-proveedores.component';
-import { InformeCompletoComponent } from './informe-completo/informe-completo.component';
+import { InformeCompletoComponent } from "./informe-completo/InformeCompletoComponent";
 
 @NgModule({
   declarations: [
