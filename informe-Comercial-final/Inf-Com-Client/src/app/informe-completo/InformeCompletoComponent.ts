@@ -959,7 +959,7 @@ export class InformeCompletoComponent implements OnInit {
             debilidad8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30),Validators.pattern(this.textPattern)]],
             debilidad9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30),Validators.pattern(this.textPattern)]],
             debilidad10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-            observacionesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+            observacionesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(500),Validators.pattern(this.textPattern)]],
         });
     }
 
