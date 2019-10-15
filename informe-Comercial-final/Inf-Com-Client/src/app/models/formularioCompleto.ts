@@ -1,6 +1,6 @@
 export class formCompleto {
     
-    _id: string;
+    id: string;
     fechaElaboracionCompleta: string;
     solicitanteCompleto: string;
     razonSocialCompleto: string;
@@ -22,7 +22,7 @@ export class formCompleto {
     personaContactoCompleto: string;
     cargoCompleto: string;
     correoCompleto: string;
-    checksEmpresas: string;
+    checksEmpresasCompleto: string;
     empresasRelacionadasCompleto: string;
     grupoEconomicoCompleto: string;
     codigoActividadCompleto: string;
@@ -161,18 +161,16 @@ export class formCompleto {
     cartCastCompleta5: string;
     saldoDeudaCompleta5: string;
     acConcCompleta5: string;
-    fechaCorteCompleta6: string;
     institucionCompleta6: string;
-    tipoRiesgoCompleta6: string;
-    tipoCreditoCompleta6: string;
-    vincCompleta6: string;
+    //tipoCreditoCompleta6: string;
+    //vincCompleta6: string;
     totalVencerCompleta6: string;
     noDevInteresesCompleta6: string;
     totalVencidoCompleta6: string;
     demJudCompleta6: string;
     cartCastCompleta6: string;
     saldoDeudaCompleta6: string;
-    acConcCompleta6: string;
+    //acConcCompleta6: string;
     acreedorCompleto: string;
     porVencerCompleto: string;
     noDevengaIntCompleto: string;
