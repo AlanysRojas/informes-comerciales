@@ -4771,7 +4771,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['cajaBancosCompleto'].touched && reporteCompleto.controls['cajaBancosCompleto'].hasError('pattern')">
-                                                    <font size="2"> Este campo ocupa carecteres numéricos"
+                                                    <font size="2"> Este campo ocupa carecteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -4824,7 +4824,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['inversionesCorrientes'].touched && reporteCompleto.controls['inversionesCorrientes'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    <font size="2"> Este campo debe contener caracteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -4849,7 +4849,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['inversionesCorrientesDos'].touched && reporteCompleto.controls['inversionesCorrientesDos'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    <font size="2"> Este campo debe contener caracteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -4879,7 +4879,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['cuentasRelacionadas'].touched && reporteCompleto.controls['cuentasRelacionadas'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    <font size="2"> Este campo debe contener caracteres numéricos 
                                                     </font>
                                                 </p>
                                             </div>
@@ -4903,7 +4903,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['cuentasRelacionadasDos'].touched && reporteCompleto.controls['cuentasRelacionadasDos'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    <font size="2"> Este campo debe contener caracteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -4933,7 +4933,11 @@
                                                     *ngIf="reporteCompleto.get('cuentasNoRelacionadas').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['cuentasNoRelacionadas'].touched && reporteCompleto.controls['cuentasNoRelacionadas'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -4954,7 +4958,11 @@
                                                     *ngIf="reporteCompleto.get('cuentasNoRelacionadasDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['cuentasNoRelacionadasDos'].touched && reporteCompleto.controls['cuentasNoRelacionadasDos'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -4982,7 +4990,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['otrasCuentasRelacionadas'].touched && reporteCompleto.controls['otrasCuentasRelacionadas'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    <font size="2"> Este campo debe contener caracteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -5007,7 +5015,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['otrasCuentasRelacionadasDos'].touched && reporteCompleto.controls['otrasCuentasRelacionadasDos'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    <font size="2"> Este campo debe contener caracteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -5038,7 +5046,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['otrasCuentasNoRelacionadas'].touched && reporteCompleto.controls['otrasCuentasNoRelacionadas'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    <font size="2"> Este campo debe contener caracteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -5063,7 +5071,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['otrasCuentasNoRelacionadasDos'].touched && reporteCompleto.controls['otrasCuentasNoRelacionadasDos'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    <font size="2"> Este campo debe contener caracteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -5090,6 +5098,11 @@
                                                     *ngIf="reporteCompleto.get('provisionCuentas').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.controls['provisionCuentas'].touched && reporteCompleto.controls['provisionCuentas'].hasError('pattern')">
+                                                    <font size="2"> Este campo debe contener caracteres numéricos
+                                                    </font>
+                                                </p>
 
                                             </div>
                                         </td>
@@ -5111,7 +5124,11 @@
                                                     *ngIf="reporteCompleto.get('provisionCuentasDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['provisionCuentasDos'].touched && reporteCompleto.controls['provisionCuentasDos'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                     </tr>
@@ -5137,10 +5154,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteCompleto.controls['creditoTributario'].touched && reporteCompleto.controls['creditoTributario'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['creditoTributario'].touched && reporteCompleto.controls['creditoTributario'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5163,7 +5180,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['creditoTributarioDos'].touched && reporteCompleto.controls['creditoTributarioDos'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                    <font size="2"> Este campo debe contener caracteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -5192,7 +5209,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['inventariosCompleto'].touched && reporteCompleto.controls['inventariosCompleto'].hasError('pattern')">
-                                                    <font size="2">Este campo debe contener caracters numéricos"
+                                                    <font size="2">Este campo debe contener caracteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -5217,7 +5234,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['inventariosCompletoDos'].touched && reporteCompleto.controls['inventariosCompletoDos'].hasError('pattern')">
-                                                    <font size="2">Este campo debe contener caracters numéricos"
+                                                    <font size="2">Este campo debe contener caracteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -5245,6 +5262,11 @@
                                                     *ngIf="reporteCompleto.get('activosPagados').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['activosPagados'].touched && reporteCompleto.controls['activosPagados'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
 
                                             </div>
                                         </td>
@@ -5266,7 +5288,11 @@
                                                     *ngIf="reporteCompleto.get('activosPagadosDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['activosPagadosDos'].touched && reporteCompleto.controls['activosPagadosDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5291,7 +5317,11 @@
                                                     *ngIf="reporteCompleto.get('otrosActivosCorrientes').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['otrosActivosCorrientes'].touched && reporteCompleto.controls['otrosActivosCorrientes'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5312,7 +5342,11 @@
                                                     *ngIf="reporteCompleto.get('otrosActivosCorrientesDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['otrosActivosCorrientesDos'].touched && reporteCompleto.controls['otrosActivosCorrientesDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5337,7 +5371,11 @@
                                                     *ngIf="reporteCompleto.get('totalActivoCorriente').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['totalActivoCorriente'].touched && reporteCompleto.controls['totalActivoCorriente'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5358,7 +5396,11 @@
                                                     *ngIf="reporteCompleto.get('totalActivoCorrienteDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['totalActivoCorrienteDos'].touched && reporteCompleto.controls['totalActivoCorrienteDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5383,6 +5425,11 @@
                                                     *ngIf="reporteCompleto.get('totalActivoFijo').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['totalActivoFijo'].touched && reporteCompleto.controls['totalActivoFijo'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
 
                                             </div>
                                         </td>
@@ -5404,6 +5451,11 @@
                                                     *ngIf="reporteCompleto.get('totalActivoFijoDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['totalActivoFijoDos'].touched && reporteCompleto.controls['totalActivoFijoDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
 
                                             </div>
                                         </td>
@@ -5429,6 +5481,11 @@
                                                     *ngIf="reporteCompleto.get('totalActivoDiferido').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['totalActivoDiferido'].touched && reporteCompleto.controls['totalActivoDiferido'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
 
                                             </div>
                                         </td>
@@ -5450,7 +5507,11 @@
                                                     *ngIf="reporteCompleto.get('totalActivoDiferidoDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['totalActivoDiferidoDos'].touched && reporteCompleto.controls['totalActivoDiferidoDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5476,7 +5537,11 @@
                                                     *ngIf="reporteCompleto.get('inversionesParticipaciones').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['inversionesParticipaciones'].touched && reporteCompleto.controls['inversionesParticipaciones'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5497,7 +5562,11 @@
                                                     *ngIf="reporteCompleto.get('inversionesParticipacionesDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['inversionesParticipacionesDos'].touched && reporteCompleto.controls['inversionesParticipacionesDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5522,7 +5591,11 @@
                                                     *ngIf="reporteCompleto.get('otrasInversionesLargoPlazo').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['otrasInversionesLargoPlazo'].touched && reporteCompleto.controls['otrasInversionesLargoPlazo'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5543,7 +5616,11 @@
                                                     *ngIf="reporteCompleto.get('otrasInversionesLargoPlazoDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['otrasInversionesLargoPlazoDos'].touched && reporteCompleto.controls['otrasInversionesLargoPlazoDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5571,7 +5648,11 @@
                                                     *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadas').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['cuentasPorCobrarRelacionadas'].touched && reporteCompleto.controls['cuentasPorCobrarRelacionadas'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5592,7 +5673,11 @@
                                                     *ngIf="reporteCompleto.get('cuentasPorCobrarRelacionadasDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['cuentasPorCobrarRelacionadasDos'].touched && reporteCompleto.controls['cuentasPorCobrarRelacionadasDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5619,7 +5704,11 @@
                                                     *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadas').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['cuentasPorCobrarNoRelacionadas'].touched && reporteCompleto.controls['cuentasPorCobrarNoRelacionadas'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5640,7 +5729,11 @@
                                                     *ngIf="reporteCompleto.get('cuentasPorCobrarNoRelacionadasDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['cuentasPorCobrarNoRelacionadasDos'].touched && reporteCompleto.controls['cuentasPorCobrarNoRelacionadasDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5668,7 +5761,11 @@
                                                     *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadas').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['otrasCuentasPorCobrarRelacionadas'].touched && reporteCompleto.controls['otrasCuentasPorCobrarRelacionadas'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5689,6 +5786,11 @@
                                                     *ngIf="reporteCompleto.get('otrasCuentasPorCobrarRelacionadasDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['otrasCuentasPorCobrarRelacionadasDos'].touched && reporteCompleto.controls['otrasCuentasPorCobrarRelacionadasDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
 
                                             </div>
                                         </td>
@@ -5716,7 +5818,11 @@
                                                     *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadas').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['otrasCuentasPorCobrarNoRelacionadas'].touched && reporteCompleto.controls['otrasCuentasPorCobrarNoRelacionadas'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5737,7 +5843,11 @@
                                                     *ngIf="reporteCompleto.get('otrasCuentasPorCobrarNoRelacionadasDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['otrasCuentasPorCobrarNoRelacionadasDos'].touched && reporteCompleto.controls['otrasCuentasPorCobrarNoRelacionadasDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5764,7 +5874,11 @@
                                                     *ngIf="reporteCompleto.get('provisionCuentasIncobrables').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['provisionCuentasIncobrables'].touched && reporteCompleto.controls['provisionCuentasIncobrables'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5785,7 +5899,11 @@
                                                     *ngIf="reporteCompleto.get('provisionCuentasIncobrablesDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['provisionCuentasIncobrablesDos'].touched && reporteCompleto.controls['provisionCuentasIncobrablesDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5810,7 +5928,11 @@
                                                     *ngIf="reporteCompleto.get('otrosActivosLargoPlazo').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['otrosActivosLargoPlazo'].touched && reporteCompleto.controls['otrosActivosLargoPlazo'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5831,7 +5953,11 @@
                                                     *ngIf="reporteCompleto.get('otrosActivosLargoPlazoDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['otrosActivosLargoPlazoDos'].touched && reporteCompleto.controls['otrosActivosLargoPlazoDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5856,7 +5982,11 @@
                                                     *ngIf="reporteCompleto.get('totalActivosLargoPlazo').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['totalActivosLargoPlazo'].touched && reporteCompleto.controls['totalActivosLargoPlazo'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5877,7 +6007,11 @@
                                                     *ngIf="reporteCompleto.get('totalActivosLargoPlazoDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['totalActivosLargoPlazoDos'].touched && reporteCompleto.controls['totalActivosLargoPlazoDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5902,7 +6036,11 @@
                                                     *ngIf="reporteCompleto.get('totalDelActivo').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['totalDelActivo'].touched && reporteCompleto.controls['totalDelActivo'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
@@ -5923,7 +6061,11 @@
                                                     *ngIf="reporteCompleto.get('totalDelActivoDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['totalDelActivoDos'].touched && reporteCompleto.controls['totalDelActivoDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5949,7 +6091,11 @@
                                                     *ngIf="reporteCompleto.get('pasivoCompleto').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['pasivoCompleto'].touched && reporteCompleto.controls['pasivoCompleto'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col" style="background: paleturquoise">
@@ -5970,7 +6116,11 @@
                                                     *ngIf="reporteCompleto.get('pasivoCompletoDos').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['pasivoCompletoDos'].touched && reporteCompleto.controls['pasivoCompletoDos'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
 
@@ -5998,7 +6148,11 @@
                                                     *ngIf="reporteCompleto.get('cuentasProveedoresRelacionado').hasError('maxlength')">
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
-
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['cuentasProveedoresRelacionado'].touched && reporteCompleto.controls['cuentasProveedoresRelacionado'].hasError('pattern')">
+                                                <font size="2">Este campo debe contener caracteres numéricos
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td scope="col">
