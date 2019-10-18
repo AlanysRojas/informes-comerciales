@@ -374,15 +374,9 @@ export class InformeCompletoComponent implements OnInit {
   razonEfectivo: string;
   razonEfectivoDos: string;
   razonEfectivoTres: string;
-  indiceApalanca: string;
-  indiceApalancaDos: string;
-  indiceApalancaTres: string;
   razonDeudaTotal: string;
   razonDeudaTotalDos: string;
   razonDeudaTotalTres: string;
-  indicesActividad: string;
-  indicesActividadDos: string;
-  indicesActividadTres: string;
   rotacionInventario: string;
   rotacionInventarioDos: string;
   rotacionInventarioTres: string;
@@ -404,9 +398,6 @@ export class InformeCompletoComponent implements OnInit {
   rotacionActivosTotales: string;
   rotacionActivosTotalesDos: string;
   rotacionActivosTotalesTres: string;
-  indicesRentabilidad: string;
-  indicesRentabilidadDos: string;
-  indicesRentabilidadTres: string;
   margenUtilidad: string;
   margenUtilidadDos: string;
   margenUtilidadTres: string;
@@ -485,7 +476,7 @@ export class InformeCompletoComponent implements OnInit {
 
 
   emailPattern = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  textPattern = new RegExp(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ&-.\s ]+$/);
+  textPattern = new RegExp(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ&-.;\s ]+$/);
   numberPattern = new RegExp(/^[0-9-%$,. ]+$/);
   paginaWebPattern = new RegExp(/^((https?):\/\/)?([w|W]{3}\.)+[a-zA-Z0-9\-\.]{3,}\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/);
   dineroPattern = new RegExp(/^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/);
@@ -854,15 +845,9 @@ export class InformeCompletoComponent implements OnInit {
       razonEfectivo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       razonEfectivoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       razonEfectivoTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-      indiceApalanca: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-      indiceApalancaDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-      indiceApalancaTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       razonDeudaTotal: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       razonDeudaTotalDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       razonDeudaTotalTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-      indicesActividad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-      indicesActividadDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-      indicesActividadTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       rotacionInventario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       rotacionInventarioDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       rotacionInventarioTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
@@ -884,9 +869,6 @@ export class InformeCompletoComponent implements OnInit {
       rotacionActivosTotales: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       rotacionActivosTotalesDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       rotacionActivosTotalesTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-      indicesRentabilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-      indicesRentabilidadDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-      indicesRentabilidadTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       margenUtilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       margenUtilidadDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
       margenUtilidadTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
