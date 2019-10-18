@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RequisitosProveedoresComponent } from './requisitos-proveedores/requisitos-proveedores.component';
 import { InformeCompletoComponent } from "./informe-completo/InformeCompletoComponent";
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InformeCompletoComponent } from "./informe-completo/InformeCompletoComp
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
    
   ],
   providers: [],
