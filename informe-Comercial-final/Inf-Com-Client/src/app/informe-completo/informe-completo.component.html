@@ -11614,71 +11614,77 @@
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad6"
-                                                formControlName="debilidad6" type="text "></textarea>
-                                            <div
-                                                *ngIf="reporteCompleto.get('debilidad6').errors && reporteCompleto.get('debilidad6').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('debilidad6').hasError('required')">
-                                                    <font size="2">Campo requerido!</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('debilidad6').hasError('minlength')">
-                                                    <font size="2">Minimo de 3 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('debilidad6').hasError('maxlength')">
-                                                    <font size="2">Maximon de 30 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                *ngIf="reporteCompleto.controls['debilidad6'].touched && reporteCompleto.controls['debilidad6'].hasError('pattern')">
-                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                </font>
+                                            formControlName="debilidad6" type="text "></textarea>
+                                        <div
+                                            *ngIf="reporteCompleto.get('debilidad6').errors && reporteCompleto.get('debilidad6').dirty">
+                                            <p class="text-danger"
+                                                *ngIf="reporteCompleto.get('debilidad6').hasError('required')">
+                                                <font size="2">Campo requerido!</font>
                                             </p>
-                                            </div>
-                                                *ngIf="reporteCompleto.get('fortaleza7').errors && reporteCompleto.get('fortaleza7').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('fortaleza7').hasError('required')">
-                                                    <font size="2">Campo requerido!</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('fortaleza7').hasError('minlength')">
-                                                    <font size="2">Minimo de 3 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('fortaleza7').hasError('maxlength')">
-                                                    <font size="2">Maximon de 30 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                *ngIf="reporteCompleto.controls['fortaleza7'].touched && reporteCompleto.controls['fortaleza7'].hasError('pattern')">
-                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                </font>
+                                            <p class="text-danger"
+                                                *ngIf="reporteCompleto.get('debilidad6').hasError('minlength')">
+                                                <font size="2">Minimo de 3 Caracteres</font>
                                             </p>
-                                            </div>
-                                        </td>
-                                        <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad7"
-                                                formControlName="debilidad7" type="text "></textarea>
-                                            <div
-                                                *ngIf="reporteCompleto.get('debilidad7').errors && reporteCompleto.get('debilidad7').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('debilidad7').hasError('required')">
-                                                    <font size="2">Campo requerido!</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('debilidad7').hasError('minlength')">
-                                                    <font size="2">Minimo de 3 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('debilidad7').hasError('maxlength')">
-                                                    <font size="2">Maximon de 30 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                *ngIf="reporteCompleto.controls['debilidad7'].touched && reporteCompleto.controls['debilidad7'].hasError('pattern')">
-                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                </font>
+                                            <p class="text-danger"
+                                                *ngIf="reporteCompleto.get('debilidad6').hasError('maxlength')">
+                                                <font size="2">Maximon de 30 Caracteres</font>
                                             </p>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            <p class="text-danger"
+                                            *ngIf="reporteCompleto.controls['debilidad6'].touched && reporteCompleto.controls['debilidad6'].hasError('pattern')">
+                                            <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                            </font>
+                                        </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="text-align:center;">
+                                    <td><textarea class="form-control " [(ngModel)]="formularioCompleto.fortaleza7"
+                                            formControlName="fortaleza7" type="text "></textarea>
+                                        <div
+                                            *ngIf="reporteCompleto.get('fortaleza7').errors && reporteCompleto.get('fortaleza7').dirty">
+                                            <p class="text-danger"
+                                                *ngIf="reporteCompleto.get('fortaleza7').hasError('required')">
+                                                <font size="2">Campo requerido!</font>
+                                            </p>
+                                            <p class="text-danger"
+                                                *ngIf="reporteCompleto.get('fortaleza7').hasError('minlength')">
+                                                <font size="2">Minimo de 3 Caracteres</font>
+                                            </p>
+                                            <p class="text-danger"
+                                                *ngIf="reporteCompleto.get('fortaleza7').hasError('maxlength')">
+                                                <font size="2">Maximon de 30 Caracteres</font>
+                                            </p>
+                                            <p class="text-danger"
+                                            *ngIf="reporteCompleto.controls['fortaleza7'].touched && reporteCompleto.controls['fortaleza7'].hasError('pattern')">
+                                            <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                            </font>
+                                        </p>
+                                        </div>
+                                    </td>
+                                    <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad7"
+                                            formControlName="debilidad7" type="text "></textarea>
+                                        <div
+                                            *ngIf="reporteCompleto.get('debilidad7').errors && reporteCompleto.get('debilidad7').dirty">
+                                            <p class="text-danger"
+                                                *ngIf="reporteCompleto.get('debilidad7').hasError('required')">
+                                                <font size="2">Campo requerido!</font>
+                                            </p>
+                                            <p class="text-danger"
+                                                *ngIf="reporteCompleto.get('debilidad7').hasError('minlength')">
+                                                <font size="2">Minimo de 3 Caracteres</font>
+                                            </p>
+                                            <p class="text-danger"
+                                                *ngIf="reporteCompleto.get('debilidad7').hasError('maxlength')">
+                                                <font size="2">Maximon de 30 Caracteres</font>
+                                            </p>
+                                            <p class="text-danger"
+                                            *ngIf="reporteCompleto.controls['debilidad7'].touched && reporteCompleto.controls['debilidad7'].hasError('pattern')">
+                                            <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                            </font>
+                                        </p>
+                                        </div>
+                                    </td>
+                                </tr>
                                     <tr style="text-align:center;">
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.fortaleza8"
                                                 formControlName="fortaleza8" type="text "></textarea>
