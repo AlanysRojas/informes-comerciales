@@ -7579,7 +7579,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.get('reservaLegal').hasError('minlength')">
-                                                    <font size="2">Minimo de 10 Caracteres</font>
+                                                    <font size="2">Mínimo de 10 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.get('reservaLegal').hasError('maxlength')">
@@ -8250,7 +8250,7 @@
                                                 </p>
                                                 <p class="text-danger"
                                                     *ngIf="reporteCompleto.controls['utilidadOperacional'].touched && reporteCompleto.controls['utilidadOperacional'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres numéricos
+                                                    <font size="2"> Este campo debe contener carácteres numéricos
                                                     </font>
                                                 </p>
                                             </div>
@@ -11319,7 +11319,7 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['fortaleza'].touched && reporteExpress.controls['fortaleza'].hasError('pattern')">
+                                                    *ngIf="reporteCompleto.controls['fortaleza'].touched && reporteCompleto.controls['fortaleza'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
@@ -11342,7 +11342,7 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad'].touched && reporteExpress.controls['debilidad'].hasError('pattern')">
+                                                    *ngIf="reporteCompleto.controls['debilidad'].touched && reporteCompleto.controls['debilidad'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
@@ -11390,10 +11390,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad1'].touched && reporteExpress.controls['debilidad1'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['debilidad1'].touched && reporteCompleto.controls['debilidad1'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                     </tr>
@@ -11415,10 +11415,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['fortaleza2'].touched && reporteExpress.controls['fortaleza2'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['fortaleza2'].touched && reporteCompleto.controls['fortaleza2'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad2"
@@ -11438,10 +11438,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad2'].touched && reporteExpress.controls['debilidad2'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['debilidad2'].touched && reporteCompleto.controls['debilidad2'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                     </tr>
@@ -11463,10 +11463,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['fortaleza3'].touched && reporteExpress.controls['fortaleza3'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['fortaleza3'].touched && reporteCompleto.controls['fortaleza3'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad3"
@@ -11486,10 +11486,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad3'].touched && reporteExpress.controls['debilidad3'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['debilidad3'].touched && reporteCompleto.controls['debilidad3'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                     </tr>
@@ -11534,7 +11534,7 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad4'].touched && reporteExpress.controls['debilidad4'].hasError('pattern')">
+                                                    *ngIf="reporteCompleto.controls['debilidad4'].touched && reporteCompleto.controls['debilidad4'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
@@ -11559,10 +11559,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['fortaleza5'].touched && reporteExpress.controls['fortaleza5'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['fortaleza5'].touched && reporteCompleto.controls['fortaleza5'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad5"
@@ -11582,10 +11582,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad5'].touched && reporteExpress.controls['debilidad5'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['debilidad5'].touched && reporteCompleto.controls['debilidad5'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                     </tr>
@@ -11607,10 +11607,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['fortaleza6'].touched && reporteExpress.controls['fortaleza6'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['fortaleza6'].touched && reporteCompleto.controls['fortaleza6'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad6"
@@ -11630,10 +11630,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad6'].touched && reporteExpress.controls['debilidad6'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['debilidad6'].touched && reporteCompleto.controls['debilidad6'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                                 *ngIf="reporteCompleto.get('fortaleza7').errors && reporteCompleto.get('fortaleza7').dirty">
                                                 <p class="text-danger"
@@ -11649,10 +11649,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['fortaleza7'].touched && reporteExpress.controls['fortaleza7'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['fortaleza7'].touched && reporteCompleto.controls['fortaleza7'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad7"
@@ -11672,10 +11672,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad7'].touched && reporteExpress.controls['debilidad7'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['debilidad7'].touched && reporteCompleto.controls['debilidad7'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                     </tr>
@@ -11697,10 +11697,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['fortaleza8'].touched && reporteExpress.controls['fortaleza8'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['fortaleza8'].touched && reporteCompleto.controls['fortaleza8'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad8"
@@ -11720,10 +11720,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad8'].touched && reporteExpress.controls['debilidad8'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['debilidad8'].touched && reporteCompleto.controls['debilidad8'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                     </tr>
@@ -11745,10 +11745,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['fortaleza9'].touched && reporteExpress.controls['fortaleza9'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['fortaleza9'].touched && reporteCompleto.controls['fortaleza9'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad9"
@@ -11768,10 +11768,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad9'].touched && reporteExpress.controls['debilidad9'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['debilidad9'].touched && reporteCompleto.controls['debilidad9'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                     </tr>
@@ -11793,10 +11793,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['fortaleza10'].touched && reporteExpress.controls['fortaleza10'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['fortaleza10'].touched && reporteCompleto.controls['fortaleza10'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad10"
@@ -11816,10 +11816,10 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
-                                                    *ngIf="reporteExpress.controls['debilidad10'].touched && reporteExpress.controls['debilidad10'].hasError('pattern')">
-                                                    <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
-                                                    </font>
-                                                </p>
+                                                *ngIf="reporteCompleto.controls['debilidad10'].touched && reporteCompleto.controls['debilidad10'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
                                             </div>
                                         </td>
                                     </tr>
