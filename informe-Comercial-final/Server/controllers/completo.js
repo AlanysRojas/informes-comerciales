@@ -1,5 +1,8 @@
 'use strict'
 var Completo = require('../models/completo');
+var express = require('express');
+var api = express.Router();
+
 
 //Guardar 
 exports.create = (req, res) => {
@@ -22,6 +25,8 @@ exports.findAll = (req, res) => {
         res.status(500).send({ message: 'Error al buscar' });
     });
 }
+
+
 
 //encontrar uno solo
 exports.findOne = (req, res) => {
@@ -53,6 +58,7 @@ exports.update = (req, res) => {
         res.status(500).send({ message: 'Error de servidor' });
     });
 }
+
 // DELETE a Customer
 exports.delete = (req, res) => {
     Completo.findByIdAndRemove(req.params.informesId)
@@ -74,4 +80,7 @@ exports.delete = (req, res) => {
             });
         });
 };
+
+
+
 

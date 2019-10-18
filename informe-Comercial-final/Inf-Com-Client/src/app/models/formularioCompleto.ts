@@ -17,6 +17,7 @@ export class formCompleto {
     direccionCompleto: string;
     telefonoCompleto: string;
     paginaWebCompleto: string;
+    correoWebCompleto:string;
     representanteLegalCompleto: string;
     cedulaCompleto: string;
     personaContactoCompleto: string;
@@ -83,7 +84,7 @@ export class formCompleto {
     checksObligacionesLegales: string;
     checksSuperintendencia: string;
     procesosJudicialesCompleto: string;
-    accionesDelitosCompleto: string;
+    //accionesDelitosCompleto: string;
     informacionRelevanteCompleto: string;
     informacionBancariaCompleto: string;
     institucionRefCompleta: string;
