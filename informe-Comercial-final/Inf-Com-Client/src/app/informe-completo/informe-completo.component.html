@@ -4765,7 +4765,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.cajaBancosCompletoDos"
-                                                formControlName="cajaBancosCompletoDos" type="text ">
+                                                formControlName="cajaBancosCompletoDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cajaBancosCompletoDos').errors && reporteCompleto.get('cajaBancosCompletoDos').dirty">
                                                 <p class="text-danger"
@@ -4854,7 +4854,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.cuentasRelacionadas"
-                                                formControlName="cuentasRelacionadas" type="text ">
+                                                formControlName="cuentasRelacionadas" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasRelacionadas').errors && reporteCompleto.get('cuentasRelacionadas').dirty">
                                                 <p class="text-danger"
@@ -4879,7 +4879,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.cuentasRelacionadasDos"
-                                                formControlName="cuentasRelacionadasDos" type="text ">
+                                                formControlName="cuentasRelacionadasDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('cuentasRelacionadasDos').errors && reporteCompleto.get('cuentasRelacionadasDos').dirty">
                                                 <p class="text-danger"
@@ -5145,7 +5145,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.creditoTributario"
-                                                formControlName="creditoTributario" type="text ">
+                                                formControlName="creditoTributario" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('creditoTributario').errors && reporteCompleto.get('creditoTributario').dirty">
                                                 <p class="text-danger"
@@ -5258,7 +5258,7 @@
                                         <td scope="col" style="text-align: left">ACTIVOS PAGADOS POR ANTICIPADO </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.activosPagados"
-                                                formControlName="activosPagados" type="text ">
+                                                formControlName="activosPagados" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('activosPagados').errors && reporteCompleto.get('activosPagados').dirty">
                                                 <p class="text-danger"
@@ -5935,7 +5935,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.provisionCuentasIncobrablesDos"
-                                                formControlName="provisionCuentasIncobrablesDos" type="text ">
+                                                formControlName="provisionCuentasIncobrablesDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('provisionCuentasIncobrablesDos').errors && reporteCompleto.get('provisionCuentasIncobrablesDos').dirty">
                                                 <p class="text-danger"
@@ -6079,7 +6079,7 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL DEL ACTIVO</b></td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.totalDelActivo"
-                                                formControlName="totalDelActivo" type="text ">
+                                                formControlName="totalDelActivo" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalDelActivo').errors && reporteCompleto.get('totalDelActivo').dirty">
                                                 <p class="text-danger"
@@ -6134,7 +6134,7 @@
                                             <b>PASIVO</b></td>
                                         <td scope="col" style="background: paleturquoise">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.pasivoCompleto"
-                                                formControlName="pasivoCompleto" type="text ">
+                                                formControlName="pasivoCompleto" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('pasivoCompleto').errors && reporteCompleto.get('pasivoCompleto').dirty">
                                                 <p class="text-danger"
@@ -7241,7 +7241,7 @@
                                         <td scope="col" style="text-align: left">OTROS PASIVOS </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.otrosPasivos"
-                                                formControlName="otrosPasivos" type="text ">
+                                                formControlName="otrosPasivos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrosPasivos').errors && reporteCompleto.get('otrosPasivos').dirty">
                                                 <p class="text-danger"
@@ -7295,7 +7295,7 @@
                                         <td scope="col" style="text-align: left"><b>TOTAL DEL PASIVO</b></td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.totalDelPasivo"
-                                                formControlName="totalDelPasivo" type="text ">
+                                                formControlName="totalDelPasivo" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('totalDelPasivo').errors && reporteCompleto.get('totalDelPasivo').dirty">
                                                 <p class="text-danger"
@@ -7350,7 +7350,7 @@
                                             <b>PATRIMONIO NETO</b></td>
                                         <td scope="col" style="background: powderblue">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.patrimonioNeto"
-                                                formControlName="patrimonioNeto" type="text ">
+                                                formControlName="patrimonioNeto" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('patrimonioNeto').errors && reporteCompleto.get('patrimonioNeto').dirty">
                                                 <p class="text-danger"
@@ -7516,7 +7516,7 @@
                                         <td scope="col" style="text-align: left">APORTES DE SOCIOS O ACCIONISTAS </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.aportesSocios"
-                                                formControlName="aportesSocios" type="text ">
+                                                formControlName="aportesSocios" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('aportesSocios').errors && reporteCompleto.get('aportesSocios').dirty">
                                                 <p class="text-danger"
@@ -7570,7 +7570,7 @@
                                         <td scope="col" style="text-align: left">RESERVA LEGAL-FACULTATIVA</td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.reservaLegal"
-                                                formControlName="reservaLegal" type="text ">
+                                                formControlName="reservaLegal" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('reservaLegal').errors && reporteCompleto.get('reservaLegal').dirty">
                                                 <p class="text-danger"
@@ -7594,9 +7594,14 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
+<<<<<<< HEAD
                                                 [(ngModel)]="formularioCompleto.reservaLegalDos"
                                                 onKeyPress="return validar(event)" onchange="format(this)"
                                                 formControlName="reservaLegalDos" type="text ">
+=======
+                                                [(ngModel)]="formularioCompleto.reservaLegalDos" onKeyPress="return validar(event)"  onchange="format(this)"
+                                                formControlName="reservaLegalDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             <div
                                                 *ngIf="reporteCompleto.get('reservaLegalDos').errors && reporteCompleto.get('reservaLegalDos').dirty">
                                                 <p class="text-danger"
@@ -7624,7 +7629,7 @@
                                         <td scope="col" style="text-align: left">OTRAS RESERVAS</td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.otrasReservas"
-                                                formControlName="otrasReservas" type="text ">
+                                                formControlName="otrasReservas" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('otrasReservas').errors && reporteCompleto.get('otrasReservas').dirty">
                                                 <p class="text-danger"
@@ -8040,7 +8045,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.ventasTotalesDos"
-                                                formControlName="ventasTotalesDos" type="text ">
+                                                formControlName="ventasTotalesDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('ventasTotalesDos').errors && reporteCompleto.get('ventasTotalesDos').dirty">
                                                 <p class="text-danger"
@@ -8068,7 +8073,7 @@
                                         <td scope="col" style="text-align: left">(-) Costo de Ventas</td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.costoVentas"
-                                                formControlName="costoVentas" type="text ">
+                                                formControlName="costoVentas" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('costoVentas').errors && reporteCompleto.get('costoVentas').dirty">
                                                 <p class="text-danger"
@@ -8092,7 +8097,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.costoVentasDos"
-                                                formControlName="costoVentasDos" type="text ">
+                                                formControlName="costoVentasDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('costoVentasDos').errors && reporteCompleto.get('costoVentasDos').dirty">
                                                 <p class="text-danger"
@@ -8146,7 +8151,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.utilidadBrutaDos"
-                                                formControlName="utilidadBrutaDos" type="text ">
+                                                formControlName="utilidadBrutaDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('utilidadBrutaDos').errors && reporteCompleto.get('utilidadBrutaDos').dirty">
                                                 <p class="text-danger"
@@ -8569,7 +8574,7 @@
                                         <td scope="col" style="text-align: left">(-) Impuesto a la renta </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.impuestoARenta"
-                                                formControlName="impuestoARenta" type="text ">
+                                                formControlName="impuestoARenta" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('impuestoARenta').errors && reporteCompleto.get('impuestoARenta').dirty">
                                                 <p class="text-danger"
@@ -8764,7 +8769,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.razonCorrienteDos"
-                                                formControlName="razonCorrienteDos" type="text ">
+                                                formControlName="razonCorrienteDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonCorrienteDos').errors && reporteCompleto.get('razonCorrienteDos').dirty">
                                                 <p class="text-danger"
@@ -8789,7 +8794,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.razonCorrienteTres"
-                                                formControlName="razonCorrienteTres" type="text ">
+                                                formControlName="razonCorrienteTres" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonCorrienteTres').errors && reporteCompleto.get('razonCorrienteTres').dirty">
                                                 <p class="text-danger"
@@ -8842,7 +8847,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.pruebaAcidaDos"
-                                                formControlName="pruebaAcidaDos" type="text ">
+                                                formControlName="pruebaAcidaDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('pruebaAcidaDos').errors && reporteCompleto.get('pruebaAcidaDos').dirty">
                                                 <p class="text-danger"
@@ -8922,7 +8927,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.razonEfectivoDos"
-                                                formControlName="razonEfectivoDos" type="text ">
+                                                formControlName="razonEfectivoDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonEfectivoDos').errors && reporteCompleto.get('razonEfectivoDos').dirty">
                                                 <p class="text-danger"
@@ -8947,7 +8952,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.razonEfectivoTres"
-                                                formControlName="razonEfectivoTres" type="text ">
+                                                formControlName="razonEfectivoTres" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonEfectivoTres').errors && reporteCompleto.get('razonEfectivoTres').dirty">
                                                 <p class="text-danger"
@@ -9058,7 +9063,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.razonDeudaTotal"
-                                                formControlName="razonDeudaTotal" type="text ">
+                                                formControlName="razonDeudaTotal" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('razonDeudaTotal').errors && reporteCompleto.get('razonDeudaTotal').dirty">
                                                 <p class="text-danger"
@@ -9141,7 +9146,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.indicesActividad"
-                                                formControlName="indicesActividad" type="text ">
+                                                formControlName="indicesActividad" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('indicesActividad').errors && reporteCompleto.get('indicesActividad').dirty">
                                                 <p class="text-danger"
@@ -9221,7 +9226,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.rotacionInventario"
-                                                formControlName="rotacionInventario" type="text ">
+                                                formControlName="rotacionInventario" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionInventario').errors && reporteCompleto.get('rotacionInventario').dirty">
                                                 <p class="text-danger"
@@ -9325,7 +9330,7 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.diasVentaDos"
-                                                formControlName="diasVentaDos" type="text ">
+                                                formControlName="diasVentaDos" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasVentaDos').errors && reporteCompleto.get('diasVentaDos').dirty">
                                                 <p class="text-danger"
@@ -9379,7 +9384,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.rotacionCuentas"
-                                                formControlName="rotacionCuentas" type="text ">
+                                                formControlName="rotacionCuentas" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionCuentas').errors && reporteCompleto.get('rotacionCuentas').dirty">
                                                 <p class="text-danger"
@@ -9544,7 +9549,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.rotacionCuentasPagar"
-                                                formControlName="rotacionCuentasPagar" type="text ">
+                                                formControlName="rotacionCuentasPagar" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionCuentasPagar').errors && reporteCompleto.get('rotacionCuentasPagar').dirty">
                                                 <p class="text-danger"
@@ -9626,7 +9631,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.diasCuentasPagar"
-                                                formControlName="diasCuentasPagar" type="text ">
+                                                formControlName="diasCuentasPagar" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('diasCuentasPagar').errors && reporteCompleto.get('diasCuentasPagar').dirty">
                                                 <p class="text-danger"
@@ -9707,7 +9712,7 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.rotacionActivosTotales"
-                                                formControlName="rotacionActivosTotales" type="text ">
+                                                formControlName="rotacionActivosTotales" type="text " onKeyPress="return validar(event)"  onchange="format(this)">
                                             <div
                                                 *ngIf="reporteCompleto.get('rotacionActivosTotales').errors && reporteCompleto.get('rotacionActivosTotales').dirty">
                                                 <p class="text-danger"
@@ -9786,31 +9791,10 @@
                                     <tr style="background: lightgray">
                                         <td scope="col" style="text-align: left"> <b>Índices de rentabilidad</b></td>
                                         <td scope="col">
-                                            <input class="form-control "
-                                                [(ngModel)]="formularioCompleto.indicesRentabilidad"
-                                                formControlName="indicesRentabilidad" type="text ">
-                                            <div
-                                                *ngIf="reporteCompleto.get('indicesRentabilidad').errors && reporteCompleto.get('indicesRentabilidad').dirty">
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('indicesRentabilidad').hasError('required')">
-                                                    <font size="2">Campo requerido!</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('indicesRentabilidad').hasError('minlength')">
-                                                    <font size="2">Minimo de 13 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.get('indicesRentabilidad').hasError('maxlength')">
-                                                    <font size="2">Maximo de 13 Caracteres</font>
-                                                </p>
-                                                <p class="text-danger"
-                                                    *ngIf="reporteCompleto.controls['indicesRentabilidad'].touched && reporteCompleto.controls['indicesRentabilidad'].hasError('pattern')">
-                                                    <font size="2"> Este campo ocupa carecteres numéricos
-                                                    </font>
-                                                </p>
-                                            </div>
+                                            
                                         </td>
                                         <td scope="col">
+<<<<<<< HEAD
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.indicesRentabilidadDos"
                                                 onKeyPress="return validar(event)" onchange="format(this)"
@@ -9861,6 +9845,12 @@
                                                     </font>
                                                 </p>
                                             </div>
+=======
+                                          
+                                        </td>
+                                        <td scope="col">
+                                           
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                         </td>
 
                                     </tr>
@@ -9868,8 +9858,12 @@
                                         <td scope="col" style="text-align: left">Margen de utilidad </td>
                                         <td scope="col">
                                             <input class="form-control " [(ngModel)]="formularioCompleto.margenUtilidad"
+<<<<<<< HEAD
                                                 formControlName="margenUtilidad" type="text "
                                                 onKeyPress="return validar(event)" onchange="format(this)">
+=======
+                                                formControlName="margenUtilidad" type="text " >
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             <div
                                                 *ngIf="reporteCompleto.get('margenUtilidad').errors && reporteCompleto.get('margenUtilidad').dirty">
                                                 <p class="text-danger"
@@ -9893,8 +9887,12 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
+<<<<<<< HEAD
                                                 [(ngModel)]="formularioCompleto.margenUtilidadDos"
                                                 onKeyPress="return validar(event)" onchange="format(this)"
+=======
+                                                [(ngModel)]="formularioCompleto.margenUtilidadDos" 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                 formControlName="margenUtilidadDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('margenUtilidadDos').errors && reporteCompleto.get('margenUtilidadDos').dirty">
@@ -9919,8 +9917,12 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
+<<<<<<< HEAD
                                                 [(ngModel)]="formularioCompleto.margenUtilidadTres"
                                                 onKeyPress="return validar(event)" onchange="format(this)"
+=======
+                                                [(ngModel)]="formularioCompleto.margenUtilidadTres" 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                 formControlName="margenUtilidadTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('margenUtilidadTres').errors && reporteCompleto.get('margenUtilidadTres').dirty">
@@ -9974,8 +9976,12 @@
                                         </td>
                                         <td scope="col">
                                             <input class="form-control "
+<<<<<<< HEAD
                                                 [(ngModel)]="formularioCompleto.rendimientoActivosDos"
                                                 onKeyPress="return validar(event)" onchange="format(this)"
+=======
+                                                [(ngModel)]="formularioCompleto.rendimientoActivosDos" 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                 formControlName="rendimientoActivosDos" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rendimientoActivosDos').errors && reporteCompleto.get('rendimientoActivosDos').dirty">
@@ -10001,7 +10007,10 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.rendimientoActivosTres"
+<<<<<<< HEAD
                                                 onKeyPress="return validar(event)" onchange="format(this)"
+=======
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                 formControlName="rendimientoActivosTres" type="text ">
                                             <div
                                                 *ngIf="reporteCompleto.get('rendimientoActivosTres').errors && reporteCompleto.get('rendimientoActivosTres').dirty">
@@ -10056,8 +10065,12 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.rendimientoCapitalDos"
+<<<<<<< HEAD
                                                 formControlName="rendimientoCapitalDos" type="text "
                                                 onKeyPress="return validar(event)" onchange="format(this)">
+=======
+                                                formControlName="rendimientoCapitalDos" type="text " >
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             <div
                                                 *ngIf="reporteCompleto.get('rendimientoCapitalDos').errors && reporteCompleto.get('rendimientoCapitalDos').dirty">
                                                 <p class="text-danger"
@@ -10082,8 +10095,12 @@
                                         <td scope="col">
                                             <input class="form-control "
                                                 [(ngModel)]="formularioCompleto.rendimientoCapitalTres"
+<<<<<<< HEAD
                                                 formControlName="rendimientoCapitalTres" type="text "
                                                 onKeyPress="return validar(event)" onchange="format(this)">
+=======
+                                                formControlName="rendimientoCapitalTres" type="text " >
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             <div
                                                 *ngIf="reporteCompleto.get('rendimientoCapitalTres').errors && reporteCompleto.get('rendimientoCapitalTres').dirty">
                                                 <p class="text-danger"
@@ -10780,8 +10797,12 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
+<<<<<<< HEAD
                                                     <input class="form-control " onKeyPress="return validar(event)"
                                                         onchange="format(this)"
+=======
+                                                    <input class="form-control "
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                         [(ngModel)]="formularioCompleto.porcentaje1"
                                                         formControlName="porcentaje1" type="text ">
                                                     <div
@@ -10835,8 +10856,12 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
+<<<<<<< HEAD
                                                     <input class="form-control " onKeyPress="return validar(event)"
                                                         onchange="format(this)"
+=======
+                                                    <input class="form-control "
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                         [(ngModel)]="formularioCompleto.porcentaje2"
                                                         formControlName="porcentaje2" type="text ">
                                                     <div
@@ -10890,8 +10915,12 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
+<<<<<<< HEAD
                                                     <input class="form-control " onKeyPress="return validar(event)"
                                                         onchange="format(this)"
+=======
+                                                    <input class="form-control " 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                         [(ngModel)]="formularioCompleto.porcentaje3"
                                                         formControlName="porcentaje3" type="text ">
                                                     <div
@@ -10945,8 +10974,12 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
+<<<<<<< HEAD
                                                     <input class="form-control " onKeyPress="return validar(event)"
                                                         onchange="format(this)"
+=======
+                                                    <input class="form-control " 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                         [(ngModel)]="formularioCompleto.porcentaje4"
                                                         formControlName="porcentaje4" type="text ">
                                                     <div
@@ -11000,8 +11033,12 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
+<<<<<<< HEAD
                                                     <input class="form-control " onKeyPress="return validar(event)"
                                                         onchange="format(this)"
+=======
+                                                    <input class="form-control " 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                         [(ngModel)]="formularioCompleto.porcentaje5"
                                                         formControlName="porcentaje5" type="text ">
                                                     <div
@@ -11055,8 +11092,12 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
+<<<<<<< HEAD
                                                     <input class="form-control " onKeyPress="return validar(event)"
                                                         onchange="format(this)"
+=======
+                                                    <input class="form-control " 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                         [(ngModel)]="formularioCompleto.porcentaje6"
                                                         formControlName="porcentaje6" type="text ">
                                                     <div
@@ -11110,8 +11151,12 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
+<<<<<<< HEAD
                                                     <input class="form-control " onKeyPress="return validar(event)"
                                                         onchange="format(this)"
+=======
+                                                    <input class="form-control " 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                         [(ngModel)]="formularioCompleto.porcentaje7"
                                                         formControlName="porcentaje7" type="text ">
                                                     <div
@@ -11165,8 +11210,12 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
+<<<<<<< HEAD
                                                     <input class="form-control " onKeyPress="return validar(event)"
                                                         onchange="format(this)"
+=======
+                                                    <input class="form-control " 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                         [(ngModel)]="formularioCompleto.porcentaje8"
                                                         formControlName="porcentaje8" type="text ">
                                                     <div
@@ -11220,8 +11269,12 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
+<<<<<<< HEAD
                                                     <input class="form-control " onKeyPress="return validar(event)"
                                                         onchange="format(this)"
+=======
+                                                    <input class="form-control " 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                         [(ngModel)]="formularioCompleto.porcentaje9"
                                                         formControlName="porcentaje9" type="text ">
                                                     <div
@@ -11276,8 +11329,12 @@
                                                     </div>
                                                 </td>
                                                 <td scope="col">
+<<<<<<< HEAD
                                                     <input class="form-control " onKeyPress="return validar(event)"
                                                         onchange="format(this)"
+=======
+                                                    <input class="form-control " 
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                                         [(ngModel)]="formularioCompleto.porcentaje10"
                                                         formControlName="porcentaje10" type="text ">
                                                     <div
@@ -11342,10 +11399,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza'].touched && reporteExpress.controls['fortaleza'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza'].touched && reporteCompleto.controls['fortaleza'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad"
@@ -11365,10 +11429,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad'].touched && reporteExpress.controls['debilidad'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad'].touched && reporteCompleto.controls['debilidad'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11390,10 +11461,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza1'].touched && reporteExpress.controls['fortaleza1'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza1'].touched && reporteCompleto.controls['fortaleza1'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad1"
@@ -11413,10 +11491,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad1'].touched && reporteExpress.controls['debilidad1'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad1'].touched && reporteCompleto.controls['debilidad1'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11438,10 +11523,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza2'].touched && reporteExpress.controls['fortaleza2'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza2'].touched && reporteCompleto.controls['fortaleza2'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad2"
@@ -11461,10 +11553,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad2'].touched && reporteExpress.controls['debilidad2'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad2'].touched && reporteCompleto.controls['debilidad2'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11486,10 +11585,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza3'].touched && reporteExpress.controls['fortaleza3'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza3'].touched && reporteCompleto.controls['fortaleza3'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad3"
@@ -11509,10 +11615,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad3'].touched && reporteExpress.controls['debilidad3'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad3'].touched && reporteCompleto.controls['debilidad3'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11534,10 +11647,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza4'].touched && reporteExpress.controls['fortaleza4'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza4'].touched && reporteCompleto.controls['fortaleza4'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad4"
@@ -11557,10 +11677,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad4'].touched && reporteExpress.controls['debilidad4'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad4'].touched && reporteCompleto.controls['debilidad4'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11582,10 +11709,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza5'].touched && reporteExpress.controls['fortaleza5'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza5'].touched && reporteCompleto.controls['fortaleza5'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad5"
@@ -11605,10 +11739,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad5'].touched && reporteExpress.controls['debilidad5'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad5'].touched && reporteCompleto.controls['debilidad5'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11630,10 +11771,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza6'].touched && reporteExpress.controls['fortaleza6'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza6'].touched && reporteCompleto.controls['fortaleza6'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad6"
@@ -11653,10 +11801,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad6'].touched && reporteExpress.controls['debilidad6'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad6'].touched && reporteCompleto.controls['debilidad6'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11678,10 +11833,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza7'].touched && reporteExpress.controls['fortaleza7'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza7'].touched && reporteCompleto.controls['fortaleza7'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad7"
@@ -11701,10 +11863,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad7'].touched && reporteExpress.controls['debilidad7'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad7'].touched && reporteCompleto.controls['debilidad7'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11726,10 +11895,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza8'].touched && reporteExpress.controls['fortaleza8'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza8'].touched && reporteCompleto.controls['fortaleza8'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad8"
@@ -11749,10 +11925,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad8'].touched && reporteExpress.controls['debilidad8'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad8'].touched && reporteCompleto.controls['debilidad8'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11774,10 +11957,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza9'].touched && reporteExpress.controls['fortaleza9'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza9'].touched && reporteCompleto.controls['fortaleza9'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad9"
@@ -11797,10 +11987,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad9'].touched && reporteExpress.controls['debilidad9'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad9'].touched && reporteCompleto.controls['debilidad9'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11822,10 +12019,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['fortaleza10'].touched && reporteExpress.controls['fortaleza10'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['fortaleza10'].touched && reporteCompleto.controls['fortaleza10'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                         <td><textarea class="form-control " [(ngModel)]="formularioCompleto.debilidad10"
@@ -11845,10 +12049,17 @@
                                                     <font size="2">Maximon de 30 Caracteres</font>
                                                 </p>
                                                 <p class="text-danger"
+<<<<<<< HEAD
                                                     *ngIf="reporteExpress.controls['debilidad10'].touched && reporteExpress.controls['debilidad10'].hasError('pattern')">
                                                     <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
                                                     </font>
                                                 </p>
+=======
+                                                *ngIf="reporteCompleto.controls['debilidad10'].touched && reporteCompleto.controls['debilidad10'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+>>>>>>> 80c0850aa188ea437440686c8ef633cef14a0397
                                             </div>
                                         </td>
                                     </tr>
@@ -11865,6 +12076,26 @@
                                     </td>
                                     
                                 </tr>
+                                <div
+                                                *ngIf="reporteCompleto.get('observacionesCompleto').errors && reporteCompleto.get('observacionesCompleto').dirty">
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('observacionesCompleto').hasError('required')">
+                                                    <font size="2">Campo requerido!</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('observacionesCompleto').hasError('minlength')">
+                                                    <font size="2">Minimo de 3 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                    *ngIf="reporteCompleto.get('observacionesCompleto').hasError('maxlength')">
+                                                    <font size="2">Maximon de 30 Caracteres</font>
+                                                </p>
+                                                <p class="text-danger"
+                                                *ngIf="reporteCompleto.controls['observacionesCompleto'].touched && reporteCompleto.controls['observacionesCompleto'].hasError('pattern')">
+                                                <font size="2"> Este campo debe contener caracteres entre "A-Za-z"
+                                                </font>
+                                            </p>
+                                            </div>
                             </table>
                         </div>
                     </div>
