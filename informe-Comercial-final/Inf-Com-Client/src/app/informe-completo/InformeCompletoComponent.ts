@@ -1,8 +1,9 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, NumberValueAccessor } from '@angular/forms';
-import { FormProveedoresServiceService } from '../services/form-proveedores-service.service';
+import{CompletoService} from '../services/completo.service'
 import { formCompleto } from '../models/formularioCompleto';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -12,8 +13,6 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 })
 
 export class InformeCompletoComponent implements OnInit {
-
-   
     formularioCompleto = new formCompleto();
     submitted = false;
     //empieza formulario
@@ -23,207 +22,208 @@ export class InformeCompletoComponent implements OnInit {
 
 
     fechaElaboracionCompleta: string;
-    solicitanteCompleto: string;
-    razonSocialCompleto: string;
-    nombreComercialCompleto: string;
-    rucCompleto: string;
-    formaLegalCompleto: string;
-    estadoCompleto: string;
-    capitalSubscritoCompleto: string;
-    inicioActividadesCompleto: string;
-    actividadPrincipalCompleto: string;
-    objetoSocialCompleto: string;
-    provinciaCompleto: string;
-    ciudadCompleto: string;
-    direccionCompleto: string;
-    telefonoCompleto: string;
-    paginaWebCompleto: string;
-    representanteLegalCompleto: string;
-    cedulaCompleto: string;
-    personaContactoCompleto: string;
-    cargoCompleto: string;
-    correoCompleto: string;
-    checksEmpresas: string;
-    empresasRelacionadasCompleto: string;
-    grupoEconomicoCompleto: string;
-    codigoActividadCompleto: string;
-    anioPagoImpuestoCompleto: string;
-    pagoRentaUnoCompleto: string;
-    anioPagoImpuestoDosCompleto: string;
-    pagoRentaDosCompleto: string;
-    anioSalidaDivisasCompleto: string;
-    anioSalidaDivisasDosCompleto: string;
-    salidaDivisasCompletoUno: string;
-    salidaDivisasCompletoDos: string;
-    checksCalificaciones: string;
-    requeridoClienteCompleto: string;
-    requeridoServiratingCompleto: string;
-    checksInfraestructura: string;
-    checksSucursalesCompleto: string;
-    direccionSucursalCompleto: string;
-    numeroEmpleadosCompleto: string;
-    checksMaquinaria: string;
-    directivoUnoCompleto: string;
-    cargoDirectivoUnoCompleto: string;
-    directivoDosCompleto: string;
-    cargoDirectivoDosCompleto: string;
-    numeroAccionistaCompleto: string;
-    identificacionAccionistaCompleto: string;
-    nombreAccionistaCompleto: string;
-    nacionalidadAccionistaCompleto: string;
-    tipoInversionAccionistaCompleto
-    capitalAccionistaCompleto: string;
-    restriccionAccionistaCompleto: string;
-    numeroDosAccionistaCompleto: string;
-    identificacionDosAccionistaCompleto: string;
-    nombreDosAccionistaCompleto: string;
-    nacionalidadDosAccionistaCompleto: string;
-    tipoInversionDosAccionistaCompleto: string;
-    capitalDosAccionistaCompleto: string;
-    restriccionDosAccionistaCompleto: string;
-    nombreRefCompleto: string;
-    nombreRefDosCompleto: string;
-    direccionRefCompleto: string;
-    direccionRefDosCompleto: string;
-    telefonoRefCompleto: string;
-    telefonoRefDosCompleto: string;
-    contactoRefCompleto: string;
-    contactoRefDosCompleto: string;
-    lineaCreditoRefCompleto: string;
-    lineaCreditoRefDosCompleto: string;
-    pagosRefCompleto: string;
-    pagosRefDosCompleto: string;
-    productoRefCompleto: string;
-    productoRefDosCompleto: string;
-    clienteDesdeRefCompleto: string;
-    clienteDesdeRefDosCompleto: string;
-    compraMensualRefCompleta: string;
-    compraMensualDosRefCompleta: string;
-    checksPuntualidadPagos: string;
-    checksPuntualidadPagosDos: string;
-    checksObligacionesLegales: string;
-    checksSuperintendencia: string;
-    procesosJudicialesCompleto: string;
-    accionesDelitosCompleto: string;
-    informacionRelevanteCompleto: string;
-    informacionBancariaCompleto: string;
-    institucionRefCompleta: string;
-    fechaInstCompleto: string;
-    mensajeRefCompleta: string;
-    fechaCorteCompleta: string;
-    institucionCompleta: string;
-    tipoRiesgoCompleta: string;
-    tipoCreditoCompleta: string;
-    vincCompleta: string;
-    totalVencerCompleta: string;
-    noDevInteresesCompleta: string;
-    totalVencidoCompleta: string;
-    demJudCompleta: string;
-    cartCastCompleta: string;
-    saldoDeudaCompleta: string;
-    acConcCompleta: string;
-    fechaCorteCompleta1: string;
-    institucionCompleta1: string;
-    tipoRiesgoCompleta1: string;
-    tipoCreditoCompleta1: string;
-    vincCompleta1: string;
-    totalVencerCompleta1: string;
-    noDevInteresesCompleta1: string;
-    totalVencidoCompleta1: string;
-    demJudCompleta1: string;
-    cartCastCompleta1: string;
-    saldoDeudaCompleta1: string;
-    acConcCompleta1: string;
-    fechaCorteCompleta2: string;
-    institucionCompleta2: string;
-    tipoRiesgoCompleta2: string;
-    tipoCreditoCompleta2: string;
-    vincCompleta2: string;
-    totalVencerCompleta2: string;
-    noDevInteresesCompleta2: string;
-    totalVencidoCompleta2: string;
-    demJudCompleta2: string;
-    cartCastCompleta2: string;
-    saldoDeudaCompleta2: string;
-    acConcCompleta2: string;
-    fechaCorteCompleta3: string;
-    institucionCompleta3: string;
-    tipoRiesgoCompleta3: string;
-    tipoCreditoCompleta3: string;
-    vincCompleta3: string;
-    totalVencerCompleta3: string;
-    noDevInteresesCompleta3: string;
-    totalVencidoCompleta3: string;
-    demJudCompleta3: string;
-    cartCastCompleta3: string;
-    saldoDeudaCompleta3: string;
-    acConcCompleta3: string;
-    fechaCorteCompleta4: string;
-    institucionCompleta4: string;
-    tipoRiesgoCompleta4: string;
-    tipoCreditoCompleta4: string;
-    vincCompleta4: string;
-    totalVencerCompleta4: string;
-    noDevInteresesCompleta4: string;
-    totalVencidoCompleta4: string;
-    demJudCompleta4: string;
-    cartCastCompleta4: string;
-    saldoDeudaCompleta4: string;
-    acConcCompleta4: string;
-    fechaCorteCompleta5: string;
-    institucionCompleta5: string;
-    tipoRiesgoCompleta5: string;
-    tipoCreditoCompleta5: string;
-    vincCompleta5: string;
-    totalVencerCompleta5: string;
-    noDevInteresesCompleta5: string;
-    totalVencidoCompleta5: string;
-    demJudCompleta5: string;
-    cartCastCompleta5: string;
-    saldoDeudaCompleta5: string;
-    acConcCompleta5: string;
-    fechaCorteCompleta6: string;
-    institucionCompleta6: string;
-    tipoRiesgoCompleta6: string;
-    tipoCreditoCompleta6: string;
-    vincCompleta6: string;
-    totalVencerCompleta6: string;
-    noDevInteresesCompleta6: string;
-    totalVencidoCompleta6: string;
-    demJudCompleta6: string;
-    cartCastCompleta6: string;
-    saldoDeudaCompleta6: string;
-    acConcCompleta6: string;
-    acreedorCompleto: string;
-    porVencerCompleto: string;
-    noDevengaIntCompleto: string;
-    vencidoCompleto: string;
-    saldDeudaCompleto: string;
-    demandaJudicialCompleto: string;
-    carteraCastigadaCompleto: string;
-    porVencerTotal: string;
-    noDevInteresesTotal: string;
-    vencidoTotal: string;
-    saldoDeudaTotal: string;
-    demandaJudicialTotal: string;
-    carteraCastigadaTotal: string;
-    historialCrediticioCompleto: string;
-    mayPlazoVencidoCompleto: string;
-    fechaMayPlazoVencido: string;
-    mayValorVencidoCompleto: string;
-    fechaMayValorVencido: string;
-    endeudamientoPromCompleto: string;
-    fechaEndeudamiento: string;
-    mayPlazoVencidoCompleto1: string;
-    fechaMayPlazoVencido1: string;
-    mayValorVencidoCompleto1: string;
-    fechaMayValorVencido1: string;
-    endeudamientoPromCompleto1: string;
-    fechaEndeudamiento1: string;
-    detallOperacionesVencidasCompleto: string;
+  solicitanteCompleto: string;
+  razonSocialCompleto: string;
+  nombreComercialCompleto: string;
+  rucCompleto: string;
+  formaLegalCompleto: string;
+  estadoCompleto: string;
+  capitalSubscritoCompleto: string;
+  inicioActividadesCompleto: string;
+  actividadPrincipalCompleto: string;
+  objetoSocialCompleto: string;
+  provinciaCompleto: string;
+  ciudadCompleto: string;
+  direccionCompleto: string;
+  telefonoCompleto: string;
+  paginaWebCompleto: string;
+  correoWebCompleto: string;
+  representanteLegalCompleto: string;
+  cedulaCompleto: string;
+  personaContactoCompleto: string;
+  cargoCompleto: string;
+  correoCompleto: string;
+  checksEmpresasCompleto: string;
+  empresasRelacionadasCompleto: string;
+  grupoEconomicoCompleto: string;
+  codigoActividadCompleto: string;
+  anioPagoImpuestoCompleto: string;
+  pagoRentaUnoCompleto: string;
+  anioPagoImpuestoDosCompleto: string;
+  pagoRentaDosCompleto: string;
+  anioSalidaDivisasCompleto: string;
+  anioSalidaDivisasDosCompleto: string;
+  salidaDivisasCompletoUno: string;
+  salidaDivisasCompletoDos: string;
+  checksCalificaciones: string;
+  requeridoClienteCompleto: string;
+  requeridoServiratingCompleto: string;
+  checksInfraestructura: string;
+  checksSucursalesCompleto: string;
+  direccionSucursalCompleto: string;
+  numeroEmpleadosCompleto: string;
+  checksMaquinaria: string;
+  directivoUnoCompleto: string;
+  cargoDirectivoUnoCompleto: string;
+  directivoDosCompleto: string;
+  cargoDirectivoDosCompleto: string;
+  numeroAccionistaCompleto: string;
+  identificacionAccionistaCompleto: string;
+  nombreAccionistaCompleto: string;
+  nacionalidadAccionistaCompleto: string;
+  tipoInversionAccionistaCompleto
+  capitalAccionistaCompleto: string;
+  restriccionAccionistaCompleto: string;
+  numeroDosAccionistaCompleto: string;
+  identificacionDosAccionistaCompleto: string;
+  nombreDosAccionistaCompleto: string;
+  nacionalidadDosAccionistaCompleto: string;
+  tipoInversionDosAccionistaCompleto: string;
+  capitalDosAccionistaCompleto: string;
+  restriccionDosAccionistaCompleto: string;
+  nombreRefCompleto: string;
+  nombreRefDosCompleto: string;
+  direccionRefCompleto: string;
+  direccionRefDosCompleto: string;
+  telefonoRefCompleto: string;
+  telefonoRefDosCompleto: string;
+  contactoRefCompleto: string;
+  contactoRefDosCompleto: string;
+  lineaCreditoRefCompleto: string;
+  lineaCreditoRefDosCompleto: string;
+  pagosRefCompleto: string;
+  pagosRefDosCompleto: string;
+  productoRefCompleto: string;
+  productoRefDosCompleto: string;
+  clienteDesdeRefCompleto: string;
+  clienteDesdeRefDosCompleto: string;
+  compraMensualRefCompleta: string;
+  compraMensualDosRefCompleta: string;
+  checksPuntualidadPagos: string;
+  checksPuntualidadPagosDos: string;
+  checksObligacionesLegales: string;
+  checksSuperintendencia: string;
+  procesosJudicialesCompleto: string;
+  //accionesDelitosCompleto: string;
+  informacionRelevanteCompleto: string;
+  informacionBancariaCompleto: string;
+  institucionRefCompleta: string;
+  fechaInstCompleto: string;
+  mensajeRefCompleta: string;
+  fechaCorteCompleta: string;
+  institucionCompleta: string;
+  tipoRiesgoCompleta: string;
+  tipoCreditoCompleta: string;
+  vincCompleta: string;
+  totalVencerCompleta: string;
+  noDevInteresesCompleta: string;
+  totalVencidoCompleta: string;
+  demJudCompleta: string;
+  cartCastCompleta: string;
+  saldoDeudaCompleta: string;
+  acConcCompleta: string;
+  fechaCorteCompleta1: string;
+  institucionCompleta1: string;
+  tipoRiesgoCompleta1: string;
+  tipoCreditoCompleta1: string;
+  vincCompleta1: string;
+  totalVencerCompleta1: string;
+  noDevInteresesCompleta1: string;
+  totalVencidoCompleta1: string;
+  demJudCompleta1: string;
+  cartCastCompleta1: string;
+  saldoDeudaCompleta1: string;
+  acConcCompleta1: string;
+  fechaCorteCompleta2: string;
+  institucionCompleta2: string;
+  tipoRiesgoCompleta2: string;
+  tipoCreditoCompleta2: string;
+  vincCompleta2: string;
+  totalVencerCompleta2: string;
+  noDevInteresesCompleta2: string;
+  totalVencidoCompleta2: string;
+  demJudCompleta2: string;
+  cartCastCompleta2: string;
+  saldoDeudaCompleta2: string;
+  acConcCompleta2: string;
+  fechaCorteCompleta3: string;
+  institucionCompleta3: string;
+  tipoRiesgoCompleta3: string;
+  tipoCreditoCompleta3: string;
+  vincCompleta3: string;
+  totalVencerCompleta3: string;
+  noDevInteresesCompleta3: string;
+  totalVencidoCompleta3: string;
+  demJudCompleta3: string;
+  cartCastCompleta3: string;
+  saldoDeudaCompleta3: string;
+  acConcCompleta3: string;
+  fechaCorteCompleta4: string;
+  institucionCompleta4: string;
+  tipoRiesgoCompleta4: string;
+  tipoCreditoCompleta4: string;
+  vincCompleta4: string;
+  totalVencerCompleta4: string;
+  noDevInteresesCompleta4: string;
+  totalVencidoCompleta4: string;
+  demJudCompleta4: string;
+  cartCastCompleta4: string;
+  saldoDeudaCompleta4: string;
+  acConcCompleta4: string;
+  fechaCorteCompleta5: string;
+  institucionCompleta5: string;
+  tipoRiesgoCompleta5: string;
+  tipoCreditoCompleta5: string;
+  vincCompleta5: string;
+  totalVencerCompleta5: string;
+  noDevInteresesCompleta5: string;
+  totalVencidoCompleta5: string;
+  demJudCompleta5: string;
+  cartCastCompleta5: string;
+  saldoDeudaCompleta5: string;
+  acConcCompleta5: string;
+
+  institucionCompleta6: string;
+  tipoRiesgoCompleta6: string;
+  tipoCreditoCompleta6: string;
+  vincCompleta6: string;
+  totalVencerCompleta6: string;
+  noDevInteresesCompleta6: string;
+  totalVencidoCompleta6: string;
+  demJudCompleta6: string;
+  cartCastCompleta6: string;
+  saldoDeudaCompleta6: string;
+  acConcCompleta6: string;
+  acreedorCompleto: string;
+  porVencerCompleto: string;
+  noDevengaIntCompleto: string;
+  vencidoCompleto: string;
+  saldDeudaCompleto: string;
+  demandaJudicialCompleto: string;
+  carteraCastigadaCompleto: string;
+  porVencerTotal: string;
+  noDevInteresesTotal: string;
+  vencidoTotal: string;
+  saldoDeudaTotal: string;
+  demandaJudicialTotal: string;
+  carteraCastigadaTotal: string;
+  historialCrediticioCompleto: string;
+  mayPlazoVencidoCompleto: string;
+  fechaMayPlazoVencido: string;
+  mayValorVencidoCompleto: string;
+  fechaMayValorVencido: string;
+  endeudamientoPromCompleto: string;
+  fechaEndeudamiento: string;
+  mayPlazoVencidoCompleto1: string;
+  fechaMayPlazoVencido1: string;
+  mayValorVencidoCompleto1: string;
+  fechaMayValorVencido1: string;
+  endeudamientoPromCompleto1: string;
+  fechaEndeudamiento1: string;
+  detallOperacionesVencidasCompleto: string;
 
 
-    //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
     balanceGeneralFecha: string;
@@ -250,7 +250,7 @@ export class InformeCompletoComponent implements OnInit {
     activosPagadosDos: string;
     otrosActivosCorrientes: string;
     otrosActivosCorrientesDos: string;
-    totalActivoCorriente: number;
+    totalActivoCorriente: string;
     totalActivoCorrienteDos: string;
     totalActivoFijo: string;
     totalActivoFijoDos: string;
@@ -383,6 +383,9 @@ export class InformeCompletoComponent implements OnInit {
     razonDeudaTotal: string;
     razonDeudaTotalDos: string;
     razonDeudaTotalTres: string;
+    indicesActividad: string;
+    indicesActividadDos: string;
+    indicesActividadTres: string;
     rotacionInventario: string;
     rotacionInventarioDos: string;
     rotacionInventarioTres: string;
@@ -404,6 +407,9 @@ export class InformeCompletoComponent implements OnInit {
     rotacionActivosTotales: string;
     rotacionActivosTotalesDos: string;
     rotacionActivosTotalesTres: string;
+    indicesRentabilidad: string;
+    indicesRentabilidadDos: string;
+    indicesRentabilidadTres: string;
     margenUtilidad: string;
     margenUtilidadDos: string;
     margenUtilidadTres: string;
@@ -478,7 +484,7 @@ export class InformeCompletoComponent implements OnInit {
     debilidad9: string;
     debilidad10: string;
     observacionesCompleto: string;
-    
+
 
 
     emailPattern = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
@@ -488,7 +494,7 @@ export class InformeCompletoComponent implements OnInit {
     dineroPattern = new RegExp(/^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/);
 
 
-    constructor(public fb: FormBuilder, private proveedoresService: FormProveedoresServiceService) {
+    constructor(public fb: FormBuilder, private completoService: CompletoService) {
 
         this.reporteCompleto = this.fb.group({
 
@@ -497,23 +503,24 @@ export class InformeCompletoComponent implements OnInit {
             razonSocialCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             nombreComercialCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             rucCompleto: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(13), Validators.pattern(this.numberPattern)]],
-            formaLegalCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            estadoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            formaLegalCompleto: ['', [Validators.required]],
+            estadoCompleto: ['', [Validators.required]],
             capitalSubscritoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            inicioActividadesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            inicioActividadesCompleto: ['', [Validators.required]],
             actividadPrincipalCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            objetoSocialCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            objetoSocialCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(500), Validators.pattern(this.textPattern)]],
             provinciaCompleto: ['', [Validators.required]],
             ciudadCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
             direccionCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
             telefonoCompleto: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(10)]],
             paginaWebCompleto: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(30), Validators.pattern(this.paginaWebPattern)]],
+            correoWebCompleto: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(30), Validators.pattern(this.emailPattern)]],
             representanteLegalCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            cedulaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            cedulaCompleto: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(this.numberPattern)]],
             personaContactoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             cargoCompleto: ['', [Validators.required]],
             correoCompleto: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(30), Validators.pattern(this.emailPattern)]],
-            checksEmpresas: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            checksEmpresasCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             empresasRelacionadasCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             grupoEconomicoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             codigoActividadCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
@@ -533,32 +540,32 @@ export class InformeCompletoComponent implements OnInit {
             direccionSucursalCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             numeroEmpleadosCompleto: ['', [Validators.required]],
             checksMaquinaria: ['', [Validators.required]],
-            directivoUnoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            directivoUnoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             cargoDirectivoUnoCompleto: ['', [Validators.required]],
-            directivoDosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            directivoDosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), , Validators.pattern(this.textPattern)]],
             cargoDirectivoDosCompleto: ['', [Validators.required]],
-            numeroAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            identificacionAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            nombreAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            nacionalidadAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            tipoInversionAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            numeroAccionistaCompleto: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
+            identificacionAccionistaCompleto: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+            nombreAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            nacionalidadAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            tipoInversionAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             capitalAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            restriccionAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            numeroDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            restriccionAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            numeroDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
             identificacionDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            nombreDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            nacionalidadDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            tipoInversionDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            nombreDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            nacionalidadDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            tipoInversionDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             capitalDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            restriccionDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            nombreRefCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            nombreRefDosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            restriccionDosAccionistaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            nombreRefCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            nombreRefDosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             direccionRefCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             direccionRefDosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             telefonoRefCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             telefonoRefDosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            contactoRefCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            contactoRefDosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            contactoRefCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            contactoRefDosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
             lineaCreditoRefCompleto: ['', [Validators.required]],
             lineaCreditoRefDosCompleto: ['', [Validators.required]],
             pagosRefCompleto: ['', [Validators.required]],
@@ -574,7 +581,7 @@ export class InformeCompletoComponent implements OnInit {
             checksObligacionesLegales: ['', [Validators.required]],
             checksSuperintendencia: ['', [Validators.required]],
             procesosJudicialesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            accionesDelitosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            // accionesDelitosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             informacionRelevanteCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             informacionBancariaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             institucionRefCompleta: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
@@ -652,18 +659,18 @@ export class InformeCompletoComponent implements OnInit {
             cartCastCompleta5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             saldoDeudaCompleta5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             acConcCompleta5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            fechaCorteCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            // fechaCorteCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             institucionCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            tipoRiesgoCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            tipoCreditoCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            vincCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            //tipoRiesgoCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            //tipoCreditoCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            //vincCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             totalVencerCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             noDevInteresesCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             totalVencidoCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             demJudCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             cartCastCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             saldoDeudaCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-            acConcCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            //acConcCompleta6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             acreedorCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             porVencerCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             noDevengaIntCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
@@ -691,7 +698,6 @@ export class InformeCompletoComponent implements OnInit {
             endeudamientoPromCompleto1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             fechaEndeudamiento1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             detallOperacionesVencidasCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-
 
 
 
@@ -841,49 +847,55 @@ export class InformeCompletoComponent implements OnInit {
             utilidadRepartibleDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             indiceFinancieroFecha: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             indiceFinancieroFechaDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            razonCorriente: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            razonCorriente: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             razonCorrienteDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             razonCorrienteTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            pruebaAcida: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), ]],
+            pruebaAcida: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             pruebaAcidaDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             pruebaAcidaTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            razonEfectivo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            razonEfectivo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             razonEfectivoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             razonEfectivoTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             indiceApalanca: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             indiceApalancaDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             indiceApalancaTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            razonDeudaTotal: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            razonDeudaTotal: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             razonDeudaTotalDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             razonDeudaTotalTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rotacionInventario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            indicesActividad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            indicesActividadDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            indicesActividadTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            rotacionInventario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionInventarioDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionInventarioTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            diasVenta: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            diasVenta: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             diasVentaDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             diasVentaTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rotacionCuentas: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            rotacionCuentas: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionCuentasDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionCuentasTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            diasPromedio: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            diasPromedio: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             diasPromedioDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             diasPromedioTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rotacionCuentasPagar: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            rotacionCuentasPagar: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionCuentasPagarDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionCuentasPagarTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            diasCuentasPagar: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            diasCuentasPagar: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             diasCuentasPagarDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             diasCuentasPagarTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rotacionActivosTotales: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            rotacionActivosTotales: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionActivosTotalesDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionActivosTotalesTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            margenUtilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            indicesRentabilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            indicesRentabilidadDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            indicesRentabilidadTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            margenUtilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             margenUtilidadDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             margenUtilidadTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rendimientoActivos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            rendimientoActivos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rendimientoActivosDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rendimientoActivosTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rendimientoCapital: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            rendimientoCapital: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rendimientoCapitalDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rendimientoCapitalTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             cuentaFecha: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
@@ -918,44 +930,134 @@ export class InformeCompletoComponent implements OnInit {
             valor8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             valor9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             valor10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje1: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje2: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje3: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje4: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje5: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje6: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje7: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje8: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje9: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje10: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
 
 
-            fortaleza: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            fortaleza1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            fortaleza2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            fortaleza3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            fortaleza4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            fortaleza5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            fortaleza6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            fortaleza7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            fortaleza8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            fortaleza9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            fortaleza10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            debilidad10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
-            observacionesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(500), Validators.pattern(this.textPattern)]],
+            fortaleza: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            debilidad10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            observacionesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
         });
     }
-
+    listaProvincias: Array<any> = [
+        {
+          name: "AZUAY", ciudades: ["CUENCA", "GIRÓN", "GUALACEO", "NABÓN", "PAUTE", "PUCARA", "SAN FERNANDO", "SANTA ISABEL", "SIGSIG", "OÑA", "CHORDELEG", "EL PAN", "SEVILLA DE ORO", "GUACHAPALA", "CAMILO PONCE ENRÍQUEZ"
+          ]
+        }, {
+          name: "BOLIVAR", ciudades: ["GUARANDA", "CHILLANES", "CHIMBO", "ECHEANDÍA", "SAN MIGUEL", "CALUMA", "LAS NAVES"
+          ]
+        }, {
+          name: "CAÑAR", ciudades: ["AZOGUES", "BIBLIÁN", "CAÑAR", "LA TRONCAL", "EL TAMBO", "DÉLEG", "SUSCAL"
+          ]
+        }, {
+          name: "CARCHI", ciudades: ["TULCÁN", "BOLÍVAR", "ESPEJO", "MIRA", "MONTÚFAR", "SAN PEDRO DE HUACA"
+          ]
+        }, {
+          name: "COTOPAXI", ciudades: ["LATACUNGA", "LA MANÁ", "PANGUA", "PUJILI", "SALCEDO", "SAQUISILÍ", "SIGCHOS"
+          ]
+        }, {
+          name: "CHIMBORAZO", ciudades: ["RIOBAMBA", "ALAUSI", "COLTA", "CHAMBO", "CHUNCHI", "GUAMOTE", "GUANO", "PALLATANGA", "PENIPE", "CUMANDÁ"
+          ]
+        }, {
+          name: "EL ORO", ciudades: ["MACHALA", "ARENILLAS", "ATAHUALPA", "BALSAS", "CHILLA", "EL GUABO", "HUAQUILLAS", "MARCABELÍ", "PASAJE", "PIÑAS", "PORTOVELO", "SANTA ROSA", "ZARUMA", "LAS LAJAS"
+          ]
+        }, {
+          name: "ESMERALDAS", ciudades: ["ESMERALDAS", "ELOY ALFARO", "MUISNE", "QUININDÉ", "SAN LORENZO", "ATACAMES", "RIOVERDE", "LA CONCORDIA"
+          ]
+        }, {
+          name: "GUAYAS", ciudades: ["GUAYAQUIL", "ALFREDO BAQUERIZO MORENO (JUJÁN)", "BALAO", "BALZAR", "COLIMES", "DAULE", "DURÁN", "EL EMPALME", "EL TRIUNFO", "MILAGRO", "NARANJAL", "NARANJITO", "PALESTINA", "PEDRO CARBO", "SAMBORONDÓN", "SANTA LUCÍA", "SALITRE (URBINA JADO)", "SAN JACINTO DE YAGUACHI", "PLAYAS", "SIMÓN BOLÍVAR", "CORONEL MARCELINO MARIDUEÑA", "LOMAS DE SARGENTILLO", "NOBOL", "GENERAL ANTONIO ELIZALDE", "ISIDRO AYORA"
+          ]
+        }, {
+          name: "IMBABURA", ciudades: ["IBARRA", "ANTONIO ANTE", "COTACACHI", "OTAVALO", "PIMAMPIRO", "SAN MIGUEL DE URCUQUÍ"
+          ]
+        }, {
+          name: "LOJA", ciudades: ["LOJA", "CALVAS", "CATAMAYO", "CELICA", "CHAGUARPAMBA", "ESPÍNDOLA", "GONZANAMÁ", "MACARÁ", "PALTAS", "PUYANGO", "SARAGURO", "SOZORANGA", "ZAPOTILLO", "PINDAL", "QUILANGA", "OLMEDO"
+          ]
+        }, {
+          name: "LOS RIOS", ciudades: ["BABAHOYO", "BABA", "MONTALVO", "PUEBLOVIEJO", "QUEVEDO", "URDANETA", "VENTANAS", "VÍNCES", "PALENQUE", "BUENA FÉ", "VALENCIA", "MOCACHE", "QUINSALOMA"
+          ]
+        }, {
+          name: "MANABI", ciudades: ["PORTOVIEJO", "BOLÍVAR", "CHONE", "EL CARMEN", "FLAVIO ALFARO", "JIPIJAPA", "JUNÍN", "MANTA", "MONTECRISTI", "PAJÁN", "PICHINCHA", "ROCAFUERTE", "SANTA ANA", "SUCRE", "TOSAGUA", "24 DE MAYO", "PEDERNALES", "OLMEDO", "PUERTO LÓPEZ", "JAMA", "JARAMIJÓ", "SAN VICENTE"
+          ]
+        }, {
+          name: "MORONA SANTIAGO", ciudades: ["MORONA", "GUALAQUIZA", "LIMÓN INDANZA", "PALORA", "SANTIAGO", "SUCÚA", "HUAMBOYA", "SAN JUAN BOSCO", "TAISHA", "LOGROÑO", "PABLO SEXTO", "TIWINTZA"
+          ]
+        }, {
+          name: "NAPO", ciudades: ["TENA", "ARCHIDONA", "EL CHACO", "QUIJOS", "CARLOS JULIO AROSEMENA TOLA"
+          ]
+        }, {
+          name: "PASTAZA", ciudades: ["PASTAZA", "MERA", "SANTA CLARA", "ARAJUNO"
+          ]
+        }, {
+          name: "PICHINCHA", ciudades: ["QUITO", "CAYAMBE", "MEJIA", "PEDRO MONCAYO", "RUMIÑAHUI", "SAN MIGUEL DE LOS BANCOS", "PEDRO VICENTE MALDONADO", "PUERTO QUITO"
+          ]
+        }, {
+          name: "TUNGURAHUA", ciudades: ["AMBATO", "BAÑOS DE AGUA SANTA", "CEVALLOS", "MOCHA", "PATATE", "QUERO", "SAN PEDRO DE PELILEO", "SANTIAGO DE PÍLLARO", "TISALEO"
+          ]
+        }, {
+          name: "ZAMORA CHINCHIPE", ciudades: ["ZAMORA", "CHINCHIPE", "NANGARITZA", "YACUAMBI", "YANTZAZA (YANZATZA)", "EL PANGUI", "CENTINELA DEL CÓNDOR", "PALANDA", "PAQUISHA"
+          ]
+        }, {
+          name: "GALAPAGOS", ciudades: ["SAN CRISTÓBAL", "ISABELA", "SANTA CRUZ"
+          ]
+        }, {
+          name: "SUCUMBIOS", ciudades: ["LAGO AGRIO", "GONZALO PIZARRO", "PUTUMAYO", "SHUSHUFINDI", "SUCUMBÍOS", "CASCALES", "CUYABENO"
+          ]
+        }, {
+          name: "ORELLANA", ciudades: ["ORELLANA", "AGUARICO", "LA JOYA DE LOS SACHAS", "LORETO"
+          ]
+        }, {
+          name: "SANTO DOMINGO DE LOS TSACHILAS", ciudades: ["SANTO DOMINGO"
+          ]
+        }, { name: "SANTA ELENA", ciudades: ["SANTA ELENA", "LA LIBERTAD", "SALINAS"] },
+      ];
+      ciudades: Array<any>;
+      cambioProvincia(count) {
+        this.ciudades = this.listaProvincias.find(con => con.name == count).ciudades;
+      }
+    
+      addInformeCompleto() {
+        this.submitted = true;
+        this.save();
+      }
+      private save(): void {
+        console.log(this.formularioCompleto);
+        this.completoService.addInformeCompleto(this.formularioCompleto)
+          .subscribe();
+        Swal.fire({
+          title: 'Muy Bien',
+          text: 'Datos Guardados Éxitosamente',
+          type: 'success'
+        });
+      }
 
     public barChartOptions = {
         scaleShowVerticalLines: false,
@@ -1132,8 +1234,6 @@ export class InformeCompletoComponent implements OnInit {
         ]
     }
 
-
-    
 
 
     addReporteCompleto() {
