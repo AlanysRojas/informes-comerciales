@@ -488,7 +488,7 @@ export class InformeCompletoComponent implements OnInit {
 
 
     emailPattern = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    textPattern = new RegExp(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ&-/'.\s ]+$/);
+    textPattern = new RegExp(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ;&-/'.\s ]+$/);
     numberPattern = new RegExp(/^[0-9-%$., ]+$/);
     paginaWebPattern = new RegExp(/^((https?):\/\/)?([w|W]{3}\.)+[a-zA-Z0-9\-\.]{3,}\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/);
     dineroPattern = new RegExp(/^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/);
@@ -580,7 +580,7 @@ export class InformeCompletoComponent implements OnInit {
             checksPuntualidadPagosDos: ['', [Validators.required]],
             checksObligacionesLegales: ['', [Validators.required]],
             checksSuperintendencia: ['', [Validators.required]],
-            procesosJudicialesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+            procesosJudicialesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(500)]],
             // accionesDelitosCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             informacionRelevanteCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             informacionBancariaCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
@@ -930,16 +930,16 @@ export class InformeCompletoComponent implements OnInit {
             valor8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             valor9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             valor10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje1: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje2: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje3: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje4: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje5: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje6: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje7: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje8: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje9: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje10: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
 
 
             fortaleza: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
