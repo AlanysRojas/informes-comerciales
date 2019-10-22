@@ -12,6 +12,8 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 })
 
 export class InformeCompletoComponent implements OnInit {
+
+   
     formularioCompleto = new formCompleto();
     submitted = false;
     //empieza formulario
@@ -248,7 +250,7 @@ export class InformeCompletoComponent implements OnInit {
     activosPagadosDos: string;
     otrosActivosCorrientes: string;
     otrosActivosCorrientesDos: string;
-    totalActivoCorriente: string;
+    totalActivoCorriente: number;
     totalActivoCorrienteDos: string;
     totalActivoFijo: string;
     totalActivoFijoDos: string;
@@ -381,9 +383,6 @@ export class InformeCompletoComponent implements OnInit {
     razonDeudaTotal: string;
     razonDeudaTotalDos: string;
     razonDeudaTotalTres: string;
-    indicesActividad: string;
-    indicesActividadDos: string;
-    indicesActividadTres: string;
     rotacionInventario: string;
     rotacionInventarioDos: string;
     rotacionInventarioTres: string;
@@ -405,9 +404,6 @@ export class InformeCompletoComponent implements OnInit {
     rotacionActivosTotales: string;
     rotacionActivosTotalesDos: string;
     rotacionActivosTotalesTres: string;
-    indicesRentabilidad: string;
-    indicesRentabilidadDos: string;
-    indicesRentabilidadTres: string;
     margenUtilidad: string;
     margenUtilidadDos: string;
     margenUtilidadTres: string;
@@ -482,7 +478,7 @@ export class InformeCompletoComponent implements OnInit {
     debilidad9: string;
     debilidad10: string;
     observacionesCompleto: string;
-
+    
 
 
     emailPattern = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
@@ -845,55 +841,49 @@ export class InformeCompletoComponent implements OnInit {
             utilidadRepartibleDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             indiceFinancieroFecha: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             indiceFinancieroFechaDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            razonCorriente: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            razonCorriente: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             razonCorrienteDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             razonCorrienteTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            pruebaAcida: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            pruebaAcida: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), ]],
             pruebaAcidaDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             pruebaAcidaTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            razonEfectivo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            razonEfectivo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             razonEfectivoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             razonEfectivoTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             indiceApalanca: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             indiceApalancaDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             indiceApalancaTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            razonDeudaTotal: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            razonDeudaTotal: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             razonDeudaTotalDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             razonDeudaTotalTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            indicesActividad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            indicesActividadDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            indicesActividadTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rotacionInventario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            rotacionInventario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             rotacionInventarioDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionInventarioTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            diasVenta: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            diasVenta: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             diasVentaDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             diasVentaTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rotacionCuentas: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            rotacionCuentas: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             rotacionCuentasDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionCuentasTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            diasPromedio: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            diasPromedio: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             diasPromedioDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             diasPromedioTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rotacionCuentasPagar: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            rotacionCuentasPagar: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             rotacionCuentasPagarDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionCuentasPagarTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            diasCuentasPagar: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            diasCuentasPagar: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             diasCuentasPagarDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             diasCuentasPagarTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rotacionActivosTotales: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            rotacionActivosTotales: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             rotacionActivosTotalesDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rotacionActivosTotalesTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            indicesRentabilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            indicesRentabilidadDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            indicesRentabilidadTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            margenUtilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            margenUtilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             margenUtilidadDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             margenUtilidadTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rendimientoActivos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            rendimientoActivos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             rendimientoActivosDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rendimientoActivosTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            rendimientoCapital: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            rendimientoCapital: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
             rendimientoCapitalDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             rendimientoCapitalTres: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             cuentaFecha: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
@@ -928,41 +918,41 @@ export class InformeCompletoComponent implements OnInit {
             valor8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             valor9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             valor10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            porcentaje10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje1: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje2: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje3: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje4: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje5: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje6: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje7: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje8: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje9: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
+            porcentaje10: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
 
 
-            fortaleza: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            fortaleza1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            fortaleza2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            fortaleza3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            fortaleza4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            fortaleza5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            fortaleza6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            fortaleza7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            fortaleza8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            fortaleza9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            fortaleza10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            debilidad10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
-            observacionesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.textPattern)]],
+            fortaleza: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            fortaleza1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            fortaleza2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            fortaleza3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            fortaleza4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            fortaleza5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            fortaleza6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            fortaleza7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            fortaleza8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            fortaleza9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            fortaleza10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad1: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad2: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad3: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad4: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad5: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad6: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad7: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad8: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad9: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            debilidad10: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300), Validators.pattern(this.textPattern)]],
+            observacionesCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(500), Validators.pattern(this.textPattern)]],
         });
     }
 
@@ -1142,6 +1132,8 @@ export class InformeCompletoComponent implements OnInit {
         ]
     }
 
+
+    
 
 
     addReporteCompleto() {
