@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, NumberValueAccessor } from '@angular/forms';
-import{CompletoService} from '../services/completo.service'
+import { CompletoService } from '../services/completo.service'
 import { formCompleto } from '../models/formularioCompleto';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+
 import Swal from 'sweetalert2';
+
+import { $ } from 'protractor';
+import { FunctionCall } from '@angular/compiler';
+import { parse } from 'url';
 
 
 @Component({
@@ -22,205 +27,205 @@ export class InformeCompletoComponent implements OnInit {
 
 
     fechaElaboracionCompleta: string;
-  solicitanteCompleto: string;
-  razonSocialCompleto: string;
-  nombreComercialCompleto: string;
-  rucCompleto: string;
-  formaLegalCompleto: string;
-  estadoCompleto: string;
-  capitalSubscritoCompleto: string;
-  inicioActividadesCompleto: string;
-  actividadPrincipalCompleto: string;
-  objetoSocialCompleto: string;
-  provinciaCompleto: string;
-  ciudadCompleto: string;
-  direccionCompleto: string;
-  telefonoCompleto: string;
-  paginaWebCompleto: string;
-  correoWebCompleto: string;
-  representanteLegalCompleto: string;
-  cedulaCompleto: string;
-  personaContactoCompleto: string;
-  cargoCompleto: string;
-  correoCompleto: string;
-  checksEmpresasCompleto: string;
-  empresasRelacionadasCompleto: string;
-  grupoEconomicoCompleto: string;
-  codigoActividadCompleto: string;
-  anioPagoImpuestoCompleto: string;
-  pagoRentaUnoCompleto: string;
-  anioPagoImpuestoDosCompleto: string;
-  pagoRentaDosCompleto: string;
-  anioSalidaDivisasCompleto: string;
-  anioSalidaDivisasDosCompleto: string;
-  salidaDivisasCompletoUno: string;
-  salidaDivisasCompletoDos: string;
-  checksCalificaciones: string;
-  requeridoClienteCompleto: string;
-  requeridoServiratingCompleto: string;
-  checksInfraestructura: string;
-  checksSucursalesCompleto: string;
-  direccionSucursalCompleto: string;
-  numeroEmpleadosCompleto: string;
-  checksMaquinaria: string;
-  directivoUnoCompleto: string;
-  cargoDirectivoUnoCompleto: string;
-  directivoDosCompleto: string;
-  cargoDirectivoDosCompleto: string;
-  numeroAccionistaCompleto: string;
-  identificacionAccionistaCompleto: string;
-  nombreAccionistaCompleto: string;
-  nacionalidadAccionistaCompleto: string;
-  tipoInversionAccionistaCompleto
-  capitalAccionistaCompleto: string;
-  restriccionAccionistaCompleto: string;
-  numeroDosAccionistaCompleto: string;
-  identificacionDosAccionistaCompleto: string;
-  nombreDosAccionistaCompleto: string;
-  nacionalidadDosAccionistaCompleto: string;
-  tipoInversionDosAccionistaCompleto: string;
-  capitalDosAccionistaCompleto: string;
-  restriccionDosAccionistaCompleto: string;
-  nombreRefCompleto: string;
-  nombreRefDosCompleto: string;
-  direccionRefCompleto: string;
-  direccionRefDosCompleto: string;
-  telefonoRefCompleto: string;
-  telefonoRefDosCompleto: string;
-  contactoRefCompleto: string;
-  contactoRefDosCompleto: string;
-  lineaCreditoRefCompleto: string;
-  lineaCreditoRefDosCompleto: string;
-  pagosRefCompleto: string;
-  pagosRefDosCompleto: string;
-  productoRefCompleto: string;
-  productoRefDosCompleto: string;
-  clienteDesdeRefCompleto: string;
-  clienteDesdeRefDosCompleto: string;
-  compraMensualRefCompleta: string;
-  compraMensualDosRefCompleta: string;
-  checksPuntualidadPagos: string;
-  checksPuntualidadPagosDos: string;
-  checksObligacionesLegales: string;
-  checksSuperintendencia: string;
-  procesosJudicialesCompleto: string;
-  //accionesDelitosCompleto: string;
-  informacionRelevanteCompleto: string;
-  informacionBancariaCompleto: string;
-  institucionRefCompleta: string;
-  fechaInstCompleto: string;
-  mensajeRefCompleta: string;
-  fechaCorteCompleta: string;
-  institucionCompleta: string;
-  tipoRiesgoCompleta: string;
-  tipoCreditoCompleta: string;
-  vincCompleta: string;
-  totalVencerCompleta: string;
-  noDevInteresesCompleta: string;
-  totalVencidoCompleta: string;
-  demJudCompleta: string;
-  cartCastCompleta: string;
-  saldoDeudaCompleta: string;
-  acConcCompleta: string;
-  fechaCorteCompleta1: string;
-  institucionCompleta1: string;
-  tipoRiesgoCompleta1: string;
-  tipoCreditoCompleta1: string;
-  vincCompleta1: string;
-  totalVencerCompleta1: string;
-  noDevInteresesCompleta1: string;
-  totalVencidoCompleta1: string;
-  demJudCompleta1: string;
-  cartCastCompleta1: string;
-  saldoDeudaCompleta1: string;
-  acConcCompleta1: string;
-  fechaCorteCompleta2: string;
-  institucionCompleta2: string;
-  tipoRiesgoCompleta2: string;
-  tipoCreditoCompleta2: string;
-  vincCompleta2: string;
-  totalVencerCompleta2: string;
-  noDevInteresesCompleta2: string;
-  totalVencidoCompleta2: string;
-  demJudCompleta2: string;
-  cartCastCompleta2: string;
-  saldoDeudaCompleta2: string;
-  acConcCompleta2: string;
-  fechaCorteCompleta3: string;
-  institucionCompleta3: string;
-  tipoRiesgoCompleta3: string;
-  tipoCreditoCompleta3: string;
-  vincCompleta3: string;
-  totalVencerCompleta3: string;
-  noDevInteresesCompleta3: string;
-  totalVencidoCompleta3: string;
-  demJudCompleta3: string;
-  cartCastCompleta3: string;
-  saldoDeudaCompleta3: string;
-  acConcCompleta3: string;
-  fechaCorteCompleta4: string;
-  institucionCompleta4: string;
-  tipoRiesgoCompleta4: string;
-  tipoCreditoCompleta4: string;
-  vincCompleta4: string;
-  totalVencerCompleta4: string;
-  noDevInteresesCompleta4: string;
-  totalVencidoCompleta4: string;
-  demJudCompleta4: string;
-  cartCastCompleta4: string;
-  saldoDeudaCompleta4: string;
-  acConcCompleta4: string;
-  fechaCorteCompleta5: string;
-  institucionCompleta5: string;
-  tipoRiesgoCompleta5: string;
-  tipoCreditoCompleta5: string;
-  vincCompleta5: string;
-  totalVencerCompleta5: string;
-  noDevInteresesCompleta5: string;
-  totalVencidoCompleta5: string;
-  demJudCompleta5: string;
-  cartCastCompleta5: string;
-  saldoDeudaCompleta5: string;
-  acConcCompleta5: string;
+    solicitanteCompleto: string;
+    razonSocialCompleto: string;
+    nombreComercialCompleto: string;
+    rucCompleto: string;
+    formaLegalCompleto: string;
+    estadoCompleto: string;
+    capitalSubscritoCompleto: string;
+    inicioActividadesCompleto: string;
+    actividadPrincipalCompleto: string;
+    objetoSocialCompleto: string;
+    provinciaCompleto: string;
+    ciudadCompleto: string;
+    direccionCompleto: string;
+    telefonoCompleto: string;
+    paginaWebCompleto: string;
+    correoWebCompleto: string;
+    representanteLegalCompleto: string;
+    cedulaCompleto: string;
+    personaContactoCompleto: string;
+    cargoCompleto: string;
+    correoCompleto: string;
+    checksEmpresasCompleto: string;
+    empresasRelacionadasCompleto: string;
+    grupoEconomicoCompleto: string;
+    codigoActividadCompleto: string;
+    anioPagoImpuestoCompleto: string;
+    pagoRentaUnoCompleto: string;
+    anioPagoImpuestoDosCompleto: string;
+    pagoRentaDosCompleto: string;
+    anioSalidaDivisasCompleto: string;
+    anioSalidaDivisasDosCompleto: string;
+    salidaDivisasCompletoUno: string;
+    salidaDivisasCompletoDos: string;
+    checksCalificaciones: string;
+    requeridoClienteCompleto: string;
+    requeridoServiratingCompleto: string;
+    checksInfraestructura: string;
+    checksSucursalesCompleto: string;
+    direccionSucursalCompleto: string;
+    numeroEmpleadosCompleto: string;
+    checksMaquinaria: string;
+    directivoUnoCompleto: string;
+    cargoDirectivoUnoCompleto: string;
+    directivoDosCompleto: string;
+    cargoDirectivoDosCompleto: string;
+    numeroAccionistaCompleto: string;
+    identificacionAccionistaCompleto: string;
+    nombreAccionistaCompleto: string;
+    nacionalidadAccionistaCompleto: string;
+    tipoInversionAccionistaCompleto
+    capitalAccionistaCompleto: string;
+    restriccionAccionistaCompleto: string;
+    numeroDosAccionistaCompleto: string;
+    identificacionDosAccionistaCompleto: string;
+    nombreDosAccionistaCompleto: string;
+    nacionalidadDosAccionistaCompleto: string;
+    tipoInversionDosAccionistaCompleto: string;
+    capitalDosAccionistaCompleto: string;
+    restriccionDosAccionistaCompleto: string;
+    nombreRefCompleto: string;
+    nombreRefDosCompleto: string;
+    direccionRefCompleto: string;
+    direccionRefDosCompleto: string;
+    telefonoRefCompleto: string;
+    telefonoRefDosCompleto: string;
+    contactoRefCompleto: string;
+    contactoRefDosCompleto: string;
+    lineaCreditoRefCompleto: string;
+    lineaCreditoRefDosCompleto: string;
+    pagosRefCompleto: string;
+    pagosRefDosCompleto: string;
+    productoRefCompleto: string;
+    productoRefDosCompleto: string;
+    clienteDesdeRefCompleto: string;
+    clienteDesdeRefDosCompleto: string;
+    compraMensualRefCompleta: string;
+    compraMensualDosRefCompleta: string;
+    checksPuntualidadPagos: string;
+    checksPuntualidadPagosDos: string;
+    checksObligacionesLegales: string;
+    checksSuperintendencia: string;
+    procesosJudicialesCompleto: string;
+    //accionesDelitosCompleto: string;
+    informacionRelevanteCompleto: string;
+    informacionBancariaCompleto: string;
+    institucionRefCompleta: string;
+    fechaInstCompleto: string;
+    mensajeRefCompleta: string;
+    fechaCorteCompleta: string;
+    institucionCompleta: string;
+    tipoRiesgoCompleta: string;
+    tipoCreditoCompleta: string;
+    vincCompleta: string;
+    totalVencerCompleta: string;
+    noDevInteresesCompleta: string;
+    totalVencidoCompleta: string;
+    demJudCompleta: string;
+    cartCastCompleta: string;
+    saldoDeudaCompleta: string;
+    acConcCompleta: string;
+    fechaCorteCompleta1: string;
+    institucionCompleta1: string;
+    tipoRiesgoCompleta1: string;
+    tipoCreditoCompleta1: string;
+    vincCompleta1: string;
+    totalVencerCompleta1: string;
+    noDevInteresesCompleta1: string;
+    totalVencidoCompleta1: string;
+    demJudCompleta1: string;
+    cartCastCompleta1: string;
+    saldoDeudaCompleta1: string;
+    acConcCompleta1: string;
+    fechaCorteCompleta2: string;
+    institucionCompleta2: string;
+    tipoRiesgoCompleta2: string;
+    tipoCreditoCompleta2: string;
+    vincCompleta2: string;
+    totalVencerCompleta2: string;
+    noDevInteresesCompleta2: string;
+    totalVencidoCompleta2: string;
+    demJudCompleta2: string;
+    cartCastCompleta2: string;
+    saldoDeudaCompleta2: string;
+    acConcCompleta2: string;
+    fechaCorteCompleta3: string;
+    institucionCompleta3: string;
+    tipoRiesgoCompleta3: string;
+    tipoCreditoCompleta3: string;
+    vincCompleta3: string;
+    totalVencerCompleta3: string;
+    noDevInteresesCompleta3: string;
+    totalVencidoCompleta3: string;
+    demJudCompleta3: string;
+    cartCastCompleta3: string;
+    saldoDeudaCompleta3: string;
+    acConcCompleta3: string;
+    fechaCorteCompleta4: string;
+    institucionCompleta4: string;
+    tipoRiesgoCompleta4: string;
+    tipoCreditoCompleta4: string;
+    vincCompleta4: string;
+    totalVencerCompleta4: string;
+    noDevInteresesCompleta4: string;
+    totalVencidoCompleta4: string;
+    demJudCompleta4: string;
+    cartCastCompleta4: string;
+    saldoDeudaCompleta4: string;
+    acConcCompleta4: string;
+    fechaCorteCompleta5: string;
+    institucionCompleta5: string;
+    tipoRiesgoCompleta5: string;
+    tipoCreditoCompleta5: string;
+    vincCompleta5: string;
+    totalVencerCompleta5: string;
+    noDevInteresesCompleta5: string;
+    totalVencidoCompleta5: string;
+    demJudCompleta5: string;
+    cartCastCompleta5: string;
+    saldoDeudaCompleta5: string;
+    acConcCompleta5: string;
 
-  institucionCompleta6: string;
-  tipoRiesgoCompleta6: string;
-  tipoCreditoCompleta6: string;
-  vincCompleta6: string;
-  totalVencerCompleta6: string;
-  noDevInteresesCompleta6: string;
-  totalVencidoCompleta6: string;
-  demJudCompleta6: string;
-  cartCastCompleta6: string;
-  saldoDeudaCompleta6: string;
-  acConcCompleta6: string;
-  acreedorCompleto: string;
-  porVencerCompleto: string;
-  noDevengaIntCompleto: string;
-  vencidoCompleto: string;
-  saldDeudaCompleto: string;
-  demandaJudicialCompleto: string;
-  carteraCastigadaCompleto: string;
-  porVencerTotal: string;
-  noDevInteresesTotal: string;
-  vencidoTotal: string;
-  saldoDeudaTotal: string;
-  demandaJudicialTotal: string;
-  carteraCastigadaTotal: string;
-  historialCrediticioCompleto: string;
-  mayPlazoVencidoCompleto: string;
-  fechaMayPlazoVencido: string;
-  mayValorVencidoCompleto: string;
-  fechaMayValorVencido: string;
-  endeudamientoPromCompleto: string;
-  fechaEndeudamiento: string;
-  mayPlazoVencidoCompleto1: string;
-  fechaMayPlazoVencido1: string;
-  mayValorVencidoCompleto1: string;
-  fechaMayValorVencido1: string;
-  endeudamientoPromCompleto1: string;
-  fechaEndeudamiento1: string;
-  detallOperacionesVencidasCompleto: string;
+    institucionCompleta6: string;
+    tipoRiesgoCompleta6: string;
+    tipoCreditoCompleta6: string;
+    vincCompleta6: string;
+    totalVencerCompleta6: string;
+    noDevInteresesCompleta6: string;
+    totalVencidoCompleta6: string;
+    demJudCompleta6: string;
+    cartCastCompleta6: string;
+    saldoDeudaCompleta6: string;
+    acConcCompleta6: string;
+    acreedorCompleto: string;
+    porVencerCompleto: string;
+    noDevengaIntCompleto: string;
+    vencidoCompleto: string;
+    saldDeudaCompleto: string;
+    demandaJudicialCompleto: string;
+    carteraCastigadaCompleto: string;
+    porVencerTotal: string;
+    noDevInteresesTotal: string;
+    vencidoTotal: string;
+    saldoDeudaTotal: string;
+    demandaJudicialTotal: string;
+    carteraCastigadaTotal: string;
+    historialCrediticioCompleto: string;
+    mayPlazoVencidoCompleto: string;
+    fechaMayPlazoVencido: string;
+    mayValorVencidoCompleto: string;
+    fechaMayValorVencido: string;
+    endeudamientoPromCompleto: string;
+    fechaEndeudamiento: string;
+    mayPlazoVencidoCompleto1: string;
+    fechaMayPlazoVencido1: string;
+    mayValorVencidoCompleto1: string;
+    fechaMayValorVencido1: string;
+    endeudamientoPromCompleto1: string;
+    fechaEndeudamiento1: string;
+    detallOperacionesVencidasCompleto: string;
 
 
     //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -276,8 +281,6 @@ export class InformeCompletoComponent implements OnInit {
     totalActivosLargoPlazoDos: string;
     totalDelActivo: string;
     totalDelActivoDos: string;
-    pasivoCompleto: string;
-    pasivoCompletoDos: string;
     cuentasProveedoresRelacionado: string;
     cuentasProveedoresRelacionadoDos: string;
     cuentasProveedoresNoRelacionado: string;
@@ -318,8 +321,6 @@ export class InformeCompletoComponent implements OnInit {
     otrosPasivosDos: string;
     totalDelPasivo: string;
     totalDelPasivoDos: string;
-    patrimonioNeto: string;
-    patrimonioNetoDos: string;
     capitalSuscrito: string;
     capitalSuscritoDos: string;
     capitalSuscritoNoPaga: string;
@@ -421,7 +422,7 @@ export class InformeCompletoComponent implements OnInit {
     rendimientoCapitalTres: string;
     cuentaFecha: string;
     cuentaFechaDos: string;
-    activoCorriente: string;
+    activoCorriente: string; 
     activoCorrienteDos: string;
     activoNoCorriente: string;
     activoNoCorrienteDos: string;
@@ -755,8 +756,6 @@ export class InformeCompletoComponent implements OnInit {
             totalActivosLargoPlazoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             totalDelActivo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             totalDelActivoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            pasivoCompleto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            pasivoCompletoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             cuentasProveedoresRelacionado: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             cuentasProveedoresRelacionadoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             cuentasProveedoresNoRelacionado: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
@@ -797,8 +796,6 @@ export class InformeCompletoComponent implements OnInit {
             otrosPasivosDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             totalDelPasivo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             totalDelPasivoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            patrimonioNeto: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
-            patrimonioNetoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             capitalSuscrito: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             capitalSuscritoDos: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
             capitalSuscritoNoPaga: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30), Validators.pattern(this.numberPattern)]],
@@ -969,102 +966,102 @@ export class InformeCompletoComponent implements OnInit {
     }
     listaProvincias: Array<any> = [
         {
-          name: "AZUAY", ciudades: ["CUENCA", "GIRÓN", "GUALACEO", "NABÓN", "PAUTE", "PUCARA", "SAN FERNANDO", "SANTA ISABEL", "SIGSIG", "OÑA", "CHORDELEG", "EL PAN", "SEVILLA DE ORO", "GUACHAPALA", "CAMILO PONCE ENRÍQUEZ"
-          ]
+            name: "AZUAY", ciudades: ["CUENCA", "GIRÓN", "GUALACEO", "NABÓN", "PAUTE", "PUCARA", "SAN FERNANDO", "SANTA ISABEL", "SIGSIG", "OÑA", "CHORDELEG", "EL PAN", "SEVILLA DE ORO", "GUACHAPALA", "CAMILO PONCE ENRÍQUEZ"
+            ]
         }, {
-          name: "BOLIVAR", ciudades: ["GUARANDA", "CHILLANES", "CHIMBO", "ECHEANDÍA", "SAN MIGUEL", "CALUMA", "LAS NAVES"
-          ]
+            name: "BOLIVAR", ciudades: ["GUARANDA", "CHILLANES", "CHIMBO", "ECHEANDÍA", "SAN MIGUEL", "CALUMA", "LAS NAVES"
+            ]
         }, {
-          name: "CAÑAR", ciudades: ["AZOGUES", "BIBLIÁN", "CAÑAR", "LA TRONCAL", "EL TAMBO", "DÉLEG", "SUSCAL"
-          ]
+            name: "CAÑAR", ciudades: ["AZOGUES", "BIBLIÁN", "CAÑAR", "LA TRONCAL", "EL TAMBO", "DÉLEG", "SUSCAL"
+            ]
         }, {
-          name: "CARCHI", ciudades: ["TULCÁN", "BOLÍVAR", "ESPEJO", "MIRA", "MONTÚFAR", "SAN PEDRO DE HUACA"
-          ]
+            name: "CARCHI", ciudades: ["TULCÁN", "BOLÍVAR", "ESPEJO", "MIRA", "MONTÚFAR", "SAN PEDRO DE HUACA"
+            ]
         }, {
-          name: "COTOPAXI", ciudades: ["LATACUNGA", "LA MANÁ", "PANGUA", "PUJILI", "SALCEDO", "SAQUISILÍ", "SIGCHOS"
-          ]
+            name: "COTOPAXI", ciudades: ["LATACUNGA", "LA MANÁ", "PANGUA", "PUJILI", "SALCEDO", "SAQUISILÍ", "SIGCHOS"
+            ]
         }, {
-          name: "CHIMBORAZO", ciudades: ["RIOBAMBA", "ALAUSI", "COLTA", "CHAMBO", "CHUNCHI", "GUAMOTE", "GUANO", "PALLATANGA", "PENIPE", "CUMANDÁ"
-          ]
+            name: "CHIMBORAZO", ciudades: ["RIOBAMBA", "ALAUSI", "COLTA", "CHAMBO", "CHUNCHI", "GUAMOTE", "GUANO", "PALLATANGA", "PENIPE", "CUMANDÁ"
+            ]
         }, {
-          name: "EL ORO", ciudades: ["MACHALA", "ARENILLAS", "ATAHUALPA", "BALSAS", "CHILLA", "EL GUABO", "HUAQUILLAS", "MARCABELÍ", "PASAJE", "PIÑAS", "PORTOVELO", "SANTA ROSA", "ZARUMA", "LAS LAJAS"
-          ]
+            name: "EL ORO", ciudades: ["MACHALA", "ARENILLAS", "ATAHUALPA", "BALSAS", "CHILLA", "EL GUABO", "HUAQUILLAS", "MARCABELÍ", "PASAJE", "PIÑAS", "PORTOVELO", "SANTA ROSA", "ZARUMA", "LAS LAJAS"
+            ]
         }, {
-          name: "ESMERALDAS", ciudades: ["ESMERALDAS", "ELOY ALFARO", "MUISNE", "QUININDÉ", "SAN LORENZO", "ATACAMES", "RIOVERDE", "LA CONCORDIA"
-          ]
+            name: "ESMERALDAS", ciudades: ["ESMERALDAS", "ELOY ALFARO", "MUISNE", "QUININDÉ", "SAN LORENZO", "ATACAMES", "RIOVERDE", "LA CONCORDIA"
+            ]
         }, {
-          name: "GUAYAS", ciudades: ["GUAYAQUIL", "ALFREDO BAQUERIZO MORENO (JUJÁN)", "BALAO", "BALZAR", "COLIMES", "DAULE", "DURÁN", "EL EMPALME", "EL TRIUNFO", "MILAGRO", "NARANJAL", "NARANJITO", "PALESTINA", "PEDRO CARBO", "SAMBORONDÓN", "SANTA LUCÍA", "SALITRE (URBINA JADO)", "SAN JACINTO DE YAGUACHI", "PLAYAS", "SIMÓN BOLÍVAR", "CORONEL MARCELINO MARIDUEÑA", "LOMAS DE SARGENTILLO", "NOBOL", "GENERAL ANTONIO ELIZALDE", "ISIDRO AYORA"
-          ]
+            name: "GUAYAS", ciudades: ["GUAYAQUIL", "ALFREDO BAQUERIZO MORENO (JUJÁN)", "BALAO", "BALZAR", "COLIMES", "DAULE", "DURÁN", "EL EMPALME", "EL TRIUNFO", "MILAGRO", "NARANJAL", "NARANJITO", "PALESTINA", "PEDRO CARBO", "SAMBORONDÓN", "SANTA LUCÍA", "SALITRE (URBINA JADO)", "SAN JACINTO DE YAGUACHI", "PLAYAS", "SIMÓN BOLÍVAR", "CORONEL MARCELINO MARIDUEÑA", "LOMAS DE SARGENTILLO", "NOBOL", "GENERAL ANTONIO ELIZALDE", "ISIDRO AYORA"
+            ]
         }, {
-          name: "IMBABURA", ciudades: ["IBARRA", "ANTONIO ANTE", "COTACACHI", "OTAVALO", "PIMAMPIRO", "SAN MIGUEL DE URCUQUÍ"
-          ]
+            name: "IMBABURA", ciudades: ["IBARRA", "ANTONIO ANTE", "COTACACHI", "OTAVALO", "PIMAMPIRO", "SAN MIGUEL DE URCUQUÍ"
+            ]
         }, {
-          name: "LOJA", ciudades: ["LOJA", "CALVAS", "CATAMAYO", "CELICA", "CHAGUARPAMBA", "ESPÍNDOLA", "GONZANAMÁ", "MACARÁ", "PALTAS", "PUYANGO", "SARAGURO", "SOZORANGA", "ZAPOTILLO", "PINDAL", "QUILANGA", "OLMEDO"
-          ]
+            name: "LOJA", ciudades: ["LOJA", "CALVAS", "CATAMAYO", "CELICA", "CHAGUARPAMBA", "ESPÍNDOLA", "GONZANAMÁ", "MACARÁ", "PALTAS", "PUYANGO", "SARAGURO", "SOZORANGA", "ZAPOTILLO", "PINDAL", "QUILANGA", "OLMEDO"
+            ]
         }, {
-          name: "LOS RIOS", ciudades: ["BABAHOYO", "BABA", "MONTALVO", "PUEBLOVIEJO", "QUEVEDO", "URDANETA", "VENTANAS", "VÍNCES", "PALENQUE", "BUENA FÉ", "VALENCIA", "MOCACHE", "QUINSALOMA"
-          ]
+            name: "LOS RIOS", ciudades: ["BABAHOYO", "BABA", "MONTALVO", "PUEBLOVIEJO", "QUEVEDO", "URDANETA", "VENTANAS", "VÍNCES", "PALENQUE", "BUENA FÉ", "VALENCIA", "MOCACHE", "QUINSALOMA"
+            ]
         }, {
-          name: "MANABI", ciudades: ["PORTOVIEJO", "BOLÍVAR", "CHONE", "EL CARMEN", "FLAVIO ALFARO", "JIPIJAPA", "JUNÍN", "MANTA", "MONTECRISTI", "PAJÁN", "PICHINCHA", "ROCAFUERTE", "SANTA ANA", "SUCRE", "TOSAGUA", "24 DE MAYO", "PEDERNALES", "OLMEDO", "PUERTO LÓPEZ", "JAMA", "JARAMIJÓ", "SAN VICENTE"
-          ]
+            name: "MANABI", ciudades: ["PORTOVIEJO", "BOLÍVAR", "CHONE", "EL CARMEN", "FLAVIO ALFARO", "JIPIJAPA", "JUNÍN", "MANTA", "MONTECRISTI", "PAJÁN", "PICHINCHA", "ROCAFUERTE", "SANTA ANA", "SUCRE", "TOSAGUA", "24 DE MAYO", "PEDERNALES", "OLMEDO", "PUERTO LÓPEZ", "JAMA", "JARAMIJÓ", "SAN VICENTE"
+            ]
         }, {
-          name: "MORONA SANTIAGO", ciudades: ["MORONA", "GUALAQUIZA", "LIMÓN INDANZA", "PALORA", "SANTIAGO", "SUCÚA", "HUAMBOYA", "SAN JUAN BOSCO", "TAISHA", "LOGROÑO", "PABLO SEXTO", "TIWINTZA"
-          ]
+            name: "MORONA SANTIAGO", ciudades: ["MORONA", "GUALAQUIZA", "LIMÓN INDANZA", "PALORA", "SANTIAGO", "SUCÚA", "HUAMBOYA", "SAN JUAN BOSCO", "TAISHA", "LOGROÑO", "PABLO SEXTO", "TIWINTZA"
+            ]
         }, {
-          name: "NAPO", ciudades: ["TENA", "ARCHIDONA", "EL CHACO", "QUIJOS", "CARLOS JULIO AROSEMENA TOLA"
-          ]
+            name: "NAPO", ciudades: ["TENA", "ARCHIDONA", "EL CHACO", "QUIJOS", "CARLOS JULIO AROSEMENA TOLA"
+            ]
         }, {
-          name: "PASTAZA", ciudades: ["PASTAZA", "MERA", "SANTA CLARA", "ARAJUNO"
-          ]
+            name: "PASTAZA", ciudades: ["PASTAZA", "MERA", "SANTA CLARA", "ARAJUNO"
+            ]
         }, {
-          name: "PICHINCHA", ciudades: ["QUITO", "CAYAMBE", "MEJIA", "PEDRO MONCAYO", "RUMIÑAHUI", "SAN MIGUEL DE LOS BANCOS", "PEDRO VICENTE MALDONADO", "PUERTO QUITO"
-          ]
+            name: "PICHINCHA", ciudades: ["QUITO", "CAYAMBE", "MEJIA", "PEDRO MONCAYO", "RUMIÑAHUI", "SAN MIGUEL DE LOS BANCOS", "PEDRO VICENTE MALDONADO", "PUERTO QUITO"
+            ]
         }, {
-          name: "TUNGURAHUA", ciudades: ["AMBATO", "BAÑOS DE AGUA SANTA", "CEVALLOS", "MOCHA", "PATATE", "QUERO", "SAN PEDRO DE PELILEO", "SANTIAGO DE PÍLLARO", "TISALEO"
-          ]
+            name: "TUNGURAHUA", ciudades: ["AMBATO", "BAÑOS DE AGUA SANTA", "CEVALLOS", "MOCHA", "PATATE", "QUERO", "SAN PEDRO DE PELILEO", "SANTIAGO DE PÍLLARO", "TISALEO"
+            ]
         }, {
-          name: "ZAMORA CHINCHIPE", ciudades: ["ZAMORA", "CHINCHIPE", "NANGARITZA", "YACUAMBI", "YANTZAZA (YANZATZA)", "EL PANGUI", "CENTINELA DEL CÓNDOR", "PALANDA", "PAQUISHA"
-          ]
+            name: "ZAMORA CHINCHIPE", ciudades: ["ZAMORA", "CHINCHIPE", "NANGARITZA", "YACUAMBI", "YANTZAZA (YANZATZA)", "EL PANGUI", "CENTINELA DEL CÓNDOR", "PALANDA", "PAQUISHA"
+            ]
         }, {
-          name: "GALAPAGOS", ciudades: ["SAN CRISTÓBAL", "ISABELA", "SANTA CRUZ"
-          ]
+            name: "GALAPAGOS", ciudades: ["SAN CRISTÓBAL", "ISABELA", "SANTA CRUZ"
+            ]
         }, {
-          name: "SUCUMBIOS", ciudades: ["LAGO AGRIO", "GONZALO PIZARRO", "PUTUMAYO", "SHUSHUFINDI", "SUCUMBÍOS", "CASCALES", "CUYABENO"
-          ]
+            name: "SUCUMBIOS", ciudades: ["LAGO AGRIO", "GONZALO PIZARRO", "PUTUMAYO", "SHUSHUFINDI", "SUCUMBÍOS", "CASCALES", "CUYABENO"
+            ]
         }, {
-          name: "ORELLANA", ciudades: ["ORELLANA", "AGUARICO", "LA JOYA DE LOS SACHAS", "LORETO"
-          ]
+            name: "ORELLANA", ciudades: ["ORELLANA", "AGUARICO", "LA JOYA DE LOS SACHAS", "LORETO"
+            ]
         }, {
-          name: "SANTO DOMINGO DE LOS TSACHILAS", ciudades: ["SANTO DOMINGO"
-          ]
+            name: "SANTO DOMINGO DE LOS TSACHILAS", ciudades: ["SANTO DOMINGO"
+            ]
         }, { name: "SANTA ELENA", ciudades: ["SANTA ELENA", "LA LIBERTAD", "SALINAS"] },
-      ];
-      ciudades: Array<any>;
-      cambioProvincia(count) {
+    ];
+    ciudades: Array<any>;
+    cambioProvincia(count) {
         this.ciudades = this.listaProvincias.find(con => con.name == count).ciudades;
-      }
-    
-      addInformeCompleto() {
+    }
+
+    addInformeCompleto() {
         this.submitted = true;
         this.save();
-      }
-      private save(): void {
+    }
+    private save(): void {
         console.log(this.formularioCompleto);
         this.completoService.addInformeCompleto(this.formularioCompleto)
-          .subscribe();
+            .subscribe();
         Swal.fire({
-          title: 'Muy Bien',
-          text: 'Datos Guardados Éxitosamente',
-          type: 'success'
+            title: 'Muy Bien',
+            text: 'Datos Guardados Éxitosamente',
+            type: 'success'
         });
-      }
+    }
 
     public barChartOptions = {
         scaleShowVerticalLines: false,
         responsive: true,
         plugins: {
-            labels:{
-                display:false
+            labels: {
+                display: false
             }
         }
     };
@@ -1075,8 +1072,8 @@ export class InformeCompletoComponent implements OnInit {
     public barChartType = 'bar';
     public barChartLegend = true;
     public barChartData = [
-        { data: [0,0,0,0,0,0,0,0,0], label: 'Año' },
-        { data: [0,0,0,0,0,0,0,0,0], label: 'Año' }
+        { data: [0, 0, 0, 0, 0, 0, 0, 0, 0], label: 'Año' },
+        { data: [0, 0, 0, 0, 0, 0, 0, 0, 0], label: 'Año' }
     ];
     //Pasteles
     public pieChartType = 'pie';
@@ -1085,9 +1082,9 @@ export class InformeCompletoComponent implements OnInit {
     public pieChartOptions = {
         responsive: true,
         plugins: {
-            datalabels: {        
-                formatter: function(value, context) {
-                    return Math.round(value*100) + '%';
+            datalabels: {
+                formatter: function (value, context) {
+                    return Math.round(value * 100) + '%';
                 }
             }
         }
@@ -1100,7 +1097,7 @@ export class InformeCompletoComponent implements OnInit {
     public pieChartDataDos = [0, 0, 0, 0, 0];
     //Activo del pasivo corriente
     public pieChartLabelsTres = ['Proveedores', 'Obligaciones institucionales financieras', 'Otras cuentas y doc. por pagar', 'Prestamos accionistas corto plazo', 'Otros pasivos corrientes'];
-    public pieChartDataTres = [0, 0, 0, 0, 0];    
+    public pieChartDataTres = [0, 0, 0, 0, 0];
     //Pasivo Largo plazo
     public pieChartLabelsCuatro = ['Cuentas y doc. por pagar largo plazo', 'Obligaciones institucionales financieras', 'Prestamos accionistas', 'Otras cuentas y doc. por pagar', 'Otros pasivos largo plazo'];
     public pieChartDataCuatro = [0, 0, 0, 0, 0];
@@ -1197,9 +1194,309 @@ export class InformeCompletoComponent implements OnInit {
         }
         console.log(this.pieChartData[pieChartName]);
     }
-    public barChart={
-        uno:[],
-        dos:[]
+    public barChart = {
+        uno: [],
+        dos: []
+    }
+    sumarTotal() {
+        if (isNaN(parseInt(this.formularioCompleto.cajaBancosCompleto))) {this.formularioCompleto.cajaBancosCompleto = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.inversionesCorrientes))) {this.formularioCompleto.inversionesCorrientes = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.cuentasRelacionadas))) {this.formularioCompleto.cuentasRelacionadas = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.cuentasNoRelacionadas))) {this.formularioCompleto.cuentasNoRelacionadas = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrasCuentasRelacionadas))) {this.formularioCompleto.otrasCuentasRelacionadas = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrasCuentasNoRelacionadas))) {this.formularioCompleto.otrasCuentasNoRelacionadas = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.provisionCuentas))) {this.formularioCompleto.provisionCuentas = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.creditoTributario))) {this.formularioCompleto.creditoTributario = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.inventariosCompleto))) {this.formularioCompleto.inventariosCompleto = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.activosPagados))) {this.formularioCompleto.activosPagados = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrosActivosCorrientes))) {this.formularioCompleto.otrosActivosCorrientes = "0";}
+        
+
+        if (isNaN(parseInt(this.formularioCompleto.cajaBancosCompletoDos))) {this.formularioCompleto.cajaBancosCompletoDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.inversionesCorrientesDos))) {this.formularioCompleto.inversionesCorrientesDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.cuentasRelacionadasDos))) {this.formularioCompleto.cuentasRelacionadasDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.cuentasNoRelacionadasDos))) {this.formularioCompleto.cuentasNoRelacionadasDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrasCuentasRelacionadasDos))) {this.formularioCompleto.otrasCuentasRelacionadasDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrasCuentasNoRelacionadasDos))) {this.formularioCompleto.otrasCuentasNoRelacionadasDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.provisionCuentasDos))) {this.formularioCompleto.provisionCuentasDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.creditoTributarioDos))) {this.formularioCompleto.creditoTributarioDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.inventariosCompletoDos))) {this.formularioCompleto.inventariosCompletoDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.activosPagadosDos))) {this.formularioCompleto.activosPagadosDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrosActivosCorrientesDos))) {this.formularioCompleto.otrosActivosCorrientesDos = "0";}
+
+        
+        if (isNaN(parseInt(this.formularioCompleto.inversionesParticipaciones))) {this.formularioCompleto.inversionesParticipaciones = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrasInversionesLargoPlazo))) {this.formularioCompleto.otrasInversionesLargoPlazo = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.cuentasPorCobrarRelacionadas))) {this.formularioCompleto.cuentasPorCobrarRelacionadas = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.cuentasPorCobrarNoRelacionadas))) {this.formularioCompleto.cuentasPorCobrarNoRelacionadas = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrasCuentasPorCobrarRelacionadas))) {this.formularioCompleto.otrasCuentasPorCobrarRelacionadas = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrasCuentasPorCobrarNoRelacionadas))) {this.formularioCompleto.otrasCuentasPorCobrarNoRelacionadas = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.provisionCuentasIncobrables))) {this.formularioCompleto.provisionCuentasIncobrables = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrosActivosLargoPlazo))) {this.formularioCompleto.otrosActivosLargoPlazo = "0";}
+
+        if (isNaN(parseInt(this.formularioCompleto.inversionesParticipacionesDos))) {this.formularioCompleto.inversionesParticipacionesDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrasInversionesLargoPlazoDos))) {this.formularioCompleto.otrasInversionesLargoPlazoDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.cuentasPorCobrarRelacionadasDos))) {this.formularioCompleto.cuentasPorCobrarRelacionadasDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.cuentasPorCobrarNoRelacionadasDos))) {this.formularioCompleto.cuentasPorCobrarNoRelacionadasDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrasCuentasPorCobrarRelacionadasDos))) {this.formularioCompleto.otrasCuentasPorCobrarRelacionadasDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrasCuentasPorCobrarNoRelacionadasDos))) {this.formularioCompleto.otrasCuentasPorCobrarNoRelacionadasDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.provisionCuentasIncobrablesDos))) {this.formularioCompleto.provisionCuentasIncobrablesDos = "0";}
+        if (isNaN(parseInt(this.formularioCompleto.otrosActivosLargoPlazoDos))) {this.formularioCompleto.otrosActivosLargoPlazoDos = "0";}
+
+        var prop = Object.keys(this.formularioCompleto);
+        console.log(prop);
+        for(var i = 192 ; i<=325;i++){
+        //        this.format(this.formularioCompleto[prop[i]]);
+        }
+        for(var i = 240 ; i<=257;i++){
+            if(this.formularioCompleto[prop[i]]=='undefined' || this.formularioCompleto[prop[i]]==null){
+                this.formularioCompleto[prop[i]] = 0;
+            }
+        }
+        for(var i = 240 ; i<=257;i++){
+            if(this.formularioCompleto[prop[i]]=='undefined' || this.formularioCompleto[prop[i]]==null){
+                this.formularioCompleto[prop[i]] = 0;
+            }
+        }
+        for(var i = 260 ; i<=273;i++){
+            if(this.formularioCompleto[prop[i]]=='undefined' || this.formularioCompleto[prop[i]]==null){
+                this.formularioCompleto[prop[i]] = 0;
+            }
+        }
+        for(var i = 280 ; i<=295;i++){
+            if(this.formularioCompleto[prop[i]]=='undefined' || this.formularioCompleto[prop[i]]==null){
+                this.formularioCompleto[prop[i]] = 0;
+            }
+        }
+
+        for(var i = 302 ; i<=325;i++){
+            if(this.formularioCompleto[prop[i]]=='undefined' || this.formularioCompleto[prop[i]]==null){
+                this.formularioCompleto[prop[i]] = 0;
+            }
+        }
+        this.formularioCompleto.totalActivoCorriente = (
+            parseInt(this.formularioCompleto.cajaBancosCompleto) +
+            parseInt(this.formularioCompleto.inversionesCorrientes) +
+            parseInt(this.formularioCompleto.cuentasRelacionadas) +
+            parseInt(this.formularioCompleto.cuentasNoRelacionadas) +
+            parseInt(this.formularioCompleto.otrasCuentasRelacionadas) +
+            parseInt(this.formularioCompleto.otrasCuentasNoRelacionadas) +
+            parseInt(this.formularioCompleto.provisionCuentas) +
+            parseInt(this.formularioCompleto.creditoTributario) +
+            parseInt(this.formularioCompleto.inventariosCompleto) +
+            parseInt(this.formularioCompleto.activosPagados) +
+            parseInt(this.formularioCompleto.otrosActivosCorrientes)
+        ).toString();
+        this.formularioCompleto.activoCorriente = this.formularioCompleto.totalActivoCorriente
+        this.formularioCompleto.activoCorrienteDos = this.formularioCompleto.totalActivoCorrienteDos
+        this.formularioCompleto.totalActivos = this.formularioCompleto.totalPasivoPatrimonio;
+        this.formularioCompleto.totalActivosDos = this.formularioCompleto.totalPasivoPatrimonioDos;
+
+        this.formularioCompleto.activoNoCorriente = (parseInt(this.formularioCompleto.totalActivos) - parseInt(this.formularioCompleto.activoCorriente)).toString()
+        this.formularioCompleto.activoNoCorrienteDos = (parseInt(this.formularioCompleto.totalActivosDos) - parseInt(this.formularioCompleto.activoCorrienteDos)).toString()
+        
+        this.formularioCompleto.pasivoCorriente = this.formularioCompleto.totalPasivoCorriente;
+        this.formularioCompleto.pasivoCorrienteDos = this.formularioCompleto.totalPasivoCorrienteDos;   
+
+        this.formularioCompleto.totalPasivos = this.formularioCompleto.totalDelPasivo;
+        this.formularioCompleto.totalPasivosDos = this.formularioCompleto.totalDelPasivoDos;
+
+        this.formularioCompleto.pasivoNoCorriente = (parseInt(this.formularioCompleto.totalPasivos) - parseInt(this.formularioCompleto.pasivoCorriente)).toString();
+        this.formularioCompleto.pasivoNoCorrienteDos = (parseInt(this.formularioCompleto.totalPasivosDos) - parseInt(this.formularioCompleto.pasivoCorrienteDos)).toString();
+
+        this.formularioCompleto.totalPatrimonio = this.formularioCompleto.patrimonio
+        this.formularioCompleto.totalPatrimonioDos = this.formularioCompleto.patrimonioDos
+
+        this.formularioCompleto.ventasCompleto = this.formularioCompleto.ventasTotales
+        this.formularioCompleto.ventasCompletoDos = this.formularioCompleto.ventasTotalesDos
+
+        this.formularioCompleto.utilidadPerdida = this.formularioCompleto.utilidadRepartible
+        this.formularioCompleto.utilidadPerdidaDos = this.formularioCompleto.utilidadRepartibleDos
+        this.formularioCompleto.utilidadPerdida =  (parseInt(this.formularioCompleto.totalActivoCorriente) - parseInt(this.formularioCompleto.totalPasivoCorriente)).toString();
+        this.formularioCompleto.utilidadPerdidaDos =  (parseInt(this.formularioCompleto.totalActivoCorrienteDos) - parseInt(this.formularioCompleto.totalPasivoCorrienteDos)).toString();
+        
+        this.formularioCompleto.utilidadBruta =  (parseInt(this.formularioCompleto.ventasTotales) - parseInt(this.formularioCompleto.costoVentas)).toString();
+        this.formularioCompleto.utilidadBrutaDos =  (parseInt(this.formularioCompleto.ventasTotalesDos) - parseInt(this.formularioCompleto.costoVentasDos)).toString();
+
+
+        this.formularioCompleto.utilidadOperacional =  (parseInt(this.formularioCompleto.utilidadBruta) - parseInt(this.formularioCompleto.gastosAdministracion)).toString();
+        this.formularioCompleto.utilidadOperacionalDos =  (parseInt(this.formularioCompleto.utilidadBrutaDos) - parseInt(this.formularioCompleto.gastosAdministracionDos)).toString();
+
+        this.formularioCompleto.utilidadAntesImpuestos =  (parseInt(this.formularioCompleto.utilidadOperacional) + parseInt(this.formularioCompleto.ingresosNoOperacionales) - parseInt(this.formularioCompleto.gastosNoOperacio)).toString();
+        this.formularioCompleto.utilidadAntesImpuestosDos =  (parseInt(this.formularioCompleto.utilidadOperacionalDos) + parseInt(this.formularioCompleto.ingresosNoOperacionalesDos) - parseInt(this.formularioCompleto.gastosNoOperacioDos)).toString();
+
+        this.formularioCompleto.utilidadTributable =  (parseInt(this.formularioCompleto.utilidadAntesImpuestos) - parseInt(this.formularioCompleto.participacionTrabajadores)).toString();
+        this.formularioCompleto.utilidadTributableDos =  (parseInt(this.formularioCompleto.utilidadAntesImpuestosDos) - parseInt(this.formularioCompleto.participacionTrabajadoresDos)).toString();
+
+        this.formularioCompleto.utilidadRepartible =  (parseInt(this.formularioCompleto.utilidadTributable) - parseInt(this.formularioCompleto.impuestoARenta)).toString();
+        this.formularioCompleto.utilidadRepartibleDos =  (parseInt(this.formularioCompleto.utilidadTributableDos) - parseInt(this.formularioCompleto.impuestoARentaDos)).toString();
+
+
+
+        this.formularioCompleto.totalActivoCorrienteDos = (
+            parseInt(this.formularioCompleto.cajaBancosCompletoDos) +
+            parseInt(this.formularioCompleto.inversionesCorrientesDos) +
+            parseInt(this.formularioCompleto.cuentasRelacionadasDos) +
+            parseInt(this.formularioCompleto.cuentasNoRelacionadasDos) +
+            parseInt(this.formularioCompleto.otrasCuentasRelacionadasDos) +
+            parseInt(this.formularioCompleto.otrasCuentasNoRelacionadasDos) +
+            parseInt(this.formularioCompleto.provisionCuentasDos) +
+            parseInt(this.formularioCompleto.creditoTributarioDos) +
+            parseInt(this.formularioCompleto.inventariosCompletoDos) +
+            parseInt(this.formularioCompleto.activosPagadosDos) +
+            parseInt(this.formularioCompleto.otrosActivosCorrientesDos)
+        ).toString();
+
+
+
+        this.formularioCompleto.totalActivosLargoPlazo = (
+            parseInt(this.formularioCompleto.inversionesParticipaciones) +
+            parseInt(this.formularioCompleto.otrasInversionesLargoPlazo) +
+            parseInt(this.formularioCompleto.cuentasPorCobrarRelacionadas) +
+            parseInt(this.formularioCompleto.cuentasPorCobrarNoRelacionadas) +
+            parseInt(this.formularioCompleto.otrasCuentasPorCobrarRelacionadas) +
+            parseInt(this.formularioCompleto.otrasCuentasPorCobrarNoRelacionadas) +
+            parseInt(this.formularioCompleto.provisionCuentasIncobrables) +
+            parseInt(this.formularioCompleto.otrosActivosLargoPlazo)
+        ).toString();
+        console.log(this.formularioCompleto.totalActivoCorriente);
+
+        this.formularioCompleto.totalActivosLargoPlazoDos = (
+            parseInt(this.formularioCompleto.inversionesParticipacionesDos) +
+            parseInt(this.formularioCompleto.otrasInversionesLargoPlazoDos) +
+            parseInt(this.formularioCompleto.cuentasPorCobrarRelacionadasDos) +
+            parseInt(this.formularioCompleto.cuentasPorCobrarNoRelacionadasDos) +
+            parseInt(this.formularioCompleto.otrasCuentasPorCobrarRelacionadasDos) +
+            parseInt(this.formularioCompleto.otrasCuentasPorCobrarNoRelacionadasDos) +
+            parseInt(this.formularioCompleto.provisionCuentasIncobrablesDos) +
+            parseInt(this.formularioCompleto.otrosActivosLargoPlazoDos)
+        ).toString();
+
+
+        this.formularioCompleto.totalActivosLargoPlazoDos = (
+            parseInt(this.formularioCompleto.inversionesParticipacionesDos) +
+            parseInt(this.formularioCompleto.otrasInversionesLargoPlazoDos) +
+            parseInt(this.formularioCompleto.cuentasPorCobrarRelacionadasDos) +
+            parseInt(this.formularioCompleto.cuentasPorCobrarNoRelacionadasDos) +
+            parseInt(this.formularioCompleto.otrasCuentasPorCobrarRelacionadasDos) +
+            parseInt(this.formularioCompleto.otrasCuentasPorCobrarNoRelacionadasDos) +
+            parseInt(this.formularioCompleto.provisionCuentasIncobrablesDos) +
+            parseInt(this.formularioCompleto.otrosActivosLargoPlazoDos)
+        ).toString();
+
+        this.formularioCompleto.totalDelActivo = (
+            parseInt(this.formularioCompleto.totalActivoCorriente) +
+            parseInt(this.formularioCompleto.totalActivoFijo) +
+            parseInt(this.formularioCompleto.totalActivoDiferido) +
+            parseInt(this.formularioCompleto.totalActivosLargoPlazo)
+            
+        ).toString();
+
+        this.formularioCompleto.totalDelActivoDos = (
+            parseInt(this.formularioCompleto.totalActivoCorrienteDos) +
+            parseInt(this.formularioCompleto.totalActivoFijoDos) +
+            parseInt(this.formularioCompleto.totalActivoDiferidoDos) +
+            parseInt(this.formularioCompleto.totalActivosLargoPlazoDos)
+            
+        ).toString();
+
+        this.formularioCompleto.totalPasivoCorriente = (
+            parseInt(this.formularioCompleto.cuentasProveedoresRelacionado) +
+            parseInt(this.formularioCompleto.cuentasProveedoresNoRelacionado) +
+            parseInt(this.formularioCompleto.obligacionesFinancieras) +
+            parseInt(this.formularioCompleto.prestamosAccionistas) +
+            parseInt(this.formularioCompleto.otrasCuentasPagarRelacionadas) +
+            parseInt(this.formularioCompleto.otrasCuentasPagarNoRelacionadas) +
+            parseInt(this.formularioCompleto.impuestoRentaEjercito) +        
+            parseInt(this.formularioCompleto.participacionEjercito)  +          
+            parseInt(this.formularioCompleto.otrosPasivosCorrientes)            
+
+        ).toString();
+
+        this.formularioCompleto.totalPasivoCorrienteDos = (
+            parseInt(this.formularioCompleto.cuentasProveedoresRelacionadoDos) +
+            parseInt(this.formularioCompleto.cuentasProveedoresNoRelacionadoDos) +
+            parseInt(this.formularioCompleto.obligacionesFinancierasDos) +
+            parseInt(this.formularioCompleto.prestamosAccionistasDos) +
+            parseInt(this.formularioCompleto.otrasCuentasPagarRelacionadasDos) +
+            parseInt(this.formularioCompleto.otrasCuentasPagarNoRelacionadasDos) +
+            parseInt(this.formularioCompleto.impuestoRentaEjercitoDos) +        
+            parseInt(this.formularioCompleto.participacionEjercitoDos)  +          
+            parseInt(this.formularioCompleto.otrosPasivosCorrientesDos)            
+
+        ).toString();
+
+        this.formularioCompleto.totPasivoLargoPlazo = (
+            parseInt(this.formularioCompleto.cuentasPorPagar) +
+            parseInt(this.formularioCompleto.cuentasPorPagarNoRela) +
+            parseInt(this.formularioCompleto.obligacionesInstituFinan) +
+            parseInt(this.formularioCompleto.prestamosLargoPlazo) +
+            parseInt(this.formularioCompleto.otrasCuentasLargoPlazo) +
+            parseInt(this.formularioCompleto.otrasCuentasPorPagar) +
+            parseInt(this.formularioCompleto.otrosPasivosLargoPlazo) 
+            
+
+        ).toString();
+
+        this.formularioCompleto.totPasivoLargoPlazoDos = (
+            parseInt(this.formularioCompleto.cuentasPorPagarDos) +
+            parseInt(this.formularioCompleto.cuentasPorPagarNoRelaDos) +
+            parseInt(this.formularioCompleto.obligacionesInstituFinanDos) +
+            parseInt(this.formularioCompleto.prestamosLargoPlazoDos) +
+            parseInt(this.formularioCompleto.otrasCuentasLargoPlazoDos) +
+            parseInt(this.formularioCompleto.otrasCuentasPorPagarDos) +
+            parseInt(this.formularioCompleto.otrosPasivosLargoPlazoDos)            
+
+        ).toString();
+
+        this.formularioCompleto.totalDelPasivo = (
+            parseInt(this.formularioCompleto.totalPasivoCorriente) +
+            parseInt(this.formularioCompleto.totPasivoLargoPlazo) 
+                     
+        ).toString();
+
+        this.formularioCompleto.totalDelPasivoDos = (
+            parseInt(this.formularioCompleto.totalPasivoCorrienteDos) +
+            parseInt(this.formularioCompleto.totPasivoLargoPlazoDos) 
+                     
+        ).toString();
+
+        this.formularioCompleto.totalPatrimonio = (
+            parseInt(this.formularioCompleto.capitalSuscrito) +
+            parseInt(this.formularioCompleto.capitalSuscritoNoPaga) +
+            parseInt(this.formularioCompleto.aportesSocios) +
+            parseInt(this.formularioCompleto.reservaLegal) +
+            parseInt(this.formularioCompleto.otrasReservas) +
+            parseInt(this.formularioCompleto.utilidadNoDistribuida) +
+            parseInt(this.formularioCompleto.perdidaAcumulada) +
+            parseInt(this.formularioCompleto.utilidadEjercito) 
+                    
+        ).toString();
+
+        this.formularioCompleto.totalPatrimonioDos = (
+            parseInt(this.formularioCompleto.capitalSuscritoDos) +
+            parseInt(this.formularioCompleto.capitalSuscritoNoPaga) +
+            parseInt(this.formularioCompleto.aportesSocios) +
+            parseInt(this.formularioCompleto.reservaLegalDos) +
+            parseInt(this.formularioCompleto.otrasReservasDos) +
+            parseInt(this.formularioCompleto.utilidadNoDistribuidaDos) +
+            parseInt(this.formularioCompleto.perdidaAcumuladaDos) +
+            parseInt(this.formularioCompleto.utilidadEjercitoDos) 
+                    
+        ).toString();
+
+        this.formularioCompleto.totalPasivoPatrimonio = (
+            parseInt(this.formularioCompleto.totalDelPasivo) +
+            parseInt(this.formularioCompleto.totalPatrimonio)   
+                    
+        ).toString();
+
+        this.formularioCompleto.totalPasivoPatrimonioDos = (
+            parseInt(this.formularioCompleto.totalDelPasivoDos) +
+            parseInt(this.formularioCompleto.totalPatrimonioDos)   
+                    
+        ).toString();
+
     }
     updateCharts() {
         this.barChartData = [
