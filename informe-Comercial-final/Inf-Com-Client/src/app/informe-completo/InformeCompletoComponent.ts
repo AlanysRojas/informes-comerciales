@@ -17,7 +17,14 @@ import { parse } from 'url';
     styleUrls: ['./informe-completo.component.css']
 })
 
+
+
 export class InformeCompletoComponent implements OnInit {
+    public mask  = function(rawValue) {
+        console.log(rawValue)
+        return [/[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+      }
+
     formularioCompleto = new formCompleto();
     submitted = false;
     //empieza formulario
@@ -1198,6 +1205,14 @@ export class InformeCompletoComponent implements OnInit {
         uno: [],
         dos: []
     }
+    quitarCero(){
+        var prop = Object.keys(this.formularioCompleto);
+        for(var i = 192 ; i<=325;i++){
+            if(this.formularioCompleto[prop[i]]==0 ){
+                this.formularioCompleto[prop[i]] = null;
+            }
+        }
+    }
     sumarTotal() {
         if (isNaN(parseInt(this.formularioCompleto.cajaBancosCompleto))) {this.formularioCompleto.cajaBancosCompleto = "0";}
         if (isNaN(parseInt(this.formularioCompleto.inversionesCorrientes))) {this.formularioCompleto.inversionesCorrientes = "0";}
@@ -1244,9 +1259,11 @@ export class InformeCompletoComponent implements OnInit {
         if (isNaN(parseInt(this.formularioCompleto.otrosActivosLargoPlazoDos))) {this.formularioCompleto.otrosActivosLargoPlazoDos = "0";}
 
         var prop = Object.keys(this.formularioCompleto);
-        console.log(prop);
-        for(var i = 192 ; i<=325;i++){
-        //        this.format(this.formularioCompleto[prop[i]]);
+
+        for(var i = 216 ; i<=219;i++){
+            if(this.formularioCompleto[prop[i]]=='undefined' || this.formularioCompleto[prop[i]]==null){
+                this.formularioCompleto[prop[i]] = 0;
+            }
         }
         for(var i = 240 ; i<=257;i++){
             if(this.formularioCompleto[prop[i]]=='undefined' || this.formularioCompleto[prop[i]]==null){
@@ -1304,11 +1321,15 @@ export class InformeCompletoComponent implements OnInit {
         this.formularioCompleto.pasivoNoCorriente = (parseInt(this.formularioCompleto.totalPasivos) - parseInt(this.formularioCompleto.pasivoCorriente)).toString();
         this.formularioCompleto.pasivoNoCorrienteDos = (parseInt(this.formularioCompleto.totalPasivosDos) - parseInt(this.formularioCompleto.pasivoCorrienteDos)).toString();
 
-        this.formularioCompleto.totalPatrimonio = this.formularioCompleto.patrimonio
-        this.formularioCompleto.totalPatrimonioDos = this.formularioCompleto.patrimonioDos
+        this.formularioCompleto.patrimonio = this.formularioCompleto.totalPatrimonio
+        this.formularioCompleto.patrimonioDos = this.formularioCompleto.totalPatrimonioDos
 
         this.formularioCompleto.ventasCompleto = this.formularioCompleto.ventasTotales
         this.formularioCompleto.ventasCompletoDos = this.formularioCompleto.ventasTotalesDos
+
+        this.formularioCompleto.capitalTrabajo =  (parseInt(this.formularioCompleto.totalActivoCorriente) - parseInt(this.formularioCompleto.totalPasivoCorriente)).toString();
+        this.formularioCompleto.capitalTrabajoDos =  (parseInt(this.formularioCompleto.totalActivoCorrienteDos) - parseInt(this.formularioCompleto.totalPasivoCorrienteDos)).toString();
+
 
         this.formularioCompleto.utilidadPerdida = this.formularioCompleto.utilidadRepartible
         this.formularioCompleto.utilidadPerdidaDos = this.formularioCompleto.utilidadRepartibleDos
@@ -1330,6 +1351,81 @@ export class InformeCompletoComponent implements OnInit {
 
         this.formularioCompleto.utilidadRepartible =  (parseInt(this.formularioCompleto.utilidadTributable) - parseInt(this.formularioCompleto.impuestoARenta)).toString();
         this.formularioCompleto.utilidadRepartibleDos =  (parseInt(this.formularioCompleto.utilidadTributableDos) - parseInt(this.formularioCompleto.impuestoARentaDos)).toString();
+
+        this.formularioCompleto.valor1 =  (parseInt(this.formularioCompleto.activoCorriente) - parseInt(this.formularioCompleto.activoCorrienteDos)).toString();
+        this.formularioCompleto.porcentaje1 =  (parseInt(this.formularioCompleto.valor1) / parseInt(this.formularioCompleto.activoCorrienteDos)).toString();
+
+        this.formularioCompleto.valor2 =  (parseInt(this.formularioCompleto.activoNoCorriente) - parseInt(this.formularioCompleto.activoNoCorrienteDos)).toString();
+        this.formularioCompleto.porcentaje2 =  (parseInt(this.formularioCompleto.valor2) / parseInt(this.formularioCompleto.activoCorrienteDos)).toString();
+
+        this.formularioCompleto.valor3 =  (parseInt(this.formularioCompleto.totalActivos) - parseInt(this.formularioCompleto.totalActivosDos)).toString();
+        this.formularioCompleto.porcentaje3 =  (parseInt(this.formularioCompleto.valor3) / parseInt(this.formularioCompleto.totalActivosDos)).toString();
+
+        this.formularioCompleto.valor4 =  (parseInt(this.formularioCompleto.pasivoCorriente) - parseInt(this.formularioCompleto.pasivoCorrienteDos)).toString();
+        this.formularioCompleto.porcentaje4 =  (parseInt(this.formularioCompleto.valor4) / parseInt(this.formularioCompleto.pasivoCorrienteDos)).toString();
+
+        this.formularioCompleto.valor5 =  (parseInt(this.formularioCompleto.pasivoNoCorriente) - parseInt(this.formularioCompleto.pasivoNoCorrienteDos)).toString();
+        this.formularioCompleto.porcentaje5 =  (parseInt(this.formularioCompleto.valor5) / parseInt(this.formularioCompleto.pasivoNoCorrienteDos)).toString();
+
+        this.formularioCompleto.valor6 =  (parseInt(this.formularioCompleto.totalPasivos) - parseInt(this.formularioCompleto.totalPasivosDos)).toString();
+        this.formularioCompleto.porcentaje6 =  (parseInt(this.formularioCompleto.valor6) / parseInt(this.formularioCompleto.totalPasivosDos)).toString();
+
+        this.formularioCompleto.valor7 =  (parseInt(this.formularioCompleto.patrimonio) - parseInt(this.formularioCompleto.patrimonioDos)).toString();
+        this.formularioCompleto.porcentaje7 =  (parseInt(this.formularioCompleto.valor7) / parseInt(this.formularioCompleto.patrimonioDos)).toString();
+
+        this.formularioCompleto.valor8 =  (parseInt(this.formularioCompleto.ventasCompleto) - parseInt(this.formularioCompleto.ventasCompletoDos)).toString();
+        this.formularioCompleto.porcentaje8 =  (parseInt(this.formularioCompleto.valor8) / parseInt(this.formularioCompleto.ventasCompletoDos)).toString();
+
+        this.formularioCompleto.valor9 =  (parseInt(this.formularioCompleto.utilidadPerdida) - parseInt(this.formularioCompleto.utilidadPerdidaDos)).toString();
+        this.formularioCompleto.porcentaje9 =  (parseInt(this.formularioCompleto.valor9) / parseInt(this.formularioCompleto.utilidadPerdidaDos)).toString();
+
+        this.formularioCompleto.valor10 =  (parseInt(this.formularioCompleto.capitalTrabajo) - parseInt(this.formularioCompleto.capitalTrabajoDos)).toString();
+        this.formularioCompleto.porcentaje10 =  (parseInt(this.formularioCompleto.valor10) / parseInt(this.formularioCompleto.capitalTrabajoDos)).toString();
+
+
+        // INDICES FINANCIEROS
+        this.formularioCompleto.razonCorrienteDos =  (parseInt(this.formularioCompleto.totalActivoCorriente) / parseInt(this.formularioCompleto.totalPasivoCorriente)).toString();
+        this.formularioCompleto.razonCorrienteTres =  (parseInt(this.formularioCompleto.totalActivoCorrienteDos) / parseInt(this.formularioCompleto.totalPasivoCorrienteDos)).toString();
+
+        this.formularioCompleto.pruebaAcidaDos =  (parseInt(this.formularioCompleto.totalActivoCorriente) - parseInt(this.formularioCompleto.inventariosCompleto) / parseInt(this.formularioCompleto.totalPasivoCorriente)).toString();
+        this.formularioCompleto.pruebaAcidaTres =  (parseInt(this.formularioCompleto.totalActivoCorrienteDos) - parseInt(this.formularioCompleto.inventariosCompletoDos) / parseInt(this.formularioCompleto.totalPasivoCorrienteDos)).toString();
+
+        this.formularioCompleto.razonEfectivoDos =  (parseInt(this.formularioCompleto.cajaBancosCompleto) / parseInt(this.formularioCompleto.totalPasivoCorriente)).toString();
+        this.formularioCompleto.razonEfectivoTres =  (parseInt(this.formularioCompleto.cajaBancosCompletoDos) / parseInt(this.formularioCompleto.totalPasivoCorrienteDos) ).toString();
+
+        this.formularioCompleto.razonDeudaTotalDos =  (parseInt(this.formularioCompleto.totalDelActivo) - parseInt(this.formularioCompleto.totalPatrimonio) / parseInt(this.formularioCompleto.totalDelActivo)).toString();
+        this.formularioCompleto.razonDeudaTotalTres =  (parseInt(this.formularioCompleto.totalDelActivoDos) - parseInt(this.formularioCompleto.totalPatrimonioDos) / parseInt(this.formularioCompleto.totalDelActivoDos)).toString();
+
+        this.formularioCompleto.rotacionInventarioDos =  (parseInt(this.formularioCompleto.costoVentas) / parseInt(this.formularioCompleto.inventariosCompleto)).toString();
+        this.formularioCompleto.rotacionInventarioTres =  (parseInt(this.formularioCompleto.costoVentasDos) / parseInt(this.formularioCompleto.inventariosCompletoDos)).toString();
+
+        this.formularioCompleto.diasVentaDos =  ( 365 / parseInt(this.formularioCompleto.rotacionInventarioDos)).toString();
+        this.formularioCompleto.diasVentaTres =  ( 365 / parseInt(this.formularioCompleto.rotacionInventarioTres)).toString();
+
+        this.formularioCompleto.rotacionCuentasDos =  ( parseInt(this.formularioCompleto.ventasTotales) / (parseInt(this.formularioCompleto.cuentasRelacionadas) + parseInt(this.formularioCompleto.cuentasNoRelacionadas))).toString();
+        this.formularioCompleto.rotacionCuentasTres =  ( parseInt(this.formularioCompleto.ventasTotalesDos) / (parseInt(this.formularioCompleto.cuentasRelacionadasDos) + parseInt(this.formularioCompleto.cuentasNoRelacionadasDos))).toString();
+
+        this.formularioCompleto.diasPromedioDos =  ( 365 / (parseInt(this.formularioCompleto.rotacionCuentasDos))).toString();
+        this.formularioCompleto.diasPromedioTres =  ( 365 / (parseInt(this.formularioCompleto.rotacionCuentasTres))).toString();
+
+        this.formularioCompleto.rotacionCuentasPagarDos =   (parseInt(this.formularioCompleto.costoVentas) / (parseInt(this.formularioCompleto.cuentasProveedoresRelacionado) + (parseInt(this.formularioCompleto.cuentasProveedoresNoRelacionado)))).toString();
+        this.formularioCompleto.rotacionCuentasPagarTres =   (parseInt(this.formularioCompleto.costoVentasDos) / (parseInt(this.formularioCompleto.cuentasProveedoresRelacionadoDos) + (parseInt(this.formularioCompleto.cuentasProveedoresNoRelacionadoDos)))).toString();
+
+        this.formularioCompleto.diasCuentasPagarDos =  ( 365 / (parseInt(this.formularioCompleto.rotacionCuentasPagarDos))).toString();
+        this.formularioCompleto.diasCuentasPagarTres =  ( 365 / (parseInt(this.formularioCompleto.rotacionCuentasPagarTres))).toString();
+
+        this.formularioCompleto.rotacionActivosTotalesDos =   (parseInt(this.formularioCompleto.ventasTotales) / (parseInt(this.formularioCompleto.totalDelActivo) )).toString();
+        this.formularioCompleto.rotacionActivosTotalesTres =   (parseInt(this.formularioCompleto.ventasTotalesDos) / (parseInt(this.formularioCompleto.totalDelActivoDos) )).toString();
+
+        this.formularioCompleto.margenUtilidadDos =   (parseInt(this.formularioCompleto.utilidadRepartible) / (parseInt(this.formularioCompleto.ventasTotales) )).toString();
+        this.formularioCompleto.margenUtilidadTres =   (parseInt(this.formularioCompleto.utilidadRepartibleDos) / (parseInt(this.formularioCompleto.ventasTotalesDos) )).toString();
+
+        this.formularioCompleto.rendimientoActivosDos =   (parseInt(this.formularioCompleto.utilidadRepartible) / (parseInt(this.formularioCompleto.totalDelActivo))).toString();
+        this.formularioCompleto.rendimientoActivosTres =   (parseInt(this.formularioCompleto.utilidadRepartibleDos) / (parseInt(this.formularioCompleto.totalDelActivoDos))).toString();
+
+        this.formularioCompleto.rendimientoCapitalDos =   (parseInt(this.formularioCompleto.utilidadRepartible) / (parseInt(this.formularioCompleto.totalDelPasivo))).toString();
+        this.formularioCompleto.rendimientoCapitalTres =   (parseInt(this.formularioCompleto.utilidadRepartibleDos) / (parseInt(this.formularioCompleto.totalDelPasivoDos))).toString();
+
 
 
 
@@ -1359,7 +1455,6 @@ export class InformeCompletoComponent implements OnInit {
             parseInt(this.formularioCompleto.provisionCuentasIncobrables) +
             parseInt(this.formularioCompleto.otrosActivosLargoPlazo)
         ).toString();
-        console.log(this.formularioCompleto.totalActivoCorriente);
 
         this.formularioCompleto.totalActivosLargoPlazoDos = (
             parseInt(this.formularioCompleto.inversionesParticipacionesDos) +

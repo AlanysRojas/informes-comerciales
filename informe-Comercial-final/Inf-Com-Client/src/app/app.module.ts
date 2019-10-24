@@ -4,18 +4,23 @@ import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RequisitosProveedoresComponent } from './requisitos-proveedores/requisitos-proveedores.component';
 import { InformeCompletoComponent } from "./informe-completo/InformeCompletoComponent";
 import { ChartsModule } from 'ng2-charts';
+import { InformeExpressComponent } from "../app/informe-express/informe-express.component"
+
+
+import { TextMaskModule } from 'angular2-text-mask';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RequisitosProveedoresComponent,
-    InformeCompletoComponent
+    InformeCompletoComponent,
+    InformeExpressComponent
   ],
   imports: [
     ReactiveFormsModule,
+    TextMaskModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,

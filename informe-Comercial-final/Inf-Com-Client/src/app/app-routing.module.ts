@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {RequisitosProveedoresComponent} from '../app/requisitos-proveedores/requisitos-proveedores.component';
 import { InformeCompletoComponent } from "../app/informe-completo/InformeCompletoComponent";
+import { InformeExpressComponent } from "../app/informe-express/informe-express.component"
 
 const routes: Routes = [
   {
     path: 'express',
-    component: RequisitosProveedoresComponent
+    component: InformeExpressComponent
   },
   {
     path: 'completo',

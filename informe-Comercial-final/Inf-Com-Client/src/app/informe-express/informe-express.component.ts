@@ -5,14 +5,114 @@ import { FormExpress } from '../models/formularioExpress';
 import {formatCurrency, getCurrencySymbol} from '@angular/common';
 import Swal from 'sweetalert2';
 
-
-
 @Component({
-  selector: 'app-requisitos-proveedores',
-  templateUrl: './requisitos-proveedores.component.html',
-  styleUrls: ['./requisitos-proveedores.component.css']
+  selector: 'app-informe-express',
+  templateUrl: './informe-express.component.html',
+  styleUrls: ['./informe-express.component.css']
 })
-export class RequisitosProveedoresComponent implements OnInit {
+export class InformeExpressComponent implements OnInit {
+
+  constructor(public fb: FormBuilder, private proveedoresService:FormProveedoresServiceService) {
+
+   
+    this.reporteExpress = this.fb.group({
+      
+      razonSocialExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      nombreComercialExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      rucExpress:  ['', [Validators.required,Validators.minLength(13) ,Validators.maxLength(13),Validators.pattern(this.numberPattern)]],
+      formaLegalExpress:  ['', [Validators.required]],
+      inicioActividadesExpress:  ['', [Validators.required]],
+      actividadPrincipalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      provinciaExpress:  ['', [Validators.required]],
+      direccionExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(50)]],
+      sucursalesExpress:  ['', [Validators.required]],
+      telefonoExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(10)]],
+      paginaExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.paginaWebPattern)]],
+      correoExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.emailPattern)]],
+      representanteLegalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      personaContactoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      cargoExpress:  ['', [Validators.required]],
+      empresasRelacionadasExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      numeroEmpleadosExpress:  ['', [Validators.required]],
+      pagoRentaUnoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      anioPagoImpuesto:  ['', [Validators.required]],
+      anioPagoImpuestoDos: ['', [Validators.required]],
+      fechaInfoFinanciera: ['', [Validators.required]],
+      fechaInfoFinanciera1: ['', [Validators.required]],
+      pagoRentaDosExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      impuestoDivisasExpressUno:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      anioImpuestoDivisas: ['', [Validators.required]],
+      anioImpuestoDivisasDos: ['', [Validators.required]],
+      puntualidadPagosExpress: ['', [Validators.required]],
+      impuestoDivisasExpressDos:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      //calificacion
+      requeridoClienteExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      requeridoServiratingExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      nombreReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      direccionReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(50)]],
+      telefonoReferenciaExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(10),Validators.pattern(this.numberPattern)]],
+      contactoReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      lineaCreditoExpress:  ['', [Validators.required]],
+      pagosReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      
+      productoServicioReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      clienteDesdeExpress:  ['', [Validators.required]],
+      compraMensualExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      //selects
+      checks: ['', [Validators.required]],
+      checks1: ['', [Validators.required]],
+      checks2: ['', [Validators.required]],
+      ciudadExpress:['', [Validators.required]],
+      estadoExpress: ['', [Validators.required]],
+      checksEmpresas: ['', [Validators.required]],
+      checksCalificaciones: ['', [Validators.required]],
+      //checks
+      procesosJudicialesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(300)]],
+      informacionRelevanteExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(500)]],
+      informacionBancariaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(500)]],
+      ventas2014Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      ventas2015Express: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      activos2014Express: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      activos2015Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      pasivo2014Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      pasivo2015Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      patrimonio2014Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      patrimonio2015Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      utilidad2014Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      utilidad2015Express: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      terrenoAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      terrenoAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      construccionAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      construccionAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      avaluoTotalAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      avaluoTotalAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      marcaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      marcaExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      marcaExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      marcaExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      marcaExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      tipoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      tipoExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      tipoExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      tipoExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      tipoExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
+      fechavahiculosExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
+      fechavahiculosExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
+      fechavahiculosExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
+      fechavahiculosExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
+      fechavahiculosExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
+      avaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      avaluoExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      avaluoExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      avaluoExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      avaluoExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
+      observacionesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(500)]],
+    
+    });
+
+  }
+    ngOnInit() {}
+
   //para mongo
   formularioExpress = new FormExpress();
   submitted = false;
@@ -149,106 +249,7 @@ export class RequisitosProveedoresComponent implements OnInit {
   paginaWebPattern= new RegExp( /^((https?):\/\/)?([w|W]{3}\.)+[a-zA-Z0-9\-\.]{3,}\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/ );
   dineroPattern= new RegExp (/^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/);
 
-  constructor(public fb: FormBuilder, private proveedoresService:FormProveedoresServiceService) {
-
-   
-    this.reporteExpress = this.fb.group({
-      
-      razonSocialExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      nombreComercialExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      rucExpress:  ['', [Validators.required,Validators.minLength(13) ,Validators.maxLength(13),Validators.pattern(this.numberPattern)]],
-      formaLegalExpress:  ['', [Validators.required]],
-      inicioActividadesExpress:  ['', [Validators.required]],
-      actividadPrincipalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      provinciaExpress:  ['', [Validators.required]],
-      direccionExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(50)]],
-      sucursalesExpress:  ['', [Validators.required]],
-      telefonoExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(10)]],
-      paginaExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.paginaWebPattern)]],
-      correoExpress:  ['', [Validators.required,Validators.minLength(10) ,Validators.maxLength(30),Validators.pattern(this.emailPattern)]],
-      representanteLegalExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      personaContactoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      cargoExpress:  ['', [Validators.required]],
-      empresasRelacionadasExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      numeroEmpleadosExpress:  ['', [Validators.required]],
-      pagoRentaUnoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      anioPagoImpuesto:  ['', [Validators.required]],
-      anioPagoImpuestoDos: ['', [Validators.required]],
-      fechaInfoFinanciera: ['', [Validators.required]],
-      fechaInfoFinanciera1: ['', [Validators.required]],
-      pagoRentaDosExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      impuestoDivisasExpressUno:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      anioImpuestoDivisas: ['', [Validators.required]],
-      anioImpuestoDivisasDos: ['', [Validators.required]],
-      puntualidadPagosExpress: ['', [Validators.required]],
-      impuestoDivisasExpressDos:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      //calificacion
-      requeridoClienteExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      requeridoServiratingExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      nombreReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      direccionReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(50)]],
-      telefonoReferenciaExpress:  ['', [Validators.required,Validators.minLength(7) ,Validators.maxLength(10),Validators.pattern(this.numberPattern)]],
-      contactoReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      lineaCreditoExpress:  ['', [Validators.required]],
-      pagosReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      
-      productoServicioReferenciaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      clienteDesdeExpress:  ['', [Validators.required]],
-      compraMensualExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      //selects
-      checks: ['', [Validators.required]],
-      checks1: ['', [Validators.required]],
-      checks2: ['', [Validators.required]],
-      ciudadExpress:['', [Validators.required]],
-      estadoExpress: ['', [Validators.required]],
-      checksEmpresas: ['', [Validators.required]],
-      checksCalificaciones: ['', [Validators.required]],
-      //checks
-      procesosJudicialesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(300)]],
-      informacionRelevanteExpress: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(500)]],
-      informacionBancariaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(500)]],
-      ventas2014Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      ventas2015Express: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      activos2014Express: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      activos2015Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      pasivo2014Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      pasivo2015Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      patrimonio2014Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      patrimonio2015Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      utilidad2014Express:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      utilidad2015Express: ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      terrenoAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      terrenoAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      construccionAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      construccionAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      avaluoTotalAreaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      avaluoTotalAvaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      marcaExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      marcaExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      marcaExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      marcaExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      marcaExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      tipoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      tipoExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      tipoExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      tipoExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      tipoExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.textPattern)]],
-      fechavahiculosExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
-      fechavahiculosExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
-      fechavahiculosExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
-      fechavahiculosExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
-      fechavahiculosExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30),Validators.pattern(this.numberPattern)]],
-      avaluoExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      avaluoExpress1:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      avaluoExpress2:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      avaluoExpress3:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      avaluoExpress4:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(30)]],
-      observacionesExpress:  ['', [Validators.required,Validators.minLength(3) ,Validators.maxLength(500)]],
-    
-    });
-
-  }
-    ngOnInit() {}
+  
     
    
  
@@ -460,3 +461,4 @@ export class RequisitosProveedoresComponent implements OnInit {
  
   
 }
+
